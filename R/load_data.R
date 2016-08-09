@@ -12,7 +12,7 @@
 #' load_data()
 #' load_data(update = TRUE)
 #'
-load_data <- function(update = FALSE, project.name = NULL) {
+load_data <- function(update = FALSE, project.name = 'tagDiabetes') {
     if (is.null(project.name))
         stop('Please change the project.name default to the name of the project.')
     if (!dir.exists(system.file('data', package = project.name)))
