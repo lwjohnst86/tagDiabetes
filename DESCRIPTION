@@ -1,13 +1,39 @@
 Package: tagDiabetes
-Title: What the Package Does (one line, title case)
+Title: Analysis Code for TAG Manuscript
 Version: 0.0.0.9000
-Authors@R: person("First", "Last", email = "first.last@example.com", role = c("aut", "cre"))
-Description: What the package does (one paragraph).
-Depends: R (>= 3.3.1)
-License: What license is it under?
+Authors@R: person("Luke", "Johnston", email = "luke.johnston@mail.utoronto.com",
+    role = c("aut", "cre"))
+Description: This repository contains the R code used to analyze the data and
+    produce the results for the manuscript on TAG and the pathogenesis of diabetes
+    in the longitudinal PROMISE cohort.
+Depends:
+    R (>= 3.3.1)
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
-Suggests: knitr,
+Suggests:
+    knitr,
     rmarkdown
 VignetteBuilder: knitr
-Imports: devtools
+Imports:
+    devtools,
+    dplyr,
+    tidyr,
+    ggplot2,
+    grid,
+    ggthemes,
+    pander,
+    carpenter,
+    caret,
+    stats,
+    mason,
+    pls,
+    fost,
+    captioner,
+    pryr,
+    magrittr,
+    PROMISE
+Remotes:
+    github::lwjohnst86/fost,
+    bitbucket::PROMISE-cohort/PROMISE
+RoxygenNote: 5.0.1
