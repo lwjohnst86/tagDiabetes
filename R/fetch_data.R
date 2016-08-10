@@ -97,4 +97,7 @@ fetch_data <- function() {
 
     # Save the dataset to the data/ folder.
     devtools::use_data(project_data, overwrite = TRUE)
+    # Save the variable names as an internal dataset
+    vars <- names(project_data)
+    devtools::use_data(vars, internal = TRUE, overwrite = TRUE)
 }
