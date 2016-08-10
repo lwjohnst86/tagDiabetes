@@ -1,11 +1,21 @@
 # Analyze -----------------------------------------------------------------
 
+#' Run GEE models
+#'
+#' @param data The project data
+#' @param y outcomes (IS, BCF)
+#' @param x predictors (TAGFA)
+#' @param covariates to adjust for
+#' @param intvar interaction variable
+#' @param rename_x Function to rename x variables
+#' @param rename_y Function to rename y variables
+#' @export
 analyze_gee <- function(data = project_data,
                         y = outcomes,
                         x = list(
                             tg_conc = tg_conc,
                             tg_pct = tg_pct,
-                            tg_total = tg_total
+                            tg_total = tg_totals
                         ),
                         covariates = c('VN', 'BaseAge', 'Sex', 'Ethnicity', 'Waist'),
                         intvar = NULL,

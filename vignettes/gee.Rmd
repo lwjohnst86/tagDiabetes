@@ -1,0 +1,75 @@
+---
+title: "GEE modeling results"
+author: "Luke W. Johnston"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{GEE modeling results}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+# Setup
+
+```{r setup, message=FALSE}
+devtools::load_all()
+library(dplyr)
+set_options()
+load_data()
+```
+
+# Unadjusted
+```{r unadj, cache=TRUE}
+m <- analyze_gee(covariates = 'VN')
+m <- filter(m, p.value <= 0.05) 
+nrow(m)
+m %>% 
+    select(Yterms, Xterms, term, estimate) %>% 
+    pander::pander()
+```
+
+# Adjusted
+```{r adj, cache=TRUE}
+m <- analyze_gee()
+m <- filter(m, p.value <= 0.05) 
+nrow(m)
+
+m %>% 
+    select(Yterms, Xterms, term, estimate) %>% 
+    pander::pander()
+```
+
+# Interactions
+
+## Time
+```{r int_time, cache=TRUE}
+m <- analyze_gee(intvar = 'VN')
+m <- filter(m, p.value <= 0.05) 
+nrow(m)
+
+m %>% 
+    select(Yterms, Xterms, term, estimate) %>% 
+    pander::pander()
+```
+
+## Sex
+```{r int_sex, cache=TRUE}
+m <- analyze_gee(intvar = 'Sex')
+m <- filter(m, p.value <= 0.05) 
+nrow(m)
+
+m %>% 
+    select(Yterms, Xterms, term, estimate) %>% 
+    pander::pander()
+```
+
+## Ethnicity
+```{r int_ethnicity, cache=TRUE}
+m <- analyze_gee(intvar = 'Ethnicity')
+m <- filter(m, p.value <= 0.05) 
+nrow(m)
+
+m %>% 
+    select(Yterms, Xterms, term, estimate) %>% 
+    pander::pander()
+```
