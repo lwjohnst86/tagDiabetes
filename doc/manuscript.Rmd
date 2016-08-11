@@ -1,0 +1,280 @@
+---
+bibliography: 
+    - /home/luke/Documents/bibliography/bib/bib-db/tagDiabetes.bib
+    - /home/luke/Documents/bibliography/bib/bib-db/myrefs.bib
+    - /home/luke/Documents/bibliography/bib/bib-db/methods.bib
+output: fost::default_manuscript
+---
+
+<!--
+
+Outline:
+
+- Primary analysis:
+    - Heatmap
+    - GEE
+        - Include # of both uncorrected and corrected (FDR) significant associations
+        - QIC modeling
+        - DAG development
+        - Look over the entire model (see which variables are significant, etc)
+    - Interaction (manhattan plot)
+    - Interaction plots (with total? + clinical?)
+        - With Ethnicity, generate contrast plots of adjusted estimates
+    - PLS with ISI and HOMA-IR
+        - CV for determining number of comps
+        - Loadings (of TAGFA)
+        - Prediction (of predicted vs real)
+        - Use extracted PLS components in GEE
+        - Train and test (CV) to see how it predicts in a new dataset (ie. a future visit)
+- Secondary analysis:
+    - PLS-DA (dysgly)
+        - Train and test (CV)
+        - Loadings (of TAGFA) 
+        - Groupings
+        - Prediction (misclassification)
+    - AROC
+        - dysgly with clinical TAG vs the 'best' fatty acid to compare to
+        
+Possible interpretations:
+
+- muscle IR -> higher TAG
+- But longitudinal, since no interaction with time, so maybe the higher TAG is
+because of higher IR (since this population is at risk of being IR).
+    
+-->
+
+# Title page
+
+Title:
+
+Author: Luke W. Johnston (1), MSc; Stewart B. Harris (2), MD; Ravi Retnakaran
+(3,4), MD; Adria Giacca (5), PhD; Zhen Liu (1), PhD;
+Richard P. Bazinet (1), PhD; and Anthony J. Hanley (1,6), PhD
+
+<!-- During time of study. -->
+Affiliation:
+
+(1) Department of Nutritional Sciences, University of Toronto, Toronto, Ontario, Canada.
+(2) Centre for Studies in Family Medicine, University of Western Ontario, London, Ontario, Canada.
+(3) Division of Endocrinology, University of Toronto, Toronto, ON, Canada.
+(4) Lunenfeld Tanenbaum Research Institute, Mount Sinai Hospital, Toronto, Ontario, Canada.
+(5) Department of Physiology, University of Toronto, Toronto, Ontario, Canada.
+(6) Dalla Lana School of Public Health, University of Toronto, Toronto, Ontario, Canada.
+
+Corresponding author:
+
+- Name: Anthony J. Hanley
+- Current address:  
+    Department of Nutritional Sciences  
+    Faculty of Medicine  
+    University of Toronto  
+    FitzGerald Building, 150 College Street, Room 341  
+    Toronto, ON, Canada, M5S 3E2
+- Phone number: 416.978.3616
+- Fax number:
+- Email: anthony.hanley@utoronto.ca
+
+Disclaimers:
+
+Funding support:
+
+# Abstract
+
+# Background
+
+Outline:
+
+- TAG strong predictor of diabetes and CVD risk
+- Not well studied how composition plays a role
+- Limited longitudinal data
+
+Our objective was to examine the longitudinal role of the specific composition
+of the TAG serum fraction on OGTT-derived measures of insulin sensitivity and
+beta-cell function.
+
+# Subjects and Methods
+
+```{r load_data, message=FALSE}
+devtools::load_all('.')
+set_options()
+load_data()
+ds <- project_data
+```
+
+```{r caption_setup}
+## Include captions below using `captioner` package
+fig <- captioner::captioner(prefix = 'Figure')
+cite_f <- pryr::partial(fig, display = 'cite')
+sfig <- captioner::captioner(prefix = 'Supplemental Figure')
+cite_sf <- pryr::partial(sfig, display = 'cite')
+tab <- captioner::captioner(prefix = 'Table')
+cite_t <- pryr::partial(tab, display = 'cite')
+stab <- captioner::captioner(prefix = 'Supplemental Table')
+cite_st <- pryr::partial(stab, display = 'cite')
+# usage: cite_st('basicChar')
+
+fig_gee <- fig('gee', 'caption here')
+```
+
+```{r set_datasets}
+pls_df_homa <- prep_pls_data(ds, 'linvHOMA')
+pls_df_isi <- prep_pls_data(ds, 'lISI')
+```
+
+```{r analyze_gee, cache=TRUE}
+gee_results <- analyze_gee(ds)
+gee_results_int <- analyze_gee(ds, intvar = 'VN')
+```
+
+```{r analyze_pls}
+pls_results <- list()
+pls_results$homa$train <- analyze_pls(pls_df_homa$train, 'linvHOMA')
+pls_results$homa$test <- analyze_pls(pls_df_homa$test, 'linvHOMA')
+pls_results$isi$train <- analyze_pls(pls_df_isi$train, 'lISI')
+pls_results$isi$test <- analyze_pls(pls_df_isi$test, 'lISI')
+```
+
+```{r analyze_cor}
+cor_results <- analyze_corr(ds)
+```
+
+
+# Results
+
+
+## GEE
+
+Main effect
+
+Interaction effect
+
+## PLS
+
+Accuracy of predictive ability of PLS components with real measure {{use test maybe?}}.
+Correlation of pred vs real in test set.
+
+## PLS-DA
+
+Misclassification of dysgly {{using test?}}, misclass by group too ('yes' vs 'no')
+
+## AROC
+
+AROC of clinical TAG vs TAGFA palmitic acid etc.
+
+# Discussion
+
+Outline:
+
+- General findings
+- Limitations of study
+- Previous lit and limits of those
+- How this study fills those gaps and new things learned
+- Potential clinical application
+
+
+# Acknowledgements
+
+## Funding/support
+
+## Conflict of interest
+
+# Tables and figures
+
+```{r table_basic}
+table_basic()
+```
+
+```{r fig_heatmap}
+plot_heatmap(cor_results)
+```
+
+```{r fig_dist}
+
+```
+
+```{r table_dist}
+table_distribution()
+```
+
+```{r table_corr}
+#table_corr(cor_results)
+```
+
+```{r fig_gee}
+plot_gee_main(gee_results)
+```
+
+```{r table_gee_main}
+table_gee_main(gee_results, '')
+```
+
+```{r fig_gee_int}
+seer::view_interaction(gee_results_int, 
+                       groups = 'unit~Yterms',
+                       ylab = 'Triacylglycerol fatty acids') +
+        graph_theme()
+```
+
+```{r fig_interacts}
+# plot_interactions(ds, fa, outcome)
+# plot_interactions(ds, fa, outcome)
+# plot_interactions(ds, fa, outcome)
+```
+
+```{r fig_pls_cvncomp}
+# Or as a table?
+plot_pls_cv_ncomp(pls_results$homa$train)
+plot_pls_cv_ncomp(pls_results_homa)
+```
+
+```{r fig_pls_loadings}
+# As a single figure
+seer::view_pls_xloadings(pls_results$homa$train) +
+    graph_theme()
+seer::view_pls_xloadings(pls_results$homa$test) +
+    graph_theme()
+seer::view_pls_xloadings(pls_results$isi$train) +
+    graph_theme()
+seer::view_pls_xloadings(pls_results$isi$test) +
+    graph_theme()
+```
+
+```{r fig_pls_prediction}
+# maybe not a figure, maybe just a correlation?
+predplot(pls_results$isi$train, ncomp = 1:2)
+predplot(pls_results$homa$train, ncomp = 1:2)
+plot_pls_predict(pls_results$isi$train)
+plot_pls_predict(pls_results_homa)
+plot_pls_predict(test_set, pls_predict_set)
+```
+
+```{r fig_pls_comp_gee}
+plot_gee_main(gee_results_plscomps)
+```
+
+```{r table_gee_pls}
+table_gee_main(gee_results_plscomps)
+```
+
+```{r fig_plsda_cvncomps}
+# can't remember if this is possible...
+plot_plsda_cv_ncomp(plsda_results)
+```
+
+```{r fig_plsda_loadings}
+plot_plsda_loadings(plsda_results)
+```
+
+```{r fig_plsda_groupings}
+plot_plsda_groupings(plsda_results)
+```
+
+```{r fig_aroc}
+plot_aroc(aroc_results) #?
+```
+
+# Supplemental Methods
+
+
+
+# References
