@@ -5,4 +5,5 @@ inst/doc
 *_cache/
 *_files/
 vignettes/*.R
+doc/*.docx
 
