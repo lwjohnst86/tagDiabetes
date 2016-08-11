@@ -96,8 +96,6 @@ beta-cell function.
 
 ```{r load_data, message=FALSE}
 devtools::load_all('.')
-set_options()
-load_data()
 ds <- project_data
 ```
 
