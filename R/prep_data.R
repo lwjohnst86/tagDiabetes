@@ -1,12 +1,5 @@
 # Grab or combine data ----------------------------------------------------
 
-prep_pls_data <- function(data, y, x) {
-    data %>%
-        dplyr::filter(VN == 0) %>%
-        dplyr::select_(.dots = c(y, x)) %>%
-        stats::na.omit()
-}
-
 prep_dysglycemia_data <- function(data) {
     dysgly.data <-
         dplyr::left_join(
