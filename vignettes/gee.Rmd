@@ -21,9 +21,7 @@ library(dplyr)
 m <- analyze_gee(covariates = 'VN')
 m <- filter(m, p.value <= 0.05) 
 nrow(m)
-m %>% 
-    select(Yterms, Xterms, term, estimate) %>% 
-    pander::pander()
+table_gee_main(m)
 ```
 
 # Adjusted
@@ -31,10 +29,7 @@ m %>%
 m <- analyze_gee()
 m <- filter(m, p.value <= 0.05) 
 nrow(m)
-
-m %>% 
-    select(Yterms, Xterms, term, estimate) %>% 
-    pander::pander()
+table_gee_main(m)
 ```
 
 # Interactions

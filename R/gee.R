@@ -122,29 +122,29 @@ analyze_gee <- function(data = project_data,
 #'
 #' @export
 table_gee_main <- function(results, caption = NULL, digits = 1) {
-    gee_table_prep <- results %>%
+    table_data <- results %>%
         dplyr::mutate_each(dplyr::funs(format_rounding(., digits = digits)),
                            estimate, conf.low, conf.high) %>%
         dplyr::mutate(
             p.binary = ifelse(p.value <= 0.05, '\\*', ''),
-            estimate.ci = paste0(estimate, ' (', conf.low, ', ', conf.high, ')', p.binary)
+            estimate.ci = paste0(estimate, ' (', conf.low, ', ', conf.high, ')',
+                                 p.binary)
         ) %>%
         dplyr::select(Yterms, Xterms, unit, estimate.ci) %>%
-        tidyr::spread(Yterms, estimate.ci)
+        tidyr::spread(Yterms, estimate.ci) %>%
+        dplyr::mutate(Xterms = as.character(Xterms))
 
-    gee_table <-
-        dplyr::bind_rows(
-            data.frame(Xterms = paste0('**', unique(gee_table_prep$unit)[3], '**')),
-            dplyr::filter(gee_table_prep, unit == 'Totals'),
-            data.frame(Xterms = paste0('**', unique(gee_table_prep$unit)[1], '**')),
-            dplyr::filter(gee_table_prep, unit == 'nmol/mL'),
-            data.frame(Xterms = paste0('**', unique(gee_table_prep$unit)[2], '**')),
-            dplyr::filter(gee_table_prep, unit == 'mol%')
+    dplyr::bind_rows(
+            tibble::data_frame(Xterms = paste0('**Totals**')),
+            dplyr::filter(table_data, unit == 'Totals'),
+            tibble::data_frame(Xterms = paste0('**nmol/mL**')),
+            dplyr::filter(table_data, unit == 'nmol/mL'),
+            tibble::data_frame(Xterms = paste0('**mol%**')),
+            dplyr::filter(table_data, unit == 'mol%')
         ) %>%
         dplyr::select(-unit) %>%
-        dplyr::rename('Fatty acid' = Xterms)
-
-    pander::pander(gee_table, missing = '', caption = caption)
+        dplyr::rename('Fatty acid' = Xterms) %>%
+        pander::pander(missing = '', caption = caption)
 }
 
 # Plotting ----------------------------------------------------------------

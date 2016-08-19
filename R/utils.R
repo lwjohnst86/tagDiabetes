@@ -6,7 +6,7 @@ trim_ws <- function (x) {
 }
 
 format_rounding <- function(x, digits) {
-    trim_ws(format(round(., digits = digits), nsmall = digits))
+    trim_ws(format(round(x, digits = digits), nsmall = digits))
 }
 
 graph_theme <- function(base.plot, ticks = TRUE, minor.grid.lines = FALSE, legend.pos = 'bottom') {
