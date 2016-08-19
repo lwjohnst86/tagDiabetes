@@ -5,6 +5,10 @@ trim_ws <- function (x) {
     gsub("^\\s+|\\s+$", "", x)
 }
 
+format_rounding <- function(x, digits) {
+    trim_ws(format(round(., digits = digits), nsmall = digits))
+}
+
 graph_theme <- function(base.plot, ticks = TRUE, minor.grid.lines = FALSE, legend.pos = 'bottom') {
     graph.theme <-
         ggplot2::"%+replace%"(
