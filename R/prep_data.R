@@ -3,38 +3,8 @@
 prep_pls_data <- function(data, y, x) {
     data %>%
         dplyr::filter(VN == 0) %>%
-        dplyr::select_(y, x) %>%
+        dplyr::select_(.dots = c(y, x)) %>%
         stats::na.omit()
-}
-
-prep_gee_data <- function(data) {
-    no_fattyacids <- data %>%
-        dplyr::select(-dplyr::matches('pct_tg\\d+|^tg\\d+'),
-                      -TotalNE,-TotalTG, -BaseTAG, -lBaseTAG)
-
-    scaled_variables <- data %>%
-        dplyr::filter(VN == 0) %>%
-        dplyr::select(SID, TotalNE, TotalTG, BaseTAG, lBaseTAG,
-                      dplyr::matches('pct_tg\\d+|^tg\\d+')) %>%
-        dplyr::mutate_each(dplyr::funs(as.numeric(scale(.))), -SID)
-
-    gee_ready_data <-
-        dplyr::full_join(
-            no_fattyacids,
-            scaled_variables,
-            by = 'SID'
-        ) %>%
-        dplyr::group_by(VN) %>%
-        dplyr::mutate(
-            Waist = as.numeric(scale(Waist)),
-            ALT = as.numeric(scale(ALT)),
-            BaseAge = as.numeric(scale(BaseAge)),
-            MET = as.numeric(scale(MET))
-        ) %>%
-        dplyr::ungroup() %>%
-        dplyr::arrange(SID, VN)
-
-    return(gee_ready_data)
 }
 
 prep_dysglycemia_data <- function(data) {

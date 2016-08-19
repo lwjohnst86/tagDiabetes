@@ -1,87 +1,12 @@
 # Analyze -----------------------------------------------------------------
 
-#' Run GEE models
-#'
-#' @param data The project data
-#' @param y outcomes (IS, BCF)
-#' @param x predictors (TAGFA)
-#' @param covariates to adjust for
-#' @param intvar interaction variable
-#' @param rename_x Function to rename x variables
-#' @param rename_y Function to rename y variables
-#' @export
-analyze_gee <- function(data = project_data,
-                        y = outcomes,
-                        x = list(
-                            tg_conc = tg_conc,
-                            tg_pct = tg_pct,
-                            tg_total = tg_totals
-                        ),
-                        covariates = c('VN', 'BaseAge', 'Sex', 'Ethnicity', 'Waist'),
-                        intvar = NULL,
-                        rename_x = renaming_fats,
-                        rename_y = renaming_outcomes) {
-
-    int <- !is.null(intvar)
-    if (int) {
-        extract_term <- ':'
-    } else {
-        extract_term <- 'Xterm$'
-    }
-    data %>%
-        prep_gee_data() %>%
-        mason::design('gee') %>%
-        mason::add_settings(family = stats::gaussian(),
-                            corstr = 'ar1', cluster.id = 'SID') %>%
-        mason::add_variables('yvars', outcomes) %>%
-        mason::add_variables('xvars', x[['tg_pct']]) %>%
-        mason::add_variables('covariates', covariates) %>% {
-            if (int) {
-                mason::add_variables(., 'interaction', intvar)
-            } else {
-                .
-            }
-        } %>%
-        mason::construct() %>%
-        mason::add_variables('xvars', x[['tg_conc']]) %>%
-        mason::construct() %>%
-        mason::add_variables('xvars', x[['tg_total']]) %>%
-        mason::construct() %>%
-        mason::scrub() %>%
-        mason::polish_filter(extract_term, 'term') %>%
-        dplyr::mutate(unit = ifelse(grepl('pct', Xterms), 'mol%',
-                                    ifelse(grepl('^tg\\d', Xterms), 'nmol/mL',
-                                           'Totals'))) %>%
-        mason::polish_transform_estimates(function(x) (exp(x) - 1) * 100) %>%
-        mason::polish_renaming(rename_x, 'Xterms') %>%
-        mason::polish_renaming(rename_y, 'Yterms') %>%
-        dplyr::mutate(
-            order1 = substr(Xterms, nchar(Xterms), nchar(Xterms)),
-            order1 = ifelse(order1 == 0, 10, order1),
-            order1 = ifelse(order1 == 'l', 20, order1),
-            order1 = ifelse(order1 == 'G', 30, order1),
-            order1 = as.integer(order1)
-        ) %>%
-        mason::polish_adjust_pvalue(method = 'BH') %>%
-        dplyr::rename(unadj.p.value = p.value, p.value = adj.p.value) %>%
-        dplyr::arrange(desc(order1)) %>%
-        dplyr::mutate(Yterms = factor(
-            Yterms,
-            levels = c('log(1/HOMA-IR)', 'log(ISI)',
-                       'log(IGI/IR)', 'log(ISSI-2)'),
-            labels = c('log(1/HOMA-IR)', 'log(ISI)',
-                       'log(IGI/IR)', 'log(ISSI-2)'),
-            ordered = TRUE),
-            Xterms = factor(Xterms, unique(Xterms))) %>%
-        dplyr::select(-order1)
-
-}
-
 analyze_pls <- function(data = project_data,
-                        y, x = tg_pct, ncomp = 2, type = c('train', 'test')) {
+                        y, x = tg_pct, ncomp = 2,
+                        type = c('train', 'test', 'full')) {
     data %>%
         prep_pls_data(y = y, x = x) %>%
-        mason::add_settings(ncomp = ncomp, cv.data = TRUE, cv.seed = 43145) %>%
+        mason::design('pls') %>%
+        mason::add_settings(ncomp = ncomp, cv.data = TRUE, cv.seed = 12345) %>%
         mason::add_variables('yvars', y) %>%
         mason::add_variables('xvars', x) %>%
         mason::construct(cv = type) %>%
