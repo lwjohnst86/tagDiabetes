@@ -1,5 +1,14 @@
+# Functions to run the correlation analysis
+#
 # Analyze -----------------------------------------------------------------
 
+#' Correlation analysis.
+#'
+#' @param data Project data
+#' @param x The covariates and outcomes
+#' @param y The fatty acids.
+#'
+#' @export
 analyze_corr <-
     function(data = project_data,
              x = c(outcomes, 'BMI', 'Waist', 'Age', 'lALT', 'lTAG', 'Chol', 'HDL', 'LDL'),
@@ -28,4 +37,22 @@ analyze_corr <-
         dplyr::mutate(Vars2 = factor(Vars2, unique(Vars2)),
                       Vars1 = factor(Vars1, unique(Vars1)),
                       Correlations = round(Correlations, 2))
+    }
+
+# Plotting ----------------------------------------------------------------
+
+#' Correlation heatmap plot.
+#'
+#' @param results Correlation results
+#'
+#' @export
+plot_heatmap <- function(results) {
+     results %>%
+        seer::view_heatmap(
+            y = 'Vars2',
+            x = 'Vars1',
+            ylab = 'Triacylglycerol fatty acids (nmol/mL)',
+            number.colours = 5,
+            values.size = 4) +
+        graph_theme(ticks = FALSE, legend.pos = 'right')
 }
