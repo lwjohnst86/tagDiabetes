@@ -13,7 +13,10 @@ Encoding: UTF-8
 LazyData: true
 Suggests:
     knitr,
-    rmarkdown
+    rmarkdown,
+    DiagrammeR,
+    DiagrammeRsvg,
+    rsvg
 VignetteBuilder: knitr
 Imports:
     devtools,
@@ -33,7 +36,8 @@ Imports:
     pryr,
     magrittr,
     PROMISE,
-    tibble
+    tibble,
+    MuMIn
 Remotes:
     github::lwjohnst86/fost,
     bitbucket::PROMISE-cohort/PROMISE
