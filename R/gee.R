@@ -52,7 +52,7 @@ analyze_gee <- function(data = project_data,
                             tg_pct = tg_pct,
                             tg_total = tg_totals
                         ),
-                        covariates = c('VN', 'BaseAge', 'Sex', 'Ethnicity', 'Waist'),
+                        covars = covariates,
                         intvar = NULL,
                         rename_x = renaming_fats,
                         rename_y = renaming_outcomes) {
@@ -68,9 +68,9 @@ analyze_gee <- function(data = project_data,
         mason::design('gee') %>%
         mason::add_settings(family = stats::gaussian(),
                             corstr = 'ar1', cluster.id = 'SID') %>%
-        mason::add_variables('yvars', outcomes) %>%
+        mason::add_variables('yvars', y) %>%
         mason::add_variables('xvars', x[['tg_pct']]) %>%
-        mason::add_variables('covariates', covariates) %>% {
+        mason::add_variables('covariates', covars) %>% {
             if (int) {
                 mason::add_variables(., 'interaction', intvar)
             } else {
