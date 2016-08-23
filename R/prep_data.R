@@ -30,3 +30,16 @@ prep_dysglycemia_data <- function(data) {
 
     return(dysgly.data)
 }
+
+
+#' Clean data output from the QIC model selection functions.
+#'
+#' @param data QIC output data.
+#'
+#' @export
+clean_qic <- function(data) {
+    data %>%
+        tibble::rownames_to_column() %>%
+        dplyr::select(Model = rowname, QIC = IC, Delta = delta) %>%
+        dplyr::mutate(id = seq_len(nrow(.)))
+}
