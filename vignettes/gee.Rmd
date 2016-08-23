@@ -18,7 +18,7 @@ library(dplyr)
 
 # Unadjusted
 ```{r unadj, cache=TRUE}
-m <- analyze_gee(covariates = 'VN')
+m <- analyze_gee(covars = 'VN')
 m <- filter(m, p.value <= 0.05) 
 nrow(m)
 table_gee_main(m)
