@@ -1,0 +1,69 @@
+---
+title: "PLS analysis results"
+author: "Luke W. Johnston"
+date: "`r Sys.Date()`"
+output: 
+    rmarkdown::html_vignette:
+        toc: true
+        fig_width: 6
+        fig_height: 6
+vignette: >
+  %\VignetteIndexEntry{PLS analysis results}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+# Setup
+
+```{r setup}
+devtools::load_all()
+library(pls)
+```
+
+# PLS for HOMA
+
+```{r homa}
+fit_train <- project_data %>%
+    analyze_pls(y = 'linvHOMA')
+
+validationplot(fit_train, newdata = fit_train$test_data)
+predplot(fit_train, ncomp = c(1,2), newdata = fit_train$test_data)
+plot_pls(fit_train)
+calc_pred_corr(fit_train, fit_train$test_data)
+```
+
+# PLS for ISI
+
+```{r isi}
+fit_train <- project_data %>%
+    analyze_pls(y = 'lISI')
+
+validationplot(fit_train, newdata = fit_train$test_data)
+predplot(fit_train, ncomp = c(1,2), newdata = fit_train$test_data)
+plot_pls(fit_train)
+calc_pred_corr(fit_train, fit_train$test_data)
+```
+
+# PLS for IGIIR
+
+```{r igiir}
+fit_train <- project_data %>%
+    analyze_pls(y = 'lIGIIR')
+
+validationplot(fit_train, newdata = fit_train$test_data)
+predplot(fit_train, ncomp = c(1,2), newdata = fit_train$test_data)
+plot_pls(fit_train)
+calc_pred_corr(fit_train, fit_train$test_data)
+```
+
+# PLS for ISSI2
+
+```{r issi2}
+fit_train <- project_data %>%
+    analyze_pls(y = 'lISSI2')
+
+validationplot(fit_train, newdata = fit_train$test_data)
+predplot(fit_train, ncomp = c(1,2), newdata = fit_train$test_data)
+plot_pls(fit_train)
+calc_pred_corr(fit_train, fit_train$test_data)
+```
