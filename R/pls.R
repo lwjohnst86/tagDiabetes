@@ -24,14 +24,15 @@ prep_pls_data <- function(data, y, x) {
 #' @param y Outcome variable.
 #' @param x Exposure variables.
 #' @param ncomp Number of components.
+#' @param cv Whether to use CV.
 #'
 #' @export
 analyze_pls <- function(data = project_data,
-                        y, x = tg_pct, ncomp = NULL) {
+                        y, x = tg_pct, ncomp = NULL, cv = TRUE) {
     data %>%
         prep_pls_data(y = y, x = x) %>%
         mason::design('pls') %>%
-        mason::add_settings(ncomp = ncomp, validation = 'CV', cv.data = TRUE, cv.seed = 5436) %>%
+        mason::add_settings(ncomp = ncomp, validation = 'CV', cv.data = cv, cv.seed = 5436) %>%
         mason::add_variables('yvars', y) %>%
         mason::add_variables('xvars', x) %>%
         mason::construct() %>%
@@ -60,8 +61,9 @@ plot_pls <- function(data) {
 #'
 #' @export
 calc_pred_corr <- function(model, test, ncomps = 1) {
-    predicted <- predict(model, ncomp = ncomps, newdata = test)
-    measured <- as.matrix(model.response(model.frame(formula(model),
-                                                     data = test)))
-    cor(predicted, measured)
+    predicted <- stats::predict(model, ncomp = ncomps, newdata = test)
+    measured <- as.matrix(stats::model.response(
+        stats::model.frame(formula(model), data = test))
+        )
+    broom::tidy(stats::cor.test(predicted, measured))[c(1, 3)]
 }
