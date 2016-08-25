@@ -2,7 +2,9 @@
 title: "GEE modeling results"
 author: "Luke W. Johnston"
 date: "`r Sys.Date()`"
-output: rmarkdown::html_vignette
+output: 
+    rmarkdown::html_vignette:
+        toc: true
 vignette: >
   %\VignetteIndexEntry{GEE modeling results}
   %\VignetteEngine{knitr::rmarkdown}
@@ -65,4 +67,7 @@ nrow(m)
 m %>% 
     select(Yterms, Xterms, term, estimate) %>% 
     pander::pander()
+
+# Which TAGFA have the interaction?
+unique(m$term)
 ```
