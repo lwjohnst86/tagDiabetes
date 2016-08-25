@@ -1,5 +1,11 @@
 # Tables ------------------------------------------------------------------
 
+#' Create a table of the basic characteristics of PROMISE.
+#'
+#' @param data Project data.
+#' @param caption Table caption.
+#'
+#' @export
 table_basic <- function(data = project_data, caption = NULL) {
     data %>%
         dplyr::mutate(Ethnicity = ifelse(VN == 0, as.character(Ethnicity), NA),
@@ -17,7 +23,13 @@ table_basic <- function(data = project_data, caption = NULL) {
         carpenter::build_table(caption = caption)
 }
 
-table_distribution <- function(data = project_data, caption = NULL) {
+#' Create a table of the values for the conc and mol% of TAGFA.
+#'
+#' @param data Project data.
+#' @param caption Table caption.
+#'
+#' @export
+table_tagfa <- function(data = project_data, caption = NULL) {
     fa <- function(pattern, x = c(tg_conc, 'TotalTG'))
         grep(pattern, x, value = TRUE)
     tgfa <- c(fa('3$'), fa('6$'), fa('7$'), fa('9$'), fa('0$'), fa('TotalTG$'))
