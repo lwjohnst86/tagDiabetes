@@ -26,6 +26,7 @@ library(pls)
 fit_train <- project_data %>%
     analyze_pls(y = 'linvHOMA')
 
+summary(fit_train)
 validationplot(fit_train, newdata = fit_train$test_data)
 predplot(fit_train, ncomp = c(1,2), newdata = fit_train$test_data)
 plot_pls(fit_train)
@@ -38,6 +39,7 @@ calc_pred_corr(fit_train, fit_train$test_data)
 fit_train <- project_data %>%
     analyze_pls(y = 'lISI')
 
+summary(fit_train)
 validationplot(fit_train, newdata = fit_train$test_data)
 predplot(fit_train, ncomp = c(1,2), newdata = fit_train$test_data)
 plot_pls(fit_train)
@@ -50,6 +52,7 @@ calc_pred_corr(fit_train, fit_train$test_data)
 fit_train <- project_data %>%
     analyze_pls(y = 'lIGIIR')
 
+summary(fit_train)
 validationplot(fit_train, newdata = fit_train$test_data)
 predplot(fit_train, ncomp = c(1,2), newdata = fit_train$test_data)
 plot_pls(fit_train)
@@ -62,6 +65,7 @@ calc_pred_corr(fit_train, fit_train$test_data)
 fit_train <- project_data %>%
     analyze_pls(y = 'lISSI2')
 
+summary(fit_train)
 validationplot(fit_train, newdata = fit_train$test_data)
 predplot(fit_train, ncomp = c(1,2), newdata = fit_train$test_data)
 plot_pls(fit_train)
