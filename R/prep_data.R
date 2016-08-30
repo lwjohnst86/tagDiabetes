@@ -1,12 +1,17 @@
 # Grab or combine data ----------------------------------------------------
 
-prep_dysglycemia_data <- function(data) {
+#' Wrangle data to determine dysglycemia conversion.
+#'
+#' @param data The project data.
+#'
+#' @export
+prep_dys_data <- function(data) {
     dysgly.data <-
         dplyr::left_join(
             data %>%
                 dplyr::filter(VN == 0),
             data %>%
-                dplyr::filter(!is.na(TotalNE)) %>%
+                dplyr::filter(!is.na(TotalTG)) %>%
                 dplyr::mutate_each(dplyr::funs(ifelse(is.na(.), 0, .)), IFG, IGT) %>%
                 dplyr::mutate(PreDM = as.numeric(rowSums(.[c('IFG', 'IGT')], na.rm = TRUE))) %>%
                 dplyr::mutate(FactorDysgly = ifelse(
@@ -30,7 +35,6 @@ prep_dysglycemia_data <- function(data) {
 
     return(dysgly.data)
 }
-
 
 #' Clean data output from the QIC model selection functions.
 #'
