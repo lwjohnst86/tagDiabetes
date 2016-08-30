@@ -53,7 +53,7 @@ plot_pls <- function(data) {
 
 # Calculations ------------------------------------------------------------
 
-#' Calculate the correlation between the predicted and measured outcome.
+#' Calculate the correlation between the predicted and actual outcome.
 #'
 #' @param model The PLS output results.
 #' @param test The test data to predict from.
@@ -65,5 +65,8 @@ calc_pred_corr <- function(model, test, ncomps = 1) {
     measured <- as.matrix(stats::model.response(
         stats::model.frame(formula(model), data = test))
         )
-    broom::tidy(stats::cor.test(predicted, measured))[c(1, 3)]
+    corr <- broom::tidy(stats::cor.test(predicted, measured))[c(1, 3)]
+    list(r = format_rounding(corr[1], 2),
+         p = format_p(corr[2]))
+
 }
