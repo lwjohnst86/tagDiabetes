@@ -37,7 +37,9 @@ Imports:
     magrittr,
     PROMISE,
     tibble,
-    MuMIn
+    MuMIn,
+    lsmeans,
+    geepack
 Remotes:
     github::lwjohnst86/fost,
     bitbucket::PROMISE-cohort/PROMISE
