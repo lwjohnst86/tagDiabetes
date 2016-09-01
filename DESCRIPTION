@@ -39,7 +39,8 @@ Imports:
     tibble,
     MuMIn,
     lsmeans,
-    geepack
+    geepack,
+    gridExtra
 Remotes:
     github::lwjohnst86/fost,
     bitbucket::PROMISE-cohort/PROMISE
