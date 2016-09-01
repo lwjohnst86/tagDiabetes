@@ -85,7 +85,12 @@ fetch_data <- function() {
                     ),
                     c('Other', 'European', 'Other', 'Latino/a',
                       'Other', 'South Asian')
-                )
+                ),
+            BiEthnicity = plyr::mapvalues(
+                Ethnicity,
+                c('Other', 'European', 'Latino/a', 'South Asian'),
+                c('Non-European', 'European', 'Non-European', 'Non-European')
+            )
         ) %>%
         dplyr::arrange(SID, VN) %>%
         dplyr::filter(!is.na(TotalTG))

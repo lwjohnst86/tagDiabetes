@@ -60,14 +60,11 @@ m %>%
 
 ## Ethnicity
 ```{r int_ethnicity, cache=TRUE}
-m <- analyze_gee(intvar = 'Ethnicity')
+m <- analyze_gee(intvar = 'BiEthnicity')
 m <- filter(m, p.value <= 0.05) 
 nrow(m)
 
 m %>% 
     select(Yterms, Xterms, term, estimate) %>% 
     pander::pander()
-
-# Which TAGFA have the interaction?
-unique(m$term)
 ```
