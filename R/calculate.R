@@ -130,3 +130,28 @@ calc_gee_estci <- function(results) {
         dplyr::arrange(Yterms, dplyr::desc(estimate)) %>%
         dplyr::select(Yterms, Xterms, e)
 }
+
+#' Extracts and computes various information from the correlation results.
+#'
+#' @param data Correlation results data.
+#'
+#' @export
+calc_cor <- function(data = cor_df) {
+    data %>%
+        dplyr::group_by(Vars1) %>%
+        {
+            high_cor <- dplyr::filter(., Correlations < -0.3 | Correlations > 0.3)
+            low_cor <- dplyr::filter(., Correlations > -0.3 & Correlations < 0.3)
+
+            list(
+                mean = dplyr::summarize(high_cor, mean = format_rounding(mean(Correlations))),
+                rng = dplyr::summarize(high_cor, rng = paste0(min(Correlations),
+                                                              ' to ', max(Correlations))),
+                fa = table(low_cor$Vars1, low_cor$Vars2) %>%
+                    tibble::as_data_frame() %>%
+                    dplyr::group_by(Var2) %>%
+                    dplyr::summarize(n = sum(n)) %>%
+                    dplyr::arrange(dplyr::desc(n))
+            )
+        }
+}
