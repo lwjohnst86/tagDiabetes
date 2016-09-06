@@ -34,6 +34,16 @@ nrow(m)
 table_gee_main(m)
 ```
 
+## Adjusting for `M4` in qic.html
+
+```{r}
+m <- analyze_gee(covars = c('Waist', 'BaseAge', 'Ethnicity', 
+                            'Sex', 'ALT', 'MET', 'AlcoholPerWk'))
+m <- filter(m, p.value <= 0.05) 
+nrow(m)
+table_gee_main(m)
+```
+
 # Interactions
 
 ## Time
