@@ -19,6 +19,8 @@ Outline:
         - QIC modeling
         - DAG development
         - Look over the entire model (see which variables are significant, etc)
+        - Sensitivity analysis with Carb intake? And with adiponectin? (which is
+        involved in TAG metabolism)
     - PLS with ISI and HOMA-IR
         - CV for determining number of comps (best is 2)
         - Loadings (of TAGFA) (tho all are the same, use HOMA/ISI. BCF have
@@ -139,82 +141,66 @@ pls_isi_t <- analyze_pls(y = 'lISI')
 cor_df <- analyze_corr()
 ```
 
-Participants from London and Toronto, Canada, were recruited into the 
-Prospective Metabolism and Islet cell Evaluation (PROMISE) cohort. Eligibility 
-for recruitment into PROMISE required having one or more risk factors for type 2
-diabetes mellitus, including obesity, hypertension, family history of diabetes, 
-and/or a history of gestational diabetes or birth of a macrosomic infant. 
-Participants aged 30 years and older (n=736) attended the baseline visit
-between 2004-2006. Follow-up examinations in this cohort occur every three years, with three
-examination visits completed to date (2004-2006, 2007-2009, and 2010-2013). 
-Participants are contacted annually by telephone. The
-current study sample used data on participants who did not have diabetes at baseline,
-who returned for one or more of the follow-up examinations, and who had samples
-available for fatty acid measurements (n=477). A diagram of the sample size at
-each visit is shown in `r cite_sf('consort')`. At each examination,
-participants undergo metabolic characterization, anthropometric measurements,
-and questionnaires on lifestyle and sociodemographics. Research ethics approval
-was obtained from Mount Sinai Hospital and the University of Western Ontario,
-and all participants provided written informed consent.
-Data collection methods were standardized across the 2 centres and research
-nurses were centrally trained. 
+{{ Use an external source via DOI for reference to these methods? }}
 
-## Blood measure assessments
+Recruitment for the Prospective Metabolism and Islet Cell Evaluation (PROMISE) 
+cohort baseline visit took place between 2004-2006 from London and Toronto, 
+Canada. Individuals were selected to participant if they met the eligibility 
+criteria of having one or more risk factors for type 2 diabetes mellitus, 
+including obesity, hypertension, family history of diabetes, and/or a history of
+gestational diabetes or birth of a macrosomic infant. A total of 736 individuals
+attended the baseline visit. Subsequent examinations occurred every three years,
+with three examination visits completed to date (2004-2006, 2007-2009, and
+2010-2013). Participants are contacted annually by telephone. The current study
+sample used data on participants who did not have diabetes at baseline, who
+returned for one or more of the follow-up examinations, and who had samples
+available for fatty acid measurements (n=477; see the CONSORT diagram in `r
+cite_sf('consort')`. Metabolic characterization, anthropometric measurements,
+and questionnaires on lifestyle and sociodemographics are collected at each
+examination visit. Research ethics approval was obtained from Mount Sinai
+Hospital and the University of Western Ontario, and all participants provided
+written informed consent. Data collection methods were standardized across the 2
+centres and research nurses were centrally trained.
 
-At each examination, an 8-12 hour fasting blood sample was drawn from each
-participant, followed by a 75g oral glucose tolerance test (OGTT) with a 30
-minute and 2 hour blood draw. All blood samples were processed and frozen at
--70°C. Alanine aminotransferase (ALT) was measured using standard laboratory
-procedures. Cholesterol, HDL, and clinically-measured triacylglycerides (TAG)
-were measured using Roche Modular's enzymatic colorimetric tests (Mississauga,
+## Metabolic characterization
+
+Participants completed an 8-12 hour 75g oral glucose tolerance test (OGTT) at 
+each examination visit, with blood samples during at fasting, 30 min, and 2 hr 
+post-glucose load. Samples were subsequently processed and frozen at -70°C.
+Alanine aminotransferase (ALT) was measured using standard laboratory 
+procedures. Cholesterol, HDL, and clinically-measured triacylglycerides (TAG) 
+were measured using Roche Modular's enzymatic colorimetric tests (Mississauga, 
 ON).  Both insulin and glucose were derived from the OGTT at fasting, 30 minute,
-and 2 hour time points. Specific insulin was measured using the Elecsys 1010
-(Roche Diagnostics, Basel, Switzerland) immunoassay analyzer and
-electrochemiluminescence immunoassay. This assay shows 0.05% cross-reactivity to
-intact human pro-insulin and the Des 31,32 circulating split form (Linco Res.
-Inc), and has a coefficient of variation (CV) of 9.3%. Glucose was determined
-using an enzymatic hexokinase (Roche Modular, Roche Diagnostics) with a
-detection range of 0.11 (2 mg/dL) to 41.6 mmol/L.  The inter-assay %CV is <1.1%
-and intra-assay %CV is < 1.9%.  All assays were performed at the Banting and
-Best Diabetes Centre Core Lab at Mt Sinai Hospital. Impaired fasting glucose
-(IFG), impaired glucose tolerance (IGT), and diabetes were categorized using the
-2006 WHO criteria [@WHO2006].
+and 2 hour time points. Specific insulin was measured with the Elecsys 1010 
+(Roche Diagnostics, Basel, Switzerland) immunoassay analyzer and 
+electrochemiluminescence immunoassay, which shows 0.05% cross-reactivity to 
+intact human pro-insulin and the Des 31,32 circulating split form (Linco Res. 
+Inc) and has a coefficient of variation (CV) of 9.3%. Glucose was determined 
+using an enzymatic hexokinase (Roche Modular, Roche Diagnostics) with a 
+detection range of 0.11 to 41.6 mmol/L and an inter-assay %CV of <1.1% and an
+intra-assay %CV of < 1.9%.  All assays were performed at the Banting and Best
+Diabetes Centre Core Lab at Mt Sinai Hospital. Impaired fasting glucose (IFG),
+impaired glucose tolerance (IGT), and diabetes were categorized using the 2006
+WHO criteria [@WHO2006].
 
 TAGFA composition was quantified using stored fasting serum samples from the 
 baseline visit, which had been frozen at -70°C for 4-6 years and had not been 
 exposed to any freeze-thaw cycles. Serum fatty acids have been documented to be 
 stable at these temperatures for up to 10 years [@Matthan2010a]. A known amount 
-of heptadecanoic acid (17:0) was added to the serum as an internal standard
-prior to extracting total lipids according to the method of Folch [@Folch1957a].
-Each serum lipid fraction---non-esterified fatty acids (NEFA), cholesteryl
-ester, phospholipid, and TAGFA---was isolated using thin layer chromatography;
-each fraction was visualized under UV light after lightly spraying with
-8-anilino-1-naphthalene sulfonic acid (0.1% wt/vol) and then converted to fatty
-acid methyl esters with 14% boron trifluoride in methanol at 100°C for 1 h.
-Fatty acid methyl esters were separated and quantified using a Varian-430 gas
-chromatograph (Varian, Lake Forest, CA, USA) equipped with a Varian Factor Four
-capillary column and a flame ionization detector, which were injected in
-splitless mode. Fatty acid concentrations (nmol/ml) were calculated by
-proportional comparison of gas chromatography peak areas to that of the internal
-standards [@Nishi2014a]. There were 22 fatty acids measured in the TAGFA
-fraction. Given their diverse biology, as well as the complexity of the
-analyses, findings for other lipid fractions in this cohort are reported
-separately (see ref @Johnston2016a and for the analysis of the phospholipid and
-cholesteryl ester fractions and {{next citation}} for the analysis of the NEFA
-fraction).
-
-## Outcome variables
-
-Insulin sensitivity and beta-cell function indices were computed using the OGTT 
-glucose and insulin data. Insulin sensitivity was assessed using 1/HOMA-IR (1
-divided by HOMA-IR) [@Matthews1985] and the Insulin Sensitivity Index (ISI)
-[@Matsuda1999]. HOMA-IR largely reflects hepatic insulin resistance, while ISI
-reflects whole-body insulin sensitivity [@AbdulGhani2007].  Beta-cell function
-was assessed using the Insulinogenic Index [@Wareham1995] over HOMA-IR (IGI/IR)
-and the Insulin Secretion-Sensitivity Index-2 (ISSI-2) [@Retnakaran2009]. IGI/IR
-is a measure of the first phase of insulin secretion while ISSI-2 is analogous to
-the disposition index (but using OGTT values). Each index has been validated
-against gold standard measures [@Matthews1985; @Matsuda1999; @Retnakaran2009].
+of {{ confirm with Richard }} heptadecanoic acid (17:0) was added as an internal
+standard prior to extracting total lipids according to the method of Folch 
+[@Folch1957a]. Each serum lipid fraction---non-esterified fatty acids (NEFA), 
+cholesteryl ester, phospholipid, and TAGFA---was isolated using thin layer 
+chromatography. Fatty acid methyl esters were separated and quantified using a 
+Varian-430 gas chromatograph (Varian, Lake Forest, CA, USA) equipped with a 
+Varian Factor Four capillary column and a flame ionization detector. Fatty acid 
+concentrations (nmol/ml) were calculated by proportional comparison of gas
+chromatography peak areas to that of the internal standards [@Nishi2014a]. There
+were 22 fatty acids measured in the TAGFA fraction. Given that each lipid
+fraction differs in biology and given the complexity of the analyses, findings
+for other lipid fractions in this cohort are reported separately (see ref
+@Johnston2016a and for the analysis of the phospholipid and cholesteryl ester
+fractions and {{next citation}} for the analysis of the NEFA fraction).
 
 ## Anthropometrics and sociodemographics
 
@@ -222,16 +208,25 @@ Height, weight, and waist circumference (WC) were measured at all clinic
 examinations using standard procedures.  WC was measured at the natural waist, 
 defined as the narrowest part of the torso between the umbilicus and the xiphoid
 process. BMI was calculated by dividing weight (kg) by height (m) squared.
-Sociodemographic information, including age, sex, and ethnicity, were determined
-using questionnaires administered at each examination. In the lifestyle
-questionnaire, physical activity was determined using a version of the
-Modifiable Activity Questionnaire (MAQ) [@Kriska1990].  The MAQ collects 
-information on leisure and occupational activity, including intensity, 
-frequency, and duration, over the past year.  Each reported activity from the 
-MAQ was weighted by its metabolic intensity allowing for the estimation of 
-MET-hours per week.
+Questionnaires administered at each examination determined sociodemographics.
+A version of the Modifiable Activity Questionnaire (MAQ) [@Kriska1990]
+determined estimated physical activity. The MAQ collects information on leisure
+and occupational activity, including intensity, frequency, and duration, over
+the past year. Each reported activity from the MAQ was weighted by its
+metabolic intensity allowing for the estimation of MET-hours per week.
 
-## Statistical analysis
+## Variable calculation and statistical analysis
+
+Insulin sensitivity and beta-cell function indices were computed using the OGTT 
+glucose and insulin data. Insulin sensitivity was assessed using 1/HOMA-IR (1
+divided by HOMA-IR) [@Matthews1985] and the Insulin Sensitivity Index (ISI)
+[@Matsuda1999]. HOMA-IR largely reflects hepatic insulin resistance, while ISI
+reflects whole-body insulin sensitivity [@AbdulGhani2007]. Beta-cell function
+was assessed using the Insulinogenic Index [@Wareham1995] over HOMA-IR (IGI/IR)
+and the Insulin Secretion-Sensitivity Index-2 (ISSI-2) [@Retnakaran2009]. IGI/IR
+is a measure of the first phase of insulin secretion while ISSI-2 is analogous to
+the disposition index (but using OGTT values). Each index has been validated
+against gold standard measures [@Matthews1985; @Matsuda1999; @Retnakaran2009].
 
 The primary outcome variables for this analysis were 
 1/HOMA-IR, ISI, IGI/IR, and ISSI-2, which were log-transformed for
@@ -243,20 +238,20 @@ assess the relationships of individual TAGFA with other continuous variables.
 Of note is clinically measured TAG was only quantified on a portion of the
 6-year visit (n = ~120 {{ find true number }}).
 
-For the primary analysis, generalized estimating equation (GEE) models 
-[@Zeger1986a] were used to determine the longitudinal associations between the 
-outcome variables and the predictor variables. Given the longitudinal design 
-an auto-regressive of order 1 (AR1) correlation matrix was chosen for the GEE models, 
-though other matrices (eg. exchangeable) had similar fit (data not shown). GEE
-is well suited to longitudinal cohort studies given it's capacity to handle
-missed visits. The predictor variables and continuous covariates were scaled
-(mean centered and standardized). The TAGFA variables were classified as
-*time-independent* (held constant) as they were measured only at the baseline
-visit, while the outcome variables and covariates were set as *time-dependent*.
-No imputation was conducted on missing values.
+Generalized estimating equation (GEE) models [@Zeger1986a] were used in the
+primary analysis to determine the longitudinal associations between the outcome
+variables and the predictor variables. An auto-regressive of order 1 (AR1) 
+correlation matrix was chosen for the GEE models as it had the best model fit
+and given the longitudinal design, though other matrices (eg. exchangeable) had
+similar fit (data not shown). GEE is well suited to longitudinal cohort studies
+given it's capacity to handle missed visits. The predictor variables and
+continuous covariates were scaled (mean centered and standardized). The TAGFA
+variables were classified as *time-independent* (held constant) as they were
+measured only at the baseline visit, while the outcome variables and covariates
+were set as *time-dependent*. No imputation was conducted on missing values.
 
-Covariate selection was based on previous literature, directed acyclic graph 
-[@Greenland1999a] recommendations, and quasi-likelihood information criterion 
+Covariates were selected based on previous studies, from directed acyclic graph 
+[@Greenland1999a] recommendations, and from quasi-likelihood information criterion 
 (QIC) {{citation?}}. `r cite_st('qic')` shows the covariates compared using QIC. While the
 final GEE model selected as best fitting differed between insulin sensitivity
 and beta-cell function measures, the differences in QIC values were less than
@@ -299,8 +294,8 @@ dys <- project_data %>%
 
 tagfa <- calc_tagfa_percent()
 outcome_chg <- calc_outcome_changes()
-calc_discr_npct(ds0yr$Sex, 'Female')
-calc_discr_npct(ds0yr$Ethnicity, 'European')
+female <- calc_discr_npct(ds0yr$Sex, 'Female')
+euro <- calc_discr_npct(ds0yr$Ethnicity, 'European')
 estci <- calc_gee_estci(gee_df)
 fa_cor <- calc_cor()
 cor_pls_homa <- calc_pred_corr(pls_homa_t, pls_homa_t$test_data)
@@ -310,6 +305,8 @@ cor_pls_isi <- calc_pred_corr(pls_isi_t, pls_isi_t$test_data)
 ## Basic characteristics of the PROMISE cohort
 
 Basic characteristics/demographics
+
+`r tab_basic` shows some basic character
 
 The outcome variables significantly decreased over the 6 years by a median 
 `r outcome_chg$chg` (p`r outcome_chg$p`; n=`r outcome_chg$n`).
@@ -397,6 +394,8 @@ The four FA that cluster together on the PLS also appear to be the same FA that
 make up most of DNL, especially in context of higher carb/refined carb in diet
 [@Wilke2009a].
 
+[@Lee2015a] 16:1n-7 may be good marker of liver DNL.
+
 # Acknowledgements
 
 ## Funding/support
@@ -425,6 +424,10 @@ plot_heatmap(cor_df)
 #table_corr(cor_results)
 ```
 
+```{r table_qic}
+table_qic_main()
+```
+
 ```{r fig_gee}
 plot_gee_main(gee_df)
 ```
@@ -441,6 +444,5 @@ gridExtra::grid.arrange(
 ```
 
 # Supplemental Methods
-
 
 # References
