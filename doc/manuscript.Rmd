@@ -404,6 +404,8 @@ make up most of DNL, especially in context of higher carb/refined carb in diet
 
 # Tables and figures
 
+![`r fig_consort`](../img/flowDiagramSample.png)
+
 ```{r table_basic}
 table_basic()
 ```
