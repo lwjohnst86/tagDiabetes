@@ -115,8 +115,6 @@ M0_ar_bcf <- M0_ar
     
 # Covariate inclusion comparisons
 
-Use M8..?
-
 ```{r covars_is}
 M0 <- M0_ar_is
 M_full <- stats::update(M0, . ~ . + Waist + BaseAge + Ethnicity + Sex + ALT + MET + 
