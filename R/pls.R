@@ -66,7 +66,8 @@ calc_pred_corr <- function(model, test, ncomps = 1) {
         stats::model.frame(formula(model), data = test))
         )
     corr <- broom::tidy(stats::cor.test(predicted, measured))[c(1, 3)]
-    list(r = format_rounding(corr[1], 2),
-         p = format_p(corr[2]))
+    r <- format_rounding(corr[1], 2)
+    p <- format_p(corr[2])
+    list(r = r, p = p, r_p = paste0('r=', r, ', p', p))
 
 }
