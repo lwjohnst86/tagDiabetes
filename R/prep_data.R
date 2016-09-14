@@ -31,7 +31,7 @@ prep_dys_data <- function(data) {
                                                     DetailedConvert))
                 )
         ) %>%
-        dplyr::filter(!is.na(TotalNE))
+        dplyr::filter(!is.na(TotalTG))
 
     return(dysgly.data)
 }
