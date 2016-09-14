@@ -146,7 +146,8 @@ calc_cor <- function(data = cor_df) {
             list(
                 mean = dplyr::summarize(high_cor, mean = format_rounding(mean(Correlations))),
                 rng = dplyr::summarize(high_cor, rng = paste0(min(Correlations),
-                                                              ' to ', max(Correlations))),
+                                                              ' to ', max(Correlations))) %>%
+                    tidyr::spread(Vars1, rng),
                 fa = table(low_cor$Vars1, low_cor$Vars2) %>%
                     tibble::as_data_frame() %>%
                     dplyr::group_by(Var2) %>%
