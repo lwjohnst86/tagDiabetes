@@ -40,8 +40,10 @@ Imports:
     MuMIn,
     lsmeans,
     geepack,
-    gridExtra
+    gridExtra,
+    aide
 Remotes:
     github::lwjohnst86/fost,
+    github::lwjohnst86/aide,
     bitbucket::PROMISE-cohort/PROMISE
 RoxygenNote: 5.0.1
