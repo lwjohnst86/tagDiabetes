@@ -114,21 +114,27 @@ calc_gee_ave <- function(results) {
 #'
 #' @export
 calc_gee_estci <- function(results) {
-    results %>%
+    b_ci <- results %>%
         dplyr::mutate(
-            e = paste0(
-                '(beta: ',
-                format_rounding(estimate),
-                ', CI: ',
+            est = format_rounding(estimate),
+            ci = paste0(
                 format_rounding(conf.low),
                 ' to ',
-                format_rounding(conf.high),
-                ')'
-            )
+                format_rounding(conf.high)
+            ),
+            eci = paste0('(beta: ', est, ', CI: ', ci, ')')
         ) %>%
         dplyr::filter(p.value <= 0.05) %>%
         dplyr::arrange(Yterms, dplyr::desc(estimate)) %>%
-        dplyr::select(Yterms, Xterms, e)
+        dplyr::select(Yterms, Xterms, est, eci)
+
+    outcome_b <- results %>%
+        dplyr::filter(p.value <= 0.05) %>%
+        dplyr::mutate(dir = ifelse(estimate < 0, 'Neg', 'Pos')) %>%
+        dplyr::group_by(Yterms, unit, dir) %>%
+        dplyr::summarise(rng = aide::min_max(estimate))
+
+    list(b_ci = b_ci, outcome_b = outcome_b)
 }
 
 #' Extracts and computes various information from the correlation results.
