@@ -122,19 +122,29 @@ fig <- captioner::captioner(prefix = 'Figure')
 cite_f <- pryr::partial(fig, display = 'cite')
 sfig <- captioner::captioner(prefix = 'Supplemental Figure')
 cite_sf <- pryr::partial(sfig, display = 'cite')
+
 tab <- captioner::captioner(prefix = 'Table')
 cite_t <- pryr::partial(tab, display = 'cite')
 stab <- captioner::captioner(prefix = 'Supplemental Table')
 cite_st <- pryr::partial(stab, display = 'cite')
 # usage: cite_st('basicChar')
 
-fig_gee <- fig('gee', 'caption here')
+tab_qic <- tab('qic', 'caption here')
+tab_basic <- tab('basic', 'caption here')
+tab_tagfa <- tab('tagfa', 'caption here')
+tab_gee <- tab('gee', 'caption here')
+
 fig_consort <- fig('consort', 'caption here')
+fig_tagfa <- fig('tagfa', 'caption here')
+fig_heatmap <- fig('heatmap', 'caption here')
+fig_gee_unadj <- fig('gee_unadj', 'caption here')
+fig_gee_adj <- fig('gee_adj', 'caption here')
+fig_pls <- fig('pls', 'caption here')
 ```
 
 ```{r analyze_gee, cache=TRUE}
-gee_adj_df <- analyze_gee()
 gee_unadj_df <- analyze_gee(covars = "VN")
+gee_adj_df <- analyze_gee()
 ```
 
 ```{r analyze_others}
@@ -417,42 +427,43 @@ make up most of DNL, especially in context of higher carb/refined carb in diet
 
 ## Conflict of interest
 
-# Tables and figures
+# Tables
 
-![`r fig_consort`](../img/flowDiagramSample.png)
+```{r table_qic}
+table_qic_main()
+```
 
 ```{r table_basic}
 table_basic()
 ```
 
-```{r fig_dist}
-plot_tagfa()
+```{r table_tagfa}
+table_tagfa()
 ```
 
-```{r table_dist}
-table_tagfa()
+```{r table_gee}
+table_gee_main(gee_unadj_df)
+table_gee_main(gee_adj_df)
+```
+
+# Figures
+
+![`r fig_consort`](../img/flowDiagramSample.png)
+
+```{r fig_tagfa}
+plot_tagfa()
 ```
 
 ```{r fig_heatmap}
 plot_heatmap(cor_df)
 ```
 
-```{r table_corr}
-#table_corr(cor_results)
-```
-
-```{r table_qic}
-table_qic_main()
-```
-
-```{r fig_gee}
+```{r fig_gee_unadj}
 plot_gee_main(gee_unadj_df)
-plot_gee_main(gee_adj_df)
 ```
 
-```{r table_gee_main}
-table_gee_main(gee_unadj_df)
-table_gee_main(gee_adj_df)
+```{r fig_gee_adj}
+plot_gee_main(gee_adj_df)
 ```
 
 ```{r fig_pls}
