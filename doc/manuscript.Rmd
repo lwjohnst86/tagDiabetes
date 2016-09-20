@@ -11,12 +11,13 @@ output: fost::default_manuscript
 Note: keep the story simple and clean, without getting too dense
 
 - Run PLS with just those FA that loaded strongly to see the predictive ability.
+- SA with/without NEFA
+- SA with/without WC
 
 Outline:
 
 - Primary analysis:
     - Look over medications, how they influence the TAGFA
-    - Heatmap
     - GEE
         - SA for the large outlier for the TAGFA (see dist plot)
         - Include # of both uncorrected and corrected (FDR) significant associations
@@ -26,21 +27,8 @@ Outline:
         - Sensitivity analysis with Carb intake? And with adiponectin? (which is
         involved in TAG metabolism)
     - PLS with ISI and HOMA-IR
-        - CV for determining number of comps (best is 2)
-        - Loadings (of TAGFA) (tho all are the same, use HOMA/ISI. BCF have
-        lower corr between measured and predicted) (Use COrr of both components
-        (1 and 2))
-        - Prediction (of predicted vs real) (in the pls.rmd file, not in
-        manuscript (or maybe in ESM?))
         - Use extracted PLS components in GEE (?)
-        - Train and test (CV) to see how it predicts in a new dataset (ie. a
-        future visit) (done. In pls.rmd file. As ESM?)
 - Secondary analysis:
-    - PLS-DA (dysgly)
-        - Train and test (CV)
-        - Loadings (of TAGFA) 
-        - Groupings
-        - Prediction (misclassification)
     - AROC
         - dysgly with clinical TAG vs the 'best' fatty acid to compare to
         
@@ -155,6 +143,8 @@ pls_isi <- analyze_pls(y = 'lISI', cv = FALSE)
 # Correlation between predicted and actual
 pls_homa_t <- analyze_pls(y = 'linvHOMA')
 pls_isi_t <- analyze_pls(y = 'lISI')
+pls_igi_t <- analyze_pls(y = 'lIGIIR')
+pls_issi2_t <- analyze_pls(y = 'lISSI2')
 
 cor_df <- analyze_corr()
 ```
@@ -245,16 +235,18 @@ and the Insulin Secretion-Sensitivity Index-2 (ISSI-2) [@Retnakaran2009]. IGI/IR
 is a measure of the first phase of insulin secretion while ISSI-2 is analogous to
 the disposition index (but using OGTT values). Each index has been validated
 against gold standard measures [@Matthews1985; @Matsuda1999; @Retnakaran2009].
+Specific formulas for each OGTT-derived measure can be found in the {{
+Supplementary Material }}.
 
-The primary outcome variables for this analysis were 
-1/HOMA-IR, ISI, IGI/IR, and ISSI-2, which were log-transformed for
-the statistical modeling. The primary predictor variables for this analysis were
-22 individual TAGFA as mole percent (mol%) of the total fraction and as
-concentration (nmol/mL). Pearson correlation coefficients were computed to
-assess the relationships of individual TAGFA with other continuous variables.
-
-Of note is clinically measured TAG was only quantified on a portion of the
-6-year visit (n = ~120 {{ find true number }}).
+The primary outcome variables for this analysis were 1/HOMA-IR, ISI, IGI/IR, and
+ISSI-2, which were log-transformed for the statistical modeling. The primary
+predictor variables for this analysis were 22 individual TAGFA as mole percent
+(mol%) of the total fraction and as concentration (nmol/mL). Clinically-measured
+TAG is also included as a primary predictor to serve as a comparison against the
+TAGFA composition. A limitation with the clinically-measured TAG is that it was
+only quantified on a portion of the 6-year visit (n = ~120 {{ find true number
+}}). Pearson correlation coefficients were computed to assess the relationships
+of individual TAGFA with other continuous variables.
 
 Generalized estimating equation (GEE) models [@Zeger1986a] were used in the
 primary analysis to determine the longitudinal associations between the outcome
@@ -320,6 +312,8 @@ est1 <- calc_gee_estci(gee_adj_df)
 fa_cor <- calc_cor()
 cor_pls_homa <- calc_pred_corr(pls_homa_t, pls_homa_t$test_data)
 cor_pls_isi <- calc_pred_corr(pls_isi_t, pls_isi_t$test_data)
+cor_pls_igiir <- calc_pred_corr(pls_igiir_t, pls_igiir_t$test_data)
+cor_pls_issi2 <- calc_pred_corr(pls_issi2_t, pls_issi2_t$test_data)
 ```
 
 ## Basic characteristics of the PROMISE cohort
@@ -384,15 +378,26 @@ interactions by time, sex, or ethnicity for any of the TAGFA (data not shown).
 
 ## Clustering of TAGFA by metabolic measures
 
-Clustering analysis using PLS, shown in `r fig_pls`, revealed that 14:0, 14:1n-7,
-16:0, and 16:1n-7 loaded strongly (meaning the FA fell between the dashed and
-solid circles) and negatively on 1/HOMA-IR and ISI, suggesting this cluster of
-TAGFA tracks together with lower insulin sensitivity. The TAGFA 20:2n-6,
-20:5n-3, 22:5n-3, and 22:6n-3 loaded positively on both insulin sensitivity 
-measures. No other TAGFA loaded strongly, and the results of which remained
-after running the PLS model on the testing set. The predictive ability of the 
-PLS model, determined by correlating the predicted outcome values with the actual 
-values, were good (1/HOMA-IR: `r cor_pls_homa$r_p`; ISI: `r cor_pls_isi$r_p`).
+To determine which components to use, internal CV showed that the first two
+components gave the highest amount of explained variance (data not shown).
+Confirming the findings from the GEE models, PLS analysis on the beta-cell
+function measures revealed that there was a low correlation (though significant
+at p`r cor_pls_igi$p`) between the predicted values and the actual values (r=
+`r cor_pls_igi$r` to `r cor_pls_issi2$r`), suggesting poor predictability. While 
+the clustering of TAGFA from the PLS results of the beta-cell function measures 
+were similar to the insulin sensitivity measures, only the insulin sensitivity 
+measures are presented given the low predictability.
+
+The PLS results for the insulin sensitivity (`r fig_pls`) revealed a clustering 
+of the FA 14:0, 14:1n-7, 16:0, and 16:1n-7. These TAGFA loaded strongly (meaning
+the FA fell between the dashed and solid circles) and negatively on 1/HOMA-IR
+and ISI, suggesting this cluster of TAGFA tracks together with lower insulin
+sensitivity. The TAGFA 20:2n-6, 20:5n-3, 22:5n-3, and 22:6n-3 loaded positively
+on both insulin sensitivity measures. No other TAGFA loaded strongly, the
+results of which remained after running the PLS model on the cross-validated
+testing set. The predictive ability of the PLS model, determined by correlating
+the predicted outcome values with the actual values, were good (1/HOMA-IR: 
+`r cor_pls_homa$r_p`; ISI: `r cor_pls_isi$r_p`).
 
 # Discussion
 
@@ -420,6 +425,11 @@ make up most of DNL, especially in context of higher carb/refined carb in diet
 [@Wilke2009a].
 
 [@Lee2015a] 16:1n-7 may be good marker of liver DNL.
+
+[@Barrows2006a] NEFA contributes 60-80% of newly synth VLDL-TAG during fasting
+and ~40% during fed. Dietary FA contribute ~25% to newly synth VLDL-TAG.
+VLDL-TAG is not cleared (lipolyzed) as much as chylomicron and so stays in
+circulation longer (hence why there is bigger TAG pool vs NEFA)
 
 # Acknowledgements
 
@@ -449,6 +459,8 @@ table_gee_main(gee_adj_df)
 # Figures
 
 ![`r fig_consort`](../img/flowDiagramSample.png)
+
+Include DAGitty image
 
 ```{r fig_tagfa}
 plot_tagfa()
