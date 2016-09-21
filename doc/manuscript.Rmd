@@ -13,6 +13,7 @@ Note: keep the story simple and clean, without getting too dense
 - Run PLS with just those FA that loaded strongly to see the predictive ability.
 - SA with/without NEFA
 - SA with/without WC
+- Interactions of VN unadjusted
 
 Outline:
 
@@ -413,6 +414,76 @@ Outline:
 - Previous lit and limits of those
 - How this study fills those gaps and new things learned
 - Potential clinical application
+
+We found that in a Canadian population of mainly female and European ancestry, 
+the specific TAGFA composition was strongly associated with insulin sensitivity
+and moderately associated with beta-cell function. In particular, TAGFA myristic 
+acid (14:0), 7-tetradecenoic acid {{ confirm }} (14:1n-7), palmitic acid (16:0),
+and palmitoleic acid (16:1n-7) all strongly and negatively predicted lower
+insulin sensitivity. While 
+
+Limitations:
+- While GEE is well suited to longitudinal datasets.. threre is a possibility
+given teh complex biology that the temporal associations can not be adequately
+analyzed using current methodologies. IN particular, an important issue si taht
+we did not quantify TAGFA at each of the three visits and so can not directed
+infer changes in TAGFA with changes in IR. However, given potential feedback
+between IR and TAGFA, this may in fact be a strength for this particular
+association given we are trying to predict how a FA at one time point can
+predict future values.
+- While PLS is a well-established technique for constructing predictive models
+of high dimensionality data strcutures, it can not adjust for potential
+confounders and other effect modifiers. Likewise, PLS is not able to handle
+longitudinal data so only the baseline visit was used in the PLS analysis.
+However, given the limitation, there results are concordant between GEE and PLS
+models.
+- Our population was predocminiately female and of euro ancestry, who were at 
+riskj for diabetes at study enrollment, and as such our results may not be
+generalizable to other populations.
+- Given the complex biology underlying the variables of interest, there many
+some residual confounding we are unaware of or have not been able to adjust for.
+However, we have taken extensive precautions for trying to ID confounders
+through the DAG models and QIC computations.
+
+Interpretation:
+
+- previous research has shown that CHO intake increases DNL {{ cite }}. In
+particular, DNL from CHO sources increases especially the 14-16 chain TAGFA as
+well as the 18 chain TAGFA. Prev lit has also shown that higher DNL can increase
+risk for DM {{ cite }} and that higher refined CHO can increase risk of DM {{
+cite }}. Our study found that the 14-16 TAGFA all strongly predicted lower
+insulin sensitivity, reinforcing this finding. While these FA also had a
+significant association with beta-cell function, the results were not as strong
+as with the IR. {{ why is it that DNL increases risk? }}
+- TAGFA that tended to positively associated with IR and BCF also tended to be
+the very long chain FA such as eicosapentaenoic acid (20:5n-3) and
+docosahexaenoic acid (22:6n-3), which have potent anti-inflammatory properties
+{{ cite }}. Biologically {{ why these FA and how help with IR }}
+- {{ compare models with and without NEFA }} NEFA have been shown contribute
+substantially to TAGFA composition and concentration. Adjusting for ...
+- Dietary FA have been shown to contribute approx 25% of the newly synth
+VLDL-TAG {{ cite }}. This suggests that our results may not entirely reflect
+diet, but also adipose stores. {{ discuss results of NEFA paper }} However, in
+an analysis of the NEFA pool {{ cite }}, we found that total NEFA, but not the
+specific composition associated with beta-cell function. There may be something
+unique about the specific composition of the TAGFA fraction that may allow it to
+enter IR tissues more easily than NEFA. It may be that VLDL receptors allow FA
+to transition to IR tissue compared to NEFA bound to albumin {{ confirm and cite
+}}.
+
+Previous lit and limits:
+
+- 
+
+New things:
+
+- No longitudinal study has examined all these TAGFA using detailed metabolic,
+OGTT-derived measures. No study has used these statistical techniques, which
+were designed with these types of data in mind, and as such allows appropriate
+conclusions to be reached from this data.
+- That 14-16 FA in the TAGFA fraction predict lower insulin sensitivity and that
+this particular cluster is also generally observed with higher CHO intake.
+
 
 [@Rhee2011a] fasting TAG status better as discriminating between DM case vs
 control than 2hr-OGTT TAG
