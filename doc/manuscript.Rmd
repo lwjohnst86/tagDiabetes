@@ -149,6 +149,31 @@ pls_issi2_t <- analyze_pls(y = 'lISSI2')
 cor_df <- analyze_corr()
 ```
 
+```{r inline}
+n_tag <- project_data %>% 
+    dplyr::filter(VN == 2) %>% 
+    dplyr::select(TAG) %>% 
+    stats::na.omit() %>% 
+    nrow()
+    
+dys <- project_data %>% 
+    prep_dys_data() %>% 
+    calc_convert_dys()
+
+tagfa <- calc_tagfa_percent()
+outcome_chg <- calc_outcome_changes()
+female <- calc_discr_npct(ds0yr$Sex, 'Female')
+euro <- calc_discr_npct(ds0yr$Ethnicity, 'European')
+fhd <- calc_discr_npct(ds0yr$FamHistDiab, 'Yes')
+est0 <- calc_gee_estci(gee_unadj_df)
+est1 <- calc_gee_estci(gee_adj_df)
+fa_cor <- calc_cor()
+cor_pls_homa <- calc_pred_corr(pls_homa_t, pls_homa_t$test_data)
+cor_pls_isi <- calc_pred_corr(pls_isi_t, pls_isi_t$test_data)
+cor_pls_igiir <- calc_pred_corr(pls_igiir_t, pls_igiir_t$test_data)
+cor_pls_issi2 <- calc_pred_corr(pls_issi2_t, pls_issi2_t$test_data)
+```
+
 {{ Use an external source via DOI for reference to these methods? }}
 
 Recruitment for the Prospective Metabolism and Islet Cell Evaluation (PROMISE) 
@@ -162,8 +187,8 @@ with three examination visits completed to date (2004-2006, 2007-2009, and
 2010-2013). Participants are contacted annually by telephone. The current study
 sample used data on participants who did not have diabetes at baseline, who
 returned for one or more of the follow-up examinations, and who had samples
-available for fatty acid measurements (n=477; see the CONSORT diagram in `r
-cite_sf('consort')`. Metabolic characterization, anthropometric measurements,
+available for fatty acid measurements (n=477; see the CONSORT diagram in 
+`r cite_sf('consort')`. Metabolic characterization, anthropometric measurements,
 and questionnaires on lifestyle and sociodemographics are collected at each
 examination visit. Research ethics approval was obtained from Mount Sinai
 Hospital and the University of Western Ontario, and all participants provided
@@ -244,43 +269,47 @@ predictor variables for this analysis were 22 individual TAGFA as mole percent
 (mol%) of the total fraction and as concentration (nmol/mL). Clinically-measured
 TAG is also included as a primary predictor to serve as a comparison against the
 TAGFA composition. A limitation with the clinically-measured TAG is that it was
-only quantified on a portion of the 6-year visit (n = ~120 {{ find true number
-}}). Pearson correlation coefficients were computed to assess the relationships
-of individual TAGFA with other continuous variables.
+only quantified on a portion of the participants at the 6-year visit (n = `r n_tag`).
+Pearson correlation coefficients were computed to assess the relationships of
+individual TAGFA with other continuous variables.
 
 Generalized estimating equation (GEE) models [@Zeger1986a] were used in the
 primary analysis to determine the longitudinal associations between the outcome
-variables and the predictor variables. An auto-regressive of order 1 (AR1) 
-correlation matrix was chosen for the GEE models as it had the best model fit
-and given the longitudinal design, though other matrices (eg. exchangeable) had
-similar fit (data not shown). GEE is well suited to longitudinal cohort studies
-given it's capacity to handle missed visits. The predictor variables and
-continuous covariates were scaled (mean centered and standardized). The TAGFA
-variables were classified as *time-independent* (held constant) as they were
-measured only at the baseline visit, while the outcome variables and covariates
-were set as *time-dependent*. No imputation was conducted on missing values.
+variables and the predictor variables. Given the longitudinal design, an
+auto-regressive of order 1 (AR1) working correlation matrix was chosen for the GEE
+models as it had the best model fit when assessed using quasi-likelihood
+information criteria (QIC), though other matrices (eg. exchangeable)
+had similar fit (data not shown). GEE is well suited to longitudinal cohort 
+studies given it's capacity to handle missed visits. The predictor variables and
+continuous covariates were scaled (mean-centered and standardized). The TAGFA,
+total NEFA, sex, ethnicity, and baseline age were classified as 
+*time-independent* (held constant) as they were measured only at the baseline 
+visit or do not change throughout the study, while the outcome variables and 
+remaining covariates were set as *time-dependent*. No imputation was conducted 
+on missing values.
 
-Covariates were selected based on previous studies, from directed acyclic graph 
-[@Greenland1999a] recommendations, and from quasi-likelihood information criterion 
-(QIC) {{citation?}}. `r cite_st('qic')` shows the covariates compared using QIC. While the
-final GEE model selected as best fitting differed between insulin sensitivity
-and beta-cell function measures, the differences in QIC values were less than
-10 between the models, suggesting similar fit. As such, we selected the model
-that had the fewest covariates and that had similar fit between the outcome
-measures ({{##}}). The final GEE model was adjusted for {{covariates}}. After scaling,
-log-transforming, and exponentiating, the GEE estimates are
+Covariates were selected based on the previous literature, from directed acyclic
+graph [@Greenland1999a] recommendations (see `r cite_st('dag')`), and from 
+QIC {{citation?}}. `r cite_st('qic')` shows the covariates compared using QIC.
+While the final GEE model selected as best fitting differed between insulin
+sensitivity and beta-cell function measures, the differences in QIC values were
+less than 10 between the models, suggesting similar fit. As such, we selected
+the model that had the fewest covariates and that had similar fit between the
+outcome measures ({{##}}). The final GEE model was adjusted for {{covariates}}.
+After scaling, log-transforming, and exponentiating, the GEE estimates are 
 interpreted as an expected percent difference in the outcome variable for every 
 standard deviation (SD) increase in the predictor variable given the covariates 
-are held constant. Lastly for the GEE models, we tested for an interaction with
+are held constant. Lastly for the GEE models, we tested for an interaction with 
 sex, ethnicity, or time by the predictor term for each outcome variable.
 
 While GEE accounts for the longitudinal design of the data, this approach is 
 limited in that it cannot analyze the inherent multivariate nature of the 
 composition of the TAGFA fraction. To confirm the GEE results in a multivariate 
-environment (all TAGFA), partial least squares regression (PLS) {{citation}} was used to
-identify the patterns of TAGFA composition against insulin sensitivity and
-beta-cell function. For more detailed explanation of GEE and PLS, please see the
-{{supplemental}} Methods.
+environment (all TAGFA), partial least squares regression (PLS) {{citation}} was
+used to identify the patterns of TAGFA composition against insulin sensitivity
+and beta-cell function. 
+For more detailed explanation of GEE and PLS, please see
+the {{supplemental}} Methods.
 
 All analyses were performed using R `r getRversion()` [@Rbase], along with the R
 packages geepack `r packageVersion('geepack')` for GEE [@Hoejsgaard2006a] and pls
@@ -290,31 +319,7 @@ statistically significance at p<0.05, after adjusting for multiple testing using
 the Benjamini-Hochberg False Discovery Rate [@Benjamini1995a]. STROBE was used
 as a guideline for reporting [@Vandenbroucke2007b].
 
-The number of components to extract from PLS was determined by 10-fold CV.
-
-Dataset was split into a training set and a testing set to determine the
-predictability of the given PLS model. Final results presented use the full dataset.a
-
 # Results
-
-```{r inline}
-dys <- project_data %>% 
-    prep_dys_data() %>% 
-    calc_convert_dys()
-
-tagfa <- calc_tagfa_percent()
-outcome_chg <- calc_outcome_changes()
-female <- calc_discr_npct(ds0yr$Sex, 'Female')
-euro <- calc_discr_npct(ds0yr$Ethnicity, 'European')
-fhd <- calc_discr_npct(ds0yr$FamHistDiab, 'Yes')
-est0 <- calc_gee_estci(gee_unadj_df)
-est1 <- calc_gee_estci(gee_adj_df)
-fa_cor <- calc_cor()
-cor_pls_homa <- calc_pred_corr(pls_homa_t, pls_homa_t$test_data)
-cor_pls_isi <- calc_pred_corr(pls_isi_t, pls_isi_t$test_data)
-cor_pls_igiir <- calc_pred_corr(pls_igiir_t, pls_igiir_t$test_data)
-cor_pls_issi2 <- calc_pred_corr(pls_issi2_t, pls_issi2_t$test_data)
-```
 
 ## Basic characteristics of the PROMISE cohort
 
@@ -486,5 +491,9 @@ gridExtra::grid.arrange(
 ```
 
 # Supplemental Methods
+
+The number of components to extract from PLS was determined by 10-fold CV.
+Dataset was split into a training set and a testing set to determine the
+predictability of the given PLS model. Final results presented use the full dataset.a
 
 # References
