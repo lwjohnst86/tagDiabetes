@@ -46,7 +46,7 @@ because of higher IR (since this population is at risk of being IR).
 
 # Title page
 
-Title:
+Title: Fatty acids involved in de novo lipogenesis within triacylglycerol fraction strongly predict lower insulin sensitivity.
 
 Author: Luke W. Johnston (1), MSc; Stewart B. Harris (2), MD; Ravi Retnakaran
 (3,4), MD; Adria Giacca (5), PhD; Zhen Liu (1), PhD;
@@ -422,29 +422,6 @@ acid (14:0), 7-tetradecenoic acid {{ confirm }} (14:1n-7), palmitic acid (16:0),
 and palmitoleic acid (16:1n-7) all strongly and negatively predicted lower
 insulin sensitivity. While 
 
-Limitations:
-- While GEE is well suited to longitudinal datasets.. threre is a possibility
-given teh complex biology that the temporal associations can not be adequately
-analyzed using current methodologies. IN particular, an important issue si taht
-we did not quantify TAGFA at each of the three visits and so can not directed
-infer changes in TAGFA with changes in IR. However, given potential feedback
-between IR and TAGFA, this may in fact be a strength for this particular
-association given we are trying to predict how a FA at one time point can
-predict future values.
-- While PLS is a well-established technique for constructing predictive models
-of high dimensionality data strcutures, it can not adjust for potential
-confounders and other effect modifiers. Likewise, PLS is not able to handle
-longitudinal data so only the baseline visit was used in the PLS analysis.
-However, given the limitation, there results are concordant between GEE and PLS
-models.
-- Our population was predocminiately female and of euro ancestry, who were at 
-riskj for diabetes at study enrollment, and as such our results may not be
-generalizable to other populations.
-- Given the complex biology underlying the variables of interest, there many
-some residual confounding we are unaware of or have not been able to adjust for.
-However, we have taken extensive precautions for trying to ID confounders
-through the DAG models and QIC computations.
-
 Interpretation:
 
 - previous research has shown that CHO intake increases DNL {{ cite }}. In
@@ -470,10 +447,119 @@ unique about the specific composition of the TAGFA fraction that may allow it to
 enter IR tissues more easily than NEFA. It may be that VLDL receptors allow FA
 to transition to IR tissue compared to NEFA bound to albumin {{ confirm and cite
 }}.
+- Challenge longitudinally since muscle IR can promote DNL + TAG Flannery2012a
+- Or that post-prandial TAG is not suppressed in IR Sondergaard2012a
+- Differences with 
+- {{ confirm }} greater flux of saturated fatty acids into tissues may encourage
+lipotoxic environment {{ cite }}
+
+Limitations:
+- While GEE is well suited to longitudinal datasets.. threre is a possibility
+given teh complex biology that the temporal associations can not be adequately
+analyzed using current methodologies. IN particular, an important issue si taht
+we did not quantify TAGFA at each of the three visits and so can not directed
+infer changes in TAGFA with changes in IR. However, given potential feedback
+between IR and TAGFA, this may in fact be a strength for this particular
+association given we are trying to predict how a FA at one time point can
+predict future values.
+- While PLS is a well-established technique for constructing predictive models
+of high dimensionality data strcutures, it can not adjust for potential
+confounders and other effect modifiers. Likewise, PLS is not able to handle
+longitudinal data so only the baseline visit was used in the PLS analysis.
+However, given the limitation, there results are concordant between GEE and PLS
+models.
+- Our population was predocminiately female and of euro ancestry, who were at 
+riskj for diabetes at study enrollment, and as such our results may not be
+generalizable to other populations.
+- Given the complex biology underlying the variables of interest, there many
+some residual confounding we are unaware of or have not been able to adjust for.
+However, we have taken extensive precautions for trying to ID confounders
+through the DAG models and QIC computations.
+- TAGFA may fluctuate daily, but we had participants come in fasted in the morning
+
+
+[@Barrows2006a] NEFA contributes 60-80% of newly synth VLDL-TAG during fasting
+and ~40% during fed. Dietary FA contribute ~25% to newly synth VLDL-TAG.
+VLDL-TAG is not cleared (lipolyzed) as much as chylomicron and so stays in
+circulation longer (hence why there is bigger TAG pool vs NEFA)
+
 
 Previous lit and limits:
+- A few epidemiological studies have examined the role of the TAGFA composition
+on insulin resistance and diabetes risk. 
+- A weight loss intervention trial showed that changes in the TAGFA composition
+of 19 participants accompanied changes in the weight and insulin sensitivity over
+the 33 week period [@Schwab2008a]. Specifically, the TAGFA 14:0, 14:1, 16:0,
+16:1, 18:0, 18:3n-3, and 18:3n-6 were all lower after weight loss and correlated
+with improved insulin sensitivity.
+- In a short (24hr) feeding trial of 24 subjects [@Lee2015a], palmitoleic acid
+(16:1n-7) was shown to be strongly correlated with isotopically measured DNL and
+was 45% higher in individuals with a greater amount of hepatic fat. However, in
+that study only the TAGFA 18:0 was correlated with HOMA-IR, likely due to the
+small sample size.
+- To our knowledge, there have been two prospective studies that had a similar
+research objective as our cohort. One was a nested case-control cohort of the 
+Framingham offspring study [@Rhee2015a], which found that TAGFA with a lower
+carbon chain and less double bonds (e.g. 14:0, 16:0) had higher OR for diabetes
+after 12-years while higher carbon chain and more double bond TAGFA had a lower
+OR for diabetes. This pattern of TAGFA with diabetes risk remained the same when
+they examined HOMA-IR cross-sectionally at the baseline visit. The other study 
+was a prospective cohort of males in Finland [@Lankinen2015a], of which they had
+TAGFA data on 831 participants after 6-years from the baseline visit. This
+cohort has similar outcomes as PROMISE, however, OGTT data was only available at
+the 6-year visit. A beta-cell function measure was computed, but only included 
+calculations up to 30 minutes of the OGTT. As with our results, they found a
+larger effect size for insulin sensitivity compared to the beta-cell function.
+The specific TAGFA that associated with the metabolic measures were similar 
+between studies, except they did not find 
+- The primary limit to these studies is the mainly small sample size and short
+study duration. Two studies had larger sample sizes of 831 [@Lankinen2015a] and 
+`r 189+189` [@Rhee2011a] and both were prospective cohorts. In addition, the
+Framingham offspring study [@Rhee2011a] did not have data on beta-cell function 
+while the Finnish cohort [@Lankinen2015a] used {{ how do I say this politely Tony? 
+They're methods and article was ... questionable... }} simple statistical 
+techniques to analysis the longitudinal data, which do not adequately take into
+consideration auto-correlation of longitudinal values and the high dimensionality
+of the TAGFA composition data structure.
 
-- 
+- Refs:
+    - Lankinen2015a (poor study, but is unfortunately relevant...) (god... I
+    really don't want to cite/talk about this...)
+    - Lee2015a (16:1n7 as marker of DNL) (n=24, feeding trial, 16:1n7 was 45%
+    higher in high liver fat group, direct dnl (isotope) was 2.5 fold higher in
+    high liver fat, 16:1n7 was corr (0.56) with direct DNL, TAG 18:0 corr (.50)
+    with HOMA)
+    - Zulyniak2012a (only vaccenic acid in TAG) (n=20, TLC-GC, HOMA-IR/HOMA-B,
+    two groups: normogly and hypergly. results in general showed no diff between
+    groups, only cis-vaccenic was higher in hyper, 'trend' with palmitic, did
+    not present results on whole fraction for IR)
+    - Rhee2011a (good paper on TAGFA composition) (Offspring of Framingham...,
+    nested case-control, n=189 case, n=189 control, MS/MS, OGTT, differences in
+    fasting TAGFA were more apparent than at 2-hr ogtt, more lower chain/lower
+    desat in cases + higher OR, while higher chain/desat had lower OR, lower
+    chain/desat pos corr with HOMA-IR, MS/MS (tandem) showed that 12-18 SFA and
+    MUFA inc risk of diabetes)
+    - Kotronen2009a (TAGFA composition) (n=16, 18-60, mostly female, lipidomics,
+    GC, HOMA-IR, total esterified (of which TAGFA makes up the majority) 16,
+    161n7, 181n9 pos corr with homa, 182n6 neg with homa)
+    - Schwab2008a (TAGFA composition and insulin sensitivity) (n=75 (but only
+    n=19 for lipidomics), overweight or obese, weght loss intervention (33
+    weeks), weight, FSIGT, GC, UPLC-MS, after weight loss 14, 141, 16, 161, 18,
+    183n3, 183n6 were lower, lower TAGFA that contained 14, 14:1, 16, 161, 18,
+    181 were correlated with improved Si)
+
+[@Rhee2011a] fasting TAG status better as discriminating between DM case vs
+control than 2hr-OGTT TAG
+[@Kotronen2009a] (this wasn't studied, but discussed) higher hepatic DNL may
+increase amount of 'shorter' chain FA (16:0, 14:0, etc.) into VLDL and hence
+into circulation. So higher of these FA may indicate higher DNL -> problems with
+liver function -> maybe hepatic IR -> cyclical?
+[@Lee2015a] 16:1n-7 may be good marker of liver DNL.
+
+Wilke2009a - contributions to DNL (e.g. 70% 16:0 to newly synth)
+The four FA that cluster together on the PLS also appear to be the same FA that
+make up most of DNL, especially in context of higher carb/refined carb in diet
+[@Wilke2009a].
 
 New things:
 
@@ -483,29 +569,6 @@ were designed with these types of data in mind, and as such allows appropriate
 conclusions to be reached from this data.
 - That 14-16 FA in the TAGFA fraction predict lower insulin sensitivity and that
 this particular cluster is also generally observed with higher CHO intake.
-
-
-[@Rhee2011a] fasting TAG status better as discriminating between DM case vs
-control than 2hr-OGTT TAG
-
-[@Kotronen2009a] (this wasn't studied, but discussed) higher hepatic DNL may
-increase amount of 'shorter' chain FA (16:0, 14:0, etc.) into VLDL and hence
-into circulation. So higher of these FA may indicate higher DNL -> problems with
-liver function -> maybe hepatic IR -> cyclical?
-
-Discuss my PL and CE paper as well. Maybe also the NEFA one if it is published
-by then...
-
-The four FA that cluster together on the PLS also appear to be the same FA that
-make up most of DNL, especially in context of higher carb/refined carb in diet
-[@Wilke2009a].
-
-[@Lee2015a] 16:1n-7 may be good marker of liver DNL.
-
-[@Barrows2006a] NEFA contributes 60-80% of newly synth VLDL-TAG during fasting
-and ~40% during fed. Dietary FA contribute ~25% to newly synth VLDL-TAG.
-VLDL-TAG is not cleared (lipolyzed) as much as chylomicron and so stays in
-circulation longer (hence why there is bigger TAG pool vs NEFA)
 
 # Acknowledgements
 
