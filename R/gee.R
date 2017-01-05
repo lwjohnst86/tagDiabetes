@@ -102,9 +102,9 @@ analyze_gee <- function(data = project_data,
         dplyr::arrange(desc(order1)) %>%
         dplyr::mutate(Yterms = factor(
             Yterms,
-            levels = c('log(1/HOMA-IR)', 'log(ISI)',
+            levels = c('log(HOMA2-IR)', 'log(HOMA2-%S)', 'log(ISI)',
                        'log(IGI/IR)', 'log(ISSI-2)'),
-            labels = c('log(1/HOMA-IR)', 'log(ISI)',
+            labels = c('log(HOMA2-IR)', 'log(HOMA2-%S)', 'log(ISI)',
                        'log(IGI/IR)', 'log(ISSI-2)'),
             ordered = TRUE),
             Xterms = factor(Xterms, unique(Xterms))) %>%

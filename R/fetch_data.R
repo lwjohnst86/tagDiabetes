@@ -12,7 +12,7 @@
 #'
 fetch_data <- function() {
     # Load the master dataset,
-    ds.prep <- PROMISE::PROMISE_data %>%
+    ds.prep <- PROMISE::PROMISE %>%
         dplyr::filter(VN %in% c(1, 3, 6)) %>%
         ## Kick out Canoers
         dplyr::filter(is.na(Canoe)) %>%
@@ -23,7 +23,8 @@ fetch_data <- function() {
     ##' Munge and wrangle the data into the final version.
     ds <- ds.prep %>%
         dplyr::select(
-            SID, VN, BMI, Waist, HOMA, ISI, IGIIR, ISSI2, TAG, LDL, HDL, Chol,
+            SID, VN, BMI, Waist, HOMA, HOMA2IR, HOMA2_S, ISI, IGIIR, ISSI2,
+            TAG, LDL, HDL, Chol,
             ALT, CRP, FamHistDiab, dplyr::matches('meds'), Age, Sex, Ethnicity,
             IFG, IGT, DM, MET, AlcoholPerWk, TobaccoUse, SelfEdu, Occupation,
             TotalTG, dplyr::matches('^tg\\d+'), Glucose0, Glucose120, TotalNE
@@ -46,6 +47,8 @@ fetch_data <- function() {
                 as.factor(),
             invHOMA = (1 / HOMA),
             linvHOMA = log(invHOMA),
+            lHOMA2IR = log(HOMA2IR),
+            lHOMA2_S = log(HOMA2_S),
             lISI = log(ISI),
             lIGIIR = log(IGIIR),
             lISSI2 = log(ISSI2),

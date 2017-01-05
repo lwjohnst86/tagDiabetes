@@ -1,5 +1,5 @@
 TODO Used MonthsFromBaseline rather than VN for GEE
-TODO Used HOMA2 instead of HOMA-IR
+DONE Used HOMA2 instead of HOMA-IR
 TODO Confirmed that incident diabetes cases were not used in GEE
 TODO Included as first model time interaction in QIC
 TODO Identified covariate that changed BCF association

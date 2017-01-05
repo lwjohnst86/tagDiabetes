@@ -5,6 +5,8 @@ renaming_table_rows <- function(x) {
         gsub('IGIIR', 'IGI/IR', .) %>%
         gsub('ISSI2', 'ISSI-2', .) %>%
         gsub('HOMA', 'HOMA-IR', .) %>%
+        gsub('HOMA2IR', 'HOMA2-IR', .) %>%
+        gsub('HOMA2_S', 'HOMA2-%S', .) %>%
         gsub('TAG', 'TAG (mmol/L)', .) %>%
         gsub('Chol', 'Chol (mmol/L)', .) %>%
         gsub('LDL', 'LDL (mmol/L)', .) %>%
@@ -18,6 +20,8 @@ renaming_table_rows <- function(x) {
 renaming_outcomes <- function(x) {
     x %>%
         gsub('linvHOMA', 'log(1/HOMA-IR)', .) %>%
+        gsub('lHOMA2IR', 'log(HOMA2-IR)', .) %>%
+        gsub('lHOMA2_S', 'log(HOMA2-%S)', .) %>%
         gsub('lISI', 'log(ISI)', .) %>%
         gsub('lIGIIR', 'log(IGI/IR)', .) %>%
         gsub('lISSI2', 'log(ISSI-2)', .) %>%
@@ -38,7 +42,7 @@ renaming_fats <- function(x) {
 
 renaming_fraction <- function(x) {
     x %>%
-        gsub('ne', 'Non-esterified', .)
+        gsub('tg', 'Triacylglycerol', .)
 }
 
 renaming_list <- function(x) {
