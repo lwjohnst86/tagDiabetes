@@ -163,5 +163,8 @@ plot_gee_main <- function(results) {
             xlab = 'Percent difference with 95% CI in the outcomes\nfor each SD increase in fatty acid',
             ylab = 'Triacylglycerol fatty acids'
             ) +
-        graph_theme(ticks = FALSE)
+        graph_theme(ticks = FALSE) +
+        ggplot2::facet_grid(unit~Yterms, switch = 'y',
+                            scales = 'free_y',
+                            space = 'free_y')
 }
