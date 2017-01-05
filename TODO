@@ -8,8 +8,6 @@ TODO Included sensitivity analysis with covariates as time-independent
 TODO Moved format_rounding etc into aide, used aide instead
 TODO Switched load_data to match new prodigen style
 TODO Switched GEE fig labels to top
-TODO Created and added unadj GEE fig
-TODO Created and added adj GEE fig
 TODO Created and added PLS fig
 TODO Created and added GEE fig with PLS scores
 TODO Created and added heatmap fig
