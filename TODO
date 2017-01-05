@@ -1,4 +1,4 @@
-TODO Used MonthsFromBaseline rather than VN for GEE
+DONE Used MonthsFromBaseline rather than VN for GEE
 DONE Used HOMA2 instead of HOMA-IR
 TODO Confirmed that incident diabetes cases were not used in GEE
 TODO Included as first model time interaction in QIC

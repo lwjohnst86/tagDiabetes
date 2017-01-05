@@ -24,7 +24,7 @@ fetch_data <- function() {
     ds <- ds.prep %>%
         dplyr::select(
             SID, VN, BMI, Waist, HOMA, HOMA2IR, HOMA2_S, ISI, IGIIR, ISSI2,
-            TAG, LDL, HDL, Chol,
+            TAG, LDL, HDL, Chol, MonthsFromBaseline,
             ALT, CRP, FamHistDiab, dplyr::matches('meds'), Age, Sex, Ethnicity,
             IFG, IGT, DM, MET, AlcoholPerWk, TobaccoUse, SelfEdu, Occupation,
             TotalTG, dplyr::matches('^tg\\d+'), Glucose0, Glucose120, TotalNE

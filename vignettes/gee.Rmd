@@ -18,7 +18,15 @@ devtools::load_all()
 library(dplyr)
 ```
 
-# Unadjusted
+# Unadjusted (with MonthsFromBaseline)
+```{r unadj, cache=TRUE}
+m <- analyze_gee(covars = 'MonthsFromBaseline')
+m <- filter(m, p.value <= 0.05) 
+nrow(m)
+table_gee_main(m)
+```
+
+# Unadjusted (with VN)
 ```{r unadj, cache=TRUE}
 m <- analyze_gee(covars = 'VN')
 m <- filter(m, p.value <= 0.05) 
