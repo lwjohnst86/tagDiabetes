@@ -132,7 +132,7 @@ fig_pls <- fig('pls', 'caption here')
 ```
 
 ```{r analyze_gee, cache=TRUE}
-gee_unadj_df <- analyze_gee(covars = "VN")
+gee_unadj_df <- analyze_gee(covars = "MonthsFromBaseline")
 gee_adj_df <- analyze_gee()
 ```
 
