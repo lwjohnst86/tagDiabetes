@@ -1,0 +1,53 @@
+TODO Used MonthsFromBaseline rather than VN for GEE
+TODO Used HOMA2 instead of HOMA-IR
+TODO Confirmed that incident diabetes cases were not used in GEE
+TODO Included as first model time interaction in QIC
+TODO Identified covariate that changed BCF association
+TODO Included sensitivity analysis based on sex
+TODO Included sensitivity analysis with covariates as time-independent
+TODO Created and added unadj GEE fig
+TODO Created and added adj GEE fig
+TODO Created and added PLS fig
+TODO Created and added GEE fig with PLS scores
+TODO Created and added heatmap fig
+TODO Included DAG (from DAGitty) as Supplement
+TODO Included QIC table as Supplement
+TODO Included Basic characteristic table in main with p-value
+TODO Included number of participants with 1, 2, 3 visits
+TODO Included incident diabetes, etc cases
+TODO Wrote up figure captions
+TODO Wrote up table captions
+TODO Clarified that most participants had a 6yr visit
+TODO Clarified whether covariates were confounders, mediators, etc.
+    # If there are more mediators, they should be used in separate model and shown as such
+    # Adjust for waist?
+TODO Clarified which variables were time-dependent in methods
+TODO Added equations for each outcome measure to methods
+TODO Added how baseline diabetes were handled in methods (included n)
+TODO Added handling of diabetes cases in methods
+TODO Added handling of potential over-adjustment to methods
+TODO Polish up methods
+TODO First draft of intro
+TODO Final draft of intro
+TODO First draft of results
+TODO Final draft of results
+TODO First draft of discussion
+TODO Final draft of discussion
+TODO Confirm manuscript created as expected (minor edits, fixes)
+TODO Confirm manuscript matches STROBE checklist
+TODO First edited version sent to Tony + Richard
+TODO Edits as per Tony's suggestions
+TODO Edits as per Richard's suggestions
+TODO Next edited version sent to co-authors
+TODO Edits as per Ravi's suggestions
+TODO Edits as per Stewart's suggestions
+TODO Edits as per Bernie's suggestions
+TODO Minor fixes to match with journal requirements
+TODO Added version numbers/session info of packages used
+TODO Submitted to journal
+>>> v0.1.0
+
+TODO Revisions as per Reviewer 1
+TODO Revisions as per Reviewer 2
+TODO Resubmit to journal
+
