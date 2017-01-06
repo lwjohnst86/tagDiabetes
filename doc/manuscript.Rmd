@@ -289,7 +289,9 @@ total NEFA, sex, ethnicity, and baseline age were classified as
 *time-independent* (held constant) as they were measured only at the baseline 
 visit or do not change throughout the study, while the outcome variables and 
 remaining covariates were set as *time-dependent*. No imputation was conducted 
-on missing values.
+on missing values. Given how the samples for TAGFA measurement were determined
+and how the outcome variables are calculated, cases of diabetes at baseline and
+followup were not included in the GEE modeling.
 
 Covariates were selected based on the previous literature, from directed acyclic
 graph [@Greenland1999a] recommendations (see `r cite_st('dag')`), and from 
@@ -310,9 +312,9 @@ limited in that it cannot analyze the inherent multivariate nature of the
 composition of the TAGFA fraction. To confirm the GEE results in a multivariate 
 environment (all TAGFA), partial least squares regression (PLS) {{citation}} was
 used to identify the patterns of TAGFA composition against insulin sensitivity
-and beta-cell function. 
-For more detailed explanation of GEE and PLS, please see
-the {{supplemental}} Methods.
+and beta-cell function. No prevalent diabetes cases were included in the PLS
+analysis. For more detailed explanation of GEE and PLS, please see the
+{{supplemental}} Methods.
 
 All analyses were performed using R `r getRversion()` [@Rbase], along with the R
 packages geepack `r packageVersion('geepack')` for GEE [@Hoejsgaard2006a] and pls

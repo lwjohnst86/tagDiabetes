@@ -25,8 +25,7 @@ TODO Clarified whether covariates were confounders, mediators, etc.
     # Adjust for waist?
 TODO Clarified which variables were time-dependent in methods
 TODO Added equations for each outcome measure to methods
-TODO Added how baseline diabetes were handled in methods (included n)
-TODO Added handling of diabetes cases in methods
+DONE Added handling of diabetes cases in methods
 TODO Added handling of potential over-adjustment to methods
 TODO Polish up methods
 TODO First draft of intro
