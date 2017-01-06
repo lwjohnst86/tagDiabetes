@@ -54,9 +54,20 @@ table_gee_main(m)
 
 # Interactions
 
+## Time (Unadjusted)
+```{r int_time, cache=TRUE}
+m <- analyze_gee(covar = 'MonthsFromBaseline', intvar = 'MonthsFromBaseline')
+m <- filter(m, p.value <= 0.05) 
+nrow(m)
+
+m %>% 
+    select(Yterms, Xterms, term, estimate) %>% 
+    pander::pander()
+```
+
 ## Time
 ```{r int_time, cache=TRUE}
-m <- analyze_gee(intvar = 'VN')
+m <- analyze_gee(intvar = 'MonthsFromBaseline')
 m <- filter(m, p.value <= 0.05) 
 nrow(m)
 
