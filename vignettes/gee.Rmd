@@ -97,3 +97,27 @@ m %>%
     select(Yterms, Xterms, term, estimate) %>% 
     pander::pander()
 ```
+
+# Stratified analysis (Sex)
+
+## Female
+```{r strat_sex_female, cache=TRUE}
+data_female <- project_data %>% 
+    filter(Sex == 'Female')
+m <- analyze_gee(data = data_female, covar = covariates[-5])
+m <- filter(m, p.value <= 0.05) 
+nrow(m)
+
+table_gee_main(m)
+```
+
+## Male
+```{r strat_sex_male, cache=TRUE}
+data_male <- project_data %>% 
+    filter(Sex == 'Male')
+m <- analyze_gee(data = data_male, covar = covariates[-5])
+m <- filter(m, p.value <= 0.05) 
+nrow(m)
+
+table_gee_main(m)
+```

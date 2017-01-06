@@ -4,7 +4,7 @@ DONE Confirmed/fixed that incident diabetes cases were not used in GEE
 DONE Included as first model time interaction in QIC/GEE
 DONE Compared VN vs MonthsFromBaseline in QIC
 TODO Identified covariate that changed BCF association
-TODO Included sensitivity analysis based on sex
+DONE Included sensitivity analysis based on sex
 TODO Included sensitivity analysis with covariates as time-independent
 TODO Moved format_rounding etc into aide, used aide instead
 TODO Switched load_data to match new prodigen style
