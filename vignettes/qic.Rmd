@@ -61,7 +61,7 @@ include:
 prep_qic <- project_data %>%
     prep_gee_data() %>% 
     dplyr::select(
-        SID, VN, lISSI2, lISI, TotalTG, TotalNE, Sex, Ethnicity, MET, ALT, BaseAge,
+        SID, VN, MonthsFromBaseline, lISSI2, lISI, TotalTG, TotalNE, Sex, Ethnicity, MET, ALT, BaseAge,
         Waist, BMI, AlcoholPerWk, TobaccoUse, FamHistDiab
         ) %>% 
     stats::na.omit()
@@ -71,6 +71,24 @@ qic_is <- prep_qic %>%
 
 qic_bcf <- prep_qic %>% 
     dplyr::select(-lISI)
+```
+
+# VN vs MonthsFromBaseline
+
+```{r}
+M0_vn <- geepack::geeglm(
+    lISI ~ TotalTG + VN, data = qic_is,
+    id = SID, family = stats::gaussian,
+    corstr = 'ar1'
+    )
+M0_mfb <- geepack::geeglm(
+    lISI ~ TotalTG + MonthsFromBaseline, data = qic_is,
+    id = SID, family = stats::gaussian,
+    corstr = 'ar1'
+    )
+MuMIn::model.sel(M0_vn, M0_mfb, rank = MuMIn::QIC) %>%
+    clean_qic() %>%
+    table_qic()
 ```
 
 # Working correlation matrices comparisons
