@@ -205,3 +205,10 @@ calc_followup_time <- function(data = project_data) {
         dplyr::summarise(MeanFollowup = aide::ave_sd(MonthsFromBaseline / 12))
 }
 
+#' Percent of participants who attended each of the 3 visits.
+#'
+#' @export
+calc_pct_full_visits <- function() {
+    pct_val <- calc_n_for_visits()[1] / sum(calc_n_for_visits())
+    format_rounding(pct_val * 100)
+}

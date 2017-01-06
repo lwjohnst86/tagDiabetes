@@ -327,7 +327,8 @@ as a guideline for reporting [@Vandenbroucke2007b].
 ## Basic characteristics of the PROMISE cohort
 
 `r tab_basic` shows some basic characteristics of the PROMISE cohort. The mean 
-follow-up time was `r calc_followup_time()`. There were
+follow-up time was `r calc_followup_time()`, where `r calc_pct_full_visits()`%
+of participants attended all three visits. There were
 `r female$npct` females and `r euro$npct` who had European-ancestry, with a mean
 age in years of `r aide::ave_sd(ds0yr$Age)` and a mean BMI
 of `r aide::ave_sd(ds0yr$BMI)`. Given the eligibility criteria, the majority of

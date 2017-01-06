@@ -19,7 +19,7 @@ TODO Included incident diabetes, etc cases
 DONE Included MonthsFromBaseline median, IQR in results
 TODO Wrote up figure captions
 TODO Wrote up table captions
-TODO Clarified that most participants had a 6yr visit
+DONE Clarified that most participants had a 6yr visit
 TODO Clarified whether covariates were confounders, mediators, etc.
     # If there are more mediators, they should be used in separate model and shown as such
     # Adjust for waist?
