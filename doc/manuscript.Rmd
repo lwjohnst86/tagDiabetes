@@ -138,11 +138,11 @@ gee_adj_df <- analyze_gee()
 
 ```{r analyze_others}
 # CV results are shown in pls.Rmd vignette
-pls_homa <- analyze_pls(y = 'linvHOMA', cv = FALSE)
+pls_homa2 <- analyze_pls(y = 'lHOMA2_S', cv = FALSE)
 pls_isi <- analyze_pls(y = 'lISI', cv = FALSE)
 
 # Correlation between predicted and actual
-pls_homa_t <- analyze_pls(y = 'linvHOMA')
+pls_homa2_t <- analyze_pls(y = 'lHOMA2_S')
 pls_isi_t <- analyze_pls(y = 'lISI')
 pls_igi_t <- analyze_pls(y = 'lIGIIR')
 pls_issi2_t <- analyze_pls(y = 'lISSI2')
@@ -169,7 +169,7 @@ fhd <- calc_discr_npct(ds0yr$FamHistDiab, 'Yes')
 est0 <- calc_gee_estci(gee_unadj_df)
 est1 <- calc_gee_estci(gee_adj_df)
 fa_cor <- calc_cor()
-cor_pls_homa <- calc_pred_corr(pls_homa_t, pls_homa_t$test_data)
+cor_pls_homa2 <- calc_pred_corr(pls_homa2_t, pls_homa2_t$test_data)
 cor_pls_isi <- calc_pred_corr(pls_isi_t, pls_isi_t$test_data)
 cor_pls_igiir <- calc_pred_corr(pls_igiir_t, pls_igiir_t$test_data)
 cor_pls_issi2 <- calc_pred_corr(pls_issi2_t, pls_issi2_t$test_data)
@@ -403,7 +403,7 @@ on both insulin sensitivity measures. No other TAGFA loaded strongly, the
 results of which remained after running the PLS model on the cross-validated
 testing set. The predictive ability of the PLS model, determined by correlating
 the predicted outcome values with the actual values, were good (1/HOMA-IR: 
-`r cor_pls_homa$r_p`; ISI: `r cor_pls_isi$r_p`).
+`r cor_pls_homa2$r_p`; ISI: `r cor_pls_isi$r_p`).
 
 # Discussion
 
@@ -619,7 +619,7 @@ plot_gee_main(gee_adj_df)
 
 ```{r fig_pls}
 gridExtra::grid.arrange(
-    plot_pls(pls_homa) + ggplot2::ggtitle('A: 1/HOMA-IR'), 
+    plot_pls(pls_homa2) + ggplot2::ggtitle('A: HOMA2-%S'), 
     plot_pls(pls_isi) + ggplot2::ggtitle('B: ISI'), 
     ncol = 2)
 ```

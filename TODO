@@ -6,10 +6,8 @@ DONE Compared VN vs MonthsFromBaseline in QIC
 TODO Identified covariate that changed BCF association
 DONE Included sensitivity analysis based on sex
 TODO Included sensitivity analysis with covariates as time-independent
-TODO Moved format_rounding etc into aide, used aide instead
-TODO Switched load_data to match new prodigen style
 DONE Switched GEE fig labels to top
-TODO Created and added PLS fig
+DONE Created and added PLS fig (using HOMA2)
 TODO Created and added GEE fig with PLS scores
 TODO Created and added heatmap fig
 TODO Included DAG (from DAGitty) as Supplement
@@ -39,6 +37,8 @@ TODO Final draft of discussion
 TODO Confirm manuscript created as expected (minor edits, fixes)
 TODO Confirm manuscript matches STROBE checklist
 TODO First edited version sent to Tony + Richard
+TODO Moved format_rounding etc into aide, used aide instead
+TODO Switched load_data to match new prodigen style
 TODO Edits as per Tony's suggestions
 TODO Edits as per Richard's suggestions
 TODO Next edited version sent to co-authors
