@@ -7,6 +7,9 @@
 #' @param data project data
 #' @export
 prep_gee_data <- function(data) {
+    data <- data %>%
+        dplyr::filter(DM != 1)
+
     no_fattyacids <- data %>%
         dplyr::select(-dplyr::matches('pct_tg\\d+|^tg\\d+'),
                       -TotalNE,-TotalTG, -BaseTAG, -lBaseTAG)
