@@ -25,7 +25,7 @@ renaming_outcomes <- function(x) {
         gsub('lISI', 'log(ISI)', .) %>%
         gsub('lIGIIR', 'log(IGI/IR)', .) %>%
         gsub('lISSI2', 'log(ISSI-2)', .) %>%
-        gsub('^invHOMA$', '1/HOMA-IR', .) %>%
+        gsub('^HOMA2_S$', 'HOMA2-%S', .) %>%
         gsub('^ISSI2$', 'ISSI-2', .) %>%
         gsub('^IGIIR$', 'IGI/IR', .)
 }

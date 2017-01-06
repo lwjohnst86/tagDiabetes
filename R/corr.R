@@ -24,7 +24,7 @@ analyze_corr <-
         mason::scrub() %>%
         mason::polish_renaming(renaming_fats, 'Vars2') %>%
         mason::polish_renaming(function(x)
-            gsub('l(ALT|TAG|IGIIR|invHOMA|ISI|ISSI2)', '\\1', x) %>%
+            gsub('l(ALT|TAG|IGIIR|HOMA2_S|ISI|ISSI2)', '\\1', x) %>%
                 renaming_outcomes(), 'Vars1') %>%
         dplyr::mutate(
             order1 = substr(Vars2, nchar(Vars2), nchar(Vars2)),
@@ -54,5 +54,6 @@ plot_heatmap <- function(results) {
             ylab = 'Triacylglycerol fatty acids (nmol/mL)',
             number.colours = 5,
             values.size = 4) +
-        graph_theme(ticks = FALSE, legend.pos = 'right')
+        graph_theme(ticks = FALSE, legend.pos = 'right') +
+        ggplot2::theme(axis.text.x = ggplot2::element_text(angle = 45, vjust = 1, hjust = 1))
 }
