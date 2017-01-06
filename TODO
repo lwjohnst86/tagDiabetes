@@ -14,7 +14,7 @@ DONE Created and added heatmap fig (with just TAGFA)
 TODO Included DAG (from DAGitty) as Supplement
 TODO Included QIC table as Supplement
 TODO Included Basic characteristic table in main with p-value
-TODO Included number of participants with 1, 2, 3 visits
+DONE Included number of participants with 1, 2, 3 visits
 TODO Included incident diabetes, etc cases
 TODO Included MonthsFromBaseline median, IQR in results
 TODO Wrote up figure captions

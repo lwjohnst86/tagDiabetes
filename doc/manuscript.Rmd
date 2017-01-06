@@ -190,12 +190,13 @@ with three examination visits completed to date (2004-2006, 2007-2009, and
 sample used data on participants who did not have diabetes at baseline, who
 returned for one or more of the follow-up examinations, and who had samples
 available for fatty acid measurements (n=477; see the CONSORT diagram in 
-`r cite_sf('consort')`. Metabolic characterization, anthropometric measurements,
-and questionnaires on lifestyle and sociodemographics are collected at each
-examination visit. Research ethics approval was obtained from Mount Sinai
-Hospital and the University of Western Ontario, and all participants provided
-written informed consent. Data collection methods were standardized across the 2
-centres and research nurses were centrally trained.
+`r cite_sf('consort')`; a total of `r calc_n_for_visits()[1]` attended all three
+visits and had complete data). Metabolic characterization, anthropometric
+measurements, and questionnaires on lifestyle and sociodemographics are
+collected at each examination visit. Research ethics approval was obtained from
+Mount Sinai Hospital and the University of Western Ontario, and all participants
+provided written informed consent. Data collection methods were standardized
+across the 2 centres and research nurses were centrally trained.
 
 ## Metabolic characterization
 
