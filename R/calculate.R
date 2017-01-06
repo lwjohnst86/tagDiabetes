@@ -192,3 +192,16 @@ calc_n_for_visits <- function(data = project_data) {
         .$Visits %>%
         table()
 }
+
+#' Mean and SD followup time for those who attended the 6 year visit.
+#'
+#' @param data Project data
+#'
+#' @export
+calc_followup_time <- function(data = project_data) {
+    data %>%
+        dplyr::filter(VN == 2) %>%
+        dplyr::select(MonthsFromBaseline) %>%
+        dplyr::summarise(MeanFollowup = aide::ave_sd(MonthsFromBaseline / 12))
+}
+
