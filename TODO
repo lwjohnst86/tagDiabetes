@@ -10,7 +10,7 @@ DONE Switched GEE fig labels to top
 DONE Created and added PLS fig (using HOMA2)
 TODO Created and added GEE fig with PLS scores
 DONE Fix outcomes in heatmap and add axis tilt
-TODO Created and added heatmap fig (with just TAGFA)
+DONE Created and added heatmap fig (with just TAGFA)
 TODO Included DAG (from DAGitty) as Supplement
 TODO Included QIC table as Supplement
 TODO Included Basic characteristic table in main with p-value

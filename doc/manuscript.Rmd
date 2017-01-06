@@ -148,6 +148,7 @@ pls_igi_t <- analyze_pls(y = 'lIGIIR')
 pls_issi2_t <- analyze_pls(y = 'lISSI2')
 
 cor_df <- analyze_corr()
+cor_df_tagfa <- analyze_corr_tagfa()
 ```
 
 ```{r inline}
@@ -607,6 +608,9 @@ plot_tagfa()
 
 ```{r fig_heatmap}
 plot_heatmap(cor_df)
+```
+```{r fig_heatmap_tagfa}
+plot_heatmap(cor_df_tagfa, text = FALSE)
 ```
 
 ```{r fig_gee_unadj}
