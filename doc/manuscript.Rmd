@@ -123,12 +123,13 @@ tab_basic <- tab('basic', 'caption here')
 tab_tagfa <- tab('tagfa', 'caption here')
 tab_gee <- tab('gee', 'caption here')
 
-fig_consort <- fig('consort', 'caption here')
-fig_tagfa <- fig('tagfa', 'caption here')
-fig_heatmap <- fig('heatmap', 'caption here')
-fig_gee_unadj <- fig('gee_unadj', 'caption here')
-fig_gee_adj <- fig('gee_adj', 'caption here')
-fig_pls <- fig('pls', 'caption here')
+fig_consort <- fig('consort', 'CONSORT diagram of PROMISE participants over the 3 visits.')
+fig_tagfa <- fig('tagfa', 'Distribution of the composition of triacylglycerol fatty acids in the baseline visit of PROMISE participants (2004-2006). Boxplots represent the median and interquartile range of the fatty acid values.')
+fig_heatmap <- fig('heatmap', 'Pearson correlation heatmap of triacylglycerol fatty acids (nmol/mL) with continuous basic and metabolic characteristics of PROMISE participants from the baseline visit (2004-2006). Darker orange represents a positive correlation; darker blue represents a negative correlation.')
+fig_heatmap_tagfa <- fig('heatmap_tagfa', 'Pearson correlation heatmap of the triacylglycerol fatty acids in the PROMISE participants from the baseline visit (2004-2006). The correlations of fatty acids grouped using heirarchical cluster analysis; fatty acids along the x and y axis are ordered according to this analysis. Darker orange represents a positive correlation; darker blue represents a negative correlation.')
+fig_gee_unadj <- fig('gee_unadj', 'Time-adjusted GEE models of the association of the triacylglycerol fatty acids (mol% and nmol/mL) and total clinically-measured TAG with insulin sensitivity and beta-cell function outcomes using the 6 year longitudinal data from the PROMISE cohort. X-axis values represent a percent difference in the outcome per SD increase in the fatty acid. P-values were adjusted for the BH false discovery rate, with the largest dot representing a significant (p<0.05) association.')
+fig_gee_adj <- fig('gee_adj', 'Fully-adjusted GEE models of the association of the triacylglycerol fatty acids (mol% and nmol/mL) and total clinically-measured TAG with insulin sensitivity and beta-cell function outcomes using the 6 year longitudinal data from the PROMISE cohort. Variables controlled for were follow-up time, waist circumference, baseline age, ethnicity, sex, ALT, physical activity, and total NEFA. X-axis values represent a percent difference in the outcome per SD increase in the fatty acid. P-values were adjusted for the BH false discovery rate, with the largest dot representing a significant (p<0.05) association.')
+fig_pls <- fig('pls', 'Partial least squares (PLS) models showing the clustering of triacylglycerol fatty acids on insulin sensitivity and beta-cell function measures. The R value shown above the graph is the correlation between predicted and actual values, using cross-validation; a higher value suggests the fatty acids strongly predict the metabolic outcome. The percent explained variance of each component is shown in brackets on each axis. The solid line represents an explained variance of 100% while the dashed line represents an explained variance of 50%. Fatty acids between these lines represent variables that strongly explain the underlying structure of the data. See the Supplemental Methods for a description of PLS analysis and an explanation of interpreting this plot.')
 ```
 
 ```{r analyze_gee, cache=TRUE}

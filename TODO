@@ -5,6 +5,7 @@ DONE Included as first model time interaction in QIC/GEE
 DONE Keep last observation for calculating median followup
 DONE Compared VN vs MonthsFromBaseline in QIC
 TODO Identified covariate that changed BCF association
+TODO Changed monthsfrombaseline to yearsfrombaseline in GEE models
 DONE Included sensitivity analysis based on sex
 TODO Included sensitivity analysis with covariates as time-independent
 DONE Switched GEE fig labels to top
@@ -12,21 +13,24 @@ DONE Created and added PLS fig (using HOMA2)
 TODO Created and added GEE fig with PLS scores
 DONE Fix outcomes in heatmap and add axis tilt
 DONE Created and added heatmap fig (with just TAGFA)
+TODO Created and added PLS fig of beta-cell function
 TODO Included DAG (from DAGitty) as Supplement
 TODO Included QIC table as Supplement
 TODO Included Basic characteristic table in main with p-value
 DONE Included number of participants with 1, 2, 3 visits
 DONE Included MonthsFromBaseline median, IQR in results
-TODO Wrote up figure captions
+DONE Wrote up figure captions
 TODO Wrote up table captions
 DONE Clarified that most participants had a 6yr visit
 TODO Clarified whether covariates were confounders, mediators, etc.
     # If there are more mediators, they should be used in separate model and shown as such
     # Adjust for waist?
 TODO Clarified which variables were time-dependent in methods
+TODO Included stats method for hclust of tagfa heatmap
 TODO Added equations for each outcome measure to methods
 DONE Added handling of diabetes cases in methods
 TODO Added handling of potential over-adjustment to methods
+TODO Added that no results were significant for time interaction
 TODO Polish up methods
 TODO First draft of intro
 TODO Final draft of intro
