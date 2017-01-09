@@ -28,7 +28,7 @@ TODO Clarified whether covariates were confounders, mediators, etc.
     # If there are more mediators, they should be used in separate model and shown as such
     # Adjust for waist?
 TODO Clarified which variables were time-dependent in methods
-TODO Included stats method for hclust of tagfa heatmap
+DONE Included stats method for hclust of tagfa heatmap
 TODO Added equations for each outcome measure to methods
 DONE Added handling of diabetes cases in methods
 TODO Added handling of potential over-adjustment to methods

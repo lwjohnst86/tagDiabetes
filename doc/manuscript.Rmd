@@ -276,7 +276,10 @@ TAG is also included as a primary predictor to serve as a comparison against the
 TAGFA composition. A limitation with the clinically-measured TAG is that it was
 only quantified on a portion of the participants at the 6-year visit (n = `r n_tag`).
 Pearson correlation coefficients were computed to assess the relationships of
-individual TAGFA with other continuous variables.
+individual TAGFA with other continuous variables. Correlations were also
+computed for TAGFA against each other, followed by using hierarchical clustering
+analysis to identify clusters within the correlation matrix of the TAGFA
+composition.
 
 Generalized estimating equation (GEE) models [@Zeger1986a] were used in the
 primary analysis to determine the longitudinal associations between the outcome
