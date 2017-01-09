@@ -200,7 +200,10 @@ calc_n_for_visits <- function(data = project_data) {
 #' @export
 calc_followup_time <- function(data = project_data) {
     data %>%
-        dplyr::filter(VN == 2) %>%
+        dplyr::arrange(SID, VN) %>%
+        dplyr::group_by(SID) %>%
+        dplyr::slice(n()) %>%
+        dplyr::ungroup() %>%
         dplyr::select(MonthsFromBaseline) %>%
         dplyr::summarise(MeanFollowup = aide::ave_sd(MonthsFromBaseline / 12))
 }

@@ -2,6 +2,7 @@ DONE Used MonthsFromBaseline rather than VN for GEE
 DONE Used HOMA2 instead of HOMA-IR
 DONE Confirmed/fixed that incident diabetes cases were not used in GEE
 DONE Included as first model time interaction in QIC/GEE
+DONE Keep last observation for calculating median followup
 DONE Compared VN vs MonthsFromBaseline in QIC
 TODO Identified covariate that changed BCF association
 DONE Included sensitivity analysis based on sex
@@ -15,7 +16,6 @@ TODO Included DAG (from DAGitty) as Supplement
 TODO Included QIC table as Supplement
 TODO Included Basic characteristic table in main with p-value
 DONE Included number of participants with 1, 2, 3 visits
-TODO Included incident diabetes, etc cases
 DONE Included MonthsFromBaseline median, IQR in results
 TODO Wrote up figure captions
 TODO Wrote up table captions
@@ -36,7 +36,7 @@ TODO First draft of discussion
 TODO Final draft of discussion
 TODO Confirm manuscript created as expected (minor edits, fixes)
 TODO Confirm manuscript matches STROBE checklist
-TODO First edited version sent to Tony + Richard
+TODO First edited version sent to Tony
 TODO Moved format_rounding etc into aide, used aide instead
 TODO Switched load_data to match new prodigen style
 TODO Edits as per Tony's suggestions
