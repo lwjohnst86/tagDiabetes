@@ -19,8 +19,9 @@ TODO Included QIC table as Supplement
 TODO Included Basic characteristic table in main with p-value
 DONE Included number of participants with 1, 2, 3 visits
 DONE Included MonthsFromBaseline median, IQR in results
+TODO Included GEE unadjusted and adjusted table.
 DONE Wrote up figure captions
-TODO Wrote up table captions
+DONE Wrote up table captions
 DONE Clarified that most participants had a 6yr visit
 TODO Clarified whether covariates were confounders, mediators, etc.
     # If there are more mediators, they should be used in separate model and shown as such
