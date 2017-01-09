@@ -587,20 +587,20 @@ this particular cluster is also generally observed with higher CHO intake.
 # Tables
 
 ```{r table_qic}
-table_qic_main()
+table_qic_main(caption = tab_qic)
 ```
 
 ```{r table_basic}
-table_basic()
+table_basic(caption = tab_basic)
 ```
 
 ```{r table_tagfa}
-table_tagfa()
+table_tagfa(caption = tab_tagfa)
 ```
 
 ```{r table_gee}
-table_gee_main(gee_unadj_df)
-table_gee_main(gee_adj_df)
+table_gee_main(gee_unadj_df, caption = tab_gee_unadj)
+table_gee_main(gee_adj_df, caption = tab_gee_adj)
 ```
 
 # Figures
@@ -609,26 +609,27 @@ table_gee_main(gee_adj_df)
 
 Include DAGitty image
 
-```{r fig_tagfa}
+```{r fig_tagfa, fig.cap=fig_tagfa}
 plot_tagfa()
 ```
 
-```{r fig_heatmap}
+```{r fig_heatmap, fig.cap=fig_heatmap}
 plot_heatmap(cor_df)
 ```
-```{r fig_heatmap_tagfa}
+
+```{r fig_heatmap_tagfa, fig.cap=fig_heatmap_tagfa}
 plot_heatmap(cor_df_tagfa, text = FALSE)
 ```
 
-```{r fig_gee_unadj}
+```{r fig_gee_unadj, fig.cap=fig_gee_unadj}
 plot_gee_main(gee_unadj_df)
 ```
 
-```{r fig_gee_adj}
+```{r fig_gee_adj, fig.cap=fig_gee_adj}
 plot_gee_main(gee_adj_df)
 ```
 
-```{r fig_pls}
+```{r fig_pls, fig.cap=fig_pls}
 gridExtra::grid.arrange(
     plot_pls(pls_homa2) + ggplot2::ggtitle('A: HOMA2-%S'), 
     plot_pls(pls_isi) + ggplot2::ggtitle('B: ISI'), 
