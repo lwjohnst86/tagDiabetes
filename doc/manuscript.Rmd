@@ -256,19 +256,19 @@ metabolic intensity allowing for the estimation of MET-hours per week.
 ## Variable calculation and statistical analysis
 
 Insulin sensitivity and beta-cell function indices were computed using the OGTT 
-glucose and insulin data. Insulin sensitivity was assessed using 1/HOMA-IR (1
-divided by HOMA-IR) [@Matthews1985] and the Insulin Sensitivity Index (ISI)
-[@Matsuda1999]. HOMA-IR largely reflects hepatic insulin resistance, while ISI
+glucose and insulin data. Insulin sensitivity was assessed using HOMA2-%S
+[@Levy1998a] using the HOMA2 Calculator and the Insulin Sensitivity Index (ISI)
+[@Matsuda1999]. HOMA largely reflects hepatic insulin resistance, while ISI
 reflects whole-body insulin sensitivity [@AbdulGhani2007]. Beta-cell function
-was assessed using the Insulinogenic Index [@Wareham1995] over HOMA-IR (IGI/IR)
+was assessed using the Insulinogenic Index [@Wareham1995] over HOMA-IR [@Matthews1985] (IGI/IR)
 and the Insulin Secretion-Sensitivity Index-2 (ISSI-2) [@Retnakaran2009]. IGI/IR
 is a measure of the first phase of insulin secretion while ISSI-2 is analogous to
 the disposition index (but using OGTT values). Each index has been validated
-against gold standard measures [@Matthews1985; @Matsuda1999; @Retnakaran2009].
+against gold standard measures [@Matthews1985; @Hermans1999a; @Matsuda1999; @Retnakaran2009].
 Specific formulas for each OGTT-derived measure can be found in the {{
 Supplementary Material }}.
 
-The primary outcome variables for this analysis were 1/HOMA-IR, ISI, IGI/IR, and
+The primary outcome variables for this analysis were HOMA2-%S, ISI, IGI/IR, and
 ISSI-2, which were log-transformed for the statistical modeling. The primary
 predictor variables for this analysis were 22 individual TAGFA as mole percent
 (mol%) of the total fraction and as concentration (nmol/mL). Clinically-measured

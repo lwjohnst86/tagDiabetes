@@ -28,7 +28,8 @@ TODO Clarified whether covariates were confounders, mediators, etc.
     # If there are more mediators, they should be used in separate model and shown as such
     # Adjust for waist?
 DONE Included stats method for hclust of tagfa heatmap
-TODO Changed HOMA-IR methods to HOMA2-%S
+DONE Changed HOMA-IR methods to HOMA2-%S
+TODO Fixed results after HOMA-IR changed to HOMA2
 TODO Added equations for each outcome measure to methods
 DONE Added handling of diabetes cases in methods
 TODO Added handling of potential over-adjustment to methods
