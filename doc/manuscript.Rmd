@@ -134,7 +134,7 @@ fig_pls <- fig('pls', 'Partial least squares (PLS) models showing the clustering
 ```
 
 ```{r analyze_gee, cache=TRUE}
-gee_unadj_df <- analyze_gee(covars = "MonthsFromBaseline")
+gee_unadj_df <- analyze_gee(covars = "YearsFromBaseline")
 gee_adj_df <- analyze_gee()
 ```
 
@@ -342,9 +342,9 @@ of `r aide::ave_sd(ds0yr$BMI)`. Given the eligibility criteria, the majority of
 participants (`r fhd$npct`) had a family history of diabetes.
 Between the baseline visit and the 6-year visit in this sample, insulin
 sensitivity and beta-cell function measures had a significant median decline
-between `r outcome_chg$chg` (p`r outcome_chg$p`; n=`r outcome_chg$n`). There 
+between `r outcome_chg$chg` (p`r outcome_chg$p` from GEE; n=`r outcome_chg$n`). There 
 were `r dys$dm` and `r dys$pre` incident cases of diabetes and
-pre-diabetes (IFG and IGT), respectively. {{ confirm this is incidence }}
+pre-diabetes (IFG and IGT), respectively. 
 
 `r fig_tagfa` shows the composition of each FA in the TAG fraction (see 
 `r stab_tagfa` for raw numerical values of the mean and SD {{ confirm }}). 
@@ -357,7 +357,7 @@ As expected, nearly all TAGFA had very strong positive correlations (r=
 correlations with WC (r=`r fa_cor$rng$Waist`). There was also moderate
 negative correlations with HDL (r=`r fa_cor$rng$HDL`). For the outcome variables,
 the correlations for the insulin sensitivity measures were generally higher 
-(1/HOMA-IR: r=`r fa_cor$rng['1/HOMA-IR']`, ISI: r=`r fa_cor$rng$ISI`) than 
+(1/HOMA-IR: r=`r fa_cor$rng['HOMA2-%S']`, ISI: r=`r fa_cor$rng$ISI`) than 
 for the beta-cell function measures (all r<0.30).
 
 ## Generalized estimating equation models
@@ -373,15 +373,15 @@ that the attenuation with beta-cell function was due primarily to adjustment for
 {{ waist? ALT? }}.
 
 As a concentration, nearly all TAGFA had a strong negative association on
-1/HOMA-IR {{ change to HOMA2-IS }} and ISI (estimates ranging from 
+HOMA2-%S and ISI (estimates ranging from 
 `r est1$outcome_b$rng[3]` and `r est1$outcome_b$rng[7]`, respectively), and a
 few had strong negative associations with IGI/IR and ISSI-2 (estimates ranging 
-from `r est1$outcome_b$rng[10]` and `r est1$outcome_b$rng[13]`, respectively).
+from `r est1$outcome_b$rng[11]` and `r est1$outcome_b$rng[15]`, respectively).
 As a mol%, four TAGFA (14:0, 16:0, 14:1n-7, and 16:1n-7) had negative
-associations with 1/HOMA-IR and ISI (between `r est1$outcome_b$rng[1]` and 
+associations with HOMA2-%S and ISI (between `r est1$outcome_b$rng[1]` and 
 `r est1$outcome_b$rng[5]`%, respectively, lower insulin sensitivity for every SD
 increase in the TAGFA), while several more TAGFA had positive associations with
-1/HOMA-IR and ISI (20:0, 18:1n-9, 20:1n-9, 22:1n-9, 18:2n-6, 20:2n-6, 20:4n-6,
+HOMA2-%S and ISI (20:0, 18:1n-9, 20:1n-9, 22:1n-9, 18:2n-6, 20:2n-6, 20:4n-6,
 and 22:5n-3) predicting between `r est1$outcome_b$rng[2]` and 
 `r est1$outcome_b$rng[6]`%, respectively, higher insulin sensitivity for every
 SD increase in the TAGFA. One TAGFA, 20:2n-6, had a very strong positive
@@ -407,13 +407,13 @@ measures are presented given the low predictability.
 
 The PLS results for the insulin sensitivity (`r fig_pls`) revealed a clustering 
 of the FA 14:0, 14:1n-7, 16:0, and 16:1n-7. These TAGFA loaded strongly (meaning
-the FA fell between the dashed and solid circles) and negatively on 1/HOMA-IR
+the FA fell between the dashed and solid circles) and negatively on HOMA2-%S
 and ISI, suggesting this cluster of TAGFA tracks together with lower insulin
 sensitivity. The TAGFA 20:2n-6, 20:5n-3, 22:5n-3, and 22:6n-3 loaded positively
 on both insulin sensitivity measures. No other TAGFA loaded strongly, the
 results of which remained after running the PLS model on the cross-validated
 testing set. The predictive ability of the PLS model, determined by correlating
-the predicted outcome values with the actual values, were good (1/HOMA-IR: 
+the predicted outcome values with the actual values, were good (HOMA2-%S: 
 `r cor_pls_homa2$r_p`; ISI: `r cor_pls_isi$r_p`).
 
 # Discussion
