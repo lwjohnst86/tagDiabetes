@@ -15,7 +15,7 @@ DONE Fix outcomes in heatmap and add axis tilt
 DONE Created and added heatmap fig (with just TAGFA)
 TODO Created and added PLS fig of beta-cell function
 TODO Included DAG (from DAGitty) as Supplement
-TODO Included/fixed QIC table
+DONE Included/fixed QIC table
 TODO Included Basic characteristic table in main with p-value
 DONE Included number of participants with 1, 2, 3 visits
 DONE Included MonthsFromBaseline median, IQR in results

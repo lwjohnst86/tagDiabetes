@@ -590,7 +590,8 @@ this particular cluster is also generally observed with higher CHO intake.
 # Tables
 
 ```{r table_qic}
-table_qic_main(caption = tab_qic)
+analyze_qic() %>% 
+    table_qic(caption = tab_qic)
 ```
 
 ```{r table_basic}
