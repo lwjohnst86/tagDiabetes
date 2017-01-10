@@ -178,10 +178,10 @@ cor_pls_igiir <- calc_pred_corr(pls_igiir_t, pls_igiir_t$test_data)
 cor_pls_issi2 <- calc_pred_corr(pls_issi2_t, pls_issi2_t$test_data)
 ```
 
-{{ Use an external source via DOI for reference to these methods? }}
+<!-- Use an external source via DOI for reference to these methods? -->
 
-Recruitment for the Prospective Metabolism and Islet Cell Evaluation (PROMISE) 
-cohort baseline visit took place between 2004-2006 from London and Toronto, 
+Recruitment for the baseline visit of the Prospective Metabolism and Islet Cell Evaluation (PROMISE) 
+cohort took place between 2004-2006 from London and Toronto, 
 Canada. Individuals were selected to participant if they met the eligibility 
 criteria of having one or more risk factors for type 2 diabetes mellitus, 
 including obesity, hypertension, family history of diabetes, and/or a history of
@@ -193,7 +193,7 @@ sample used data on participants who did not have diabetes at baseline, who
 returned for one or more of the follow-up examinations, and who had samples
 available for fatty acid measurements (n=477; see the CONSORT diagram in 
 `r cite_sf('consort')`; a total of `r calc_n_for_visits()[1]` attended all three
-visits and had complete data). Metabolic characterization, anthropometric
+visits). Metabolic characterization, anthropometric
 measurements, and questionnaires on lifestyle and sociodemographics are
 collected at each examination visit. Research ethics approval was obtained from
 Mount Sinai Hospital and the University of Western Ontario, and all participants
@@ -203,7 +203,7 @@ across the 2 centres and research nurses were centrally trained.
 ## Metabolic characterization
 
 Participants completed an 8-12 hour 75g oral glucose tolerance test (OGTT) at 
-each examination visit, with blood samples during at fasting, 30 min, and 2 hr 
+each examination visit, with blood samples taken during fasting, 30 min, and 2 hr 
 post-glucose load. Samples were subsequently processed and frozen at -70°C.
 Alanine aminotransferase (ALT) was measured using standard laboratory 
 procedures. Cholesterol, HDL, and clinically-measured triacylglycerides (TAG) 
@@ -225,7 +225,7 @@ TAGFA composition was quantified using stored fasting serum samples from the
 baseline visit, which had been frozen at -70°C for 4-6 years and had not been 
 exposed to any freeze-thaw cycles. Serum fatty acids have been documented to be 
 stable at these temperatures for up to 10 years [@Matthan2010a]. A known amount 
-of {{ confirm with Richard }} heptadecanoic acid (17:0) was added as an internal
+of {{ confirm with Richard the correct name}} heptadecanoic acid (17:0) was added as an internal
 standard prior to extracting total lipids according to the method of Folch 
 [@Folch1957a]. Each serum lipid fraction---non-esterified fatty acids (NEFA), 
 cholesteryl ester, phospholipid, and TAGFA---was isolated using thin layer 
@@ -237,8 +237,9 @@ chromatography peak areas to that of the internal standards [@Nishi2014a]. There
 were 22 fatty acids measured in the TAGFA fraction. Given that each lipid
 fraction differs in biology and given the complexity of the analyses, findings
 for other lipid fractions in this cohort are reported separately (see ref
-@Johnston2016a and for the analysis of the phospholipid and cholesteryl ester
-fractions and {{next citation}} for the analysis of the NEFA fraction).
+@Johnston2016a for the analysis of the phospholipid and cholesteryl ester
+fractions). 
+<!--and {{next citation}} for the analysis of the NEFA fraction).-->
 
 ## Anthropometrics and sociodemographics
 
@@ -300,22 +301,22 @@ followup were not included in the GEE modeling.
 
 Covariates were selected based on the previous literature, from directed acyclic
 graph [@Greenland1999a] recommendations (see `r cite_st('dag')`), and from 
-QIC {{citation?}}. `r cite_st('qic')` shows the covariates compared using QIC.
+QIC. `r cite_st('qic')` shows the covariates compared using QIC.
 While the final GEE model selected as best fitting differed between insulin
 sensitivity and beta-cell function measures, the differences in QIC values were
-less than 10 between the models, suggesting similar fit. As such, we selected
+less than 10 between many of the models, suggesting similar fit. As such, we selected
 the model that had the fewest covariates and that had similar fit between the
 outcome measures ({{##}}). The final GEE model was adjusted for {{covariates}}.
 After scaling, log-transforming, and exponentiating, the GEE estimates are 
 interpreted as an expected percent difference in the outcome variable for every 
 standard deviation (SD) increase in the predictor variable given the covariates 
-are held constant. Lastly for the GEE models, we tested for an interaction with 
+are held constant (including time). Lastly for the GEE models, we tested for an interaction with 
 sex, ethnicity, or time by the predictor term for each outcome variable.
 
 While GEE accounts for the longitudinal design of the data, this approach is 
 limited in that it cannot analyze the inherent multivariate nature of the 
 composition of the TAGFA fraction. To confirm the GEE results in a multivariate 
-environment (all TAGFA), partial least squares regression (PLS) {{citation}} was
+environment (all TAGFA), partial least squares regression (PLS) was
 used to identify the patterns of TAGFA composition against insulin sensitivity
 and beta-cell function. No prevalent diabetes cases were included in the PLS
 analysis. For more detailed explanation of GEE and PLS, please see the
@@ -323,7 +324,7 @@ analysis. For more detailed explanation of GEE and PLS, please see the
 
 All analyses were performed using R `r getRversion()` [@Rbase], along with the R
 packages geepack `r packageVersion('geepack')` for GEE [@Hoejsgaard2006a] and pls
-`r packageVersion('pls')` for PLS {{cite?}}. The R code and extra analyses for
+`r packageVersion('pls')` for PLS. The R code and extra analyses for
 this manuscript is available at {{code doi}}. Results were considered
 statistically significance at p<0.05, after adjusting for multiple testing using
 the Benjamini-Hochberg False Discovery Rate [@Benjamini1995a]. STROBE was used
