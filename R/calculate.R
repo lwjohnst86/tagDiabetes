@@ -204,8 +204,7 @@ calc_followup_time <- function(data = project_data) {
         dplyr::group_by(SID) %>%
         dplyr::slice(n()) %>%
         dplyr::ungroup() %>%
-        dplyr::select(MonthsFromBaseline) %>%
-        dplyr::summarise(MeanFollowup = aide::ave_sd(MonthsFromBaseline / 12))
+        dplyr::summarise(MeanFollowup = aide::ave_sd(YearsFromBaseline))
 }
 
 #' Percent of participants who attended each of the 3 visits.

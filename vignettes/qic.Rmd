@@ -61,7 +61,7 @@ include:
 prep_qic <- project_data %>%
     prep_gee_data() %>% 
     dplyr::select(
-        SID, VN, MonthsFromBaseline, lISSI2, lISI, TotalTG, TotalNE, Sex, Ethnicity, MET, ALT, BaseAge,
+        SID, VN, YearsFromBaseline, lISSI2, lISI, TotalTG, TotalNE, Sex, Ethnicity, MET, ALT, BaseAge,
         Waist, BMI, AlcoholPerWk, TobaccoUse, FamHistDiab
         ) %>% 
     stats::na.omit()
@@ -73,7 +73,7 @@ qic_bcf <- prep_qic %>%
     dplyr::select(-lISI)
 ```
 
-# VN vs MonthsFromBaseline
+# VN vs YearsFromBaseline
 
 ```{r}
 M0_vn <- geepack::geeglm(
@@ -82,7 +82,7 @@ M0_vn <- geepack::geeglm(
     corstr = 'ar1'
     )
 M0_mfb <- geepack::geeglm(
-    lISI ~ TotalTG + MonthsFromBaseline, data = qic_is,
+    lISI ~ TotalTG + YearsFromBaseline, data = qic_is,
     id = SID, family = stats::gaussian,
     corstr = 'ar1'
     )

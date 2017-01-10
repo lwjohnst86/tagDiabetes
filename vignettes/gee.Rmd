@@ -18,9 +18,9 @@ devtools::load_all()
 library(dplyr)
 ```
 
-# Unadjusted (with MonthsFromBaseline)
+# Unadjusted (with YearsFromBaseline)
 ```{r unadj, cache=TRUE}
-m <- analyze_gee(covars = 'MonthsFromBaseline')
+m <- analyze_gee(covars = 'YearsFromBaseline')
 m <- filter(m, p.value <= 0.05) 
 nrow(m)
 table_gee_main(m)
@@ -56,7 +56,7 @@ table_gee_main(m)
 
 ## Time (Unadjusted)
 ```{r int_time, cache=TRUE}
-m <- analyze_gee(covar = 'MonthsFromBaseline', intvar = 'MonthsFromBaseline')
+m <- analyze_gee(covar = 'YearsFromBaseline', intvar = 'YearsFromBaseline')
 m <- filter(m, p.value <= 0.05) 
 nrow(m)
 
@@ -67,7 +67,7 @@ m %>%
 
 ## Time
 ```{r int_time, cache=TRUE}
-m <- analyze_gee(intvar = 'MonthsFromBaseline')
+m <- analyze_gee(intvar = 'YearsFromBaseline')
 m <- filter(m, p.value <= 0.05) 
 nrow(m)
 

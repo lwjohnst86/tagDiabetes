@@ -30,6 +30,7 @@ fetch_data <- function() {
             TotalTG, dplyr::matches('^tg\\d+'), Glucose0, Glucose120, TotalNE
         ) %>%
         dplyr::mutate(
+            YearsFromBaseline = MonthsFromBaseline / 12,
             BaseTotalNE = TotalNE,
             BaseTotalTG = TotalTG,
             BaseTAG = ifelse(VN == 1, TAG, NA),
