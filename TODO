@@ -21,7 +21,7 @@ DONE Included number of participants with 1, 2, 3 visits
 DONE Included MonthsFromBaseline median, IQR in results
 DONE Wrote up figure captions
 DONE Wrote up table captions
-TODO Fixed renaming of basic char table rows
+DONE Fixed renaming of basic char table rows
 DONE Assigned the captions to figures and tables
 DONE Clarified that most participants had a 6yr visit
 TODO Clarified whether covariates were confounders, mediators, etc.

@@ -13,8 +13,8 @@ table_basic <- function(data = project_data, caption = NULL) {
                       Sex = ifelse(VN == 0, as.character(Sex), NA),
                       Sex = as.factor(Sex)) %>%
         carpenter::outline_table('f.VN') %>%
-        carpenter::add_rows(c('HOMA', 'ISI', 'IGIIR', 'ISSI2'), carpenter::stat_medianIQR, digits = 1) %>%
-        carpenter::add_rows(c('ALT', 'TAG', 'Chol', 'HDL', 'BaseTotalNE', 'MET',
+        carpenter::add_rows(c('HOMA2_S', 'ISI', 'IGIIR', 'ISSI2'), carpenter::stat_medianIQR, digits = 1) %>%
+        carpenter::add_rows(c('ALT', 'TAG', 'Chol', 'HDL', 'BaseTotalTG', 'BaseTotalNE', 'MET',
                               'Age', 'BMI', 'Waist'),
                             carpenter::stat_meanSD, digits = 1) %>%
         carpenter::add_rows(c('Ethnicity', 'Sex'), carpenter::stat_nPct, digits = 0) %>%
