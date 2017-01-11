@@ -6,6 +6,7 @@ DONE Keep last observation for calculating median followup
 DONE Compared VN vs MonthsFromBaseline in QIC
 TODO Identified covariate that changed BCF association
 DONE Changed monthsfrombaseline to yearsfrombaseline in GEE models
+TODO Added interaction with time, sex, ethnicity unadjusted results
 DONE Included sensitivity analysis based on sex
 TODO Included sensitivity analysis with covariates as time-independent
 DONE Switched GEE fig labels to top
@@ -35,12 +36,14 @@ TODO Added equations for each outcome measure to methods
 DONE Added handling of diabetes cases in methods
 TODO Added handling of potential over-adjustment to methods
 DONE Polish up methods
-TODO First draft of intro
-TODO Final draft of intro
+DONE First (rough) draft of intro
+TODO Second draft of intro
+TODO Third draft of intro
 DONE First draft of results
-TODO Final draft of results
-TODO First draft of discussion
-TODO Final draft of discussion
+TODO Second draft of results
+TODO First (rough) draft of discussion
+TODO Second draft of discussion
+TODO Third draft of discussion
 TODO Confirm manuscript created as expected (minor edits, fixes)
 TODO Confirm manuscript matches STROBE checklist
 TODO First edited version sent to Tony
