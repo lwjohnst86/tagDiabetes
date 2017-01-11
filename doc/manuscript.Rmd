@@ -324,7 +324,8 @@ and how the outcome variables are calculated, cases of diabetes at baseline and
 followup were not included in the GEE modeling.
 
 Covariates were selected based on the previous literature, from directed acyclic
-graph [@Greenland1999a] recommendations (see `r cite_f('dag_is')` and `r cite_f('dag_bcf')`), and from 
+graph [@Greenland1999a] recommendations (using the DAGitty software
+[@Textor2011a], http://dagitty.net/; see `r cite_f('dag_is')` and `r cite_f('dag_bcf')`), and from
 QIC. `r cite_t('tab_qic')` shows the covariates compared using QIC.
 While the final GEE model selected as best fitting differed between insulin
 sensitivity and beta-cell function measures, the differences in QIC values were
