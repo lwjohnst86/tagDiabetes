@@ -147,7 +147,8 @@ tab_gee_unadj <- tab('gee_unadj', 'Raw estimates and confidence interval values 
 tab_gee_adj <- tab('gee_adj', 'Raw estimates and confidence interval values for *fully*-adjusted GEE models of the association of the triacylglycerol fatty acids (mol% and nmol/mL) and total clinically-measured TAG with insulin sensitivity and beta-cell function outcomes using the 6 year longitudinal data from the PROMISE cohort. Variables controlled for were follow-up time, waist circumference, baseline age, ethnicity, sex, ALT, physical activity, and total NEFA. Estimates represent a percent difference in the outcome per SD increase in the fatty acid. P-values were adjusted for the BH false discovery rate, with an asterisk (*) denoting a significant (p<0.05) association.')
 
 fig_consort <- fig('consort', 'CONSORT diagram of PROMISE participants over the 3 visits.')
-fig_dag <- fig('dag', 'Directed acyclic graphic output from the DAGitty online software.')
+fig_dag_is <- fig('dag_is', 'Directed acyclic graphic output from the DAGitty online software for insulin sensitivity.')
+fig_dag_bcf <- fig('dag_bcf', 'Directed acyclic graphic output from the DAGitty online software for beta-cell function.')
 fig_tagfa <- fig('tagfa', 'Distribution of the composition of triacylglycerol fatty acids in the baseline visit of PROMISE participants (2004-2006). Boxplots represent the median and interquartile range of the fatty acid values.')
 fig_heatmap <- fig('heatmap', 'Pearson correlation heatmap of triacylglycerol fatty acids (nmol/mL) with continuous basic and metabolic characteristics of PROMISE participants from the baseline visit (2004-2006). Darker orange represents a positive correlation; darker blue represents a negative correlation.')
 fig_heatmap_tagfa <- fig('heatmap_tagfa', 'Pearson correlation heatmap of the triacylglycerol fatty acids in the PROMISE participants from the baseline visit (2004-2006). The correlations of fatty acids grouped using heirarchical cluster analysis; fatty acids along the x and y axis are ordered according to this analysis. Darker orange represents a positive correlation; darker blue represents a negative correlation.')
@@ -323,7 +324,7 @@ and how the outcome variables are calculated, cases of diabetes at baseline and
 followup were not included in the GEE modeling.
 
 Covariates were selected based on the previous literature, from directed acyclic
-graph [@Greenland1999a] recommendations (see `r cite_t('tab_dag')`), and from 
+graph [@Greenland1999a] recommendations (see `r cite_f('dag_is')` and `r cite_f('dag_bcf')`), and from 
 QIC. `r cite_t('tab_qic')` shows the covariates compared using QIC.
 While the final GEE model selected as best fitting differed between insulin
 sensitivity and beta-cell function measures, the differences in QIC values were
@@ -637,7 +638,9 @@ table_gee_main(gee_adj_df, caption = tab_gee_adj)
 
 ![`r fig_consort`](../img/flowDiagramSample.png)
 
-Include DAGitty image
+![`r fig_dag_is`](../img/dagitty-model-is.png)
+
+![`r fig_dag_bcf`](../img/dagitty-model-bcf.png)
 
 ```{r fig_tagfa, fig.cap=fig_tagfa}
 plot_tagfa()
