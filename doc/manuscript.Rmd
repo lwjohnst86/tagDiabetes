@@ -629,6 +629,22 @@ conclusions to be reached from this data.
 - That 14-16 FA in the TAGFA fraction predict lower insulin sensitivity and that
 this particular cluster is also generally observed with higher CHO intake.
 
+NEFA may be a mediating factor in association, but that adjustment will not
+attenuate this assoc since TAGFA composition is also dictated by other sources
+for DNL (e.g. recent meal, DNL from glucose stores, etc.).
+
+Since no interaction, no loop? Not enough sample, already IR? maybe?
+
+Concentration data is not
+
+Discuss well done paper (very relevant) Kotronen2009a
+
+
+Prospective cohorts:
+    - Chien K, et al. A prediction model for type 2 diabetes risk among Chinese people. Diabetologia. 2009;52(3):443–450.
+    - D’Agostino RB Jr, Hamman RF, Karter AJ, Mykkanen L, Wagenknecht LE, Haffner SM. Cardiovascular disease risk factors predict the development of type 2 diabetes: the insulin resistance atherosclerosis study. Diabetes Care. 2004;27(9):2234–2240.
+    - Schulze MB, et al. Use of multiple metabolic and genetic markers to improve the prediction of type 2 diabetes: the EPIC-Potsdam Study. Diabetes Care. 2009;32(11):2116–2119.
+
 # Acknowledgements
 
 ## Funding/support
