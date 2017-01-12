@@ -492,30 +492,50 @@ to transition to IR tissue compared to NEFA bound to albumin {{ confirm and cite
 - {{ confirm }} greater flux of saturated fatty acids into tissues may encourage
 lipotoxic environment {{ cite }}
 
-Limitations:
-- While GEE is well suited to longitudinal datasets.. threre is a possibility
-given teh complex biology that the temporal associations can not be adequately
-analyzed using current methodologies. IN particular, an important issue si taht
-we did not quantify TAGFA at each of the three visits and so can not directed
-infer changes in TAGFA with changes in IR. However, given potential feedback
-between IR and TAGFA, this may in fact be a strength for this particular
-association given we are trying to predict how a FA at one time point can
-predict future values.
-- While PLS is a well-established technique for constructing predictive models
-of high dimensionality data strcutures, it can not adjust for potential
-confounders and other effect modifiers. Likewise, PLS is not able to handle
-longitudinal data so only the baseline visit was used in the PLS analysis.
-However, given the limitation, there results are concordant between GEE and PLS
-models.
-- Our population was predocminiately female and of euro ancestry, who were at 
-riskj for diabetes at study enrollment, and as such our results may not be
-generalizable to other populations.
-- Given the complex biology underlying the variables of interest, there many
-some residual confounding we are unaware of or have not been able to adjust for.
-However, we have taken extensive precautions for trying to ID confounders
-through the DAG models and QIC computations.
-- TAGFA may fluctuate daily, but we had participants come in fasted in the morning
+## Limitations
 
+There are a few important limitations to our study. In addition to the
+observational nature of the cohort, the biology underlying the interaction
+between TAGFA, insulin secretion, and insulin sensitivity is complex and
+multifacetted {{?}} and as such there may be some residual confounding we were
+unaware of or had not been able to adjust for. However, we have taken extensive,
+empirically based precautions in identifying potential confounders and mediators
+through the use of the DAG modeling, relying on previous literature, and through
+QIC modeling fitting methods.
+
+TAGFA can fluctuate substantially throughout the day and to control for this all
+PROMISE participants came for their clinic visits in the morning in a fasted
+state. Some of the inherent variability in TAGFA fluctuation can be managed by
+standardizing the data collection time, though there may still be some
+{{residual error? random error?}}.
+
+Since TAGFA were only quantified at the baseline visit and as such we cannot
+investigate whether there are concomitant changes in TAGFA and the metabolic
+measures over time. In relation to this limitation, while GEE is well suited to
+longitudinal datasets, the complex biology and temporal nature of the
+associations may restrict the ability of GEE to appropriately analyze and
+interpret the data. However, to maximize the potential of GEE, we used the model
+to infer that a given value of TAGFA could predict values of insulin sensitivity
+or beta-cell function over a 6 year period. This in our view is a strength of
+our analysis, as it reduces the chance of reverse causality given the tight
+integration of the glucose and fatty acid metabolism pathways, as well as uses
+GEE modeling appropriately {{? another word}}.
+
+PLS is a well-established technique for constructing predictive models
+of high dimensionality data structures (i.e. fatty acid composition), however a
+limitation is that the initial models analyzed through PLS and the final
+computed scores are not able to control for potential confounders and other
+effect modifiers. Likewise, PLS is not able to handle longitudinal data so only
+the baseline visit was used in the PLS analysis. In light of these limitations,
+we still observe concordant results between the PLS and GEE analyses {{ add more }}.
+
+Even with these limitations, our study also has several major strengths,
+including the longitudinal design and the rigorous statistical techniques and
+methods applied in analyzing the data. These statistical techniques are
+specifically suited to investigating temporal relationships and to handling the
+multivariate nature of the data. Lastly, our cohort contains highly detailed and
+comprehensive variable measurements at each collection visit, as well as having
+both concentration and mol% data for the fatty acids.
 
 [@Barrows2006a] NEFA contributes 60-80% of newly synth VLDL-TAG during fasting
 and ~40% during fed. Dietary FA contribute ~25% to newly synth VLDL-TAG.
