@@ -52,6 +52,8 @@ Author: Luke W. Johnston (1), MSc; Stewart B. Harris (2), MD; Ravi Retnakaran
 (3,4), MD; Adria Giacca (5), PhD; Zhen Liu (1), PhD;
 Richard P. Bazinet (1), PhD; and Anthony J. Hanley (1,6), PhD
 
+{{Bernie?}}
+
 <!-- During time of study. -->
 Affiliation:
 
@@ -647,9 +649,40 @@ Prospective cohorts:
 
 # Acknowledgements
 
-## Funding/support
+The authors thank Jan Neuman, Paula Van Nostrand, Stella Kink, and Annette
+Barnie of the Leadership Sinai Centre for Diabetes, Mount Sinai Hospital,
+Toronto, Canada and Sheila Porter and Mauricio Marin of the Centre for Studies
+in Family Medicine, University of Western Ontario, London, Canada for their 
+expert technical assistance and dedication in their work for PROMISE. 
 
-## Conflict of interest
+## Funding
+
+This study was supported by grants from the Canadian Diabetes Association (CDA),
+the Canadian Institutes for Health Research, and the University of
+Toronto Banting and Best Diabetes Centre; LWJ is supported by a CDA
+Doctoral Student Research Award; RR is supported by a Heart and Stroke
+Foundation of Ontario Mid-Career Investigator Award {{confirm}}; SBH holds the
+CDA Chair in National Diabetes Management and the Ian McWhinney Chair of Family
+Medicine Studies at the University of Western Ontario {{confirm}}; RBP holds a
+Tier II Canada Research Chair in Brain Lipid Metabolism; AJH holds a Tier II
+Canada Research Chair in Diabetes Epidemiology.
+
+## Conflicts of interest
+
+The authors report no potential conflicts of interest relevant to this study.
+
+## Contribution statement
+
+The authors had the following responsibility: LWJ conducted research, analyzed
+data, and wrote the paper; RR, ZL, and SBH designed research, conducted
+research, and provided essential materials (infrastructure and clinical
+resources); RR, SBH, RPB, and AG provided intellectual feedback on the
+paper; RPB conducted research, provided essential reagents and materials; AJH
+designed research, assisted with interpretation, and provided intellectual
+feedback on all versions of the paper; LWJ and AJH had primary responsibility
+for final content. All authors read and approved the final manuscript.
+
+{{Bernie?}}
 
 # Tables
 
