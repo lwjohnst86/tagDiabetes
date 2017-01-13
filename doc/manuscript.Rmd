@@ -456,43 +456,23 @@ Outline:
 - How this study fills those gaps and new things learned
 - Potential clinical application
 
-We found that in a Canadian population of mainly female and European ancestry, 
-the specific TAGFA composition was strongly associated with insulin sensitivity
-and moderately associated with beta-cell function. In particular, TAGFA myristic 
-acid (14:0), 7-tetradecenoic acid {{ confirm }} (14:1n-7), palmitic acid (16:0),
-and palmitoleic acid (16:1n-7) all strongly and negatively predicted lower
-insulin sensitivity. While 
+## Overall conclusion
 
-Interpretation:
-
-- previous research has shown that CHO intake increases DNL {{ cite }}. In
-particular, DNL from CHO sources increases especially the 14-16 chain TAGFA as
-well as the 18 chain TAGFA. Prev lit has also shown that higher DNL can increase
-risk for DM {{ cite }} and that higher refined CHO can increase risk of DM {{
-cite }}. Our study found that the 14-16 TAGFA all strongly predicted lower
-insulin sensitivity, reinforcing this finding. While these FA also had a
-significant association with beta-cell function, the results were not as strong
-as with the IR. {{ why is it that DNL increases risk? }}
-- TAGFA that tended to positively associated with IR and BCF also tended to be
-the very long chain FA such as eicosapentaenoic acid (20:5n-3) and
-docosahexaenoic acid (22:6n-3), which have potent anti-inflammatory properties
-{{ cite }}. Biologically {{ why these FA and how help with IR }}
-- {{ compare models with and without NEFA }} NEFA have been shown contribute
-substantially to TAGFA composition and concentration. Adjusting for ...
-- Dietary FA have been shown to contribute approx 25% of the newly synth
-VLDL-TAG {{ cite }}. This suggests that our results may not entirely reflect
-diet, but also adipose stores. {{ discuss results of NEFA paper }} However, in
-an analysis of the NEFA pool {{ cite }}, we found that total NEFA, but not the
-specific composition associated with beta-cell function. There may be something
-unique about the specific composition of the TAGFA fraction that may allow it to
-enter IR tissues more easily than NEFA. It may be that VLDL receptors allow FA
-to transition to IR tissue compared to NEFA bound to albumin {{ confirm and cite
-}}.
-- Challenge longitudinally since muscle IR can promote DNL + TAG Flannery2012a
-- Or that post-prandial TAG is not suppressed in IR Sondergaard2012a
-- Differences with 
-- {{ confirm }} greater flux of saturated fatty acids into tissues may encourage
-lipotoxic environment {{ cite }}
+We found that in an at-risk for diabetes Canadian population of mainly female
+and European ancestry, the specific TAGFA composition was strongly associated
+with insulin sensitivity and moderately associated with beta-cell function. In
+particular, TAGFA myristic acid (14:0), 7-tetradecenoic acid {{ confirm }}
+(14:1n-7), palmitic acid (16:0), and palmitoleic acid (16:1n-7) all strongly and
+negatively predicted lower insulin sensitivity. {{confirm}} While most TAGFA
+were not associated with beta-cell function, {{confirm after checking models}}
+two fatty acids, 16:0 and 18:1n-7, were associated negatively and positively,
+respectively, with both measures of beta-cell function. We also found that four
+TAGFA (14:0, 14:1n-7, 16:0, 16:1n-7) clustered together, and that also strongly 
+predicted lower insulin sensitivity. These four fatty acids are also involved in
+the DNL of refined and simple carbohydrates {{cite}}. Our results, which are in
+agreement with the current literature, suggest that higher intakes of simple
+carbohydrates or higher activity of DNL may increase the risk for diabetes,
+likely through worsening insulin sensitivity.
 
 ## Limitations
 
@@ -538,6 +518,38 @@ specifically suited to investigating temporal relationships and to handling the
 multivariate nature of the data. Lastly, our cohort contains highly detailed and
 comprehensive variable measurements at each collection visit, as well as having
 both concentration and mol% data for the fatty acids.
+
+## Interpretation and previous literature
+
+- previous research has shown that CHO intake increases DNL {{ cite }}. In
+particular, DNL from CHO sources increases especially the 14-16 chain TAGFA as
+well as the 18 chain TAGFA. Prev lit has also shown that higher DNL can increase
+risk for DM {{ cite }} and that higher refined CHO can increase risk of DM {{
+cite }}. Our study found that the 14-16 TAGFA all strongly predicted lower
+insulin sensitivity, reinforcing this finding. While these FA also had a
+significant association with beta-cell function, the results were not as strong
+as with the IR. {{ why is it that DNL increases risk? }}
+- TAGFA that tended to positively associated with IR and BCF also tended to be
+the very long chain FA such as eicosapentaenoic acid (20:5n-3) and
+docosahexaenoic acid (22:6n-3), which have potent anti-inflammatory properties
+{{ cite }}. Biologically {{ why these FA and how help with IR }}
+- {{ compare models with and without NEFA }} NEFA have been shown contribute
+substantially to TAGFA composition and concentration. Adjusting for ...
+- Dietary FA have been shown to contribute approx 25% of the newly synth
+VLDL-TAG {{ cite }}. This suggests that our results may not entirely reflect
+diet, but also adipose stores. {{ discuss results of NEFA paper }} However, in
+an analysis of the NEFA pool {{ cite }}, we found that total NEFA, but not the
+specific composition associated with beta-cell function. There may be something
+unique about the specific composition of the TAGFA fraction that may allow it to
+enter IR tissues more easily than NEFA. It may be that VLDL receptors allow FA
+to transition to IR tissue compared to NEFA bound to albumin {{ confirm and cite
+}}.
+- Challenge longitudinally since muscle IR can promote DNL + TAG Flannery2012a
+- Or that post-prandial TAG is not suppressed in IR Sondergaard2012a
+- Differences with 
+- {{ confirm }} greater flux of saturated fatty acids into tissues may encourage
+lipotoxic environment {{ cite }}
+
 
 [@Barrows2006a] NEFA contributes 60-80% of newly synth VLDL-TAG during fasting
 and ~40% during fed. Dietary FA contribute ~25% to newly synth VLDL-TAG.

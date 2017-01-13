@@ -43,21 +43,22 @@ TODO Third draft of intro
 DONE First draft of results
 TODO Second draft of results
 DONE First (rough) draft of discussion - limitations
+DONE First (rough) draft of discussion - general findings
 TODO First (rough) draft of discussion
 TODO Second draft of discussion
 TODO Third draft of discussion
 DONE First draft acknowledgements, conflicts, funding
-TODO Confirm manuscript created as expected (minor edits, fixes)
-TODO Confirm manuscript matches STROBE checklist
-TODO First edited version sent to Tony
+TODO Confirmed manuscript created as expected (minor edits, fixes)
+TODO Confirmed manuscript matches STROBE checklist
+TODO First edited version sent to Tony # Create branch
 TODO Moved format_rounding etc into aide, used aide instead
 TODO Switched load_data to match new prodigen style
-TODO Edits as per Tony's suggestions
-TODO Edits as per Richard's suggestions
-TODO Next edited version sent to co-authors
-TODO Edits as per Ravi's suggestions
-TODO Edits as per Stewart's suggestions
-TODO Edits as per Bernie's suggestions
+TODO Edits as per Tony's suggestions # Create branch
+TODO Edits as per Richard's suggestions # Create branch
+TODO Next edited version sent to co-authors # Create branch
+TODO Edits as per Ravi's suggestions # Create branch
+TODO Edits as per Stewart's suggestions # Create branch
+TODO Edits as per Bernie's suggestions # Create branch (maybe not send to him)
 TODO Minor fixes to match with journal requirements
 TODO Added version numbers/session info of packages used
 TODO Submitted to journal
