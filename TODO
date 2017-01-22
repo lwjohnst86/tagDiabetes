@@ -29,7 +29,7 @@ DONE Assigned the captions to figures and tables
 DONE Clarified that most participants had a 6yr visit
 TODO Clarified whether covariates were confounders, mediators, etc.
     # If there are more mediators, they should be used in separate model and shown as such
-    # Adjust for waist?
+    # Adjust for waist? Remove ALT?
 DONE Included stats method for hclust of tagfa heatmap
 DONE Changed HOMA-IR methods to HOMA2-%S
 DONE Fixed results after HOMA-IR changed to HOMA2
@@ -46,7 +46,7 @@ TODO Second draft of results
 DONE First (rough) draft of discussion - limitations
 DONE First (rough) draft of discussion - general findings
 DONE Re-arranged and added to discussion - prev lit and interpret
-TODO First (rough) draft of discussion - prev lit and interpret
+DONE First (rough) draft of discussion - prev lit and interpret
 TODO First (rough) draft of discussion - conclusion
 TODO Second draft of discussion
 TODO Third draft of discussion
