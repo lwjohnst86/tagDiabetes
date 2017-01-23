@@ -54,7 +54,7 @@ TODO Third draft of discussion
 DONE First draft acknowledgements, conflicts, funding
 DONE Confirmed manuscript created as expected (minor edits, fixes)
 TODO Confirmed manuscript matches STROBE checklist
-TODO First edited version sent to Tony # Create branch
+DONE First edited version sent to Tony # Create branch
 TODO Moved format_rounding etc into aide, used aide instead
 TODO Switched load_data to match new prodigen style
 TODO Edits as per Tony's suggestions # Create branch
