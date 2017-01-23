@@ -3,6 +3,7 @@ bibliography:
     - /home/luke/Documents/bibliography/bib/bib-db/tagDiabetes.bib
     - /home/luke/Documents/bibliography/bib/bib-db/myrefs.bib
     - /home/luke/Documents/bibliography/bib/bib-db/methods.bib
+csl: /home/luke/Documents/bibliography/styles/dependent/diabetes-care.csl
 output: fost::default_manuscript
 ---
 
@@ -53,6 +54,8 @@ Disclaimers:
 
 Funding support:
 
+Word count: ~4200
+
 # Abstract
 
 # Background
@@ -92,7 +95,7 @@ diabetes.
 
 # Subjects and Methods
 
-```{r load_data, message=FALSE}
+```{r load_data, message=FALSE, echo=FALSE}
 devtools::load_all('.')
 ds0yr <- project_data %>% 
     dplyr::filter(VN == 0)
@@ -187,7 +190,7 @@ with three examination visits completed to date (2004-2006, 2007-2009, and
 sample used data on participants who did not have diabetes at baseline, who
 returned for one or more of the follow-up examinations, and who had samples
 available for fatty acid measurements (n=477; see the CONSORT diagram in 
-`r cite_sf('consort')`; a total of `r calc_n_for_visits()[1]` attended all three
+`r cite_f('consort')`; a total of `r calc_n_for_visits()[1]` attended all three
 visits). Metabolic characterization, anthropometric
 measurements, and questionnaires on lifestyle and sociodemographics are
 collected at each examination visit. Research ethics approval was obtained from
@@ -220,10 +223,10 @@ TAGFA composition was quantified using stored fasting serum samples from the
 baseline visit, which had been frozen at -70°C for 4-6 years and had not been 
 exposed to any freeze-thaw cycles. Serum fatty acids have been documented to be 
 stable at these temperatures for up to 10 years [@Matthan2010a]. A known amount 
-of {{ confirm with Richard the correct name}} heptadecanoic acid (17:0) was added as an internal
+of {{confirm with Richard the correct name}} heptadecanoic acid (17:0) was added as an internal
 standard prior to extracting total lipids according to the method of Folch 
-[@Folch1957a]. Each serum lipid fraction---non-esterified fatty acids (NEFA), 
-cholesteryl ester, phospholipid, and TAGFA---was isolated using thin layer 
+[@Folch1957a]. Each serum lipid fraction (non-esterified fatty acids (NEFA), 
+cholesteryl ester, phospholipid, and TAGFA) was isolated using thin layer 
 chromatography. Fatty acid methyl esters were separated and quantified using a 
 Varian-430 gas chromatograph (Varian, Lake Forest, CA, USA) equipped with a 
 Varian Factor Four capillary column and a flame ionization detector. Fatty acid 
@@ -297,17 +300,19 @@ followup were not included in the GEE modeling.
 Covariates were selected based on the previous literature, from directed acyclic
 graph [@Greenland1999a] recommendations (using the DAGitty software
 [@Textor2011a], http://dagitty.net/; see `r cite_f('dag_is')` and `r cite_f('dag_bcf')`), and from
-QIC. `r cite_t('tab_qic')` shows the covariates compared using QIC.
+QIC. `r cite_t('qic')` shows the covariates compared using QIC.
 While the final GEE model selected as best fitting differed between insulin
 sensitivity and beta-cell function measures, the differences in QIC values were
 less than 10 between many of the models, suggesting similar fit. As such, we selected
 the model that had the fewest covariates and that had similar fit between the
-outcome measures ({{##}}). The final GEE model was adjusted for {{covariates}}.
+outcome measures. The final GEE model was adjusted for time, waist
+circumference, baseline age, ethnicity, sex, ALT, MET, and total NEFA.
 After scaling, log-transforming, and exponentiating, the GEE estimates are 
 interpreted as an expected percent difference in the outcome variable for every 
 standard deviation (SD) increase in the predictor variable given the covariates 
-are held constant (including time). Lastly for the GEE models, we tested for an interaction with 
-sex, ethnicity, or time by the predictor term for each outcome variable.
+are held constant (including time). Lastly for the GEE models, we tested for an
+interaction with sex, ethnicity, or time by the predictor term for each outcome
+variable.
 
 While GEE accounts for the longitudinal design of the data, this approach is 
 limited in that it cannot analyze the inherent multivariate nature of the 
@@ -330,7 +335,7 @@ as a guideline for reporting [@Vandenbroucke2007b].
 
 ## Basic characteristics of the PROMISE cohort
 
-`r cite_t('tab_basic')` shows some basic characteristics of the PROMISE cohort. The mean 
+`r cite_t('basic')` shows some basic characteristics of the PROMISE cohort. The mean 
 follow-up time was `r calc_followup_time()`, where `r calc_pct_full_visits()`%
 of participants attended all three visits. There were
 `r female$npct` females and `r euro$npct` who had European-ancestry, with a mean
@@ -343,11 +348,11 @@ between `r outcome_chg$chg` (p`r outcome_chg$p` from GEE; n=`r outcome_chg$n`). 
 were `r dys$dm` and `r dys$pre` incident cases of diabetes and
 pre-diabetes (IFG and IGT), respectively. 
 
-`r cite_f('fig_tagfa')` shows the composition of each FA in the TAG fraction (see 
-`r cite_t('tab_tagfa')` for a tabular presentation of the values). 
+`r cite_f('tagfa')` shows the composition of each FA in the TAG fraction (see 
+`r cite_t('tagfa')` for a tabular presentation of the values). 
 Three TAGFA contributed `r format_rounding(sum(tagfa$pct))`% to the total 
 TAG concentration: `r tagfa$c[1]`; `r tagfa$c[2]`; and, `r tagfa$c[3]`.
-`r fig_corr` shows a heatmap of the correlation of individual TAGFA with the
+`r cite_f('heatmap')` shows a heatmap of the correlation of individual TAGFA with the
 outcome variables and several basic characteristics.
 As expected, nearly all TAGFA had very strong positive correlations (r=
 `r fa_cor$rng$TAG`) with clinically-measured TAG and moderate positive 
@@ -360,14 +365,15 @@ for the beta-cell function measures (all r<0.30).
 ## Generalized estimating equation models
 
 There were `r nrow(dplyr::filter(gee_unadj_df, p.value <= 0.05))` FDR-corrected 
-significant associations in the unadjusted GEE model (see `r cite_f('fig_gee_unadj')`) and 
+significant associations in the unadjusted GEE model (see `r cite_f('gee_unadj')`) and 
 `r nrow(dplyr::filter(gee_adj_df, p.value <= 0.05))` FDR-corrected
-significant associations in the adjusted GEE model as shown in `r cite_f('fig_gee_adj')`. 
+significant associations in the adjusted GEE model as shown in `r cite_f('gee_adj')`. 
 The majority of associations with beta-cell function measures were attenuated
 after full model adjustment, while nearly all associations with insulin
-sensitivity remained significant. {{ confirm }} Subsequent analysis revealed
+sensitivity remained significant. 
+<!--{{ confirm }} Subsequent analysis revealed
 that the attenuation with beta-cell function was due primarily to adjustment for
-{{ waist? ALT? }}.
+{{ waist? ALT? }}.-->
 
 As a concentration, nearly all TAGFA had a strong negative association on
 HOMA2-%S and ISI (estimates ranging from 
@@ -389,8 +395,8 @@ to `r est1$b_ci$est[37]`% higher insulin sensitivity for every SD increase in
 Both clinically-measured TAG and total TAGFA concentration had very strong
 negative associations with all outcome variables. There were no significant
 interactions by time, sex, or ethnicity for any of the TAGFA (data not shown).
-A tabular presentation of the GEE results is shown in `r cite_t("tab_gee_unadj")` 
-for unadjusted models and `r cite_t("tab_gee_adj")` for adjusted models.
+A tabular presentation of the GEE results is shown in `r cite_t("gee_unadj")` 
+for unadjusted models and `r cite_t("gee_adj")` for adjusted models.
 
 ## Clustering of TAGFA by metabolic measures
 
@@ -404,7 +410,7 @@ the clustering of TAGFA from the PLS results of the beta-cell function measures
 were similar to the insulin sensitivity measures, only the insulin sensitivity 
 measures are presented given the higher predictive ability.
 
-The PLS results for the insulin sensitivity (`r cite_f('fig_pls')`) revealed a clustering 
+The PLS results for the insulin sensitivity (`r cite_f('pls')`) revealed a clustering 
 of the fatty acids 14:0, 14:1n-7, 16:0, and 16:1n-7. These TAGFA loaded strongly (meaning
 the fatty acids fell between the dashed and solid circles) and negatively on HOMA2-%S
 and ISI, suggesting this cluster of TAGFA tracks together with lower insulin
@@ -443,7 +449,7 @@ of the TAGFA fraction on detailed OGTT-derived metabolic measures using advanced
 utilize the data. Two large prospective studies have been published that had
 similar research objectives as the present analysis. One was a nested
 case-control cohort (n=189 cases and n=189 controls) of the Framingham offspring
-study [@Rhee2015a], which found that TAGFA composition with a lower carbon chain
+study [@Rhee2011a], which found that TAGFA composition with a lower carbon chain
 and less double bonds (e.g. 14:0, 16:0) had a higher risk for diabetes after 
 12-years while higher carbon chain and more double bond TAGFA had a lower risk 
 for diabetes. This pattern of TAGFA with diabetes risk remained the same when 
@@ -458,7 +464,7 @@ The specific TAGFA that associated with the metabolic measures were similar
 between studies, particularly with the four DNL fatty acids. A limitation of 
 the study was the simpler statistical techniques used to analyze the data, 
 which are not able to adequately use the longitudinal and high-dimensional 
-dataset. {{ They're article and methods were ... questionable... }} In another 
+dataset. {{ Their article and methods were ... questionable... }} In another 
 study of a much smaller (n=16) mostly female group [@Kotronen2009a], the authors
 report a positive correlation between total esterified (of which TAG make up the
 majority) 16:0, 16:1n-7, and 18:1n-9 with HOMA-IR, similar as our results except
@@ -520,9 +526,9 @@ within the liver, circulating NEFA, and through DNL [@Barrows2006a]. Therefore, 
 TAGFA composition reflects not just dietary intake but also stored fatty acids
 from the adipose tissue and the DNL capacity of the individual. During fasting, a
 large portion of fatty acids bound together as TAG are obtained from circulating
-NEFA. A study examining this found that NEFA contributed 60-80% of newly synth
+NEFA. A study examining this found that NEFA contributed 60-80% of newly synthesized
 VLDL-TAG during fasting and ~40% during the fed state while dietary fatty acids
-contributed ~25% to newly synth VLDL-TAG [@Barrows2006a]. In an analysis of the
+contributed ~25% to newly synthesized VLDL-TAG [@Barrows2006a]. In an analysis of the
 serum NEFA fraction in the PROMISE cohort with the OGTT-derived outcomes
 (currently unpublished), we found that higher total NEFA but not the specific
 composition associated with lower beta-cell function and not with insulin 
@@ -670,11 +676,6 @@ for final content. All authors read and approved the final manuscript.
 
 # Tables
 
-```{r table_qic}
-analyze_qic() %>% 
-    table_qic(caption = tab_qic)
-```
-
 ```{r table_basic}
 table_basic(caption = tab_basic)
 ```
@@ -687,6 +688,12 @@ table_tagfa(caption = tab_tagfa)
 table_gee_main(gee_unadj_df, caption = tab_gee_unadj)
 table_gee_main(gee_adj_df, caption = tab_gee_adj)
 ```
+
+```{r table_qic}
+analyze_qic() %>% 
+    table_qic(caption = tab_qic)
+```
+
 
 # Figures
 
@@ -725,8 +732,10 @@ gridExtra::grid.arrange(
 
 # Supplemental Methods
 
+<!--
 The number of components to extract from PLS was determined by 10-fold CV.
 Dataset was split into a training set and a testing set to determine the
 predictability of the given PLS model. Final results presented use the full dataset.a
+-->
 
 # References
