@@ -620,6 +620,17 @@ Lastly, our cohort contains highly detailed and comprehensive variable
 measurements at each collection visit, as well as having both concentration and
 mol% data for the fatty acids.
 
+## Final conclusion
+
+In conclusion, we found that a TAGFA composition indicative of higher DNL
+(containing higher 14:0, 14:1n-7, 16:0, and 16:1n-7) associated strongly lower
+insulin sensitivity and moderately with lower beta-cell function. The fatty
+acids that clustered together represent fatty acids created from DNL, which is
+characteristic of higher simple carbohydrate (e.g. added sugar) intake. Our
+results, which are congruent with current evidence, suggest that higher DNL
+likely due to greater intake of simple or refined carbohydrates may increase the
+risk of diabetes through worsening of insulin sensitivity.
+
 # Acknowledgements
 
 The authors thank Jan Neuman, Paula Van Nostrand, Stella Kink, and Annette
