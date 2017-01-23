@@ -30,6 +30,7 @@ DONE Clarified that most participants had a 6yr visit
 TODO Clarified whether covariates were confounders, mediators, etc.
     # If there are more mediators, they should be used in separate model and shown as such
     # Adjust for waist? Remove ALT?
+TODO Added analyses in vignette on impact of meds on TAGFA
 DONE Included stats method for hclust of tagfa heatmap
 DONE Changed HOMA-IR methods to HOMA2-%S
 DONE Fixed results after HOMA-IR changed to HOMA2
@@ -39,7 +40,7 @@ DONE Added handling of diabetes cases in methods
 TODO Added handling of potential over-adjustment to methods
 DONE Polish up methods
 DONE First (rough) draft of intro
-TODO Second draft of intro
+DONE Second draft of intro
 TODO Third draft of intro
 DONE First draft of results
 TODO Second draft of results

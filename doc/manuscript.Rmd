@@ -8,45 +8,17 @@ output: fost::default_manuscript
 
 <!--
 
-Note: keep the story simple and clean, without getting too dense
-
-- Run PLS with just those FA that loaded strongly to see the predictive ability.
-- SA with/without NEFA
-- SA with/without WC
-- Interactions of VN unadjusted
-
 Outline:
 
 - Primary analysis:
-    - Look over medications, how they influence the TAGFA
-    - GEE
-        - SA for the large outlier for the TAGFA (see dist plot)
-        - Include # of both uncorrected and corrected (FDR) significant associations
-        - QIC modeling
-        - DAG development
-        - Look over the entire model (see which variables are significant, etc)
-        - Sensitivity analysis with Carb intake? And with adiponectin? (which is
-        involved in TAG metabolism)
-    - PLS with ISI and HOMA-IR
-        - Use extracted PLS components in GEE (?)
-- Secondary analysis:
-    - AROC
-        - dysgly with clinical TAG vs the 'best' fatty acid to compare to
-        
-- Make sure to include comments from NEFA paper
-- Add stats to basic char table... (don't really want to. But I should ..?)
-        
-Possible interpretations:
+        - Sensitivity analysis with Carb intake? 
 
-- muscle IR -> higher TAG
-- But longitudinal, since no interaction with time, so maybe the higher TAG is
-because of higher IR (since this population is at risk of being IR).
-    
 -->
 
 # Title page
 
-Title: Fatty acids involved in de novo lipogenesis within triacylglycerol fraction strongly predict lower insulin sensitivity.
+Title: Fatty acids involved in de novo lipogenesis within the serum
+triacylglycerol fraction strongly predict lower insulin sensitivity.
 
 Author: Luke W. Johnston (1), MSc; Stewart B. Harris (2), MD; Ravi Retnakaran
 (3,4), MD; Adria Giacca (5), PhD; Zhen Liu (1), PhD;
@@ -85,41 +57,38 @@ Funding support:
 
 # Background
 
-Hypertriglyceridemia is an established and well known factor involved in the
-dysregulation of metabolic function and subsequent negative health impacts. It
-is a component of the metabolic syndrome {{ cite }}, a strong risk factor for
-cardiovascular disease {{cite}}, and can contribute to worsening pathogenesis of
-diabetes through it's harmful health effects {{ clarify }}. Triacylglcerol (TAG)
-is a common blood measure taken during routine clinical visits and has {{
-historically?}} been a target of pharmaceutical intervention {{cite}}, though evidence on
-the {{efficacy? effectiveness?}} of such interventions are often underwhelming
-on their effects on disease {{risk?}} reduction {{cite}}.
+Hypertriglyceridemia is an extensively studied and well known factor involved in
+the dysregulation of metabolic function and subsequent negative health impacts.
+It is a component of the metabolic syndrome [@Alberti2009], a strong risk factor for
+cardiovascular disease [@DAgostino2004a], and can contribute to the pathogenesis
+of diabetes. Measuring triacylglcerides (TAG) within the blood is commonly done
+during routine clinical visits as part of health assessment. However, clinically
+measured TAG is limited as it represents all the types of fatty acids within the
+TAG fraction as a single measure. Given the increasing appreciation for the role
+of the specific fatty acid composition on health outcomes, for instance with
+differences in associations of fatty acids within the PL lipid fraction
+[@Forouhi2014a; @Ma2015a] including an analysis from the PROMISE cohort
+[@Johnston2016a], there are relatively few studies that have explored this area
+of research in the TAG fraction.
 
-TAG as a pharmaceutical target and as a measure of metabolic health is a single
-measure of all fatty acids within the TAG fraction. However, given the 
-increasing appreciation for the role of the specific fatty acid composition
-of various blood lipid fractions on health outcomes, reducing the complex fatty acids 
-metabolism within the TAG fraction to a single measure may contribute to the 
-less than expected {{?}} changes in risk reduction.
+The interaction between TAG and insulin sensitivity is complex and has 
+components of a feedback system. Greater resistance to insulin in both the liver
+and muscle may result in greater production of TAG and secretion of lipoproteins
+that transport TAG [@Yu2012a]. Likewise, greater TAGFA may contribute to 
+metabolic dysfunction and lipotoxicity in various tissues, such as the 
+beta-cells, and thus continuing the cycle. Given the complexity and temporal
+nature of the relationship, long term studies with multiple data collections are
+paramount to better understanding the underlying biology and subsequent risk.
 
-In additiona, the {{interplay?}} between TAG and IR is complex and has the
-potential to act as a {{feed forward?}} loop. Greater resistance to insulin,
-particularly in the liver, can result in greater accumulation of hepatic fat and
-a potential associated increased production in TAG which are secreted into
-circulation with VLDL [@Yu2012a] {{review on mechanisms of TAG, IR, etc.}} {{not
-always the case, dependent on ethnicity}}. However, higher circulating TAG can
-exacerbate or contribute to insulin resistance in various tissues, creating a
-vicious cycle {{cite}}. Few studies have been conducted that have examined the
-longitudinal effect of TAGFA composition on diabetes pathophysiology.
-
-Several prospective studies have identified to date the association of 
-hypertriglyceridemia on incident diabetes {{[@Chien2008a; @DAgostino2004a;
-@Schulze2009a]}}, but no longitudinal studies have been conducted{{another 
-word?}} on the pathophysiological factors underlying diabetes.
-
-Our objective was to examine the longitudinal role of the specific composition
-of the serum TAG fraction on OGTT-derived measures of insulin sensitivity and
-beta-cell function in an Canadian population at risk for diabetes over 6 years.
+While several prospective studies have identified a harmful association of 
+hypertriglyceridemia on greater incidence for type 2 diabetes 
+[@Chien2008a; @DAgostino2004a; @Schulze2009a], there are limited longitudinal
+studies that have examined the relationship between TAG and it's composition on
+the pathophysiological factors underlying diabetes, particularly in regard to
+beta-cell function. Our objective was to examine the longitudinal role of the
+specific composition of the serum TAG fraction on OGTT-derived measures of
+insulin sensitivity and beta-cell function in an Canadian population at risk for
+diabetes.
 
 # Subjects and Methods
 
