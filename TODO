@@ -58,6 +58,12 @@ DONE First edited version sent to Tony # Create branch
 TODO Moved format_rounding etc into aide, used aide instead
 TODO Switched load_data to match new prodigen style
 TODO Edits as per Tony's suggestions # Create branch
+TODO Changed title to be results agnostic
+TODO Removed FDR-corrected numbers in Results
+TODO Moved more detailed stats methods to Supplemental Material
+TODO Moved detailed PLS results to Supplemental Material
+TODO Added analysis using PLS scores and AROC with incident dysglycemia
+TODO Moved some tables and figs into Supplemental Results
 TODO Edits as per Richard's suggestions # Create branch
 TODO Next edited version sent to co-authors # Create branch
 TODO Edits as per Ravi's suggestions # Create branch
