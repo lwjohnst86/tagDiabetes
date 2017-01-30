@@ -70,12 +70,12 @@ analyze_corr_tagfa <-
 #' @param results Correlation results
 #'
 #' @export
-plot_heatmap <- function(results, text = TRUE) {
+plot_heatmap <- function(results, text = TRUE, unit = 'nmol/mL') {
      results %>%
         seer::view_heatmap(
             y = 'Vars2',
             x = 'Vars1',
-            ylab = 'Triacylglycerol fatty acids (nmol/mL)',
+            ylab = paste0('Triacylglycerol fatty acids (', unit, ')'),
             number.colours = 5,
             values.text = text,
             values.size = 4) +

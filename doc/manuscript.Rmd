@@ -125,6 +125,7 @@ fig_dag_is <- fig('dag_is', 'Directed acyclic graphic output from the DAGitty on
 fig_dag_bcf <- fig('dag_bcf', 'Directed acyclic graphic output from the DAGitty online software for beta-cell function.')
 fig_tagfa <- fig('tagfa', 'Distribution of the composition of triacylglycerol fatty acids in the baseline visit of PROMISE participants (2004-2006). Boxplots represent the median and interquartile range of the fatty acid values.')
 fig_heatmap <- fig('heatmap', 'Pearson correlation heatmap of triacylglycerol fatty acids (nmol/mL) with continuous basic and metabolic characteristics of PROMISE participants from the baseline visit (2004-2006). Darker orange represents a positive correlation; darker blue represents a negative correlation.')
+fig_heatmap_mol <- fig('heatmap_mol', 'Pearson correlation heatmap of triacylglycerol fatty acids (mol%) with continuous basic and metabolic characteristics of PROMISE participants from the baseline visit (2004-2006). Darker orange represents a positive correlation; darker blue represents a negative correlation.')
 fig_heatmap_tagfa <- fig('heatmap_tagfa', 'Pearson correlation heatmap of the triacylglycerol fatty acids in the PROMISE participants from the baseline visit (2004-2006). The correlations of fatty acids grouped using heirarchical cluster analysis; fatty acids along the x and y axis are ordered according to this analysis. Darker orange represents a positive correlation; darker blue represents a negative correlation.')
 fig_gee_unadj <- fig('gee_unadj', 'Time-adjusted GEE models of the association of the triacylglycerol fatty acids (mol% and nmol/mL) and total clinically-measured TAG with insulin sensitivity and beta-cell function outcomes using the 6 year longitudinal data from the PROMISE cohort. X-axis values represent a percent difference in the outcome per SD increase in the fatty acid. P-values were adjusted for the BH false discovery rate, with the largest dot representing a significant (p<0.05) association.')
 fig_gee_adj <- fig('gee_adj', 'Fully-adjusted GEE models of the association of the triacylglycerol fatty acids (mol% and nmol/mL) and total clinically-measured TAG with insulin sensitivity and beta-cell function outcomes using the 6 year longitudinal data from the PROMISE cohort. Variables controlled for were follow-up time, waist circumference, baseline age, ethnicity, sex, ALT, physical activity, and total NEFA. X-axis values represent a percent difference in the outcome per SD increase in the fatty acid. P-values were adjusted for the BH false discovery rate, with the largest dot representing a significant (p<0.05) association.')
@@ -148,6 +149,7 @@ pls_igi_t <- analyze_pls(y = 'lIGIIR')
 pls_issi2_t <- analyze_pls(y = 'lISSI2')
 
 cor_df <- analyze_corr()
+cor_df_mol <- analyze_corr(y = tg_pct)
 cor_df_tagfa <- analyze_corr_tagfa()
 ```
 
@@ -360,7 +362,10 @@ correlations with WC (r=`r fa_cor$rng$Waist`). There was also moderate
 negative correlations with HDL (r=`r fa_cor$rng$HDL`). For the outcome variables,
 the correlations for the insulin sensitivity measures were generally higher 
 (HOMA2-%S: r=`r fa_cor$rng['HOMA2-%S']`, ISI: r=`r fa_cor$rng$ISI`) than 
-for the beta-cell function measures (all r<0.30).
+for the beta-cell function measures (all r<0.30). A heatmap of the correlations
+of individual TAGFA using mol% with the basic characteristics is shown in 
+`r cite_f('heatmap_mol')` and the inter-correlation matrix of the TAGFA fraction 
+is shown in `r cite_f('heatmap_tagfa')`.
 
 ## Generalized estimating equation models
 
@@ -709,6 +714,10 @@ plot_tagfa()
 
 ```{r fig_heatmap, fig.cap=fig_heatmap}
 plot_heatmap(cor_df)
+```
+
+```{r fig_heatmap, fig.cap=fig_heatmap_mol}
+plot_heatmap(cor_df_mol, unit = 'mol%')
 ```
 
 ```{r fig_heatmap_tagfa, fig.cap=fig_heatmap_tagfa}
