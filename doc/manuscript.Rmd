@@ -18,8 +18,9 @@ Outline:
 
 # Title page
 
-Title: Fatty acids involved in de novo lipogenesis within the serum
-triacylglycerol fraction strongly predict lower insulin sensitivity.
+Title: Composition of fatty acids within the serum triacylglycerol fraction and 
+the association with the pathogenesis of diabetes in a population at-risk for 
+diabetes
 
 Author: Luke W. Johnston (1), MSc; Stewart B. Harris (2), MD; Ravi Retnakaran
 (3,4), MD; Adria Giacca (5), PhD; Zhen Liu (1), PhD;
