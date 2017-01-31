@@ -22,9 +22,9 @@ Title: Composition of fatty acids within the serum triacylglycerol fraction and
 the association with the pathogenesis of diabetes in a population at-risk for 
 diabetes
 
-Author: Luke W. Johnston (1), MSc; Stewart B. Harris (2), MD; Ravi Retnakaran
-(3,4), MD; Bernard Zinman, MD (3,4); Adria Giacca (5), PhD; Zhen Liu (1), PhD;
-Richard P. Bazinet (1), PhD; and Anthony J. Hanley (1,6), PhD
+Author: Luke W. Johnston, MSc (1); Stewart B. Harris, MD (2); Ravi Retnakaran, MD
+(3,4); Bernard Zinman, MD (3,4); Adria Giacca, PhD (5); Zhen Liu, PhD (1);
+Richard P. Bazinet, PhD (1); and Anthony J. Hanley, PhD (1,6)
 
 <!-- During time of study. -->
 Affiliation:
