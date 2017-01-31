@@ -370,10 +370,8 @@ is shown in `r cite_f('heatmap_tagfa')`.
 
 ## Generalized estimating equation models
 
-There were `r nrow(dplyr::filter(gee_unadj_df, p.value <= 0.05))` FDR-corrected 
-significant associations in the unadjusted GEE model (see `r cite_f('gee_unadj')`) and 
-`r nrow(dplyr::filter(gee_adj_df, p.value <= 0.05))` FDR-corrected
-significant associations in the adjusted GEE model as shown in `r cite_f('gee_adj')`. 
+Results from the unadjusted GEE model are shown in `r cite_f('gee_unadj')`) and 
+for the adjusted GEE model in `r cite_f('gee_adj')`. 
 The majority of associations with beta-cell function measures were attenuated
 after full model adjustment, while nearly all associations with insulin
 sensitivity remained significant. 
