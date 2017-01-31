@@ -281,39 +281,25 @@ computed for TAGFA against each other, followed by using hierarchical clustering
 analysis to identify clusters within the correlation matrix of the TAGFA
 composition.
 
-Generalized estimating equation (GEE) models [@Zeger1986a] were used in the
-primary analysis to determine the longitudinal associations between the outcome
-variables and the predictor variables. Given the longitudinal design, an
-auto-regressive of order 1 (AR1) working correlation matrix was chosen for the GEE
-models as it had the best model fit when assessed using quasi-likelihood
-information criteria (QIC), though other matrices (eg. exchangeable)
-had similar fit (data not shown). GEE is well suited to longitudinal cohort 
-studies given it's capacity to handle missed visits. The predictor variables and
-continuous covariates were scaled (mean-centered and standardized). The TAGFA,
-total NEFA, sex, ethnicity, and baseline age were classified as 
-*time-independent* (held constant) as they were measured only at the baseline 
-visit or do not change throughout the study, while the outcome variables and 
-remaining covariates were set as *time-dependent*. No imputation was conducted 
-on missing values. Given how the samples for TAGFA measurement were determined
-and how the outcome variables are calculated, cases of diabetes at baseline and
-followup were not included in the GEE modeling.
-
-Covariates were selected based on the previous literature, from directed acyclic
-graph [@Greenland1999a] recommendations (using the DAGitty software
-[@Textor2011a], http://dagitty.net/; see `r cite_f('dag_is')` and `r cite_f('dag_bcf')`), and from
-QIC. `r cite_t('qic')` shows the covariates compared using QIC.
-While the final GEE model selected as best fitting differed between insulin
-sensitivity and beta-cell function measures, the differences in QIC values were
-less than 10 between many of the models, suggesting similar fit. As such, we selected
-the model that had the fewest covariates and that had similar fit between the
-outcome measures. The final GEE model was adjusted for time, waist
-circumference, baseline age, ethnicity, sex, ALT, MET, and total NEFA.
-After scaling, log-transforming, and exponentiating, the GEE estimates are 
-interpreted as an expected percent difference in the outcome variable for every 
-standard deviation (SD) increase in the predictor variable given the covariates 
-are held constant (including time). Lastly for the GEE models, we tested for an
-interaction with sex, ethnicity, or time by the predictor term for each outcome
-variable.
+Generalized estimating equation (GEE) models [@Zeger1986a] were used in the 
+primary analysis to determine the longitudinal associations between the outcome 
+variables and the predictor variables. The predictor variables and continuous 
+covariates were scaled (mean-centered and standardized). Given the longitudinal 
+design, an auto-regressive of order 1 (AR1) working correlation matrix was 
+specified in the GEE model. Covariates to adjust for were selected based on the
+previous literature, from directed acyclic graph [@Greenland1999a]
+recommendations, and from quasi-likelihood information criteria (QIC). The final
+GEE model was adjusted for time, waist circumference, baseline age, ethnicity,
+sex, ALT, MET, and total NEFA. The TAGFA, total NEFA, sex, ethnicity, and
+baseline age were classified as *time-independent* (held constant) as they were
+measured only at the baseline visit or do not change throughout the study, while
+the outcome variables and remaining covariates were set as *time-dependent*.
+After transformations, the GEE estimates are interpreted as an expected percent 
+difference in the outcome variable for every standard deviation (SD) increase in
+the predictor variable given the covariates are held constant (including time). 
+We also tested for an interaction with sex, ethnicity, or time by the predictor 
+term for each outcome variable. See the Supplemental Methods for an expanded 
+explanation of the GEE modeling analysis.
 
 While GEE accounts for the longitudinal design of the data, this approach is 
 limited in that it cannot analyze the inherent multivariate nature of the 
@@ -321,8 +307,8 @@ composition of the TAGFA fraction. To confirm the GEE results in a multivariate
 environment (all TAGFA), partial least squares regression (PLS) was
 used to identify the patterns of TAGFA composition against insulin sensitivity
 and beta-cell function. No prevalent diabetes cases were included in the PLS
-analysis. For more detailed explanation of GEE and PLS, please see the
-{{supplemental}} Methods.
+analysis. For more detailed explanation of PLS, please see the Supplemental
+Methods.
 
 All analyses were performed using R `r getRversion()` [@Rbase], along with the R
 packages geepack `r packageVersion('geepack')` for GEE [@Hoejsgaard2006a] and pls
@@ -737,6 +723,38 @@ gridExtra::grid.arrange(
 ```
 
 # Supplemental Methods
+
+## Supplemental Methods: Statistical analysis
+
+Generalized estimating equations (GEE) is a technique similar to mixed effects
+modeling, except it calculates the marginal population averages compared to the
+individual averages in mixed effects models. GEE is well suited and commonly
+used in longitudinal cohort studies, especially given it's capacity to handle
+missed visits.
+
+The working correlation matrix for the GEE analysis was chosen based on 
+quasi-likelihood information criteria (QIC). The auto-regressive of order 1
+(AR1) matrix was chosen for the GEE models as it had the best model fit accessed
+using QIC, though other matrices (eg. exchangeable) had similar fit (data not
+shown). 
+
+For the confounders, they were chosen based on previous literature, from
+directed acyclic graph (DAG) [@Greenland1999a] recommendations, and from
+QIC. The DAG recommendations were obtained from using the DAGitty software
+[@Textor2011a], http://dagitty.net/. See `r cite_f('dag_is')` and 
+`r cite_f('dag_bcf')`) for the DAG model. See `r cite_t('qic')` for the
+comparison of various models with different covariates using QIC. While the
+final GEE model selected as best fitting differed between insulin sensitivity
+and beta-cell function measures, the differences in QIC values were less than 10
+between many of the models, suggesting similar fit. As such, we selected the
+model that had the fewest covariates and that had similar fit between the
+outcome measures.
+
+No imputation was conducted on missing values. Given how the samples for TAGFA
+measurement were determined and how the outcome variables are calculated, cases
+of diabetes at baseline and followup were not included in the GEE modeling. The
+resulting GEE beta estimates were exponentiated to allow the interpretation as
+stated in the main methods.
 
 <!--
 The number of components to extract from PLS was determined by 10-fold CV.
