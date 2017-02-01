@@ -388,8 +388,6 @@ for unadjusted models and `r cite_t("gee_adj")` for adjusted models.
 
 ## Clustering of TAGFA by metabolic measures
 
-To determine which components to use, internal CV showed that the first two
-components gave the highest amount of explained variance (data not shown).
 Confirming the findings from the GEE models, PLS analysis on the beta-cell
 function measures revealed that there was a low correlation (though significant
 at p`r cor_pls_igi$p`) between the predicted values and the actual values (r=
@@ -403,11 +401,10 @@ of the fatty acids 14:0, 14:1n-7, 16:0, and 16:1n-7. These TAGFA loaded strongly
 the fatty acids fell between the dashed and solid circles) and negatively on HOMA2-%S
 and ISI, suggesting this cluster of TAGFA tracks together with lower insulin
 sensitivity. The TAGFA 20:2n-6, 20:5n-3, 22:5n-3, and 22:6n-3 loaded positively
-on both insulin sensitivity measures. No other TAGFA loaded strongly, the
-results of which remained after running the PLS model on the cross-validated
-testing set. The PLS model for insulin sensitivity had good predictive ability, 
-determined by correlating the predicted outcome values with the actual values
-(HOMA2-%S: `r cor_pls_homa2$r_p`; ISI: `r cor_pls_isi$r_p`).
+on both insulin sensitivity measures. No other TAGFA loaded strongly. The PLS
+model for insulin sensitivity had good predictive ability, determined by
+correlating the predicted outcome values with the actual values (HOMA2-%S: `r
+cor_pls_homa2$r_p`; ISI: `r cor_pls_isi$r_p`).
 
 # Discussion
 
@@ -727,8 +724,8 @@ gridExtra::grid.arrange(
 ## Supplemental Methods: Statistical analysis
 
 Generalized estimating equations (GEE) is a technique similar to mixed effects
-modeling, except it calculates the marginal population averages compared to the
-individual averages in mixed effects models. GEE is well suited and commonly
+modeling, except it calculates the marginal population estimates compared to the
+subject-specific estimates in mixed effects models. GEE is well suited and commonly
 used in longitudinal cohort studies, especially given it's capacity to handle
 missed visits.
 
@@ -761,5 +758,17 @@ The number of components to extract from PLS was determined by 10-fold CV.
 Dataset was split into a training set and a testing set to determine the
 predictability of the given PLS model. Final results presented use the full dataset.a
 -->
+
+We used internal 10-fold cross-validation to determine which components to
+extract from the PLS analysis. Based on the internal cross-validation, the first
+two components gave the highest amount of explained variance (data not shown),
+of which we decided to use these two components in the final results.
+
+The predictive capability of the PLS models were tested using cross-validation. 
+The data set was randomly split in half into a training set and a testing set. 
+After specifying the model on the training set, results were compared using the 
+testing set to determine whether how predictive the model was given a new
+dataset. Final results shown in the figures use the full dataset (rather than a
+training or testing set)
 
 # References
