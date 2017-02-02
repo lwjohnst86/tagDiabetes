@@ -113,15 +113,15 @@ stab <- captioner::captioner(prefix = 'Supplemental Table')
 cite_st <- pryr::partial(stab, display = 'cite')
 # usage: cite_st('basicChar')
 
-tab_qic <- tab('qic', 'Comparison of GEE model fitness for variable selection using quasi-likelihood information criteria.')
+tab_qic <- stab('qic', 'Comparison of GEE model fitness for variable selection using quasi-likelihood information criteria.')
 tab_basic <- tab('basic', 'Basic characteristics of PROMISE participants at each of the 3 clinic visits.')
-tab_tagfa <- tab('tagfa', 'Concentration (nmol/mL) and relative percent (mol%) values of triacylglycerol fatty acids in PROMISE participants at the baseline visit (2004-2006).')
-tab_gee_unadj <- tab('gee_unadj', 'Raw estimates and confidence interval values for *time*-adjusted GEE models of the association of the triacylglycerol fatty acids (mol% and nmol/mL) and total clinically-measured TAG with insulin sensitivity and beta-cell function outcomes using the 6 year longitudinal data from the PROMISE cohort. Estimates represent a percent difference in the outcome per SD increase in the fatty acid. P-values were adjusted for the BH false discovery rate, with an asterisk (*) denoting a significant (p<0.05) association.')
-tab_gee_adj <- tab('gee_adj', 'Raw estimates and confidence interval values for *fully*-adjusted GEE models of the association of the triacylglycerol fatty acids (mol% and nmol/mL) and total clinically-measured TAG with insulin sensitivity and beta-cell function outcomes using the 6 year longitudinal data from the PROMISE cohort. Variables controlled for were follow-up time, waist circumference, baseline age, ethnicity, sex, ALT, physical activity, and total NEFA. Estimates represent a percent difference in the outcome per SD increase in the fatty acid. P-values were adjusted for the BH false discovery rate, with an asterisk (*) denoting a significant (p<0.05) association.')
+tab_tagfa <- stab('tagfa', 'Concentration (nmol/mL) and relative percent (mol%) values of triacylglycerol fatty acids in PROMISE participants at the baseline visit (2004-2006).')
+tab_gee_unadj <- stab('gee_unadj', 'Raw estimates and confidence interval values for *time*-adjusted GEE models of the association of the triacylglycerol fatty acids (mol% and nmol/mL) and total clinically-measured TAG with insulin sensitivity and beta-cell function outcomes using the 6 year longitudinal data from the PROMISE cohort. Estimates represent a percent difference in the outcome per SD increase in the fatty acid. P-values were adjusted for the BH false discovery rate, with an asterisk (*) denoting a significant (p<0.05) association.')
+tab_gee_adj <- stab('gee_adj', 'Raw estimates and confidence interval values for *fully*-adjusted GEE models of the association of the triacylglycerol fatty acids (mol% and nmol/mL) and total clinically-measured TAG with insulin sensitivity and beta-cell function outcomes using the 6 year longitudinal data from the PROMISE cohort. Variables controlled for were follow-up time, waist circumference, baseline age, ethnicity, sex, ALT, physical activity, and total NEFA. Estimates represent a percent difference in the outcome per SD increase in the fatty acid. P-values were adjusted for the BH false discovery rate, with an asterisk (*) denoting a significant (p<0.05) association.')
 
-fig_consort <- fig('consort', 'CONSORT diagram of PROMISE participants over the 3 visits.')
-fig_dag_is <- fig('dag_is', 'Directed acyclic graphic output from the DAGitty online software for insulin sensitivity.')
-fig_dag_bcf <- fig('dag_bcf', 'Directed acyclic graphic output from the DAGitty online software for beta-cell function.')
+fig_consort <- sfig('consort', 'CONSORT diagram of PROMISE participants over the 3 visits.')
+fig_dag_is <- sfig('dag_is', 'Directed acyclic graphic output from the DAGitty online software for insulin sensitivity.')
+fig_dag_bcf <- sfig('dag_bcf', 'Directed acyclic graphic output from the DAGitty online software for beta-cell function.')
 fig_tagfa <- fig('tagfa', 'Distribution of the composition of triacylglycerol fatty acids in the baseline visit of PROMISE participants (2004-2006). Boxplots represent the median and interquartile range of the fatty acid values.')
 fig_heatmap <- fig('heatmap', 'Pearson correlation heatmap of triacylglycerol fatty acids (nmol/mL) with continuous basic and metabolic characteristics of PROMISE participants from the baseline visit (2004-2006). Darker orange represents a positive correlation; darker blue represents a negative correlation.')
 fig_heatmap_mol <- fig('heatmap_mol', 'Pearson correlation heatmap of triacylglycerol fatty acids (mol%) with continuous basic and metabolic characteristics of PROMISE participants from the baseline visit (2004-2006). Darker orange represents a positive correlation; darker blue represents a negative correlation.')
@@ -191,7 +191,7 @@ with three examination visits completed to date (2004-2006, 2007-2009, and
 sample used data on participants who did not have diabetes at baseline, who
 returned for one or more of the follow-up examinations, and who had samples
 available for fatty acid measurements (n=477; see the CONSORT diagram in 
-`r cite_f('consort')`; a total of `r calc_n_for_visits()[1]` attended all three
+`r cite_sf('consort')`; a total of `r calc_n_for_visits()[1]` attended all three
 visits). Metabolic characterization, anthropometric
 measurements, and questionnaires on lifestyle and sociodemographics are
 collected at each examination visit. Research ethics approval was obtained from
@@ -336,7 +336,7 @@ were `r dys$dm` and `r dys$pre` incident cases of diabetes and
 pre-diabetes (IFG and IGT), respectively. 
 
 `r cite_f('tagfa')` shows the composition of each FA in the TAG fraction (see 
-`r cite_t('tagfa')` for a tabular presentation of the values). 
+`r cite_st('tagfa')` for a tabular presentation of the values). 
 Three TAGFA contributed `r format_rounding(sum(tagfa$pct))`% to the total 
 TAG concentration: `r tagfa$c[1]`; `r tagfa$c[2]`; and, `r tagfa$c[3]`.
 `r cite_f('heatmap')` shows a heatmap of the correlation of individual TAGFA with the
@@ -383,8 +383,8 @@ to `r est1$b_ci$est[37]`% higher insulin sensitivity for every SD increase in
 Both clinically-measured TAG and total TAGFA concentration had very strong
 negative associations with all outcome variables. There were no significant
 interactions by time, sex, or ethnicity for any of the TAGFA (data not shown).
-A tabular presentation of the GEE results is shown in `r cite_t("gee_unadj")` 
-for unadjusted models and `r cite_t("gee_adj")` for adjusted models.
+A tabular presentation of the GEE results is shown in `r cite_st("gee_unadj")` 
+for unadjusted models and `r cite_st("gee_adj")` for adjusted models.
 
 ## Clustering of TAGFA by metabolic measures
 
@@ -665,28 +665,7 @@ for final content. All authors read and approved the final manuscript.
 table_basic(caption = tab_basic)
 ```
 
-```{r table_tagfa}
-table_tagfa(caption = tab_tagfa)
-```
-
-```{r table_gee}
-table_gee_main(gee_unadj_df, caption = tab_gee_unadj)
-table_gee_main(gee_adj_df, caption = tab_gee_adj)
-```
-
-```{r table_qic}
-analyze_qic() %>% 
-    table_qic(caption = tab_qic)
-```
-
-
 # Figures
-
-![`r fig_consort`](../img/flowDiagramSample.png)
-
-![`r fig_dag_is`](../img/dagitty-model-is.png)
-
-![`r fig_dag_bcf`](../img/dagitty-model-bcf.png)
 
 ```{r fig_tagfa, fig.cap=fig_tagfa}
 plot_tagfa()
@@ -696,7 +675,7 @@ plot_tagfa()
 plot_heatmap(cor_df)
 ```
 
-```{r fig_heatmap, fig.cap=fig_heatmap_mol}
+```{r fig_heatmap_mol, fig.cap=fig_heatmap_mol}
 plot_heatmap(cor_df_mol, unit = 'mol%')
 ```
 
@@ -738,8 +717,8 @@ shown).
 For the confounders, they were chosen based on previous literature, from
 directed acyclic graph (DAG) [@Greenland1999a] recommendations, and from
 QIC. The DAG recommendations were obtained from using the DAGitty software
-[@Textor2011a], http://dagitty.net/. See `r cite_f('dag_is')` and 
-`r cite_f('dag_bcf')`) for the DAG model. See `r cite_t('qic')` for the
+[@Textor2011a], http://dagitty.net/. See `r cite_sf('dag_is')` and 
+`r cite_sf('dag_bcf')`) for the DAG model. See `r cite_st('qic')` for the
 comparison of various models with different covariates using QIC. While the
 final GEE model selected as best fitting differed between insulin sensitivity
 and beta-cell function measures, the differences in QIC values were less than 10
@@ -770,5 +749,30 @@ After specifying the model on the training set, results were compared using the
 testing set to determine whether how predictive the model was given a new
 dataset. Final results shown in the figures use the full dataset (rather than a
 training or testing set)
+
+## Supplemental Tables
+
+```{r table_qic}
+analyze_qic() %>% 
+    table_qic(caption = tab_qic)
+```
+
+```{r table_tagfa}
+table_tagfa(caption = tab_tagfa)
+```
+
+```{r table_gee}
+table_gee_main(gee_unadj_df, caption = tab_gee_unadj)
+table_gee_main(gee_adj_df, caption = tab_gee_adj)
+```
+
+## Supplemental Figures
+
+![`r fig_consort`](../img/flowDiagramSample.png)
+
+![`r fig_dag_is`](../img/dagitty-model-is.png)
+
+![`r fig_dag_bcf`](../img/dagitty-model-bcf.png)
+
 
 # References
