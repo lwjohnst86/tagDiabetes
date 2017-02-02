@@ -17,7 +17,7 @@ prep_qic_data <- function(data) {
             TotalTG,
             TotalNE,
             Sex,
-            Ethnicity,
+            BiEthnicity,
             MET,
             ALT,
             BaseAge,
@@ -67,22 +67,25 @@ qic_is <- function(data = project_data) {
     )
 
     Int <- stats::update(M0, . ~ . + TotalTG:YearsFromBaseline)
-    Full <- stats::update(M0, . ~ . + Waist + BaseAge + Ethnicity + Sex + ALT + MET +
+    Full <- stats::update(M0, . ~ . + Waist + BaseAge + BiEthnicity + Sex + ALT + MET +
                 AlcoholPerWk + FamHistDiab + TobaccoUse + TotalNE)
-    M1 <- stats::update(M0, . ~ . + Waist + BaseAge + Ethnicity + Sex)
-    M2 <- stats::update(M0, . ~ . + Waist + BaseAge + Ethnicity + Sex + ALT)
-    M3 <- stats::update(M0, . ~ . + Waist + BaseAge + Ethnicity + Sex + ALT + MET)
-    M4 <- stats::update(M0, . ~ . + Waist + BaseAge + Ethnicity + Sex + ALT + MET + AlcoholPerWk)
-    M5 <- stats::update(M0, . ~ . + Waist + BaseAge + Ethnicity + Sex + ALT + MET + AlcoholPerWk +
+    M1 <- stats::update(M0, . ~ . + Waist + BaseAge + BiEthnicity + Sex)
+    M2 <- stats::update(M0, . ~ . + Waist + BaseAge + BiEthnicity + Sex + ALT)
+    M3 <- stats::update(M0, . ~ . + Waist + BaseAge + BiEthnicity + Sex + ALT + MET)
+    M4 <- stats::update(M0, . ~ . + Waist + BaseAge + BiEthnicity + Sex + ALT + MET + AlcoholPerWk)
+    M5 <- stats::update(M0, . ~ . + Waist + BaseAge + BiEthnicity + Sex + ALT + MET + AlcoholPerWk +
                           FamHistDiab)
-    M6 <- stats::update(M0, . ~ . + Waist + BaseAge + Ethnicity + Sex + ALT + FamHistDiab + TobaccoUse)
-    M7 <- stats::update(M0, . ~ . + Waist + BaseAge + Ethnicity + Sex + ALT + FamHistDiab)
-    M8 <- stats::update(M0, . ~ . + Waist + BaseAge + Ethnicity + Sex + ALT + MET + FamHistDiab)
-    M9 <- stats::update(M0, . ~ . + Waist + BaseAge + Ethnicity + Sex + ALT + MET + TotalNE)
-    M10 <- stats::update(M0, . ~ . + Waist + BaseAge + Ethnicity + Sex + ALT + MET + TotalNE +
+    M6 <- stats::update(M0, . ~ . + Waist + BaseAge + BiEthnicity + Sex + ALT + FamHistDiab + TobaccoUse)
+    M7 <- stats::update(M0, . ~ . + Waist + BaseAge + BiEthnicity + Sex + ALT + FamHistDiab)
+    M8 <- stats::update(M0, . ~ . + Waist + BaseAge + BiEthnicity + Sex + ALT + MET + FamHistDiab)
+    M9 <- stats::update(M0, . ~ . + Waist + BaseAge + BiEthnicity + Sex + ALT + MET + TotalNE)
+    M10 <- stats::update(M0, . ~ . + Waist + BaseAge + BiEthnicity + Sex + ALT + MET + TotalNE +
                           FamHistDiab)
+    M11 <- stats::update(M0, . ~ . + BaseAge + BiEthnicity + Sex + ALT + MET + TotalNE)
+    M12 <- stats::update(M0, . ~ . + BaseAge + BiEthnicity + Sex + ALT + MET +
+                AlcoholPerWk + FamHistDiab + TobaccoUse + TotalNE)
 
-    MuMIn::model.sel(M0, Int, Full, M1, M2, M3, M4, M5, M6, M7, M8, M9, M10,
+    MuMIn::model.sel(M0, Int, Full, M1, M2, M3, M4, M5, M6, M7, M8, M9, M10, M11, M12,
                      rank = MuMIn::QIC) %>%
         clean_qic()
 }
@@ -107,22 +110,25 @@ qic_bcf <- function(data = project_data) {
     )
 
     Int <- stats::update(M0, . ~ . + TotalTG:YearsFromBaseline)
-    Full <- stats::update(M0, . ~ . + Waist + BaseAge + Ethnicity + Sex + ALT + MET +
+    Full <- stats::update(M0, . ~ . + Waist + BaseAge + BiEthnicity + Sex + ALT + MET +
                 AlcoholPerWk + FamHistDiab + TobaccoUse + TotalNE)
-    M1 <- stats::update(M0, . ~ . + Waist + BaseAge + Ethnicity + Sex)
-    M2 <- stats::update(M0, . ~ . + Waist + BaseAge + Ethnicity + Sex + ALT)
-    M3 <- stats::update(M0, . ~ . + Waist + BaseAge + Ethnicity + Sex + ALT + MET)
-    M4 <- stats::update(M0, . ~ . + Waist + BaseAge + Ethnicity + Sex + ALT + MET + AlcoholPerWk)
-    M5 <- stats::update(M0, . ~ . + Waist + BaseAge + Ethnicity + Sex + ALT + MET + AlcoholPerWk +
+    M1 <- stats::update(M0, . ~ . + Waist + BaseAge + BiEthnicity + Sex)
+    M2 <- stats::update(M0, . ~ . + Waist + BaseAge + BiEthnicity + Sex + ALT)
+    M3 <- stats::update(M0, . ~ . + Waist + BaseAge + BiEthnicity + Sex + ALT + MET)
+    M4 <- stats::update(M0, . ~ . + Waist + BaseAge + BiEthnicity + Sex + ALT + MET + AlcoholPerWk)
+    M5 <- stats::update(M0, . ~ . + Waist + BaseAge + BiEthnicity + Sex + ALT + MET + AlcoholPerWk +
                           FamHistDiab)
-    M6 <- stats::update(M0, . ~ . + Waist + BaseAge + Ethnicity + Sex + ALT + FamHistDiab + TobaccoUse)
-    M7 <- stats::update(M0, . ~ . + Waist + BaseAge + Ethnicity + Sex + ALT + FamHistDiab)
-    M8 <- stats::update(M0, . ~ . + Waist + BaseAge + Ethnicity + Sex + ALT + MET + FamHistDiab)
-    M9 <- stats::update(M0, . ~ . + Waist + BaseAge + Ethnicity + Sex + ALT + MET + TotalNE)
-    M10 <- stats::update(M0, . ~ . + Waist + BaseAge + Ethnicity + Sex + ALT + MET + TotalNE +
+    M6 <- stats::update(M0, . ~ . + Waist + BaseAge + BiEthnicity + Sex + ALT + FamHistDiab + TobaccoUse)
+    M7 <- stats::update(M0, . ~ . + Waist + BaseAge + BiEthnicity + Sex + ALT + FamHistDiab)
+    M8 <- stats::update(M0, . ~ . + Waist + BaseAge + BiEthnicity + Sex + ALT + MET + FamHistDiab)
+    M9 <- stats::update(M0, . ~ . + Waist + BaseAge + BiEthnicity + Sex + ALT + MET + TotalNE)
+    M10 <- stats::update(M0, . ~ . + Waist + BaseAge + BiEthnicity + Sex + ALT + MET + TotalNE +
                           FamHistDiab)
+    M11 <- stats::update(M0, . ~ . + BaseAge + BiEthnicity + Sex + ALT + MET + TotalNE)
+    M12 <- stats::update(M0, . ~ . + BaseAge + BiEthnicity + Sex + ALT + MET +
+                AlcoholPerWk + FamHistDiab + TobaccoUse + TotalNE)
 
-    MuMIn::model.sel(M0, Int, Full, M1, M2, M3, M4, M5, M6, M7, M8, M9, M10,
+    MuMIn::model.sel(M0, Int, Full, M1, M2, M3, M4, M5, M6, M7, M8, M9, M10, M11, M12,
                      rank = MuMIn::QIC) %>%
         clean_qic()
 }
