@@ -4,9 +4,11 @@ DONE Confirmed/fixed that incident diabetes cases were not used in GEE
 DONE Included as first model time interaction in QIC/GEE
 DONE Keep last observation for calculating median followup
 DONE Compared VN vs MonthsFromBaseline in QIC
-TODO Identified covariate that changed BCF association
+DONE Identified covariate that changed BCF association
+TODO Added another figure of adj with and without waist to manuscript
 DONE Changed monthsfrombaseline to yearsfrombaseline in GEE models
-TODO Added interaction with time, sex, ethnicity unadjusted results
+TODO Added interaction with time, sex, ethnicity unadjusted results in Results
+TODO Created plots to view interaction with time
 DONE Included sensitivity analysis based on sex
 TODO Included sensitivity analysis with covariates as time-independent
 DONE Switched GEE fig labels to top

@@ -16,46 +16,55 @@ vignette: >
 ```{r setup, message=FALSE}
 devtools::load_all()
 library(dplyr)
+
+knitr::opts_chunk$set(fig.width = 7, fig.height = 5)
+
+explore_gee <- function(covars = covariates, caption = NULL, graph = FALSE) {
+    m <- analyze_gee(covars = covars)
+    m <- filter(m, p.value <= 0.05)
+    print(nrow(m))
+    if (graph) {
+        print(caption)
+        plot_gee_main(m)
+    } else {
+        table_gee_main(m, caption = caption)
+    }
+}
 ```
 
 # Unadjusted (with YearsFromBaseline)
-```{r unadj, cache=TRUE}
-m <- analyze_gee(covars = 'YearsFromBaseline')
-m <- filter(m, p.value <= 0.05) 
-nrow(m)
-table_gee_main(m)
+```{r unadj_years, cache=TRUE}
+explore_gee(covars = 'YearsFromBaseline')
 ```
 
 # Unadjusted (with VN)
-```{r unadj, cache=TRUE}
-m <- analyze_gee(covars = 'VN')
-m <- filter(m, p.value <= 0.05) 
-nrow(m)
-table_gee_main(m)
+```{r unadj_vn, cache=TRUE}
+explore_gee(covars = 'VN')
 ```
 
 # Adjusted
 ```{r adj, cache=TRUE}
-m <- analyze_gee()
-m <- filter(m, p.value <= 0.05) 
-nrow(m)
-table_gee_main(m)
+explore_gee()
 ```
 
 ## Adjusting for `M4` in qic.html
 
-```{r}
-m <- analyze_gee(covars = c('Waist', 'BaseAge', 'Ethnicity', 
-                            'Sex', 'ALT', 'MET', 'AlcoholPerWk'))
-m <- filter(m, p.value <= 0.05) 
-nrow(m)
-table_gee_main(m)
+```{r adj_m4, cache=TRUE}
+explore_gee(covars = c(
+    'Waist',
+    'BaseAge',
+    'Ethnicity',
+    'Sex',
+    'ALT',
+    'MET',
+    'AlcoholPerWk'
+    ))
 ```
 
 # Interactions
 
 ## Time (Unadjusted)
-```{r int_time, cache=TRUE}
+```{r int_time_unadj, cache=TRUE}
 m <- analyze_gee(covar = 'YearsFromBaseline', intvar = 'YearsFromBaseline')
 m <- filter(m, p.value <= 0.05) 
 nrow(m)
@@ -121,3 +130,63 @@ nrow(m)
 
 table_gee_main(m)
 ```
+
+# Identify covariates that impact association
+
+```{r covar_id, cache=TRUE}
+covars <- c('YearsFromBaseline', 'Sex', 'BiEthnicity', 'BaseAge')
+explore_gee(covars = covars,
+            caption = 'Basic demographics',
+            graph = TRUE)
+
+explore_gee(
+    covars = c(covars, 'Waist'),
+    caption = 'Basic demographics with waist',
+    graph = TRUE
+    )
+
+explore_gee(covars = c(covars, 'ALT'),
+            caption = 'Basic demographics with ALT',
+            graph = TRUE)
+
+explore_gee(
+    covars = c(covars, 'TotalNE'),
+    caption = 'Basic demographics with Total NEFA',
+    graph = TRUE
+    )
+
+explore_gee(covars = c(covars, 'MET'),
+            caption = 'Basic demographics with MET',
+            graph = TRUE)
+
+explore_gee(
+    covars = c(covars, 'ALT', 'Waist'),
+    caption = 'Basic demographics with Waist and ALT',
+    graph = TRUE
+    )
+
+explore_gee(
+    covars = c(covars, 'TotalNE', 'Waist'),
+    caption = 'Basic demographics with Waist and Total NEFA',
+    graph = TRUE
+    )
+
+explore_gee(
+    covars = c(covars, 'TotalNE', 'ALT'),
+    caption = 'Basic demographics with ALT and Total NEFA',
+    graph = TRUE
+    )
+
+explore_gee(
+    covars = c(covars, 'TotalNE', 'ALT', 'Waist'),
+    caption = 'Basic demographics with Waist, ALT, and Total NEFA',
+    graph = TRUE
+    )
+
+explore_gee(
+    covars = c(covars, 'TotalNE', 'ALT', 'Waist', 'MET'),
+    caption = 'Basic demographics with Waist, ALT, Total NEFA, and MET',
+    graph = TRUE
+    )
+```
+
