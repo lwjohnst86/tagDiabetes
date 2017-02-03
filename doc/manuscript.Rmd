@@ -128,6 +128,7 @@ fig_heatmap_mol <- fig('heatmap_mol', 'Pearson correlation heatmap of triacylgly
 fig_heatmap_tagfa <- fig('heatmap_tagfa', 'Pearson correlation heatmap of the triacylglycerol fatty acids in the PROMISE participants from the baseline visit (2004-2006). The correlations of fatty acids grouped using heirarchical cluster analysis; fatty acids along the x and y axis are ordered according to this analysis. Darker orange represents a positive correlation; darker blue represents a negative correlation.')
 fig_gee_unadj <- fig('gee_unadj', 'Time-adjusted GEE models of the association of the triacylglycerol fatty acids (mol% and nmol/mL) and total clinically-measured TAG with insulin sensitivity and beta-cell function outcomes using the 6 year longitudinal data from the PROMISE cohort. X-axis values represent a percent difference in the outcome per SD increase in the fatty acid. P-values were adjusted for the BH false discovery rate, with the largest dot representing a significant (p<0.05) association.')
 fig_gee_adj <- fig('gee_adj', 'Fully-adjusted GEE models of the association of the triacylglycerol fatty acids (mol% and nmol/mL) and total clinically-measured TAG with insulin sensitivity and beta-cell function outcomes using the 6 year longitudinal data from the PROMISE cohort. Variables controlled for were follow-up time, waist circumference, baseline age, ethnicity, sex, ALT, physical activity, and total NEFA. X-axis values represent a percent difference in the outcome per SD increase in the fatty acid. P-values were adjusted for the BH false discovery rate, with the largest dot representing a significant (p<0.05) association.')
+fig_gee_adj_nowaist <- sfig('gee_adj_nowaist', 'Fully-adjusted (without waist size) GEE models of the association of the triacylglycerol fatty acids (mol% and nmol/mL) and total clinically-measured TAG with insulin sensitivity and beta-cell function outcomes using the 6 year longitudinal data from the PROMISE cohort. Variables controlled for were follow-up time, baseline age, ethnicity, sex, ALT, physical activity, and total NEFA. X-axis values represent a percent difference in the outcome per SD increase in the fatty acid. P-values were adjusted for the BH false discovery rate, with the largest dot representing a significant (p<0.05) association.')
 fig_pls <- fig('pls', 'Partial least squares (PLS) models showing the clustering of triacylglycerol fatty acids on insulin sensitivity and beta-cell function measures. The R value shown above the graph is the correlation between predicted and actual values, using cross-validation; a higher value suggests the fatty acids strongly predict the metabolic outcome. The percent explained variance of each component is shown in brackets on each axis. The solid line represents an explained variance of 100% while the dashed line represents an explained variance of 50%. Fatty acids between these lines represent variables that strongly explain the underlying structure of the data. See the Supplemental Methods for a description of PLS analysis and an explanation of interpreting this plot.')
 ```
 
@@ -383,8 +384,12 @@ to `r est1$b_ci$est[37]`% higher insulin sensitivity for every SD increase in
 Both clinically-measured TAG and total TAGFA concentration had very strong
 negative associations with all outcome variables. There were no significant
 interactions by time, sex, or ethnicity for any of the TAGFA (data not shown).
-A tabular presentation of the GEE results is shown in `r cite_st("gee_unadj")` 
-for unadjusted models and `r cite_st("gee_adj")` for adjusted models.
+We ran sensitivity analyses to identify which covariate attenuated the beta-cell
+function associations from the unadjusted model. We found that including waist
+circumference in the model lead to the attenuation of associations, shown in 
+`r cite_st("gee_adj_nowaist")`. A tabular presentation of the GEE results is
+shown in `r cite_st("gee_unadj")` for unadjusted models and 
+`r cite_st("gee_adj")` for adjusted models.
 
 ## Clustering of TAGFA by metabolic measures
 
@@ -774,5 +779,8 @@ table_gee_main(gee_adj_df, caption = tab_gee_adj)
 
 ![`r fig_dag_bcf`](../img/dagitty-model-bcf.png)
 
+```{r fig_gee_adj_nowaist, fig.cap=fig_gee_adj_nowaist}
+plot_gee_main(analyze_gee(covars = covariates[which(covariates != 'Waist')]))
+```
 
 # References
