@@ -36,6 +36,32 @@ prep_gee_data <- function(data) {
         dplyr::arrange(SID, VN)
 }
 
+#' Add the extracted PLS scores to the data for use in GEE.
+#'
+#' @param data The project data.
+#' @param pls_results Results dataset from PLS.
+#' @export
+prep_gee_pls_data <- function(data = project_data, pls_results) {
+    sid_vn <- data %>%
+        dplyr::filter(VN == 0) %>%
+        dplyr::select_(.dots = c(outcomes, tg_pct, 'SID', covariates)) %>%
+        stats::na.omit() %>%
+        dplyr::full_join(dplyr::select(project_data, SID, VN)) %>%
+        dplyr::select_(.dots = c(outcomes, 'SID', 'VN'))
+
+    pls_results %>%
+    {
+        dplyr::bind_cols(tibble::as_data_frame(.$model$Y),
+                         tibble::as_data_frame(unclass(.$scores))[1:2])
+    } %>%
+        dplyr::rename(Comp1 = `Comp 1`, Comp2 = `Comp 2`) %>%
+        dplyr::full_join(sid_vn) %>%
+        dplyr::select(SID, VN, Comp1, Comp2) %>%
+        dplyr::full_join(data) %>%
+        dplyr::arrange(SID, VN) %>%
+        tidyr::fill(Comp1, Comp2)
+}
+
 # Analyze -----------------------------------------------------------------
 
 #' Run GEE models on the prepared project data.
@@ -43,10 +69,15 @@ prep_gee_data <- function(data) {
 #' @param data The project data
 #' @param y outcomes (IS, BCF)
 #' @param x predictors (TAGFA)
-#' @param covariates to adjust for
 #' @param intvar interaction variable
 #' @param rename_x Function to rename x variables
+#' @param covars Covariates to include in the model
+#' @param data_prep Whether to clean the dataset before hand (either basic prep
+#'   or extracting PLS scores).
+#' @param pls_results Optional; if doing the data_prep for PLS, need to include
+#'   the pls results dataset.
 #' @param rename_y Function to rename y variables
+#'
 #' @export
 analyze_gee <- function(data = project_data,
                         y = outcomes,
@@ -58,7 +89,9 @@ analyze_gee <- function(data = project_data,
                         covars = covariates,
                         intvar = NULL,
                         rename_x = renaming_fats,
-                        rename_y = renaming_outcomes) {
+                        rename_y = renaming_outcomes,
+                        data_prep = c('basic', 'pls', 'none'),
+                        pls_results = NULL) {
 
     int <- !is.null(intvar)
     if (int) {
@@ -66,25 +99,36 @@ analyze_gee <- function(data = project_data,
     } else {
         extract_term <- 'Xterm$'
     }
+
+    data_prep <- match.arg(data_prep)
+    switch(data_prep,
+           none = {data <- data},
+           basic = {data <- prep_gee_data(data)},
+           pls = {data <- prep_gee_pls_data(data, pls_results = pls_results)})
+
     data %>%
-        prep_gee_data() %>%
         mason::design('gee') %>%
         mason::add_settings(family = stats::gaussian(),
                             corstr = 'ar1', cluster.id = 'SID') %>%
         mason::add_variables('yvars', y) %>%
-        mason::add_variables('xvars', x[['tg_pct']]) %>%
-        mason::add_variables('covariates', covars) %>% {
-            if (int) {
-                mason::add_variables(., 'interaction', intvar)
-            } else {
-                .
-            }
-        } %>%
-        mason::construct() %>%
-        mason::add_variables('xvars', x[['tg_conc']]) %>%
-        mason::construct() %>%
-        mason::add_variables('xvars', x[['tg_total']]) %>%
-        mason::construct() %>%
+        {if (is.list(x)) {
+            mason::add_variables(., 'xvars', x[['tg_pct']]) %>%
+                mason::add_variables('covariates', covars) %>% {
+                    if (int) {
+                        mason::add_variables(., 'interaction', intvar)
+                    } else {
+                        .
+                    }
+                } %>%
+                mason::construct() %>%
+                mason::add_variables('xvars', x[['tg_conc']]) %>%
+                mason::construct() %>%
+                mason::add_variables('xvars', x[['tg_total']]) %>%
+                mason::construct()
+        } else {
+            mason::add_variables(., 'xvars', x) %>%
+                mason::construct()
+        }} %>%
         mason::scrub() %>%
         mason::polish_filter(extract_term, 'term') %>%
         dplyr::mutate(unit = ifelse(grepl('pct', Xterms), 'mol%',

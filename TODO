@@ -9,11 +9,12 @@ DONE Added another figure of adj with and without waist to manuscript
 DONE Changed monthsfrombaseline to yearsfrombaseline in GEE models
 TODO Added interaction with time, sex, ethnicity unadjusted results in Results
 TODO Created plots to view interaction with time
+TODO Moved interaction plot to seer, used seer function instead
 DONE Included sensitivity analysis based on sex
 TODO Included sensitivity analysis with covariates as time-independent
 DONE Switched GEE fig labels to top
 DONE Created and added PLS fig (using HOMA2)
-TODO Created and added GEE fig with PLS scores
+DONE Created and added GEE with PLS scores code and results
 DONE Fix outcomes in heatmap and add axis tilt
 DONE Created and added heatmap fig (with just TAGFA)
 DONE Created and added heatmap fig using mol%

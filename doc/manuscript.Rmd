@@ -151,6 +151,17 @@ pls_issi2_t <- analyze_pls(y = 'lISSI2')
 cor_df <- analyze_corr()
 cor_df_mol <- analyze_corr(y = tg_pct)
 cor_df_tagfa <- analyze_corr_tagfa()
+
+pls_gee <- project_data %>%
+    analyze_gee(
+        x = c('Comp1', 'Comp2'),
+        data_prep = 'pls',
+        pls_results = pls_isi
+        ) %>% 
+    dplyr::select(Yterms, Xterms, estimate, p.value) %>% 
+    dplyr::filter(Xterms == 'Comp1') %>% 
+    dplyr::mutate(p.value = format_p(p.value),
+                  estimate = format_rounding(estimate))
 ```
 
 ```{r inline}
@@ -411,7 +422,11 @@ however there there was a low correlation (though significant at
 p`r cor_pls_igi$p`) between the predicted values and the actual values 
 (r=`r cor_pls_igi$r` to `r cor_pls_issi2$r`), suggesting poor predictability.
 Given the low predictability, only the insulin sensitivity measures are
-presented.
+presented. We used the extracted PLS scores as the predictor variable in the GEE
+models and found negative associations of the first component on all outcome
+variables, with the strongest association being with the insulin sensitivity
+variables (beta=`r pls_gee$estimate[3]`, all p`r pls_gee$p.value[1]`; using PLS
+scores constrained by ISI).
 
 # Discussion
 
