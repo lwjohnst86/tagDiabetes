@@ -63,25 +63,48 @@ explore_gee(covars = c(
 
 # Interactions
 
-## Time (Unadjusted)
+## Time (Unadjusted; using YearsFromBaseline)
 ```{r int_time_unadj, cache=TRUE}
 m <- analyze_gee(covar = 'YearsFromBaseline', intvar = 'YearsFromBaseline')
 m <- filter(m, p.value <= 0.05) 
 nrow(m)
 
 m %>% 
-    select(Yterms, Xterms, term, estimate) %>% 
+    select(Yterms, Xterms, unit, term, estimate) %>% 
     pander::pander()
 ```
 
-## Time
+## Time (Unadjusted; using VN)
+```{r int_time_unadj_vn, cache=TRUE}
+m <- analyze_gee(covar = 'VN', intvar = 'VN')
+m <- filter(m, p.value <= 0.05) 
+nrow(m)
+
+m %>% 
+    select(Yterms, Xterms, unit, term, estimate) %>% 
+    pander::pander()
+```
+
+## Time (using YearsFromBaseline)
 ```{r int_time, cache=TRUE}
 m <- analyze_gee(intvar = 'YearsFromBaseline')
 m <- filter(m, p.value <= 0.05) 
 nrow(m)
 
 m %>% 
-    select(Yterms, Xterms, term, estimate) %>% 
+    select(Yterms, Xterms, unit, term, estimate) %>% 
+    pander::pander()
+```
+
+## Time (using VN)
+```{r int_time_vn, cache=TRUE}
+covars_int_vn <- c(covariates[which(covariates != 'YearsFromBaseline')], 'VN')
+m <- analyze_gee(covars = covars_int_vn, intvar = 'VN')
+m <- filter(m, p.value <= 0.05) 
+nrow(m)
+
+m %>% 
+    select(Yterms, Xterms, unit, term, estimate) %>% 
     pander::pander()
 ```
 
@@ -92,7 +115,7 @@ m <- filter(m, p.value <= 0.05)
 nrow(m)
 
 m %>% 
-    select(Yterms, Xterms, term, estimate) %>% 
+    select(Yterms, Xterms, unit, term, estimate) %>% 
     pander::pander()
 ```
 
@@ -103,7 +126,7 @@ m <- filter(m, p.value <= 0.05)
 nrow(m)
 
 m %>% 
-    select(Yterms, Xterms, term, estimate) %>% 
+    select(Yterms, Xterms, unit, term, estimate) %>% 
     pander::pander()
 ```
 
