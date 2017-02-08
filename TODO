@@ -72,7 +72,7 @@ TODO Used 'observed' vs 'actual'/'measured' for prediction
 DONE Included wording on using CV for prediction
 TODO Rearranged diabetes after prediabetes
 TODO Included dysglycemia as covariate # yea?
-TODO Changed clinical TAG as only baseline for GEE
+DONE Changed clinical TAG as only baseline for GEE
 TODO Changed diabetes and prediabetes numbers to reflect analysis
 TODO Changed Zhen to second author
 TODO Added models to caption for QIC table
