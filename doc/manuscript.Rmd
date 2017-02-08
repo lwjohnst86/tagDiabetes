@@ -324,9 +324,9 @@ used to identify the patterns of TAGFA composition against insulin sensitivity
 and beta-cell function. For a detailed explanation of PLS see the Supplemental
 Methods, but briefly, PLS is a technique that extracts latent structures
 (clusters) underlying a set of predictor variables conditional on a response
-variable(s) (i.e. the outcome variables). These extracted latent structures can
-be used to calculated the predicted value of the outcome values, determining how
-well TAGFA predict metabolic function by comparing to the measured metabolic function.
+variable(s) (i.e. the outcome variables). We determined the predictive strength
+of modeling the TAGFA composition on metabolic function by using
+cross-validation on the PLS model.
 
 All analyses were performed using R `r getRversion()` [@Rbase], along with the R
 packages geepack `r packageVersion('geepack')` for GEE [@Hoejsgaard2006a] and pls

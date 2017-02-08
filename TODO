@@ -9,9 +9,7 @@ DONE Added another figure of adj with and without waist to manuscript
 DONE Changed monthsfrombaseline to yearsfrombaseline in GEE models
 DONE Added interaction with time, sex, ethnicity unadjusted results in Results
 DONE Created plots to view interaction with time in a vignette
-TODO Moved interaction plot to seer, used seer function instead
 DONE Included sensitivity analysis based on sex
-TODO Included sensitivity analysis with covariates as time-independent
 DONE Switched GEE fig labels to top
 DONE Created and added PLS fig (using HOMA2)
 DONE Created and added GEE with PLS scores code and results
@@ -21,7 +19,6 @@ DONE Created and added heatmap fig using mol%
 DONE Included citation for DAGitty (or link)
 DONE Included DAG (from DAGitty) as Supplement
 DONE Included/fixed QIC table
-TODO Included Basic characteristic table in main with p-value
 DONE Included number of participants with 1, 2, 3 visits
 DONE Included MonthsFromBaseline median, IQR in results
 DONE Wrote up figure captions
@@ -29,9 +26,6 @@ DONE Wrote up table captions
 DONE Fixed renaming of basic char table rows
 DONE Assigned the captions to figures and tables
 DONE Clarified that most participants had a 6yr visit
-TODO Clarified whether covariates were confounders, mediators, etc.
-    # If there are more mediators, they should be used in separate model and shown as such
-    # Adjust for waist? Remove ALT?
 TODO Added analyses in vignette on impact of meds on TAGFA
 DONE Included stats method for hclust of tagfa heatmap
 DONE Changed HOMA-IR methods to HOMA2-%S
@@ -39,7 +33,6 @@ DONE Fixed results after HOMA-IR changed to HOMA2
 TODO Converted gee calc function into list of lists
 TODO Added equations for each outcome measure to methods
 DONE Added handling of diabetes cases in methods
-TODO Added handling of potential over-adjustment to methods
 TODO Added impact of adjusting for waist on BCF results to manuscript
 DONE Polish up methods
 DONE First (rough) draft of intro
@@ -73,6 +66,15 @@ TODO Added analysis using PLS scores and AROC with incident dysglycemia
 TODO Moved supplemental material into new, separate file
 DONE Moved some tables and figs into Supplemental Results
 DONE Updated QIC with models excluding waist
+TODO Made edits based on Tony's comments
+TODO Added wording regarding GEE efficiency with missed visits
+TODO Used 'observed' vs 'actual'/'measured' for prediction
+DONE Included wording on using CV for prediction
+TODO Rearranged diabetes after prediabetes
+TODO Included dysglycemia as covariate # yea?
+TODO Changed clinical TAG as only baseline for GEE
+TODO Changed diabetes and prediabetes numbers to reflect analysis
+TODO Changed Zhen to second author
 TODO Added models to caption for QIC table
 TODO Edits as per Richard's suggestions # Create branch
 TODO Next edited version sent to co-authors # Create branch
@@ -84,6 +86,14 @@ TODO Added version numbers/session info of packages used
 TODO Submitted to journal
 >>> v0.1.0
 
+TODO Included sensitivity analysis with covariates as time-independent # maybe?
+TODO Included Basic characteristic table in main with p-value # maybe?
+TODO Moved interaction plot to seer, used seer function instead # maybe?
+TODO Clarified whether covariates were confounders, mediators, etc.
+    # Maybe?
+    # If there are more mediators, they should be used in separate model and shown as such
+    # Adjust for waist? Remove ALT?
+TODO Added handling of potential over-adjustment to methods # maybe?
 TODO Revisions as per Reviewer 1
 TODO Revisions as per Reviewer 2
 TODO Resubmit to journal
