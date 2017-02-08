@@ -729,13 +729,13 @@ gridExtra::grid.arrange(
     ncol = 2)
 ```
 
-# Supplemental Methods
+# Supplemental Material
 
 ## Supplemental Methods: Statistical analysis
 
 Generalized estimating equations (GEE) is a technique similar to mixed effects
 modeling, except it calculates the marginal population estimates compared to the
-subject-specific estimates in mixed effects models. GEE is well suited and commonly
+subject-specific estimates in mixed effects models. GEE is well suited to and commonly
 used in longitudinal cohort studies, especially given its capacity to handle
 missed visits.
 
@@ -755,19 +755,21 @@ final GEE model selected as best fitting differed between insulin sensitivity
 and beta-cell function measures, the differences in the QIC values were less than 10
 between many of the models, suggesting similar fit. As such, we selected the
 model that had the fewest covariates and that had similar fit between the
-outcome measures. {{NEFA comment for inclusion here}}
+outcome measures. In particular for NEFA, it is used substantially as a source
+of fatty acids in hepatic TAG production [@Barrows2006a] and may be a strong
+confounder.
 
 No imputation was conducted on missing values. Prevalent cases of diabetes at
 baseline and incident cases at follow-up were excluded from the GEE analysis. 
 The resulting GEE beta estimates were exponentiated to allow the interpretation
 as stated in the main methods.
 
-<!--
-The number of components to extract from PLS was determined by 10-fold CV.
-Dataset was split into a training set and a testing set to determine the
-predictability of the given PLS model. Final results presented use the full dataset.a
--->
-
+PLS is a technique used for multivariate, high dimensionality datasets where
+there is a potential or likely underlying structure to the data. Because it uses
+a response variable (i.e. the outcome or y variable) when identifying the 
+underlying structure it is known as a supervised statistical method, which gives
+it greater predictive power when using the model against updated or new data.
+PLS generates a number of components based on the number of variables provided.
 We used internal 10-fold cross-validation to determine which components to
 extract from the PLS analysis. Based on the internal cross-validation, the first
 two components gave the highest amount of explained variance (data not shown),
@@ -778,10 +780,8 @@ The data set was randomly split in half into a training set and a testing set.
 After specifying the model on the training set, results were compared using the 
 testing set to determine whether how predictive the model was given a new
 dataset. Final results shown in the figures use the full dataset (rather than a
-training or testing set)
-
-No prevalent diabetes cases were included in the PLS
-analysis. 
+training or testing set). No prevalent diabetes cases were included in the PLS 
+analysis.
 
 ## Supplemental Tables
 

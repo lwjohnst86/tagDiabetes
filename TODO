@@ -62,7 +62,7 @@ TODO Moved format_rounding etc into aide, used aide instead
 TODO Switched load_data to match new prodigen style
 DONE Edits as per Tony's suggestions from doc # Create branch
 DONE Edits as per Tony's suggestions from email (esp re: vs Tg)
-TODO Expanded on wording of PLS methods as per Tony's email
+DONE Expanded on wording of PLS methods as per Tony's email
 DONE Changed title to be results agnostic
 DONE Removed FDR-corrected numbers in Results
 DONE Added Bernie onto author list
