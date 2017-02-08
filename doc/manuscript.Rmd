@@ -60,25 +60,26 @@ Word count: ~4200
 # Background
 
 Hypertriglyceridemia is an extensively studied and well known factor involved in
-the dysregulation of metabolic function and subsequent negative health outcomes {{cite}}.
-It is a component of the metabolic syndrome [@Alberti2009], a strong risk factor for
-cardiovascular disease [@DAgostino2004a], and has been shown to contribute to the pathogenesis
-of diabetes {{cite}}. The measurement of circulating triacylglcerides (TAG) is commonly done
-during routine clinical visits as part of health assessment. However, clinically
-measured TAG is limited as it represents all the types of fatty acids within the
-TAG fraction as a single measure. Given the increasing appreciation for the role
-of the specific fatty acid composition on health outcomes, for instance with
-differences in associations of fatty acids within the PL lipid fraction
-[@Forouhi2014a; @Ma2015a] including an analysis from the PROMISE cohort
-[@Johnston2016a], there are relatively few studies that have explored this area
-of research in the TAG fraction.
+the dysregulation of metabolic function and subsequent negative health outcomes [@Chehade2013a].
+It is a component of the metabolic syndrome [@Alberti2009] and a strong risk factor for
+cardiovascular disease [@DAgostino2004a], in addition to it's role in metabolic
+dysfunction [@Verges2015a; @Kawano2013a]. The measurement of circulating 
+triacylglcerides (TAG) is commonly done during routine clinical visits as part
+of health assessment. However, clinically measured TAG is limited as it
+represents all the types of fatty acids within the TAG fraction as a single
+measure. Given the increasing appreciation for the role of the specific fatty
+acid composition on health outcomes, for instance with differences in
+associations of fatty acids within the PL lipid fraction [@Forouhi2014a; @Ma2015a] 
+including an analysis from the PROMISE cohort [@Johnston2016a], there
+are relatively few studies that have explored this area of research in the TAG
+fraction.
 
 The interaction between TAG and insulin sensitivity is complex and has 
-components of a feedback system {{cite}}. Greater resistance to insulin in both the liver
+components of a feedback system [@Verges2015a]. Greater resistance to insulin in both the liver
 and muscle may result in greater production of TAG and secretion of lipoproteins
 that transport TAG [@Yu2012a]. Likewise, greater TAGFA may contribute to 
 metabolic dysfunction and lipotoxicity in various tissues, such as the 
-beta-cells, and thus continuing the cycle {{cite}}. Given the complexity and temporal
+beta-cells, and thus continuing the cycle [@Verges2015a]. Given the complexity and temporal
 nature of the relationship, long term studies with multiple data collections are
 paramount to better understanding the underlying biology and subsequent risk.
 
@@ -280,8 +281,8 @@ and the Insulin Secretion-Sensitivity Index-2 (ISSI-2) [@Retnakaran2009]. IGI/IR
 is a measure of the first phase of insulin secretion while ISSI-2 is analogous to
 the disposition index (but using OGTT values). Each index has been validated
 against gold standard measures [@Matthews1985; @Hermans1999a; @Matsuda1999; @Retnakaran2009].
-Specific formulas for each OGTT-derived measure can be found in the {{
-Supplementary Material }}.
+Specific formulas for each OGTT-derived measure can be found in the 
+Supplementary Material.
 
 The primary outcome variables for this analysis were HOMA2-%S, ISI, IGI/IR, and
 ISSI-2, which were log-transformed for the statistical modeling. The primary
@@ -490,7 +491,11 @@ dysfunction [@Ma2015a; @Zong2013a; @Lankinen2015a; @Kroger2011a]. Our study
 extends these findings by showing that TAGFA with 14 to 16 carbons clustered together and all
 strongly predicted lower insulin sensitivity. While these fatty acids also had a
 significant association with beta-cell function, the results were not as strong
-as with the insulin sensitivity.
+as with the insulin sensitivity. However, while the DNL cluster had a strong
+harmful association with insulin sensitivity when we include it in the GEE
+models, the magnitude of the association was not as large as when using
+clinically measured TAG, reinforcing that the total TAG concentration still more
+strongly predicts metabolic dysfunction.
 
 The link between higher DNL and increases in specific fatty acids has been
 examined in several studies. Previous studies that have examined DNL have used
@@ -511,10 +516,11 @@ that clustered together using the PLS analysis, implicating these fatty acids as
 indicative of a higher carbohydrate diet. A higher carbohydrate diet, 
 particularly one characterized by a predominance of simple carbohydrates, may
 lead to greater DNL in an attempt to control blood glucose, thus increasing hepatic
-fat stores and consequently increasing the amount of TAGFA in circulation {{cite}}. The higher
-concentration of circulating 14 and 16 carbon fatty acids may then expose
-tissues to greater lipotoxicity, for instance from palmitic acid (16:0), which
-is well-known to have harmful effects on tissues [@Riserus2008a; @Iggman2010a].
+fat stores and consequently increasing the amount of TAGFA in circulation
+[@Chehade2013a; @Verges2015a]. The higher concentration of circulating 14 and 16
+carbon fatty acids may then expose tissues to greater lipotoxicity, for instance
+from palmitic acid (16:0), which is well-known to have harmful effects on
+tissues [@Riserus2008a; @Iggman2010a].
 
 We found no interaction by time for any of the TAGFA on the metabolic outcomes.
 Analyzing these biological processes longitudinally is challenging due to the
@@ -528,8 +534,9 @@ insulin sensitivity and lower TAGFA composition indicative of lower DNL (less
 mechanisms and feedback loops involved, disentangling whether insulin
 sensitivity influences TAGFA more strongly than TAGFA influencing insulin
 sensitivity will require more complicated research designs and analyses. Our own
-null results on this question may tentatively point to an equally influential
-feedback mechanism between TAGFA and insulin sensitivity {{rephrase after exploring time interaction}}.
+findings of no interaction by time with the TAGFA tentatively suggest that the
+influence of either TAGFA or insulin resistance within the feedback loop may be
+of relatively equal strength. 
 
 Serum TAG are packaged into lipoproteins, particularly VLDL, by the liver. The
 sources of fatty acids for TAG production during fasting are stored fatty acids
@@ -547,8 +554,9 @@ resistance. While NEFA may contribute substantially to the TAG fraction, there
 may be something unique about the specific composition of the TAGFA fraction 
 that may allow it to enter insulin sensitive tissues more easily than NEFA. It 
 may be that VLDL receptors allow fatty acids to enter these tissue more easily
-than NEFA bound to albumin, or it may be due to the other influences on TAGFA 
-composition such as dietary intake {{cite?}}.
+than NEFA bound to albumin or it may be due to the other influences on TAGFA 
+composition such as dietary intake since circulating NEFA primarily come from
+adipose tissue [@Verges2015a].
 
 <!--
 {{ Not sure about this... Include this? }}
@@ -674,15 +682,13 @@ The authors report no potential conflicts of interest relevant to this study.
 ## Contribution statement
 
 The authors had the following responsibility: LWJ conducted research, analyzed
-data, and wrote the paper; RR, ZL, and SBH designed research, conducted
+data, and wrote the paper; RR, BZ, ZL, and SBH designed research, conducted
 research, and provided essential materials (infrastructure and clinical
-resources); RR, SBH, RPB, and AG provided intellectual feedback on the
-paper; RPB conducted research, provided essential reagents and materials; AJH
+resources); RR, BZ, SBH, RPB, and AG provided intellectual feedback on the
+paper; RPB and ZL conducted research, provided essential reagents and materials; AJH
 designed research, assisted with interpretation, and provided intellectual
 feedback on all versions of the paper; LWJ and AJH had primary responsibility
 for final content. All authors read and approved the final manuscript.
-
-{{Bernie?}}
 
 # Tables
 
