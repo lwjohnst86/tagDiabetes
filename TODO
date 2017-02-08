@@ -73,8 +73,8 @@ DONE Included wording on using CV for prediction
 TODO Rearranged diabetes after prediabetes
 TODO Included dysglycemia as covariate # yea?
 DONE Changed clinical TAG as only baseline for GEE
-TODO Changed diabetes and prediabetes numbers to reflect analysis
-TODO Changed Zhen to second author
+TODO Included simple analysis in vignette on aroc of TAG vs DNL # maybe?
+DONE Changed Zhen to second author
 TODO Added models to caption for QIC table
 TODO Edits as per Richard's suggestions # Create branch
 TODO Next edited version sent to co-authors # Create branch
