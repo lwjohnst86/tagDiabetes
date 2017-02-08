@@ -4,7 +4,7 @@ bibliography:
     - /home/luke/Documents/bibliography/bib/bib-db/myrefs.bib
     - /home/luke/Documents/bibliography/bib/bib-db/methods.bib
 csl: /home/luke/Documents/bibliography/styles/dependent/diabetes-care.csl
-output: fost::default_manuscript
+output: fost::diabetologia_manuscript
 ---
 
 <!--
@@ -405,7 +405,7 @@ shown). There were no significant interactions by sex or ethnicity for any of
 the TAGFA (data not shown). We ran sensitivity analyses to identify which
 covariate attenuated the beta-cell function associations from the unadjusted
 model. We found that including waist circumference in the model lead to the
-attenuation of associations, shown in `r cite_st("gee_adj_nowaist")`. A tabular
+attenuation of associations, shown in `r cite_sf("gee_adj_nowaist")`. A tabular
 presentation of the GEE results is shown in `r cite_st("gee_unadj")` for
 unadjusted models and `r cite_st("gee_adj")` for adjusted models.
 
