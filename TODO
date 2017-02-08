@@ -8,7 +8,7 @@ DONE Identified covariate that changed BCF association
 DONE Added another figure of adj with and without waist to manuscript
 DONE Changed monthsfrombaseline to yearsfrombaseline in GEE models
 TODO Added interaction with time, sex, ethnicity unadjusted results in Results
-TODO Created plots to view interaction with time
+DONE Created plots to view interaction with time in a vignette
 TODO Moved interaction plot to seer, used seer function instead
 DONE Included sensitivity analysis based on sex
 TODO Included sensitivity analysis with covariates as time-independent
