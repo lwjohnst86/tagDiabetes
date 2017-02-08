@@ -96,6 +96,7 @@ in an Canadian population at risk for diabetes.
 
 ```{r load_data, message=FALSE, echo=FALSE}
 devtools::load_all('.')
+knitr::opts_chunk$set(echo = FALSE)
 ds0yr <- project_data %>% 
     dplyr::filter(VN == 0)
 ```
@@ -396,14 +397,16 @@ to `r est1$b_ci$est[37]`% higher insulin sensitivity for every SD increase in
 20:2n-6. 
 
 Both clinically-measured TAG and total TAGFA concentration had very strong
-negative associations with all outcome variables. There were no significant
-interactions by time, sex, or ethnicity for any of the TAGFA (data not shown).
-We ran sensitivity analyses to identify which covariate attenuated the beta-cell
-function associations from the unadjusted model. We found that including waist
-circumference in the model lead to the attenuation of associations, shown in 
-`r cite_st("gee_adj_nowaist")`. A tabular presentation of the GEE results is
-shown in `r cite_st("gee_unadj")` for unadjusted models and 
-`r cite_st("gee_adj")` for adjusted models.
+negative associations with all outcome variables. While there were a few
+significant interactions by time in unadjusted models, after inclusion of
+covariates in the model, these interactions were attenuated (data not
+shown). There were no significant interactions by sex or ethnicity for any of
+the TAGFA (data not shown). We ran sensitivity analyses to identify which
+covariate attenuated the beta-cell function associations from the unadjusted
+model. We found that including waist circumference in the model lead to the
+attenuation of associations, shown in `r cite_st("gee_adj_nowaist")`. A tabular
+presentation of the GEE results is shown in `r cite_st("gee_unadj")` for
+unadjusted models and `r cite_st("gee_adj")` for adjusted models.
 
 ## Clustering of TAGFA by metabolic measures
 
