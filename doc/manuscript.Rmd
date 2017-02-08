@@ -350,8 +350,9 @@ participants (`r fhd$npct`) had a family history of diabetes.
 Between the baseline visit and the 6-year visit in this sample, insulin
 sensitivity and beta-cell function measures had a significant median decline
 between `r outcome_chg$chg` (p`r outcome_chg$p` from GEE; n=`r outcome_chg$n`). There 
-were `r dys$dm` and `r dys$pre` incident cases of diabetes and
-pre-diabetes (IFG and IGT), respectively, over the 6-years, of whom were excluded from later analyses. 
+were `r dys$pre` and `r dys$dm` incident cases of pre-diabetes (IFG and IGT) and
+diabetes, respectively, over the 6-years, of whom were excluded from later
+analyses.
 
 `r cite_f('tagfa')` shows the composition of each FA in the TAG fraction (see 
 `r cite_st('tagfa')` for a tabular presentation of the values). 
