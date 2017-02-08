@@ -8,4 +8,5 @@ vignettes/*.R
 vignettes/*.png
 doc/*.docx
 data/
+man/
 
