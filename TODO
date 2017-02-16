@@ -33,7 +33,6 @@ DONE Fixed results after HOMA-IR changed to HOMA2
 TODO Converted gee calc function into list of lists
 TODO Added equations for each outcome measure to methods
 DONE Added handling of diabetes cases in methods
-TODO Added impact of adjusting for waist on BCF results to manuscript
 DONE Polish up methods
 DONE First (rough) draft of intro
 DONE Second draft of intro
@@ -66,7 +65,7 @@ TODO Added analysis using PLS scores and AROC with incident dysglycemia
 DONE Moved some tables and figs into Supplemental Results
 DONE Updated QIC with models excluding waist
 DONE Made edits based on Tony's comments (not discussion)
-TODO Made edits based on Tony's comments (discussion only)
+DONE Made edits based on Tony's comments (discussion only)
 TODO Added wording regarding GEE efficiency with missed visits
 TODO Used 'observed' vs 'actual'/'measured' for prediction
 DONE Included wording on using CV for prediction
