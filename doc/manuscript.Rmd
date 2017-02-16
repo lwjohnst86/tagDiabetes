@@ -734,9 +734,9 @@ final GEE model selected as best fitting differed between insulin sensitivity
 and beta-cell function measures, the differences in the QIC values were less than 10
 between many of the models, suggesting similar fit. As such, we selected the
 model that had the fewest covariates and that had similar fit between the
-outcome measures. In particular for NEFA, it is used substantially as a source
-of fatty acids in hepatic TAG production [@Barrows2006a] and may be a strong
-confounder.
+outcome measures. Total NEFA was included as a confounder because it is used
+substantially as a source of fatty acids in hepatic TAG production
+[@Barrows2006a].
 
 No imputation was conducted on missing values. Prevalent cases of diabetes at
 baseline and incident cases at follow-up were excluded from the GEE analysis. 
@@ -768,6 +768,26 @@ analysis.
 analyze_qic() %>% 
     table_qic(caption = tab_qic)
 ```
+
+Given the number of possible combinations of outcome and predictor variables,
+only ISI and ISSI-2 with total triacylglycerol fatty acids (nmol/mL) were used to
+compare various GEE models and to select a final model.  Baseline age was used
+as including both the original age and the time variable would result in
+collinearity.  Column names: QIC is the quasi-likelihood information criteria
+(smaller values, eg. larger negative values, indicate a better fit compared to
+other models), Delta is the QIC minus the lowest QIC (models with delta <10 are 
+considered equivalent).  Models were:
+
+- M0: log(ISSI-2) or log(ISI) = total triacylglycerol fatty acids (nmol/mL) + years from baseline
+- M1: M0 + fatty acid by time interaction
+- M2: M0 + sex + ethnicity + baseline age
+- M3: M2 + waist
+- M4: M3 + ALT
+- M5: M4 + physical activity (MET)
+- M6: M5 + total NEFA
+- M7: M6 + alcohol intake
+- M8: M7 + family history of diabetes
+- M9: M8 + smoking status
 
 ```{r table_tagfa}
 table_tagfa(caption = tab_tagfa)
