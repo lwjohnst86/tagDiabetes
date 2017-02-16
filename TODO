@@ -63,10 +63,10 @@ DONE Moved degree before affil number
 DONE Moved more detailed GEE stats methods to Supplemental Material
 DONE Moved detailed PLS results to Supplemental Material
 TODO Added analysis using PLS scores and AROC with incident dysglycemia
-TODO Moved supplemental material into new, separate file
 DONE Moved some tables and figs into Supplemental Results
 DONE Updated QIC with models excluding waist
-TODO Made edits based on Tony's comments
+DONE Made edits based on Tony's comments (not discussion)
+TODO Made edits based on Tony's comments (discussion only)
 TODO Added wording regarding GEE efficiency with missed visits
 TODO Used 'observed' vs 'actual'/'measured' for prediction
 DONE Included wording on using CV for prediction
@@ -75,6 +75,8 @@ DONE Changed clinical TAG as only baseline for GEE
 TODO Included simple analysis in vignette on aroc of TAG vs DNL # maybe?
 DONE Changed Zhen to second author
 TODO Added models to caption for QIC table
+TODO Added explanation to interaction vignette about the results
+TODO Moved supplemental material into new, separate file
 TODO Edits as per Richard's suggestions # Create branch
 TODO Next edited version sent to co-authors # Create branch
 TODO Edits as per Ravi's suggestions # Create branch

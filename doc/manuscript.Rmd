@@ -19,8 +19,7 @@ Outline:
 # Title page
 
 Title: Composition of fatty acids within the serum triacylglycerol fraction and 
-the association with the pathogenesis of diabetes in a population at-risk for 
-diabetes
+the association with the pathogenesis of diabetes 
 
 Author: Luke W. Johnston, MSc (1); Zhen Liu, PhD (1); Ravi Retnakaran, MD
 (3,4); Bernard Zinman, MD (3,4); Adria Giacca, PhD (5); Stewart B. Harris, MD (2); 
@@ -75,23 +74,24 @@ are relatively few studies that have explored this area of research in the TAG
 fraction.
 
 The interaction between TAG and insulin sensitivity is complex and has 
-components of a feedback system [@Verges2015a]. Greater resistance to insulin in both the liver
-and muscle may result in greater production of TAG and secretion of lipoproteins
-that transport TAG [@Yu2012a]. Likewise, greater TAGFA may contribute to 
-metabolic dysfunction and lipotoxicity in various tissues, such as the 
-beta-cells, and thus continuing the cycle [@Verges2015a]. Given the complexity and temporal
-nature of the relationship, long term studies with multiple data collections are
-paramount to better understanding the underlying biology and subsequent risk.
+components of a feedback system [@Verges2015a]. Greater resistance to insulin in
+both the liver and muscle may result in greater production of TAG and secretion
+of lipoproteins that transport TAG [@Yu2012a]. Likewise, greater TAGFA may
+contribute to metabolic dysfunction and lipotoxicity in various tissues, such as
+the beta-cells, and thus continuing the cycle [@Verges2015a]. Given the
+complexity and temporal nature of the relationship, long term studies with
+multiple data collections are paramount to better understanding the underlying
+biology and subsequent risk.
 
 While several prospective studies have documented a prospective association of 
 hypertriglyceridemia with incident type 2 diabetes 
 [@Chien2008a; @DAgostino2004a; @Schulze2009a], there are limited longitudinal
-studies that have examined the relationship between TAG and it's composition on
-the pathophysiological factors underlying diabetes, particularly in regard to
-beta-cell function. Our objective was to examine the longitudinal role of the
-specific composition of the serum TAG fraction on OGTT-derived measures of
-insulin sensitivity and beta-cell function compared to clinically measured TAG
-in an Canadian population at risk for diabetes.
+studies [@Rhee2011a; @Lankinen2015a] that have examined the relationship between
+TAG and it's composition on the pathophysiological factors underlying diabetes, 
+particularly in regard to beta-cell function. Our objective was to examine the 
+longitudinal role of the specific composition of the serum TAG fraction on 
+OGTT-derived measures of insulin sensitivity and beta-cell function compared to 
+clinically measured TAG in an Canadian population at risk for diabetes.
 
 # Subjects and Methods
 
@@ -131,7 +131,7 @@ fig_heatmap_tagfa <- fig('heatmap_tagfa', 'Pearson correlation heatmap of the tr
 fig_gee_unadj <- fig('gee_unadj', 'Time-adjusted GEE models of the association of the triacylglycerol fatty acids (mol% and nmol/mL) and total clinically-measured TAG with insulin sensitivity and beta-cell function outcomes using the 6 year longitudinal data from the PROMISE cohort. X-axis values represent a percent difference in the outcome per SD increase in the fatty acid. P-values were adjusted for the BH false discovery rate, with the largest dot representing a significant (p<0.05) association.')
 fig_gee_adj <- fig('gee_adj', 'Fully-adjusted GEE models of the association of the triacylglycerol fatty acids (mol% and nmol/mL) and total clinically-measured TAG with insulin sensitivity and beta-cell function outcomes using the 6 year longitudinal data from the PROMISE cohort. Variables controlled for were follow-up time, waist circumference, baseline age, ethnicity, sex, ALT, physical activity, and total NEFA. X-axis values represent a percent difference in the outcome per SD increase in the fatty acid. P-values were adjusted for the BH false discovery rate, with the largest dot representing a significant (p<0.05) association.')
 fig_gee_adj_nowaist <- sfig('gee_adj_nowaist', 'Fully-adjusted (without waist size) GEE models of the association of the triacylglycerol fatty acids (mol% and nmol/mL) and total clinically-measured TAG with insulin sensitivity and beta-cell function outcomes using the 6 year longitudinal data from the PROMISE cohort. Variables controlled for were follow-up time, baseline age, ethnicity, sex, ALT, physical activity, and total NEFA. X-axis values represent a percent difference in the outcome per SD increase in the fatty acid. P-values were adjusted for the BH false discovery rate, with the largest dot representing a significant (p<0.05) association.')
-fig_pls <- fig('pls', 'Partial least squares (PLS) models showing the clustering of triacylglycerol fatty acids on insulin sensitivity and beta-cell function measures. The R value shown above the graph is the correlation between predicted and actual values, using cross-validation; a higher value suggests the fatty acids strongly predict the metabolic outcome. The percent explained variance of each component is shown in brackets on each axis. The solid line represents an explained variance of 100% while the dashed line represents an explained variance of 50%. Fatty acids between these lines represent variables that strongly explain the underlying structure of the data. See the Supplemental Methods for a description of PLS analysis and an explanation of interpreting this plot.')
+fig_pls <- fig('pls', 'Partial least squares (PLS) models showing the clustering of triacylglycerol fatty acids on insulin sensitivity and beta-cell function measures. The R value shown above the graph is the correlation between predicted and observed values, using cross-validation; a higher value suggests the fatty acids strongly predict the metabolic outcome. The percent explained variance of each component is shown in brackets on each axis. The solid line represents an explained variance of 100% while the dashed line represents an explained variance of 50%. Fatty acids between these lines represent variables that strongly explain the underlying structure of the data. See the Supplemental Methods for a description of PLS analysis and an explanation of interpreting this plot.')
 ```
 
 ```{r analyze_gee, cache=TRUE}
@@ -144,7 +144,7 @@ gee_adj_df <- analyze_gee()
 pls_homa2 <- analyze_pls(y = 'lHOMA2_S', cv = FALSE)
 pls_isi <- analyze_pls(y = 'lISI', cv = FALSE)
 
-# Correlation between predicted and actual
+# Correlation between predicted and observed
 pls_homa2_t <- analyze_pls(y = 'lHOMA2_S')
 pls_isi_t <- analyze_pls(y = 'lISI')
 pls_igi_t <- analyze_pls(y = 'lIGIIR')
@@ -167,12 +167,6 @@ pls_gee <- project_data %>%
 ```
 
 ```{r inline}
-n_tag <- project_data %>% 
-    dplyr::filter(VN == 2) %>% 
-    dplyr::select(TAG) %>% 
-    stats::na.omit() %>% 
-    nrow()
-    
 dys <- project_data %>% 
     prep_dys_data() %>% 
     calc_convert_dys()
@@ -184,7 +178,8 @@ euro <- calc_discr_npct(ds0yr$Ethnicity, 'European')
 fhd <- calc_discr_npct(ds0yr$FamHistDiab, 'Yes')
 est0 <- calc_gee_estci(gee_unadj_df)
 est1 <- calc_gee_estci(gee_adj_df)
-fa_cor <- calc_cor()
+fa_cor <- calc_cor(cor_df)
+fa_cor_mol <- calc_cor(cor_df_mol)
 cor_pls_homa2 <- calc_pred_corr(pls_homa2_t, pls_homa2_t$test_data)
 cor_pls_isi <- calc_pred_corr(pls_isi_t, pls_isi_t$test_data)
 cor_pls_igi <- calc_pred_corr(pls_igi_t, pls_igi_t$test_data)
@@ -201,13 +196,12 @@ including obesity, hypertension, family history of diabetes, and/or a history of
 gestational diabetes or birth of a macrosomic infant. A total of 736 individuals
 attended the baseline visit. Subsequent examinations occurred every three years,
 with three examination visits completed to date (2004-2006, 2007-2009, and
-2010-2013). Participants are contacted annually by telephone. The current study
+2010-2013). The current study
 used data on participants who did not have diabetes at baseline, who
 returned for one or more of the follow-up examinations, and who had samples
 available for fatty acid measurements (n=477; see the CONSORT diagram in 
-`r cite_sf('consort')`; a total of `r calc_n_for_visits()[1]` attended all three
-visits). Metabolic characterization, anthropometric
-measurements, and questionnaires on lifestyle and sociodemographics are
+`r cite_sf('consort')`). Metabolic characterization, anthropometric
+measurements, and questionnaires on lifestyle and sociodemographics were
 administered at each examination visit. Research ethics approval was obtained from
 Mount Sinai Hospital and the University of Western Ontario, and all participants
 provided written informed consent. Data collection methods were standardized
@@ -215,14 +209,13 @@ across the 2 centres and research nurses were centrally trained.
 
 ## Metabolic characterization
 
-After 8-12 hours of fasting, participants completed a 75g oral glucose tolerance test (OGTT) at 
+After 8-12 hours of overnight fasting, participants completed a 75g oral glucose tolerance test (OGTT) at 
 each examination visit, with blood samples taken at fasting, 30 min, and 2 hr 
 post-glucose load. Samples were subsequently processed and frozen at -70°C.
 Alanine aminotransferase (ALT) was measured using standard laboratory 
 procedures. Cholesterol, HDL, and clinically-measured TAG 
 were measured using Roche Modular's enzymatic colorimetric tests (Mississauga, 
-ON). At the 6-year visit only, clinically-measured TAG was only quantified on a
-subset of the participants (n=`r n_tag`). Both insulin and glucose were
+ON). Both insulin and glucose were
 measured from OGTT blood samples at fasting, 30 minute,
 and 2 hour time points. Specific insulin was measured with the Elecsys 1010 
 (Roche Diagnostics, Basel, Switzerland) immunoassay analyzer and 
@@ -249,8 +242,8 @@ Varian-430 gas chromatograph (Varian, Lake Forest, CA, USA) equipped with a
 Varian Factor Four capillary column and a flame ionization detector. Fatty acid 
 concentrations (nmol/ml) were calculated by proportional comparison of gas
 chromatography peak areas to that of the internal standards [@Nishi2014a]. There
-were 22 fatty acids measured in the TAGFA fraction. Given that each lipid
-fraction differs in biology and given the complexity of the analyses, findings
+were 22 fatty acids measured in the TAGFA fraction. 
+Findings
 for other lipid fractions in this cohort are reported separately (see ref
 @Johnston2016a for the analysis of the phospholipid and cholesteryl ester
 fractions). 
@@ -272,14 +265,14 @@ metabolic intensity allowing for the estimation of MET-hours per week [@Kriska19
 ## Variable calculation and statistical analysis
 
 Insulin sensitivity and beta-cell function indices were computed using the OGTT 
-glucose and insulin data. Insulin sensitivity was assessed using HOMA2-%S
-[@Levy1998a] using the HOMA2 Calculator and the Insulin Sensitivity Index (ISI)
-[@Matsuda1999]. HOMA largely reflects hepatic insulin resistance, while ISI
+glucose and insulin data. Insulin sensitivity was assessed using the Insulin
+Sensitivity Index (ISI) [@Matsuda1999] and HOMA2-%S [@Levy1998a] using the HOMA2
+Calculator. HOMA largely reflects hepatic insulin resistance, while ISI
 reflects whole-body insulin sensitivity [@AbdulGhani2007]. Beta-cell function
 was assessed using the Insulinogenic Index [@Wareham1995] over HOMA-IR [@Matthews1985] (IGI/IR)
 and the Insulin Secretion-Sensitivity Index-2 (ISSI-2) [@Retnakaran2009]. IGI/IR
 is a measure of the first phase of insulin secretion while ISSI-2 is analogous to
-the disposition index (but using OGTT values). Each index has been validated
+the disposition index (but is calculated using OGTT values). Each index has been validated
 against gold standard measures [@Matthews1985; @Hermans1999a; @Matsuda1999; @Retnakaran2009].
 Specific formulas for each OGTT-derived measure can be found in the 
 Supplementary Material.
@@ -292,8 +285,8 @@ TAG was also included as a primary predictor to allow us to test the hypothesis
 that specific TAGFA better predicted outcomes compared to clinical TAG. 
 Pearson correlation coefficients were computed to assess the relationships of
 individual TAGFA with other continuous variables. Correlations were also
-computed for TAGFA against each other, followed by using hierarchical clustering
-analysis to identify clusters within the correlation matrix of the TAGFA
+computed for TAGFA against each other; hierarchical clustering analysis was
+applied to the correlation matrix to identify potential clusters within the TAGFA 
 composition.
 
 Generalized estimating equation (GEE) models [@Zeger1986a] were used in the 
@@ -318,15 +311,15 @@ explanation of the GEE modeling analysis.
 
 While GEE accounts for the longitudinal design of the data, this approach is 
 limited in that it cannot analyze the inherent multivariate nature of the 
-composition of the TAGFA fraction. To confirm the GEE results in a multivariate 
+composition of the TAGFA fraction. Therfore, to confirm the GEE results in a multivariate 
 environment (i.e. all TAGFA analyzed collectively), partial least squares regression (PLS) was
 used to identify the patterns of TAGFA composition against insulin sensitivity
-and beta-cell function. For a detailed explanation of PLS see the Supplemental
-Methods, but briefly, PLS is a technique that extracts latent structures
-(clusters) underlying a set of predictor variables conditional on a response
-variable(s) (i.e. the outcome variables). We determined the predictive strength
-of modeling the TAGFA composition on metabolic function by using
-cross-validation on the PLS model.
+and beta-cell function as outcome variables. For a detailed explanation of PLS
+see the Supplemental Methods. Briefly, PLS is a technique that extracts latent
+structures (clusters) underlying a set of predictor variables conditional on a
+response variable(s) (i.e. the outcome variables). How accurately the clusters
+within the TAGFA composition predict metabolic function is determined by using
+cross-validation on the PLS models.
 
 All analyses were performed using R `r getRversion()` [@Rbase], along with the R
 packages geepack `r packageVersion('geepack')` for GEE [@Hoejsgaard2006a] and pls
@@ -348,28 +341,33 @@ age in years of `r aide::ave_sd(ds0yr$Age)` and a mean BMI
 of `r aide::ave_sd(ds0yr$BMI)` kg/m^2^. As expected from the study's eligibility criteria, the majority of
 participants (`r fhd$npct`) had a family history of diabetes.
 Between the baseline visit and the 6-year visit in this sample, insulin
-sensitivity and beta-cell function measures had a significant median decline
+sensitivity and beta-cell function measures had a significant median decline of
 between `r outcome_chg$chg` (p`r outcome_chg$p` from GEE; n=`r outcome_chg$n`). There 
 were `r dys$pre` and `r dys$dm` incident cases of pre-diabetes (IFG and IGT) and
-diabetes, respectively, over the 6-years, of whom were excluded from later
+diabetes, respectively, over the 6-years; these observations were excluded from GEE and PLS
 analyses.
 
 `r cite_f('tagfa')` shows the composition of each FA in the TAG fraction (see 
 `r cite_st('tagfa')` for a tabular presentation of the values). 
 Three TAGFA contributed `r format_rounding(sum(tagfa$pct))`% to the total 
 TAG concentration: `r tagfa$c[1]`; `r tagfa$c[2]`; and, `r tagfa$c[3]`.
-`r cite_f('heatmap')` shows a heatmap of the correlation of individual TAGFA with the
-outcome variables and several basic characteristics.
+`r cite_f('heatmap')` shows a heatmap of the correlation of individual TAGFA as
+concentrations with the outcome variables and several basic characteristics.
 As expected, nearly all TAGFA had very strong positive correlations (r=
 `r fa_cor$rng$TAG`) with clinically-measured TAG and moderate positive 
 correlations with WC (r=`r fa_cor$rng$Waist`). There was also moderate
 negative correlations with HDL (r=`r fa_cor$rng$HDL`). For the outcome variables,
 the correlations for the insulin sensitivity measures were generally higher 
 (HOMA2-%S: r=`r fa_cor$rng['HOMA2-%S']`, ISI: r=`r fa_cor$rng$ISI`) than 
-for the beta-cell function measures (all r<0.30). A heatmap of the correlations
-of individual TAGFA using mol% with the basic characteristics is shown in 
-`r cite_f('heatmap_mol')` and the inter-correlation matrix of the TAGFA fraction 
-is shown in `r cite_f('heatmap_tagfa')`.
+for the beta-cell function measures (all r<0.30). For correlations
+of individual TAGFA using mol% with the basic participant characteristics, as shown in 
+`r cite_f('heatmap_mol')`, differences in correlations between fatty acids were
+most evident for 14:0, 14:1n-7, 16:0, and 16:1n-7 that had a moderate positive
+correlation with clinical TAG while all other fatty acids had a negative association.
+Based on heirarchical cluster analysis of the inter-correlation matrix of the
+TAGFA fraction, shown in `r cite_f('heatmap_tagfa')`, four fatty acids (14:0,
+16:0, 14:1n-7, and 16:1n-7) displayed a marked separation and cluster from the
+other TAGFA.
 
 ## Generalized estimating equation models
 
@@ -381,7 +379,7 @@ significant for both mol% and nmol/mL results. Subsequent analysis revealed that
 the attenuation with beta-cell function was due primarily to adjustment for
 waist.
 
-In analyses using TAGFA concentration values, nearly all TAGFA had a strong
+In analyses using concentration values, nearly all TAGFA had a strong
 negative association on HOMA2-%S and ISI (estimates ranging from
 `r est1$outcome_b$rng[3]` and `r est1$outcome_b$rng[7]`, respectively), and a
 few had strong negative associations with IGI/IR and ISSI-2 (estimates ranging 
@@ -395,37 +393,38 @@ and 22:5n-3) predicting between `r est1$outcome_b$rng[2]` and
 `r est1$outcome_b$rng[6]`%, respectively, higher insulin sensitivity for every
 SD increase in the TAGFA. One TAGFA, 20:2n-6, had a very strong positive
 association with the insulin sensitivity measures, with a `r est1$b_ci$est[1]`
-to `r est1$b_ci$est[37]`% higher insulin sensitivity for every SD increase in 
-20:2n-6. 
-
+to `r est1$b_ci$est[37]`% higher insulin sensitivity for every SD increase. 
 Both clinically-measured TAG and total TAGFA concentration had very strong
-negative associations with all outcome variables. While there were a few
+negative associations with all outcome variables. 
+
+While there were a few
 significant interactions by time in unadjusted models, after inclusion of
 covariates in the model, these interactions were attenuated (data not
 shown). There were no significant interactions by sex or ethnicity for any of
-the TAGFA (data not shown). We ran sensitivity analyses to identify which
-covariate attenuated the beta-cell function associations from the unadjusted
-model. We found that including waist circumference in the model lead to the
-attenuation of associations, shown in `r cite_sf("gee_adj_nowaist")`. A tabular
-presentation of the GEE results is shown in `r cite_st("gee_unadj")` for
-unadjusted models and `r cite_st("gee_adj")` for adjusted models.
+the TAGFA (data not shown). Results of the sensitivity analyses identifying
+waist circumference as the covariate that attenuated the beta-cell function
+associations from the unadjusted model are shown in `r cite_sf("gee_adj_nowaist")`. 
+A tabular presentation of the GEE results is shown in `r cite_st("gee_unadj")`
+for unadjusted models and `r cite_st("gee_adj")` for adjusted models.
 
 ## Clustering of TAGFA by metabolic measures
 
 The PLS analysis corroborated the findings from the GEE models. 
-The insulin sensitivity (`r cite_f('pls')`) PLS results showed a clustering 
-of the fatty acids 14:0, 14:1n-7, 16:0, and 16:1n-7. These TAGFA loaded strongly
-and negatively on HOMA2-%S and ISI, suggesting this cluster of TAGFA tracks
+The PLS results conditioned on insulin sensitivity as the outcome showed a
+clustering of the fatty acids 14:0, 14:1n-7, 16:0, and 16:1n-7 
+(`r cite_f('pls')`). These TAGFA loaded strongly and negatively on HOMA2-%S and ISI,
+suggesting this cluster of TAGFA tracks
 together with lower insulin sensitivity. The TAGFA 20:2n-6, 20:5n-3, 22:5n-3,
 and 22:6n-3 loaded positively on both insulin sensitivity measures. No other
 TAGFA loaded strongly. The PLS model for insulin sensitivity had good predictive
 ability, with a high correlation between the predicted outcome values against
-the actual values (HOMA2-%S: `r cor_pls_homa2$r_p`; ISI: `r cor_pls_isi$r_p`).
+the observed values (HOMA2-%S: `r cor_pls_homa2$r_p`; ISI: `r cor_pls_isi$r_p`).
 
-The beta-cell function PLS results showed clustering of similar fatty acids,
-however there there was a low correlation (though significant at 
-p`r cor_pls_igi$p`) between the predicted values and the actual values 
-(r=`r cor_pls_igi$r` to `r cor_pls_issi2$r`), suggesting poor predictability.
+The beta-cell function PLS results showed a similar clustering of fatty acids,
+however there was a lower correlation (though significant at 
+p`r cor_pls_igi$p`) between the predicted values and the observed values 
+(r=`r cor_pls_igi$r` to `r cor_pls_issi2$r`), suggesting that TAGFA composition
+poorly predicts beta-cell function.
 Given the low predictability, only the insulin sensitivity measures are
 presented. We used the extracted PLS scores as the predictor variable in the GEE
 models and found negative associations of the first component on all outcome
