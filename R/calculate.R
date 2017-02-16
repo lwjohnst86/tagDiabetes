@@ -178,21 +178,6 @@ calc_n_at_each_visit <- function(data = project_data) {
         dplyr::summarise(n = n())
 }
 
-#' Calculate the number of participants who attended one, two, or three visits.
-#'
-#' @param data Project data.
-#'
-#' @export
-calc_n_for_visits <- function(data = project_data) {
-    data %>%
-        dplyr::select(SID, VN, f.VN) %>%
-        stats::na.omit() %>%
-        tidyr::spread(f.VN, VN) %>%
-        dplyr::mutate(Visits = paste(yr0, yr3, yr6, sep = '-')) %>%
-        .$Visits %>%
-        table()
-}
-
 #' Mean and SD followup time for those who attended the 6 year visit.
 #'
 #' @param data Project data
