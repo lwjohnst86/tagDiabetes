@@ -233,10 +233,10 @@ TAGFA composition was quantified using stored fasting serum samples from the
 baseline visit, which had been frozen at -70°C for 4-6 years and had not been 
 exposed to any freeze-thaw cycles. Serum fatty acids have been documented to be 
 stable at these temperatures for up to 10 years [@Matthan2010a]. A known amount 
-of {{confirm with Richard the correct name}} heptadecanoic acid (17:0) was added as an internal
+of triheptadecanoin (17:0; Nu-Chek Prep, Inc Elysian, MN, USA) was added as an internal
 standard prior to extracting total lipids according to the method of Folch 
 [@Folch1957a]. Each serum lipid fraction (non-esterified fatty acids (NEFA), 
-cholesteryl ester, phospholipid, and TAGFA) was isolated using thin layer 
+cholesteryl ester, phospholipid, and TAG) was isolated using thin layer 
 chromatography. Fatty acid methyl esters were separated and quantified using a 
 Varian-430 gas chromatograph (Varian, Lake Forest, CA, USA) equipped with a 
 Varian Factor Four capillary column and a flame ionization detector. Fatty acid 
@@ -439,7 +439,7 @@ scores constrained by ISI).
 In the present study, we found that in a Canadian cohort at risk for diabetes,
 several specific TAGFA and groups of TAGFA were strongly associated
 with insulin sensitivity and moderately associated with beta-cell function. In 
-particular, the TAGFA myristic acid (14:0), 7-tetradecenoic acid {{ confirm name }} 
+particular, the TAGFA myristic acid (14:0), 7-tetradecenoic acid 
 (14:1n-7), palmitic acid (16:0), and palmitoleic acid (16:1n-7) all strongly and
 negatively predicted lower insulin sensitivity. While most TAGFA were not
 associated with beta-cell function, two fatty acids, palmitic acid (16:0) and
