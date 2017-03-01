@@ -354,16 +354,19 @@ TAG concentration: `r tagfa$c[1]`; `r tagfa$c[2]`; and, `r tagfa$c[3]`.
 `r cite_f('heatmap')` shows a heatmap of the correlation of individual TAGFA as
 concentrations with the outcome variables and several basic characteristics.
 As expected, nearly all TAGFA had very strong positive correlations (r=
-`r fa_cor$rng$TAG`) with clinically-measured TAG and moderate positive 
-correlations with WC (r=`r fa_cor$rng$Waist`). There was also moderate
-negative correlations with HDL (r=`r fa_cor$rng$HDL`). For the outcome variables,
+`r fa_cor$rng$TAG[2]`) with clinically-measured TAG and moderate positive 
+correlations with WC (r=`r fa_cor$rng$Waist[2]`). There was also moderate
+negative correlations with HDL (r=`r fa_cor$rng$HDL[1]`). For the outcome variables,
 the correlations for the insulin sensitivity measures were generally higher 
-(HOMA2-%S: r=`r fa_cor$rng['HOMA2-%S']`, ISI: r=`r fa_cor$rng$ISI`) than 
+(HOMA2-%S: r=`r fa_cor$rng[['HOMA2-%S']][1]`, ISI: r=`r fa_cor$rng$ISI[1]`) than 
 for the beta-cell function measures (all r<0.30). For correlations
 of individual TAGFA using mol% with the basic participant characteristics, as shown in 
 `r cite_f('heatmap_mol')`, differences in correlations between fatty acids were
 most evident for 14:0, 14:1n-7, 16:0, and 16:1n-7 that had a moderate positive
-correlation with clinical TAG while all other fatty acids had a negative association.
+correlation with clinical TAG (r=` fa_cor_mol$rng$TAG[1]`) while all other fatty
+acids had a negative association (r=`fa_cor_mol$rng$TAG[2]`). In particular,
+those fatty acids with the negative associations with clinical TAG were all the
+very long chain polyunsaturated fatty acids (e.g. 20:4n-6, 20:5n-3).
 Based on heirarchical cluster analysis of the inter-correlation matrix of the
 TAGFA fraction, shown in `r cite_f('heatmap_tagfa')`, four fatty acids (14:0,
 16:0, 14:1n-7, and 16:1n-7) displayed a marked separation and cluster from the

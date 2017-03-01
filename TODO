@@ -76,9 +76,10 @@ DONE Added models to caption for QIC table
 TODO Added explanation to interaction vignette about the results
 TODO Moved supplemental material into new, separate file
 DONE Edits as per Richard's suggestions
-TODO Created new function to include corr of DNL TAGFA
+DONE Created new function for corr of DNL TAGFA and added to results
 TODO Added a brief section in discussion on DNL and total TAG
 TODO Added vignette on role of TAGFA on clinical TAG
+TODO Updated the README to include info about the actual project
 TODO Added role of TAGFA as % on TAG in results (for corr)
 TODO Next edited version sent to co-authors # Create branch
 TODO Edits as per Ravi's suggestions # Create branch
