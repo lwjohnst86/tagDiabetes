@@ -77,7 +77,7 @@ TODO Added explanation to interaction vignette about the results
 TODO Moved supplemental material into new, separate file
 DONE Edits as per Richard's suggestions
 DONE Created new function for corr of DNL TAGFA and added to results
-TODO Added a brief section in discussion on DNL and total TAG
+DONE Added a brief section in discussion on DNL and total TAG
 TODO Added vignette on role of TAGFA on clinical TAG
 TODO Updated the README to include info about the actual project
 TODO Added role of TAGFA as % on TAG in results (for corr)

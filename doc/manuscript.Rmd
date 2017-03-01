@@ -517,10 +517,13 @@ indicative of a higher carbohydrate diet. A higher carbohydrate diet,
 particularly one characterized by a predominance of simple carbohydrates, may
 lead to greater DNL in an attempt to control blood glucose, thus increasing hepatic
 fat stores and consequently increasing the amount of TAGFA in circulation
-[@Chehade2013a; @Verges2015a]. The higher concentration of circulating 14 and 16
-carbon fatty acids may then expose tissues to greater lipotoxicity, for instance
-from palmitic acid (16:0), which is well-known to have harmful effects on
-tissues [@Riserus2008a; @Iggman2010a].
+[@Chehade2013a; @Verges2015a]. In fact, we found in our study that
+higher proportions of these four DNL TAGFA also highly correlated with a higher
+concentration of clinical TAG, reinforcing this pathway between carbohydrate
+intake, DNL, and circulating TAG. The higher concentration of circulating 14 and
+16 carbon fatty acids may then expose tissues to greater lipotoxicity, for
+instance from palmitic acid (16:0), which is well-known to have harmful effects
+on tissues [@Riserus2008a; @Iggman2010a].
 
 The direction of association between TAGFA and insulin sensitivity is unclear 
 from cross-sectional studies due to the physiological feedback mechanisms 
