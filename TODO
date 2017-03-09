@@ -27,6 +27,7 @@ DONE Fixed renaming of basic char table rows
 DONE Assigned the captions to figures and tables
 DONE Clarified that most participants had a 6yr visit
 TODO Added analyses in vignette on impact of meds on TAGFA
+TODO Confirmed that GEE prep from PLS works (fills down correctly)
 DONE Included stats method for hclust of tagfa heatmap
 DONE Changed HOMA-IR methods to HOMA2-%S
 DONE Fixed results after HOMA-IR changed to HOMA2
@@ -70,6 +71,8 @@ DONE Included wording on using CV for prediction
 DONE Rearranged diabetes after prediabetes
 DONE Changed clinical TAG as only baseline for GEE
 TODO Included simple analysis in vignette on aroc of TAG vs DNL # maybe?
+TODO Vignette of PLS results, TAG, and dysgly logistic regression
+DONE Added influence of location/site to gee vignette
 DONE Changed Zhen to second author
 TODO Added to supplemental material from NEFA paper
 DONE Added models to caption for QIC table
@@ -80,7 +83,6 @@ DONE Created new function for corr of DNL TAGFA and added to results
 DONE Added a brief section in discussion on DNL and total TAG
 TODO Added vignette on role of TAGFA on clinical TAG
 TODO Updated the README to include info about the actual project
-TODO Added role of TAGFA as % on TAG in results (for corr)
 TODO Next edited version sent to co-authors # Create branch
 TODO Edits as per Ravi's suggestions # Create branch
 TODO Edits as per Stewart's suggestions # Create branch

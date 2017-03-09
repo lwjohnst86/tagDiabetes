@@ -19,8 +19,9 @@ library(dplyr)
 
 knitr::opts_chunk$set(fig.width = 7, fig.height = 5)
 
-explore_gee <- function(covars = covariates, caption = NULL, graph = FALSE) {
-    m <- analyze_gee(covars = covars)
+explore_gee <- function(data = project_data, 
+                        covars = covariates, caption = NULL, graph = FALSE) {
+    m <- analyze_gee(data = data, covars = covars)
     m <- filter(m, p.value <= 0.05)
     print(nrow(m))
     if (graph) {
@@ -60,6 +61,22 @@ explore_gee(covars = c(
     'AlcoholPerWk'
     ))
 ```
+
+## Adjusting for Location
+
+```{r adj_location, cache=TRUE}
+ds <- project_data %>% 
+    mutate(Location = ifelse(SID >= 2000, 'London', 'Toronto')) 
+
+ds %>% 
+    group_by(Location, VN) %>% 
+    summarize(SampleSize = n()) %>% 
+    knitr::kable()
+
+ds %>% 
+    explore_gee(covars = c(covariates, 'Location'), graph = TRUE)
+```
+
 
 # Interactions
 
@@ -127,6 +144,19 @@ nrow(m)
 
 m %>% 
     select(Yterms, Xterms, unit, term, estimate) %>% 
+    pander::pander()
+```
+
+## Location
+```{r int_location, cache=TRUE}
+m <- project_data %>% 
+    mutate(Location = ifelse(SID >= 2000, 'London', 'Toronto')) %>% 
+    analyze_gee(covars = c(covariates, 'Location'), intvar = 'Location') %>% 
+    filter(p.value <= 0.05) 
+nrow(m)
+
+m %>% 
+    select(Yterms, Xterms, unit, term, estimate, p.value) %>% 
     pander::pander()
 ```
 
