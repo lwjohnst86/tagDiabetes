@@ -363,8 +363,8 @@ for the beta-cell function measures (all r<0.30). For correlations
 of individual TAGFA using mol% with the basic participant characteristics, as shown in 
 `r cite_f('heatmap_mol')`, differences in correlations between fatty acids were
 most evident for 14:0, 14:1n-7, 16:0, and 16:1n-7 that had a moderate positive
-correlation with clinical TAG (r=` fa_cor_mol$rng$TAG[1]`) while all other fatty
-acids had a negative association (r=`fa_cor_mol$rng$TAG[2]`). In particular,
+correlation with clinical TAG (r=`r fa_cor_mol$rng$TAG[1]`) while all other fatty
+acids had a negative association (r=`r fa_cor_mol$rng$TAG[2]`). In particular,
 those fatty acids with the negative associations with clinical TAG were all the
 very long chain polyunsaturated fatty acids (e.g. 20:4n-6, 20:5n-3).
 Based on heirarchical cluster analysis of the inter-correlation matrix of the
