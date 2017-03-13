@@ -144,10 +144,10 @@ TAGFA composition was quantified using stored fasting serum samples from the
 baseline visit, which had been frozen at -70°C for 4-6 years and had not been 
 exposed to any freeze-thaw cycles. Serum fatty acids have been documented to be 
 stable at these temperatures for up to 10 years [@Matthan2010a]. A known amount 
-of {{confirm with Richard the correct name}} heptadecanoic acid (17:0) was added as an internal
+of triheptadecanoin (17:0; Nu-Chek Prep, Inc Elysian, MN, USA) was added as an internal
 standard prior to extracting total lipids according to the method of Folch 
 [@Folch1957a]. Each serum lipid fraction (non-esterified fatty acids (NEFA), 
-cholesteryl ester, phospholipid, and TAGFA) was isolated using thin layer 
+cholesteryl ester, phospholipid, and TAG) was isolated using thin layer 
 chromatography. Fatty acid methyl esters were separated and quantified using a 
 Varian-430 gas chromatograph (Varian, Lake Forest, CA, USA) equipped with a 
 Varian Factor Four capillary column and a flame ionization detector. Fatty acid 
@@ -274,7 +274,10 @@ for the beta-cell function measures (all r<0.30). For correlations
 of individual TAGFA using mol% with the basic participant characteristics, as shown in 
 Figure  3, differences in correlations between fatty acids were
 most evident for 14:0, 14:1n-7, 16:0, and 16:1n-7 that had a moderate positive
-correlation with clinical TAG while all other fatty acids had a negative association.
+correlation with clinical TAG (r=-0.5 to -0.31) while all other fatty
+acids had a negative association (r=0.42 to 0.52). In particular,
+those fatty acids with the negative associations with clinical TAG were all the
+very long chain polyunsaturated fatty acids (e.g. 20:4n-6, 20:5n-3).
 Based on heirarchical cluster analysis of the inter-correlation matrix of the
 TAGFA fraction, shown in Figure  4, four fatty acids (14:0,
 16:0, 14:1n-7, and 16:1n-7) displayed a marked separation and cluster from the
@@ -350,7 +353,7 @@ scores constrained by ISI).
 In the present study, we found that in a Canadian cohort at risk for diabetes,
 several specific TAGFA and groups of TAGFA were strongly associated
 with insulin sensitivity and moderately associated with beta-cell function. In 
-particular, the TAGFA myristic acid (14:0), 7-tetradecenoic acid {{ confirm name }} 
+particular, the TAGFA myristic acid (14:0), 7-tetradecenoic acid 
 (14:1n-7), palmitic acid (16:0), and palmitoleic acid (16:1n-7) all strongly and
 negatively predicted lower insulin sensitivity. While most TAGFA were not
 associated with beta-cell function, two fatty acids, palmitic acid (16:0) and
@@ -425,10 +428,13 @@ indicative of a higher carbohydrate diet. A higher carbohydrate diet,
 particularly one characterized by a predominance of simple carbohydrates, may
 lead to greater DNL in an attempt to control blood glucose, thus increasing hepatic
 fat stores and consequently increasing the amount of TAGFA in circulation
-[@Chehade2013a; @Verges2015a]. The higher concentration of circulating 14 and 16
-carbon fatty acids may then expose tissues to greater lipotoxicity, for instance
-from palmitic acid (16:0), which is well-known to have harmful effects on
-tissues [@Riserus2008a; @Iggman2010a].
+[@Chehade2013a; @Verges2015a]. In fact, we found in our study that
+higher proportions of these four DNL TAGFA also highly correlated with a higher
+concentration of clinical TAG, reinforcing this pathway between carbohydrate
+intake, DNL, and circulating TAG. The higher concentration of circulating 14 and
+16 carbon fatty acids may then expose tissues to greater lipotoxicity, for
+instance from palmitic acid (16:0), which is well-known to have harmful effects
+on tissues [@Riserus2008a; @Iggman2010a].
 
 The direction of association between TAGFA and insulin sensitivity is unclear 
 from cross-sectional studies due to the physiological feedback mechanisms 
