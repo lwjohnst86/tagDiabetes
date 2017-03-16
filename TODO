@@ -70,15 +70,16 @@ DONE Made edits based on Tony's comments (discussion only)
 DONE Included wording on using CV for prediction
 DONE Rearranged diabetes after prediabetes
 DONE Changed clinical TAG as only baseline for GEE
-TODO Included simple analysis in vignette on aroc of TAG vs DNL # maybe?
-TODO Vignette of PLS results, TAG, and dysgly logistic regression
+DONE Vignette of PLS results, TAG, and dysgly logistic regression
 DONE Added influence of location/site to gee vignette
 DONE Changed Zhen to second author
 TODO Added to supplemental material from NEFA paper
 DONE Added models to caption for QIC table
+TODO Fix pls figure dimensions
 TODO Added explanation to interaction vignette about the results
 TODO Moved supplemental material into new, separate file
 DONE Edits as per Richard's suggestions
+TODO Added abstract
 DONE Created new function for corr of DNL TAGFA and added to results
 DONE Added a brief section in discussion on DNL and total TAG
 TODO Added vignette on role of TAGFA on clinical TAG
