@@ -131,12 +131,44 @@ analyze_gee <- function(data = project_data,
         }} %>%
         mason::scrub() %>%
         mason::polish_filter(extract_term, 'term') %>%
-        dplyr::mutate(unit = ifelse(grepl('pct', Xterms), 'mol%',
-                                    ifelse(grepl('^tg\\d', Xterms), 'nmol/mL',
-                                           'Totals'))) %>%
-        mason::polish_transform_estimates(function(x) (exp(x) - 1) * 100) %>%
+        categorize_fa_model_output() %>%
+        transform_continuous_model_output() %>%
+        rename_terms_model_output(rename_x = rename_x, rename_y = rename_y) %>%
+        padjust_model_output() %>%
+        order_model_output() %>%
+        set_outcome_order_model_output()
+
+}
+
+categorize_fa_model_output <- function(gee_results) {
+    gee_results %>%
+        dplyr::mutate(unit = ifelse(
+            grepl('pct', Xterms),
+            'mol%',
+            ifelse(grepl('^tg\\d', Xterms), 'nmol/mL',
+                   'Totals')
+        ))
+}
+
+transform_continuous_model_output <- function(gee_results) {
+    gee_results %>%
+        mason::polish_transform_estimates(function(x) (exp(x) - 1) * 100)
+}
+
+rename_terms_model_output <- function(gee_results, rename_x, rename_y) {
+    gee_results %>%
         mason::polish_renaming(rename_x, 'Xterms') %>%
-        mason::polish_renaming(rename_y, 'Yterms') %>%
+        mason::polish_renaming(rename_y, 'Yterms')
+}
+
+padjust_model_output <- function(gee_results) {
+    gee_results %>%
+        mason::polish_adjust_pvalue(method = 'BH') %>%
+        dplyr::rename(unadj.p.value = p.value, p.value = adj.p.value)
+}
+
+order_model_output <- function(gee_results) {
+    gee_results %>%
         dplyr::mutate(
             order1 = substr(Xterms, nchar(Xterms), nchar(Xterms)),
             order1 = ifelse(order1 == 0, 10, order1),
@@ -144,19 +176,20 @@ analyze_gee <- function(data = project_data,
             order1 = ifelse(order1 == 'G', 30, order1),
             order1 = as.integer(order1)
         ) %>%
-        mason::polish_adjust_pvalue(method = 'BH') %>%
-        dplyr::rename(unadj.p.value = p.value, p.value = adj.p.value) %>%
         dplyr::arrange(desc(order1)) %>%
+        dplyr::mutate(Xterms = factor(Xterms, unique(Xterms))) %>%
+        dplyr::select(-order1)
+}
+
+set_outcome_order_model_output <- function(gee_results) {
+    gee_results %>%
         dplyr::mutate(Yterms = factor(
             Yterms,
             levels = c('log(HOMA2-IR)', 'log(HOMA2-%S)', 'log(ISI)',
                        'log(IGI/IR)', 'log(ISSI-2)'),
             labels = c('log(HOMA2-IR)', 'log(HOMA2-%S)', 'log(ISI)',
                        'log(IGI/IR)', 'log(ISSI-2)'),
-            ordered = TRUE),
-            Xterms = factor(Xterms, unique(Xterms))) %>%
-        dplyr::select(-order1)
-
+            ordered = TRUE))
 }
 
 # Tables ------------------------------------------------------------------
