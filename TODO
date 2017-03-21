@@ -37,16 +37,13 @@ DONE Added handling of diabetes cases in methods
 DONE Polish up methods
 DONE First (rough) draft of intro
 DONE Second draft of intro
-TODO Third draft of intro
 DONE First draft of results
-TODO Second draft of results
 DONE First (rough) draft of discussion - limitations
 DONE First (rough) draft of discussion - general findings
 DONE Re-arranged and added to discussion - prev lit and interpret
 DONE First (rough) draft of discussion - prev lit and interpret
 DONE First (rough) draft of discussion - conclusion
 DONE Second draft of discussion
-TODO Third draft of discussion
 DONE First draft acknowledgements, conflicts, funding
 DONE Confirmed manuscript created as expected (minor edits, fixes)
 TODO Confirmed manuscript matches STROBE checklist
@@ -62,7 +59,6 @@ DONE Added Bernie onto author list
 DONE Moved degree before affil number
 DONE Moved more detailed GEE stats methods to Supplemental Material
 DONE Moved detailed PLS results to Supplemental Material
-TODO Added analysis using PLS scores and AROC with incident dysglycemia
 DONE Moved some tables and figs into Supplemental Results
 DONE Updated QIC with models excluding waist
 DONE Made edits based on Tony's comments (not discussion)
@@ -75,7 +71,7 @@ DONE Added influence of location/site to gee vignette
 DONE Changed Zhen to second author
 TODO Added to supplemental material from NEFA paper
 DONE Added models to caption for QIC table
-TODO Fix pls figure dimensions
+DONE Fix pls figure dimensions
 TODO Added explanation to interaction vignette about the results
 TODO Moved supplemental material into new, separate file
 DONE Edits as per Richard's suggestions

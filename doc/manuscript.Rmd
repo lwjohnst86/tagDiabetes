@@ -699,12 +699,14 @@ plot_gee_main(gee_unadj_df)
 plot_gee_main(gee_adj_df)
 ```
 
-```{r fig_pls, fig.cap=fig_pls}
+```{r fig_pls, fig.cap=fig_pls, fig.height=8, fig.width=4}
 gridExtra::grid.arrange(
     plot_pls(pls_homa2) + ggplot2::ggtitle('A: HOMA2-%S'), 
     plot_pls(pls_isi) + ggplot2::ggtitle('B: ISI'), 
-    ncol = 2)
+    ncol = 1)
 ```
+
+# References
 
 # Supplemental Material
 
