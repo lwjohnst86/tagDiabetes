@@ -412,11 +412,14 @@ for unadjusted models and `r cite_st("gee_adj")` for adjusted models.
 The PLS analysis corroborated the findings from the GEE models. 
 The PLS results conditioned on insulin sensitivity as the outcome showed a
 clustering of the fatty acids 14:0, 14:1n-7, 16:0, and 16:1n-7 as mol%
-(`r cite_f('pls')`). These TAGFA loaded strongly and negatively on HOMA2-%S and ISI,
-suggesting this cluster of TAGFA tracks
+(`r cite_f('pls')`). These TAGFA loaded strongly and negatively on HOMA2-%S and ISI
+in the first component, suggesting this cluster of TAGFA tracks
 together with lower insulin sensitivity. The TAGFA 20:2n-6, 20:5n-3, 22:5n-3,
 and 22:6n-3 loaded positively on both insulin sensitivity measures. No other
-TAGFA loaded strongly. The PLS model for insulin sensitivity had good predictive
+TAGFA loaded strongly. In the second component, 18:1n-9 and 18:1n-7 loaded postively 
+but not strongly while 20:5n-3 and 22:6n-3 loaded strongly and negatively with both
+HOMA2-%S and ISI; however, this component only explained <10% of the variance. 
+The PLS model for insulin sensitivity had good predictive
 ability, with a high correlation between the predicted outcome values against
 the observed values (HOMA2-%S: `r cor_pls_homa2$r_p`; ISI: `r cor_pls_isi$r_p`).
 
@@ -434,8 +437,6 @@ scores constrained by ISI).
 
 # Discussion
 
-## Overall conclusion
-
 In the present study, we found that in a Canadian cohort at risk for diabetes,
 several specific TAGFA and groups of TAGFA were strongly associated
 with insulin sensitivity and moderately associated with beta-cell function. In 
@@ -451,8 +452,6 @@ involved in the *de novo* lipogenesis (DNL) of refined and simple carbohydrates
 [@Hodson2008a; @Kawano2013a]. Our results suggest that higher activity of DNL
 (potentially through higher intakes of simple carbohydrates) may increase the
 risk for diabetes, primarily through worsening insulin sensitivity.
-
-## Interpretation and previous literature
 
 To our knowledge, no longitudinal study to date has examined the role of the
 composition of the TAGFA fraction on detailed OGTT-derived metabolic measures 
@@ -575,7 +574,7 @@ lipotoxic environment {{ cite }}
 
 -->
 
-## Limitations
+## Limitations and strengths
 
 Our study has potential limitations that need to be considered when interpreting
 the results. Firstly, this is an observational cohort and as such there may be
@@ -809,5 +808,3 @@ table_gee_main(gee_adj_df, caption = tab_gee_adj)
 ```{r fig_gee_adj_nowaist, fig.cap=fig_gee_adj_nowaist}
 plot_gee_main(analyze_gee(covars = covariates[which(covariates != 'Waist')]))
 ```
-
-# References
