@@ -75,7 +75,7 @@ DONE Fix pls figure dimensions
 TODO Added explanation to interaction vignette about the results
 TODO Moved supplemental material into new, separate file
 DONE Edits as per Richard's suggestions
-TODO Added abstract
+DONE Added abstract
 DONE Created new function for corr of DNL TAGFA and added to results
 DONE Added a brief section in discussion on DNL and total TAG
 TODO Added vignette on role of TAGFA on clinical TAG

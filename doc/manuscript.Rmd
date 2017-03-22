@@ -4,7 +4,7 @@ bibliography:
     - /home/luke/Documents/bibliography/bib/bib-db/myrefs.bib
     - /home/luke/Documents/bibliography/bib/bib-db/methods.bib
 csl: /home/luke/Documents/bibliography/styles/dependent/diabetes-care.csl
-output: fost::diabetologia_manuscript
+output: fost::diabetes_care_manuscript
 ---
 
 <!--
@@ -55,6 +55,42 @@ Funding support:
 Word count: ~4000
 
 # Abstract
+
+Word count: ~281 / 250
+
+**Objective**: 
+There is limited data on the role of the specific triacylglyceride fatty acid
+(TAGFA) composition on diabetes pathogenesis. Our aim was to examine the 
+longitudinal association of TAGFA on insulin sensitivity (IS) and beta-cell
+function.
+
+**Research Design and Methods**:
+We used data from the Prospective Metabolism and Islet Cell Evaluation (PROMISE)
+cohort of adults (n=477) at-risk for diabetes with over 6-years of followup (3
+timepoints). Glucose and insulin from an OGTT were used to calculate the Matsuda
+index (ISI), HOMA2-%S, the Insulinogenic Index over HOMA-IR (IGI/IR), and the
+Insulin Secretion-Sensitivity Index-2 (ISSI-2). Gas chromatography quantified
+TAGFA. Generalized estimating equations (GEE) adjusted for confounders and
+partial least squares (PLS) were used for the analysis.
+
+**Results**: 
+The outcome variables declined by 14% to 27% over the 6-years. Most TAGFA
+modeled as a concentration had strong negative associations with IS in adjusted
+GEE models; when as a mol%, four TAGFA (14:0, 16:0, 14:1n-7, 16:1n-7) had strong
+negative associations while most others (e.g. 18:1n-7, 18:1n-9, 20:2n-6,
+20:5n-3) had strong positive associations. Few associations were seen for
+beta-cell function, except for 16:0 (negative) and 18:1n-7 (positive). The PLS
+analysis identified that the four 'harmful' TAGFA (14 and 16 carbon TAGFA)
+clustered together and strongly predicted lower IS.
+
+**Conclusions**:
+We found that a higher proportions of a cluster of four TAGFA (14:0, 14:1-7,
+16:0, 16:1n-7) strongly predicted lower IS. Previous research suggests these
+four FA are heavily derived from the de novo lipogenesis (DNL) of higher intakes
+of simple or refined carbohydrates, especially 16:1n-7. Our results suggest that
+greater simple or refined carbohydrate intake may impact risk for diabetes
+through greater DNL and higher FA associated with lipotoxicity (e.g. 16:0),
+leading to hypertriglyceridemia and lower IS.
 
 # Background
 
@@ -705,8 +741,6 @@ gridExtra::grid.arrange(
     ncol = 1)
 ```
 
-# References
-
 # Supplemental Material
 
 ## Supplemental Methods: Statistical analysis
@@ -808,3 +842,5 @@ table_gee_main(gee_adj_df, caption = tab_gee_adj)
 ```{r fig_gee_adj_nowaist, fig.cap=fig_gee_adj_nowaist}
 plot_gee_main(analyze_gee(covars = covariates[which(covariates != 'Waist')]))
 ```
+
+# References
