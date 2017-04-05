@@ -56,47 +56,43 @@ Word count: ~4000
 
 # Abstract
 
-Word count: ~281 / 250
+Word count: 234 / 250
 
 **Objective**: 
-There is limited data on the role of the specific triacylglyceride fatty acid
-(TAGFA) composition on diabetes pathogenesis. Our aim was to examine the 
-longitudinal association of TAGFA on insulin sensitivity (IS) and beta-cell
-function.
+Although elevated serum triglyceride (TAG) is a well-described risk factor for
+type 2 diabetes, few data are available regarding the role of the specific fatty
+acid composition within serum TAG (TAGFA). In this context, our aim was to
+examine longitudinal associations of TAGFA with insulin sensitivity (IS) and
+beta-cell function.
 
 **Research Design and Methods**:
-We used data from the Prospective Metabolism and Islet Cell Evaluation (PROMISE)
-cohort of adults (n=477) at-risk for diabetes with over 6-years of followup (3
-timepoints). Glucose and insulin from an OGTT were used to calculate the Matsuda
-index (ISI), HOMA2-%S, the Insulinogenic Index over HOMA-IR (IGI/IR), and the
-Insulin Secretion-Sensitivity Index-2 (ISSI-2). Gas chromatography quantified
-TAGFA. Generalized estimating equations (GEE) adjusted for confounders and
-partial least squares (PLS) were used for the analysis.
+We used longitudinal data (3 visits over 6 years) from the Prospective
+Metabolism and Islet Cell Evaluation (PROMISE) cohort of adults (n=477) at-risk
+for diabetes. Glucose and insulin from an OGTT were used to calculate the
+Matsuda index (ISI), HOMA2-%S, the Insulinogenic Index over HOMA-IR (IGI/IR),
+and the Insulin Secretion-Sensitivity Index-2 (ISSI-2). Gas chromatography
+quantified TAGFA composition. Generalized estimating equations (GEE) adjusted for
+confounders and partial least squares (PLS) were used for the analysis.
 
 **Results**: 
-The outcome variables declined by 14% to 27% over the 6-years. Most TAGFA
-modeled as a concentration had strong negative associations with IS in adjusted
-GEE models; when as a mol%, four TAGFA (14:0, 16:0, 14:1n-7, 16:1n-7) had strong
-negative associations while most others (e.g. 18:1n-7, 18:1n-9, 20:2n-6,
-20:5n-3) had strong positive associations. Few associations were seen for
-beta-cell function, except for 16:0 (negative) and 18:1n-7 (positive). The PLS
-analysis identified that the four 'harmful' TAGFA (14 and 16 carbon TAGFA)
-clustered together and strongly predicted lower IS.
+The outcome variables declined by 14% to 27% over the 6-years. In the adjusted
+GEE models with TAGFA as mol%, four TAGFA (14:0, 16:0, 14:1n-7, 16:1n-7) had
+strong negative associations while most others (e.g. 18:1n-7, 18:1n-9, 20:2n-6, 
+20:5n-3) had strong positive associations. Few associations were seen for 
+beta-cell function, except for 16:0 (negative) and 18:1n-7 (positive). PLS
+analysis indicated that four TGFA clustered together and strongly predicted
+lower IS. These four TAGFA also correlated highly (r>0.4) with clinically
+measured TAG.
 
 **Conclusions**:
-We found that a higher proportions of a cluster of four TAGFA (14:0, 14:1-7,
-16:0, 16:1n-7) strongly predicted lower IS. Previous research suggests these
-four FA are heavily derived from the de novo lipogenesis (DNL) of higher intakes
-of simple or refined carbohydrates, especially 16:1n-7. Our results suggest that
-greater simple or refined carbohydrate intake may impact risk for diabetes
-through greater DNL and higher FA associated with lipotoxicity (e.g. 16:0),
-leading to hypertriglyceridemia and lower IS.
+We found that higher proportions of a cluster of four TAGFA (14:0, 14:1-7,
+16:0, 16:1n-7) strongly predicted lower IS as well as hypertriglyceridemia.
 
 # Background
 
 Hypertriglyceridemia is an extensively studied and well described disorder in
 the dysregulation of metabolic function and subsequent negative health outcomes [@Chehade2013a].
-It is a strong risk factor for cardiovascular disease [@DAgostino2004a], in addition to other metabolic disorders such as non-is involved in metabolic dysfunction [@Verges2015a; @Kawano2013a; @Alberti2009a]. 
+It is a strong risk factor for cardiovascular disease [@DAgostino2004a], in addition to other metabolic disorders such as non-is involved in metabolic dysfunction [@Verges2015a; @Kawano2013a; @Alberti2009]. 
 Circulating triacylglceride (TAG) concentration is commonly measured during
 routine clinical assessment using enzymatic methods.
 However, clinically measured TAG is limited as it
