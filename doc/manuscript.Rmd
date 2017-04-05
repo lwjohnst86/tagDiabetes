@@ -7,15 +7,6 @@ csl: /home/luke/Documents/bibliography/styles/dependent/diabetes-care.csl
 output: fost::diabetes_care_manuscript
 ---
 
-<!--
-
-Outline:
-
-- Primary analysis:
-        - Sensitivity analysis with Carb intake? 
-
--->
-
 # Title page
 
 Title: Specific clusters of fatty acids within the serum triacylglycerol fraction 
@@ -56,19 +47,19 @@ Word count: ~4000
 
 # Abstract
 
-Word count: 234 / 250
+Word count: 249 / 250
 
 **Objective**: 
 Although elevated serum triglyceride (TAG) is a well-described risk factor for
-type 2 diabetes, few data are available regarding the role of the specific fatty
-acid composition within serum TAG (TAGFA). In this context, our aim was to
+type 2 diabetes (T2DM), few data are available regarding the role of the specific fatty
+acid composition within serum TAG (TAGFA) in the pathogenesis of T2DM. Our aim, therefore, was to
 examine longitudinal associations of TAGFA with insulin sensitivity (IS) and
 beta-cell function.
 
 **Research Design and Methods**:
 We used longitudinal data (3 visits over 6 years) from the Prospective
-Metabolism and Islet Cell Evaluation (PROMISE) cohort of adults (n=477) at-risk
-for diabetes. Glucose and insulin from an OGTT were used to calculate the
+Metabolism and Islet Cell Evaluation (PROMISE) cohort of adults (n=477) who were at-risk
+for diabetes at baseline. Glucose and insulin from an OGTT were used to calculate the
 Matsuda index (ISI), HOMA2-%S, the Insulinogenic Index over HOMA-IR (IGI/IR),
 and the Insulin Secretion-Sensitivity Index-2 (ISSI-2). Gas chromatography
 quantified TAGFA composition. Generalized estimating equations (GEE) adjusted for
@@ -76,17 +67,18 @@ confounders and partial least squares (PLS) were used for the analysis.
 
 **Results**: 
 The outcome variables declined by 14% to 27% over the 6-years. In the adjusted
-GEE models with TAGFA as mol%, four TAGFA (14:0, 16:0, 14:1n-7, 16:1n-7) had
-strong negative associations while most others (e.g. 18:1n-7, 18:1n-9, 20:2n-6, 
+GEE models, four TAGFA (14:0, 16:0, 14:1n-7, 16:1n-7 as mol%) had
+strong negative associations with IS while others (e.g. 18:1n-7, 18:1n-9, 20:2n-6, 
 20:5n-3) had strong positive associations. Few associations were seen for 
 beta-cell function, except for 16:0 (negative) and 18:1n-7 (positive). PLS
-analysis indicated that four TGFA clustered together and strongly predicted
+analysis indicated four TAGFA (14:0, 16:0, 14:1n-7, 16:1n-7) that are markers of de novo lipogenesis (DNL)
+clustered together and strongly predicted
 lower IS. These four TAGFA also correlated highly (r>0.4) with clinically
 measured TAG.
 
 **Conclusions**:
-We found that higher proportions of a cluster of four TAGFA (14:0, 14:1-7,
-16:0, 16:1n-7) strongly predicted lower IS as well as hypertriglyceridemia.
+We found that higher proportions of a cluster of four DNL TAGFA 
+strongly predicted lower IS as well as hypertriglyceridemia.
 
 # Background
 
