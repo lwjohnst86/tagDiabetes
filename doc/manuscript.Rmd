@@ -9,7 +9,7 @@ output: fost::diabetes_care_manuscript
 
 # Title page
 
-Title: Specific clusters of fatty acids within the serum triacylglycerol fraction 
+Title: Specific clusters of fatty acids within the serum triacylglyceride fraction 
 associate with the pathogenesis of type 2 diabetes 
 
 Author: Luke W. Johnston, MSc (1); Zhen Liu, PhD (1); Ravi Retnakaran, MD
@@ -50,9 +50,9 @@ Word count: ~4000
 Word count: 249 / 250
 
 **Objective**: 
-Although elevated serum triglyceride (TAG) is a well-described risk factor for
+Although elevated serum triacylglyceride (TAG) is a well-described risk factor for
 type 2 diabetes (T2DM), few data are available regarding the role of the specific fatty
-acid composition within serum TAG (TAGFA) in the pathogenesis of T2DM. Our aim, therefore, was to
+acid (FA) composition within serum TAG (TAGFA) in the pathogenesis of T2DM. Our aim, therefore, was to
 examine longitudinal associations of TAGFA with insulin sensitivity (IS) and
 beta-cell function.
 
@@ -66,7 +66,7 @@ quantified TAGFA composition. Generalized estimating equations (GEE) adjusted fo
 confounders and partial least squares (PLS) were used for the analysis.
 
 **Results**: 
-The outcome variables declined by 14% to 27% over the 6-years. In the adjusted
+The metabolic outcome variables declined by 14% to 27% over the 6-years. In the adjusted
 GEE models, four TAGFA (14:0, 16:0, 14:1n-7, 16:1n-7 as mol%) had
 strong negative associations with IS while others (e.g. 18:1n-7, 18:1n-9, 20:2n-6, 
 20:5n-3) had strong positive associations. Few associations were seen for 
