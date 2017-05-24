@@ -1,21 +1,12 @@
 
-<!--
-
-Outline:
-
-- Primary analysis:
-        - Sensitivity analysis with Carb intake? 
-
--->
-
 # Title page
 
-Title: Composition of fatty acids within the serum triacylglycerol fraction and 
-the association with the pathogenesis of diabetes 
+Title: Specific clusters of fatty acids within the serum triacylglycerol fraction 
+associate with the pathogenesis of type 2 diabetes 
 
 Author: Luke W. Johnston, MSc (1); Zhen Liu, PhD (1); Ravi Retnakaran, MD
 (3,4); Bernard Zinman, MD (3,4); Adria Giacca, PhD (5); Stewart B. Harris, MD (2); 
-Richard P. Bazinet, PhD (1); and Anthony J. Hanley, PhD (1,6)
+Richard P. Bazinet, PhD (1); and Anthony J. Hanley, PhD (1,3,6)
 
 <!-- During time of study. -->
 Affiliation:
@@ -48,42 +39,75 @@ Word count: ~4000
 
 # Abstract
 
+Word count: 249 / 250
+
+**Objective**: 
+Although elevated serum triglyceride (TAG) is a well-described risk factor for
+type 2 diabetes (T2DM), few data are available regarding the role of the specific fatty
+acid composition within serum TAG (TAGFA) in the pathogenesis of T2DM. Our aim, therefore, was to
+examine longitudinal associations of TAGFA with insulin sensitivity (IS) and
+beta-cell function.
+
+**Research Design and Methods**:
+We used longitudinal data (3 visits over 6 years) from the Prospective
+Metabolism and Islet Cell Evaluation (PROMISE) cohort of adults (n=477) who were at-risk
+for diabetes at baseline. Glucose and insulin from an OGTT were used to calculate the
+Matsuda index (ISI), HOMA2-%S, the Insulinogenic Index over HOMA-IR (IGI/IR),
+and the Insulin Secretion-Sensitivity Index-2 (ISSI-2). Gas chromatography
+quantified TAGFA composition. Generalized estimating equations (GEE) adjusted for
+confounders and partial least squares (PLS) were used for the analysis.
+
+**Results**: 
+The outcome variables declined by 14% to 27% over the 6-years. In the adjusted
+GEE models, four TAGFA (14:0, 16:0, 14:1n-7, 16:1n-7 as mol%) had
+strong negative associations with IS while others (e.g. 18:1n-7, 18:1n-9, 20:2n-6, 
+20:5n-3) had strong positive associations. Few associations were seen for 
+beta-cell function, except for 16:0 (negative) and 18:1n-7 (positive). PLS
+analysis indicated four TAGFA (14:0, 16:0, 14:1n-7, 16:1n-7) that are markers of de novo lipogenesis (DNL)
+clustered together and strongly predicted
+lower IS. These four TAGFA also correlated highly (r>0.4) with clinically
+measured TAG.
+
+**Conclusions**:
+We found that higher proportions of a cluster of four DNL TAGFA 
+strongly predicted lower IS as well as hypertriglyceridemia.
+
 # Background
 
-Hypertriglyceridemia is an extensively studied and well known factor involved in
+Hypertriglyceridemia is an extensively studied and well described disorder in
 the dysregulation of metabolic function and subsequent negative health outcomes [@Chehade2013a].
-It is a component of the metabolic syndrome [@Alberti2009] and a strong risk factor for
-cardiovascular disease [@DAgostino2004a], in addition to it's role in metabolic
-dysfunction [@Verges2015a; @Kawano2013a]. The measurement of circulating 
-triacylglcerides (TAG) is commonly done during routine clinical visits as part
-of health assessment. However, clinically measured TAG is limited as it
-represents all the types of fatty acids within the TAG fraction as a single
-measure. Given the increasing appreciation for the role of the specific fatty
-acid composition on health outcomes, for instance with differences in
-associations of fatty acids within the PL lipid fraction [@Forouhi2014a; @Ma2015a] 
-including an analysis from the PROMISE cohort [@Johnston2016a], there
-are relatively few studies that have explored this area of research in the TAG
-fraction.
+It is a strong risk factor for cardiovascular disease [@DAgostino2004a; @Verges2015a]
+and is involved in other metabolic disorders and phenomenon such as non-alcoholic
+fatty liver disease [@Kawano2013a], the metabolic syndrome [@Alberti2009], and
+the hypertriglyceridemic waist [@Lemieux2000a].
+Circulating triacylglceride (TAG) concentration is commonly measured during
+routine clinical assessment using enzymatic methods.
+However, clinically measured TAG is limited as it
+represents the full fatty acid spectrum within the TAG fraction as a summary
+measure. There is increasing appreciation for the importance of specific fatty 
+acid composition profiles in different plasma fractions on various health
+outcomes [@Forouhi2014a; @Ma2015a; @Johnston2016a], however there are relatively
+few studies that have explored the impact of the fatty acid composition in the TAG fraction [@Rhee2011a; @Lankinen2015a].
 
-The interaction between TAG and insulin sensitivity is complex and has 
+The interaction between TAG and insulin sensitivity is complex and involves 
 components of a feedback system [@Verges2015a]. Greater resistance to insulin in
 both the liver and muscle may result in greater production of TAG and secretion
 of lipoproteins that transport TAG [@Yu2012a]. Likewise, greater TAG may
 contribute to metabolic dysfunction and lipotoxicity in various tissues, such as
-the beta-cells, and thus continuing the cycle [@Verges2015a]. Given the
+the beta-cells, and thus continue the cycle [@Verges2015a]. Given the
 complexity and temporal nature of the relationship, long term studies with
-multiple data collections are paramount to better understanding the underlying
+multiple data collection time points are paramount to better understanding the underlying
 biology and subsequent risk.
 
-While several prospective studies have documented a prospective association of 
+While several studies have documented prospective associations of 
 hypertriglyceridemia with incident type 2 diabetes 
-[@Chien2008a; @DAgostino2004a; @Schulze2009a], there are limited longitudinal
-studies [@Rhee2011a; @Lankinen2015a] that have examined the relationship between
-TAG and it's composition on the pathophysiological factors underlying diabetes, 
-particularly in regard to beta-cell function. Our objective was to examine the 
+[@Chien2008a; @DAgostino2004a; @Schulze2009a], only a limited number of longitudinal
+studies [@Rhee2011a; @Lankinen2015a] have examined the relationship between
+TAG and its composition on the pathophysiological factors underlying diabetes, 
+particularly on beta-cell function. Our objective was to examine the 
 longitudinal role of the specific composition of the serum TAG fraction on 
 OGTT-derived measures of insulin sensitivity and beta-cell function compared to 
-clinically measured TAG in an Canadian population at risk for diabetes.
+clinically measured TAG in a Canadian population at risk for diabetes.
 
 # Subjects and Methods
 
@@ -106,8 +130,8 @@ criteria of having one or more risk factors for type 2 diabetes mellitus,
 including obesity, hypertension, family history of diabetes, and/or a history of
 gestational diabetes or birth of a macrosomic infant. A total of 736 individuals
 attended the baseline visit. Subsequent examinations occurred every three years,
-with three examination visits completed to date (2004-2006, 2007-2009, and
-2010-2013). The current study
+with data from three examination visits available for the present analysis
+(2004-2006, 2007-2009, and 2010-2013). The current study
 used data on participants who did not have diabetes at baseline, who
 returned for one or more of the follow-up examinations, and who had samples
 available for fatty acid measurements (n=477; see the CONSORT diagram in 
@@ -134,8 +158,8 @@ electrochemiluminescence immunoassay, which shows 0.05% cross-reactivity to
 intact human pro-insulin and the Des 31,32 circulating split form (Linco Res. 
 Inc) and has a coefficient of variation (CV) of 9.3%. Glucose was determined 
 using an enzymatic hexokinase (Roche Modular, Roche Diagnostics) with a 
-detection range of 0.11 to 41.6 mmol/L and an inter-assay %CV of <1.1% and an
-intra-assay %CV of < 1.9%.  All assays were performed at the Banting and Best
+detection range of 0.11 to 41.6 mmol/L and an inter-assay CV of <1.1% and an
+intra-assay CV of < 1.9%.  All assays were performed at the Banting and Best
 Diabetes Centre Core Lab at Mt Sinai Hospital. Impaired fasting glucose (IFG),
 impaired glucose tolerance (IGT), and diabetes were categorized using the 2006
 WHO criteria [@WHO2006].
@@ -294,7 +318,7 @@ the attenuation with beta-cell function was due primarily to adjustment for
 waist.
 
 In analyses using concentration values, nearly all TAGFA had a strong
-negative association on HOMA2-%S and ISI (estimates ranging from
+negative association on HOMA2-%S and ISI (estimates of percent different ranging from
 -13.7 to -3.6 and -14.7 to -4.4, respectively), and a
 few had strong negative associations with IGI/IR and ISSI-2 (estimates ranging 
 from -7.4 to -7.3 and -4.1 to -3.4, respectively).
@@ -325,12 +349,15 @@ for unadjusted models and Supplemental Table  4 for adjusted models.
 
 The PLS analysis corroborated the findings from the GEE models. 
 The PLS results conditioned on insulin sensitivity as the outcome showed a
-clustering of the fatty acids 14:0, 14:1n-7, 16:0, and 16:1n-7 
-(Figure  7). These TAGFA loaded strongly and negatively on HOMA2-%S and ISI,
-suggesting this cluster of TAGFA tracks
+clustering of the fatty acids 14:0, 14:1n-7, 16:0, and 16:1n-7 as mol%
+(Figure  7). These TAGFA loaded strongly and negatively on HOMA2-%S and ISI
+in the first component, suggesting this cluster of TAGFA tracks
 together with lower insulin sensitivity. The TAGFA 20:2n-6, 20:5n-3, 22:5n-3,
 and 22:6n-3 loaded positively on both insulin sensitivity measures. No other
-TAGFA loaded strongly. The PLS model for insulin sensitivity had good predictive
+TAGFA loaded strongly. In the second component, 18:1n-9 and 18:1n-7 loaded postively 
+but not strongly while 20:5n-3 and 22:6n-3 loaded strongly and negatively with both
+HOMA2-%S and ISI; however, this component only explained <10% of the variance. 
+The PLS model for insulin sensitivity had good predictive
 ability, with a high correlation between the predicted outcome values against
 the observed values (HOMA2-%S: r=0.46, p<0.001; ISI: r=0.39, p<0.001).
 
@@ -348,8 +375,6 @@ scores constrained by ISI).
 
 # Discussion
 
-## Overall conclusion
-
 In the present study, we found that in a Canadian cohort at risk for diabetes,
 several specific TAGFA and groups of TAGFA were strongly associated
 with insulin sensitivity and moderately associated with beta-cell function. In 
@@ -365,8 +390,6 @@ involved in the *de novo* lipogenesis (DNL) of refined and simple carbohydrates
 [@Hodson2008a; @Kawano2013a]. Our results suggest that higher activity of DNL
 (potentially through higher intakes of simple carbohydrates) may increase the
 risk for diabetes, primarily through worsening insulin sensitivity.
-
-## Interpretation and previous literature
 
 To our knowledge, no longitudinal study to date has examined the role of the
 composition of the TAGFA fraction on detailed OGTT-derived metabolic measures 
@@ -393,8 +416,8 @@ of metabolic function and as well as multivariate statistical approaches that
 allowed us to identify clusters of TAGFA. In another study of a much
 smaller (n=16) mostly female group [@Kotronen2009a], the authors report a
 positive correlation between total esterified (of which TAG make up the
-majority) 16:0, 16:1n-7, and 18:1n-9 with HOMA-IR, similar as our results except
-for the 18:1n-9 finding.
+majority) 16:0, 16:1n-7, and 18:1n-9 with HOMA-IR, findings which were largely 
+similar to the present analysis.
 
 Previous research has shown that carbohydrate intake increases DNL 
 [@Hodson2008a; @Kawano2013a; @Harding2015a; @Hudgins2000a; @Parks1999a]. In
@@ -437,7 +460,7 @@ instance from palmitic acid (16:0), which is well-known to have harmful effects
 on tissues [@Riserus2008a; @Iggman2010a].
 
 The direction of association between TAGFA and insulin sensitivity is unclear 
-from cross-sectional studies due to the physiological feedback mechanisms 
+from previous cross-sectional studies due to the physiological feedback mechanisms 
 involved. For example, while greater DNL may promote muscle insulin resistance, 
 the reverse may also be true [@Flannery2012a]. Higher insulin resistance may
 encourage greater DNL to handle the higher blood glucose. To illustrate this, in
@@ -489,7 +512,7 @@ lipotoxic environment {{ cite }}
 
 -->
 
-## Limitations
+## Limitations and strengths
 
 Our study has potential limitations that need to be considered when interpreting
 the results. Firstly, this is an observational cohort and as such there may be

@@ -84,7 +84,10 @@ strongly predicted lower IS as well as hypertriglyceridemia.
 
 Hypertriglyceridemia is an extensively studied and well described disorder in
 the dysregulation of metabolic function and subsequent negative health outcomes [@Chehade2013a].
-It is a strong risk factor for cardiovascular disease [@DAgostino2004a], in addition to other metabolic disorders such as non-is involved in metabolic dysfunction [@Verges2015a; @Kawano2013a; @Alberti2009]. 
+It is a strong risk factor for cardiovascular disease [@DAgostino2004a; @Verges2015a]
+and is involved in other metabolic disorders and phenomenon such as non-alcoholic
+fatty liver disease [@Kawano2013a], the metabolic syndrome [@Alberti2009], and
+the hypertriglyceridemic waist [@Lemieux2000a].
 Circulating triacylglceride (TAG) concentration is commonly measured during
 routine clinical assessment using enzymatic methods.
 However, clinically measured TAG is limited as it
@@ -99,7 +102,7 @@ components of a feedback system [@Verges2015a]. Greater resistance to insulin in
 both the liver and muscle may result in greater production of TAG and secretion
 of lipoproteins that transport TAG [@Yu2012a]. Likewise, greater TAG may
 contribute to metabolic dysfunction and lipotoxicity in various tissues, such as
-the beta-cells, and thus continuing the cycle [@Verges2015a]. Given the
+the beta-cells, and thus continue the cycle [@Verges2015a]. Given the
 complexity and temporal nature of the relationship, long term studies with
 multiple data collection time points are paramount to better understanding the underlying
 biology and subsequent risk.
@@ -109,7 +112,7 @@ hypertriglyceridemia with incident type 2 diabetes
 [@Chien2008a; @DAgostino2004a; @Schulze2009a], only a limited number of longitudinal
 studies [@Rhee2011a; @Lankinen2015a] have examined the relationship between
 TAG and its composition on the pathophysiological factors underlying diabetes, 
-particularly beta-cell function. Our objective was to examine the 
+particularly on beta-cell function. Our objective was to examine the 
 longitudinal role of the specific composition of the serum TAG fraction on 
 OGTT-derived measures of insulin sensitivity and beta-cell function compared to 
 clinically measured TAG in a Canadian population at risk for diabetes.
