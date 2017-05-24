@@ -24,7 +24,15 @@ library(pls)
 
 ```{r homa}
 fit_train <- project_data %>%
-    analyze_pls(y = 'linvHOMA')
+    analyze_pls(y = 'lHOMA2_S')
+
+ds <- project_data %>% 
+    prep_gee_pls_data(
+        analyze_pls(project_data, y = 'lHOMA2_S', cv = FALSE)
+        )
+
+plot(x = ds$Comp1, y = ds$lHOMA2_S)    
+plot(x = ds$Comp2, y = ds$lHOMA2_S)    
 
 summary(fit_train)
 validationplot(fit_train, newdata = fit_train$test_data)
@@ -38,6 +46,14 @@ calc_pred_corr(fit_train, fit_train$test_data)
 ```{r isi}
 fit_train <- project_data %>%
     analyze_pls(y = 'lISI')
+
+ds <- project_data %>% 
+    prep_gee_pls_data(
+        analyze_pls(project_data, y = 'lISI', cv = FALSE)
+        )
+
+plot(x = ds$Comp1, y = ds$lISI)    
+plot(x = ds$Comp2, y = ds$lISI)    
 
 summary(fit_train)
 validationplot(fit_train, newdata = fit_train$test_data)
