@@ -27,7 +27,7 @@ set_options <- function() {
     # For the document (knitr)
     knitr::opts_chunk$set(
         warning = FALSE, message = FALSE, collapse = TRUE,
-        fig.showtext = TRUE, comment = '#>'
+        fig.showtext = FALSE, comment = '#>', dev = "pdf"
     )
 }
 
