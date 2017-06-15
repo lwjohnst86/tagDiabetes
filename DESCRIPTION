@@ -41,7 +41,8 @@ Imports:
     lsmeans,
     geepack,
     gridExtra,
-    aide
+    aide,
+    showtext
 Remotes:
     github::lwjohnst86/fost,
     github::lwjohnst86/aide,
