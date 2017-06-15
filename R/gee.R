@@ -226,6 +226,7 @@ table_gee_main <- function(results, caption = NULL, digits = 1) {
         ) %>%
         dplyr::select(-unit) %>%
         dplyr::rename('Fatty acid' = Xterms) %>%
+        as.data.frame() %>%
         pander::pander(missing = '', caption = caption)
 }
 
