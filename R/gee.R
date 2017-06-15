@@ -157,8 +157,8 @@ transform_continuous_model_output <- function(gee_results) {
 
 rename_terms_model_output <- function(gee_results, rename_x, rename_y) {
     gee_results %>%
-        mason::polish_renaming(rename_x, 'Xterms') %>%
-        mason::polish_renaming(rename_y, 'Yterms')
+        dplyr::mutate_at('Xterms', dplyr::funs(rename_x)) %>%
+        dplyr::mutate_at('Yterms', dplyr::funs(rename_y))
 }
 
 padjust_model_output <- function(gee_results) {
@@ -203,8 +203,10 @@ set_outcome_order_model_output <- function(gee_results) {
 #' @export
 table_gee_main <- function(results, caption = NULL, digits = 1) {
     table_data <- results %>%
-        dplyr::mutate_each(dplyr::funs(format_rounding(., digits = digits)),
-                           estimate, conf.low, conf.high) %>%
+        dplyr::mutate_at(
+            dplyr::vars(estimate, conf.low, conf.high),
+            dplyr::funs(format_rounding(., digits = digits))
+        ) %>%
         dplyr::mutate(
             p.binary = ifelse(p.value <= 0.05, '\\*', ''),
             estimate.ci = paste0(estimate, ' (', conf.low, ', ', conf.high, ')',

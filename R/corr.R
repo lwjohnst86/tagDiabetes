@@ -22,10 +22,10 @@ analyze_corr <-
         mason::add_variables('xvars', x) %>%
         mason::construct() %>%
         mason::scrub() %>%
-        mason::polish_renaming(renaming_fats, 'Vars2') %>%
-        mason::polish_renaming(function(x)
+        dplyr::mutate_at('Vars2', dplyr::funs(renaming_fats)) %>%
+        dplyr::mutate_at("Vars1", function(x)
             gsub('l(ALT|TAG|IGIIR|HOMA2_S|ISI|ISSI2)', '\\1', x) %>%
-                renaming_outcomes(), 'Vars1') %>%
+                renaming_outcomes()) %>%
         dplyr::mutate(
             order1 = substr(Vars2, nchar(Vars2), nchar(Vars2)),
             order1 = ifelse(order1 == 0, 10, order1),
@@ -56,8 +56,7 @@ analyze_corr_tagfa <-
         mason::add_variables('xvars', x) %>%
         mason::construct() %>%
         mason::scrub() %>%
-        mason::polish_renaming(renaming_fats, 'Vars2') %>%
-        mason::polish_renaming(renaming_fats, 'Vars1') %>%
+        dplyr::mutate_at(c("Vars2", "Vars1"), dplyr::funs(renaming_fats)) %>%
         dplyr::mutate(Vars2 = factor(Vars2, unique(Vars2)),
                       Vars1 = factor(Vars1, unique(Vars1)))
     }
