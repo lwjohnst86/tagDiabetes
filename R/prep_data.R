@@ -12,7 +12,7 @@ prep_dys_data <- function(data) {
                 dplyr::filter(VN == 0),
             data %>%
                 dplyr::filter(!is.na(TotalTG)) %>%
-                dplyr::mutate_each(dplyr::funs(ifelse(is.na(.), 0, .)), IFG, IGT) %>%
+                dplyr::mutate_at(c("IFG", "IGT"), dplyr::funs(ifelse(is.na(.), 0, .))) %>%
                 dplyr::mutate(PreDM = as.numeric(rowSums(.[c('IFG', 'IGT')], na.rm = TRUE))) %>%
                 dplyr::mutate(FactorDysgly = ifelse(
                     PreDM == 1, 'PreDM',

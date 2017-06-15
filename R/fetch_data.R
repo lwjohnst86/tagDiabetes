@@ -65,7 +65,8 @@ fetch_data <- function() {
     ds <- ds %>%
         dplyr::full_join(ds %>%
                       dplyr::filter(VN == 1) %>%
-                      dplyr::mutate_each(dplyr::funs((. / TotalTG) * 100), dplyr::matches('^tg\\d+')) %>%
+                      dplyr::mutate_at(dplyr::vars(dplyr::matches('^tg\\d+')),
+                                       dplyr::funs((. / TotalTG) * 100)) %>%
                       dplyr::select(SID, dplyr::matches('^tg\\d+')) %>%
                       stats::setNames(paste0('pct_', names(.))) %>%
                       dplyr::rename(SID = pct_SID),

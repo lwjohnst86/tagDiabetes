@@ -18,7 +18,7 @@ prep_gee_data <- function(data) {
         dplyr::filter(VN == 0) %>%
         dplyr::select(SID, TotalNE, TotalTG, BaseTAG, lBaseTAG,
                       dplyr::matches('pct_tg\\d+|^tg\\d+')) %>%
-        dplyr::mutate_each(dplyr::funs(as.numeric(scale(.))), -SID)
+        dplyr::mutate_at(dplyr::vars(-SID), dplyr::funs(as.numeric(scale(.))))
 
     dplyr::full_join(
             no_fattyacids,
