@@ -47,7 +47,7 @@ analyze_pls <- function(data = project_data,
 #'
 #' @export
 plot_pls <- function(data) {
-    seer::view_pls_xloadings(data, renaming.x = renaming_fats) +
+    seer::view_pls_xloadings(data, renaming.x = renaming_fats, dot.colour = "black") +
         graph_theme(minor.grid.lines = FALSE)
 }
 

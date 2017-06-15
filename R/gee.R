@@ -241,6 +241,7 @@ plot_gee_main <- function(results) {
     results %>%
         seer::view_main_effect(
             graph.options = 'dot.size',
+            dot.colour = "black",
             groups = 'unit~Yterms',
             legend.title = 'FDR-adjusted\np-value',
             xlab = 'Percent difference with 95% CI in the outcomes\nfor each SD increase in fatty acid',
