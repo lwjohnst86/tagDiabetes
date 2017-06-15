@@ -16,7 +16,7 @@ format_p <- function(x) {
 graph_theme <- function(base.plot, ticks = TRUE, minor.grid.lines = FALSE, legend.pos = 'bottom') {
     graph.theme <-
         ggplot2::"%+replace%"(
-            ggthemes::theme_tufte(base_size = 10, base_family = 'Arial'),
+            ggthemes::theme_tufte(base_size = 10, base_family = 'sans'),
             ggplot2::theme(
                 axis.line = ggplot2::element_line('black'),
                 axis.line.x = ggplot2::element_line('black'),
