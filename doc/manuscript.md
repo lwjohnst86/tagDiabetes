@@ -1,7 +1,7 @@
 
 # Title page
 
-Title: Specific clusters of fatty acids within the serum triacylglycerol fraction 
+Title: Specific clusters of fatty acids within the serum triacylglyceride fraction 
 associate with the pathogenesis of type 2 diabetes 
 
 Author: Luke W. Johnston, MSc (1); Zhen Liu, PhD (1); Ravi Retnakaran, MD
@@ -42,23 +42,23 @@ Word count: ~4000
 Word count: 249 / 250
 
 **Objective**: 
-Although elevated serum triglyceride (TAG) is a well-described risk factor for
+Although elevated serum triacylglyceride (TAG) is a well-described risk factor for
 type 2 diabetes (T2DM), few data are available regarding the role of the specific fatty
-acid composition within serum TAG (TAGFA) in the pathogenesis of T2DM. Our aim, therefore, was to
+acid (FA) composition within serum TAG (TAGFA) in the pathogenesis of T2DM. Our aim, therefore, was to
 examine longitudinal associations of TAGFA with insulin sensitivity (IS) and
 beta-cell function.
 
 **Research Design and Methods**:
 We used longitudinal data (3 visits over 6 years) from the Prospective
 Metabolism and Islet Cell Evaluation (PROMISE) cohort of adults (n=477) who were at-risk
-for diabetes at baseline. Glucose and insulin from an OGTT were used to calculate the
-Matsuda index (ISI), HOMA2-%S, the Insulinogenic Index over HOMA-IR (IGI/IR),
-and the Insulin Secretion-Sensitivity Index-2 (ISSI-2). Gas chromatography
+for diabetes at baseline. Glucose and insulin from an OGTT were used to calculate the outcome variables
+Matsuda index (ISI), HOMA2-%S, Insulinogenic Index over HOMA-IR (IGI/IR),
+and Insulin Secretion-Sensitivity Index-2 (ISSI-2). Gas chromatography
 quantified TAGFA composition. Generalized estimating equations (GEE) adjusted for
 confounders and partial least squares (PLS) were used for the analysis.
 
 **Results**: 
-The outcome variables declined by 14% to 27% over the 6-years. In the adjusted
+The metabolic outcome variables declined by 14% to 27% over the 6-years. In the adjusted
 GEE models, four TAGFA (14:0, 16:0, 14:1n-7, 16:1n-7 as mol%) had
 strong negative associations with IS while others (e.g. 18:1n-7, 18:1n-9, 20:2n-6, 
 20:5n-3) had strong positive associations. Few associations were seen for 
@@ -74,12 +74,11 @@ strongly predicted lower IS as well as hypertriglyceridemia.
 
 # Background
 
-Hypertriglyceridemia is an extensively studied and well described disorder in
-the dysregulation of metabolic function and subsequent negative health outcomes [@Chehade2013a].
-It is a strong risk factor for cardiovascular disease [@DAgostino2004a; @Verges2015a]
-and is involved in other metabolic disorders and phenomenon such as non-alcoholic
+Hypertriglyceridemia is a well described metabolic disorder resulting in negative health outcomes [@Chehade2013a].
+It is a risk factor for cardiovascular disease [@DAgostino2004a; @Verges2015a]
+and is associated with other metabolic disorders such as non-alcoholic
 fatty liver disease [@Kawano2013a], the metabolic syndrome [@Alberti2009], and
-the hypertriglyceridemic waist [@Lemieux2000a].
+abdominal obesity [@Lemieux2000a].
 Circulating triacylglceride (TAG) concentration is commonly measured during
 routine clinical assessment using enzymatic methods.
 However, clinically measured TAG is limited as it
@@ -93,8 +92,8 @@ The interaction between TAG and insulin sensitivity is complex and involves
 components of a feedback system [@Verges2015a]. Greater resistance to insulin in
 both the liver and muscle may result in greater production of TAG and secretion
 of lipoproteins that transport TAG [@Yu2012a]. Likewise, greater TAG may
-contribute to metabolic dysfunction and lipotoxicity in various tissues, such as
-the beta-cells, and thus continue the cycle [@Verges2015a]. Given the
+contribute to metabolic dysfunction and lipotoxicity in various tissues,
+affecting insulin sensitivity, and thus continue the cycle [@Verges2015a]. Given the
 complexity and temporal nature of the relationship, long term studies with
 multiple data collection time points are paramount to better understanding the underlying
 biology and subsequent risk.
@@ -103,8 +102,8 @@ While several studies have documented prospective associations of
 hypertriglyceridemia with incident type 2 diabetes 
 [@Chien2008a; @DAgostino2004a; @Schulze2009a], only a limited number of longitudinal
 studies [@Rhee2011a; @Lankinen2015a] have examined the relationship between
-TAG and its composition on the pathophysiological factors underlying diabetes, 
-particularly on beta-cell function. Our objective was to examine the 
+TAG and its composition with the pathophysiological factors underlying diabetes, 
+particularly beta-cell function. Our objective was to examine the 
 longitudinal role of the specific composition of the serum TAG fraction on 
 OGTT-derived measures of insulin sensitivity and beta-cell function compared to 
 clinically measured TAG in a Canadian population at risk for diabetes.
@@ -125,7 +124,7 @@ clinically measured TAG in a Canadian population at risk for diabetes.
 
 Recruitment for the baseline visit of the Prospective Metabolism and Islet Cell Evaluation (PROMISE) 
 cohort took place between 2004-2006 in London and Toronto, 
-Canada. Individuals were selected to participant if they met the eligibility 
+Canada. Individuals were selected to participate if they met the eligibility 
 criteria of having one or more risk factors for type 2 diabetes mellitus, 
 including obesity, hypertension, family history of diabetes, and/or a history of
 gestational diabetes or birth of a macrosomic infant. A total of 736 individuals
@@ -157,7 +156,7 @@ and 2 hour time points. Specific insulin was measured with the Elecsys 1010
 electrochemiluminescence immunoassay, which shows 0.05% cross-reactivity to 
 intact human pro-insulin and the Des 31,32 circulating split form (Linco Res. 
 Inc) and has a coefficient of variation (CV) of 9.3%. Glucose was determined 
-using an enzymatic hexokinase (Roche Modular, Roche Diagnostics) with a 
+using an enzymatic hexokinase method (Roche Modular, Roche Diagnostics) with a 
 detection range of 0.11 to 41.6 mmol/L and an inter-assay CV of <1.1% and an
 intra-assay CV of < 1.9%.  All assays were performed at the Banting and Best
 Diabetes Centre Core Lab at Mt Sinai Hospital. Impaired fasting glucose (IFG),
@@ -181,7 +180,7 @@ were 22 fatty acids measured in the TAGFA fraction.
 Findings
 for other lipid fractions in this cohort are reported separately (see ref
 @Johnston2016a for the analysis of the phospholipid and cholesteryl ester
-fractions). 
+fractions). <!--{{put these analyses in discussion?}} -->
 <!--and {{next citation}} for the analysis of the NEFA fraction).-->
 
 ## Anthropometrics and sociodemographics
@@ -206,11 +205,11 @@ Calculator. HOMA largely reflects hepatic insulin sensitivity, while ISI
 reflects whole-body insulin sensitivity [@AbdulGhani2007]. Beta-cell function
 was assessed using the Insulinogenic Index [@Wareham1995] over HOMA-IR [@Matthews1985] (IGI/IR)
 and the Insulin Secretion-Sensitivity Index-2 (ISSI-2) [@Retnakaran2009]. IGI/IR
-is a measure of the first phase of insulin secretion while ISSI-2 is analogous to
+is a measure of the early phase of insulin secretion while ISSI-2 is analogous to
 the disposition index (but is calculated using OGTT values). Each index has been validated
 against gold standard measures [@Matthews1985; @Hermans1999a; @Matsuda1999; @Retnakaran2009].
 Specific formulas for each OGTT-derived measure can be found in the 
-Supplementary Material.
+Supplemental Material {{insert formula}}.
 
 The primary outcome variables for this analysis were HOMA2-%S, ISI, IGI/IR, and
 ISSI-2, which were log-transformed for the statistical modeling. The primary
@@ -220,9 +219,7 @@ TAG was also included as a primary predictor to allow us to test the hypothesis
 that specific TAGFA better predicted outcomes compared to clinical TAG. 
 Pearson correlation coefficients were computed to assess the relationships of
 individual TAGFA with other continuous variables. Correlations were also
-computed for TAGFA against each other; hierarchical clustering analysis was
-applied to the correlation matrix to identify potential clusters within the TAGFA 
-composition.
+computed and hierarchical clustering analysis was conducted for TAGFA against each other.
 
 Generalized estimating equation (GEE) models [@Zeger1986a] were used in the 
 primary analysis to determine the longitudinal associations between the outcome 
@@ -232,7 +229,7 @@ design, an auto-regressive of order 1 (AR1) working correlation matrix was
 specified in the GEE model. Covariates to adjust for were selected based on the
 previous literature, from directed acyclic graph [@Greenland1999a]
 recommendations, and from quasi-likelihood information criteria (QIC). The final
-GEE model was adjusted for time, waist circumference, baseline age, ethnicity,
+GEE model (M6) was adjusted for time, waist circumference, baseline age, ethnicity,
 sex, ALT, MET, and total NEFA. The TAGFA, total NEFA, sex, ethnicity, and
 baseline age were classified as *time-independent* (held constant) as they were
 measured only at the baseline visit or do not change throughout the study, while
@@ -256,11 +253,11 @@ response variable(s) (i.e. the outcome variables). How accurately the clusters
 within the TAGFA composition predict metabolic function is determined by using
 cross-validation on the PLS models.
 
-All analyses were performed using R 3.3.1 [@Rbase], along with the R
+All analyses were performed using R 3.4.0 [@Rbase], along with the R
 packages geepack 1.2.1 for GEE [@Hoejsgaard2006a] and pls
 2.6.0 for PLS. The R code and extra analyses for
 this manuscript is available at {{code doi}}. Results were considered
-statistically significance at p<0.05, after adjusting for multiple testing using
+statistically significant at p<0.05, after adjusting for multiple testing using
 the Benjamini-Hochberg False Discovery Rate [@Benjamini1995a]. STROBE was used
 as a guideline for reporting [@Vandenbroucke2007b].
 
@@ -280,7 +277,7 @@ insulin sensitivity and beta-cell function measures had a significant median dec
 between 14% to 27% (p<0.001 from GEE; n=367-470). There 
 were 96 (20%) and 42 (9%) incident cases of pre-diabetes (IFG and IGT) and
 diabetes, respectively, over the 6-years; these observations were excluded from GEE and PLS
-analyses.
+analyses due to how the outcomes were measured (OGTT was not done on those with diabetes).
 
 Figure  1 shows the composition of each FA in the TAG fraction (see 
 Supplemental Table  2 for a tabular presentation of the values). 
@@ -290,7 +287,7 @@ Figure  2 shows a heatmap of the correlation of individual TAGFA as
 concentrations with the outcome variables and several basic characteristics.
 As expected, nearly all TAGFA had very strong positive correlations (r=
 0.33 to 0.92) with clinically-measured TAG and moderate positive 
-correlations with WC (r=0.31 to 0.36). There was also moderate
+correlations with WC (r=0.31 to 0.36). There were also moderate
 negative correlations with HDL (r=-0.53 to -0.32). For the outcome variables,
 the correlations for the insulin sensitivity measures were generally higher 
 (HOMA2-%S: r=-0.48 to -0.32, ISI: r=-0.48 to -0.33) than 
@@ -302,10 +299,9 @@ correlation with clinical TAG (r=-0.5 to -0.31) while all other fatty
 acids had a negative association (r=0.42 to 0.52). In particular,
 those fatty acids with the negative associations with clinical TAG were all the
 very long chain polyunsaturated fatty acids (e.g. 20:4n-6, 20:5n-3).
-Based on heirarchical cluster analysis of the inter-correlation matrix of the
-TAGFA fraction, shown in Figure  4, four fatty acids (14:0,
-16:0, 14:1n-7, and 16:1n-7) displayed a marked separation and cluster from the
-other TAGFA.
+As seen in Figure  4, four fatty acids (14:0,
+16:0, 14:1n-7, and 16:1n-7) clustered together, each highly positively correlated
+with each other and negatively correlated with all other fatty acids.
 
 ## Generalized estimating equation models
 
@@ -784,113 +780,113 @@ considered equivalent).  Models were:
 Table: Supplemental Table  2: Concentration (nmol/mL) and relative percent (mol%) values of triacylglycerol fatty acids in PROMISE participants at the baseline visit (2004-2006).
 
 
-| Fatty acid   | log(HOMA2-%S)          | log(ISI)               | log(IGI/IR)            | log(ISSI-2)           |
-|:-------------|:-----------------------|:-----------------------|:-----------------------|:----------------------|
-| **Totals**   |                        |                        |                        |                       |
-| Clinical TAG | -25.0 (-29.1, -20.8)\* | -24.6 (-28.4, -20.7)\* | -18.5 (-24.2, -12.3)\* | -11.1 (-14.4, -7.6)\* |
-| Total        | -22.4 (-27.8, -16.7)\* | -23.1 (-28.5, -17.2)\* | -15.8 (-22.2, -8.8)\*  | -9.2 (-13.2, -5.1)\*  |
-| **nmol/mL**  |                        |                        |                        |                       |
-| 14:0         | -19.1 (-23.7, -14.2)\* | -19.6 (-24.2, -14.8)\* | -10.8 (-16.5, -4.7)\*  | -6.7 (-10.0, -3.2)\*  |
-| 16:0         | -23.2 (-28.5, -17.5)\* | -23.9 (-29.2, -18.2)\* | -16.4 (-22.9, -9.4)\*  | -9.6 (-13.5, -5.4)\*  |
-| 18:0         | -21.1 (-26.6, -15.2)\* | -21.6 (-27.3, -15.5)\* | -15.3 (-21.8, -8.2)\*  | -9.0 (-12.9, -4.9)\*  |
-| 20:0         | -13.1 (-17.1, -8.9)\*  | -13.0 (-17.6, -8.2)\*  | -8.4 (-13.7, -2.7)\*   | -5.7 (-8.6, -2.8)\*   |
-| 22:0         | -12.6 (-17.1, -7.9)\*  | -13.1 (-17.8, -8.2)\*  | -2.2 (-7.9, 3.9)       | -1.9 (-4.7, 1.0)      |
-| 18:1n-9      | -21.6 (-26.2, -16.8)\* | -22.1 (-26.8, -17.1)\* | -15.9 (-21.8, -9.5)\*  | -9.1 (-12.6, -5.4)\*  |
-| 20:1n-9      | -15.0 (-19.2, -10.7)\* | -14.9 (-19.0, -10.6)\* | -12.7 (-18.8, -6.2)\*  | -7.0 (-10.2, -3.6)\*  |
-| 22:1n-9      | -13.8 (-19.3, -7.8)\*  | -11.9 (-18.1, -5.3)\*  | -11.1 (-15.7, -6.4)\*  | -5.5 (-8.1, -2.9)\*   |
-| 24:1n-9      | -4.5 (-8.6, -0.2)      | -6.4 (-10.7, -1.8)\*   | 4.0 (-1.6, 9.8)        | 2.0 (-0.7, 4.7)       |
-| 14:1n-7      | -14.8 (-19.3, -10.1)\* | -15.2 (-19.7, -10.4)\* | -9.0 (-14.4, -3.2)\*   | -5.4 (-8.4, -2.3)\*   |
-| 16:1n-7      | -19.3 (-24.4, -13.8)\* | -19.8 (-25.0, -14.4)\* | -14.2 (-20.7, -7.1)\*  | -8.1 (-12.0, -4.1)\*  |
-| 18:1n-7      | -22.3 (-26.2, -18.3)\* | -22.9 (-26.9, -18.7)\* | -16.0 (-21.3, -10.4)\* | -9.0 (-12.0, -5.9)\*  |
-| 18:2n-6      | -19.0 (-23.7, -14.0)\* | -19.5 (-24.3, -14.4)\* | -12.0 (-17.7, -5.8)\*  | -7.2 (-10.7, -3.6)\*  |
-| 18:3n-6      | -13.3 (-18.2, -8.1)\*  | -13.2 (-18.4, -7.8)\*  | -9.1 (-15.0, -2.8)\*   | -5.3 (-8.8, -1.7)\*   |
-| 20:2n-6      | -15.8 (-20.9, -10.4)\* | -16.3 (-21.5, -10.9)\* | -12.8 (-19.3, -5.9)\*  | -6.8 (-10.7, -2.8)\*  |
-| 20:3n-6      | -17.7 (-22.8, -12.2)\* | -18.5 (-23.7, -13.0)\* | -12.5 (-18.6, -5.9)\*  | -7.3 (-10.9, -3.4)\*  |
-| 20:4n-6      | -17.2 (-24.6, -9.1)\*  | -18.3 (-25.9, -9.9)\*  | -13.3 (-21.6, -4.1)\*  | -7.5 (-12.7, -1.9)\*  |
-| 22:4n-6      | -18.1 (-25.8, -9.6)\*  | -18.7 (-26.4, -10.2)\* | -10.1 (-17.6, -1.9)\*  | -5.8 (-10.4, -0.9)\*  |
-| 18:3n-3      | -15.8 (-19.7, -11.7)\* | -16.8 (-20.7, -12.6)\* | -9.5 (-14.3, -4.5)\*   | -6.0 (-8.6, -3.3)\*   |
-| 20:5n-3      | -5.5 (-9.3, -1.5)\*    | -8.4 (-12.2, -4.5)\*   | -3.7 (-8.5, 1.3)       | -3.2 (-5.8, -0.5)\*   |
-| 22:5n-3      | -7.7 (-11.8, -3.3)\*   | -8.0 (-12.3, -3.5)\*   | -11.0 (-15.7, -5.9)\*  | -6.7 (-9.1, -4.2)\*   |
-| 22:6n-3      | -7.3 (-11.1, -3.3)\*   | -10.1 (-14.0, -6.0)\*  | -4.2 (-8.6, 0.4)       | -3.4 (-5.9, -0.9)\*   |
-| **mol%**     |                        |                        |                        |                       |
-| 14:0         | -14.0 (-17.8, -10.0)\* | -13.8 (-17.8, -9.6)\*  | -4.8 (-10.5, 1.4)      | -3.6 (-6.6, -0.6)\*   |
-| 16:0         | -20.0 (-23.6, -16.2)\* | -20.4 (-24.2, -16.5)\* | -13.5 (-18.9, -7.7)\*  | -8.0 (-10.9, -5.0)\*  |
-| 18:0         | 3.7 (-0.9, 8.6)        | 3.4 (-1.4, 8.3)        | 1.4 (-5.2, 8.5)        | 0.5 (-2.7, 3.8)       |
-| 20:0         | 9.5 (2.5, 16.9)\*      | 9.6 (2.3, 17.4)\*      | 7.6 (0.8, 15.0)\*      | 3.0 (-0.6, 6.7)       |
-| 22:0         | 4.2 (-0.7, 9.3)        | 4.2 (-0.4, 8.9)        | 11.0 (5.1, 17.2)\*     | 5.2 (2.6, 7.9)\*      |
-| 18:1n-9      | 14.6 (9.1, 20.4)\*     | 15.5 (9.5, 22.0)\*     | 5.6 (-0.5, 12.0)       | 4.4 (1.4, 7.5)\*      |
-| 20:1n-9      | 7.3 (1.9, 13.1)\*      | 8.2 (2.3, 14.4)\*      | 2.1 (-4.8, 9.6)        | 1.8 (-2.0, 5.7)       |
-| 22:1n-9      | 10.3 (4.8, 16.1)\*     | 12.7 (7.1, 18.6)\*     | 6.6 (-0.3, 14.0)       | 4.3 (0.8, 7.8)\*      |
-| 24:1n-9      | 3.2 (-1.5, 8.0)        | 1.4 (-3.2, 6.3)        | 10.5 (4.3, 17.0)\*     | 4.7 (1.8, 7.8)\*      |
-| 14:1n-7      | -10.0 (-14.2, -5.6)\*  | -9.6 (-14.0, -5.0)\*   | -4.1 (-9.7, 2.0)       | -2.8 (-5.7, 0.3)      |
-| 16:1n-7      | -10.9 (-15.2, -6.4)\*  | -10.7 (-15.2, -6.0)\*  | -8.5 (-14.2, -2.3)\*   | -5.0 (-7.9, -1.9)\*   |
-| 18:1n-7      | 7.2 (1.7, 12.9)\*      | 7.9 (2.4, 13.8)\*      | 5.3 (-1.0, 12.0)       | 3.8 (0.7, 7.0)\*      |
-| 18:2n-6      | 12.6 (6.7, 18.8)\*     | 13.1 (7.1, 19.6)\*     | 10.0 (3.4, 17.1)\*     | 5.1 (1.9, 8.5)\*      |
-| 18:3n-6      | 8.4 (3.7, 13.2)\*      | 10.3 (5.5, 15.3)\*     | 7.3 (1.2, 13.8)\*      | 3.9 (1.0, 6.9)\*      |
-| 20:2n-6      | 21.4 (16.2, 26.9)\*    | 21.9 (16.3, 27.7)\*    | 9.3 (2.9, 16.2)\*      | 6.6 (3.5, 9.8)\*      |
-| 20:3n-6      | 4.3 (-0.1, 9.0)        | 3.6 (-1.0, 8.4)        | 1.6 (-3.2, 6.8)        | 0.7 (-1.7, 3.2)       |
-| 20:4n-6      | 10.1 (5.0, 15.4)\*     | 8.9 (3.1, 15.0)\*      | 3.5 (-2.4, 9.8)        | 2.4 (-0.5, 5.4)       |
-| 22:4n-6      | 1.6 (-3.1, 6.4)        | 1.6 (-3.0, 6.3)        | 6.1 (-0.5, 13.1)       | 3.3 (0.4, 6.4)\*      |
-| 18:3n-3      | 5.7 (0.6, 11.1)\*      | 5.3 (-0.2, 11.2)       | 5.9 (-1.0, 13.3)       | 2.3 (-1.0, 5.7)       |
-| 20:5n-3      | 8.2 (1.7, 15.0)\*      | 4.7 (-1.9, 11.6)       | 7.1 (1.6, 12.9)\*      | 2.6 (-0.1, 5.4)       |
-| 22:5n-3      | 12.9 (7.4, 18.6)\*     | 12.1 (6.0, 18.5)\*     | 3.2 (-2.8, 9.5)        | 1.6 (-1.4, 4.6)       |
-| 22:6n-3      | 5.4 (0.2, 10.8)        | 2.2 (-3.0, 7.7)        | 5.6 (0.6, 10.9)\*      | 2.0 (-0.6, 4.7)       |
+| Fatty acid   | log(HOMA2-%S)          | log(ISI)               | log(IGI/IR)            | log(ISSI-2)          |
+|:-------------|:-----------------------|:-----------------------|:-----------------------|:---------------------|
+| **Totals**   |                        |                        |                        |                      |
+| BaseTAG      | -23.5 (-29.0, -17.7)\* | -24.0 (-29.4, -18.2)\* | -17.2 (-23.9, -9.8)\*  | -9.9 (-14.0, -5.6)\* |
+| Total        | -22.4 (-27.8, -16.7)\* | -23.1 (-28.5, -17.2)\* | -15.8 (-22.2, -8.8)\*  | -9.2 (-13.2, -5.1)\* |
+| **nmol/mL**  |                        |                        |                        |                      |
+| 14:0         | -19.1 (-23.7, -14.2)\* | -19.6 (-24.2, -14.8)\* | -10.8 (-16.5, -4.7)\*  | -6.7 (-10.0, -3.2)\* |
+| 16:0         | -23.2 (-28.5, -17.5)\* | -23.9 (-29.2, -18.2)\* | -16.4 (-22.9, -9.4)\*  | -9.6 (-13.5, -5.4)\* |
+| 18:0         | -21.1 (-26.6, -15.2)\* | -21.6 (-27.3, -15.5)\* | -15.3 (-21.8, -8.2)\*  | -9.0 (-12.9, -4.9)\* |
+| 20:0         | -13.1 (-17.1, -8.9)\*  | -13.0 (-17.6, -8.2)\*  | -8.4 (-13.7, -2.7)\*   | -5.7 (-8.6, -2.8)\*  |
+| 22:0         | -12.6 (-17.1, -7.9)\*  | -13.1 (-17.8, -8.2)\*  | -2.2 (-7.9, 3.9)       | -1.9 (-4.7, 1.0)     |
+| 18:1n-9      | -21.6 (-26.2, -16.8)\* | -22.1 (-26.8, -17.1)\* | -15.9 (-21.8, -9.5)\*  | -9.1 (-12.6, -5.4)\* |
+| 20:1n-9      | -15.0 (-19.2, -10.7)\* | -14.9 (-19.0, -10.6)\* | -12.7 (-18.8, -6.2)\*  | -7.0 (-10.2, -3.6)\* |
+| 22:1n-9      | -13.8 (-19.3, -7.8)\*  | -11.9 (-18.1, -5.3)\*  | -11.1 (-15.7, -6.4)\*  | -5.5 (-8.1, -2.9)\*  |
+| 24:1n-9      | -4.5 (-8.6, -0.2)      | -6.4 (-10.7, -1.8)\*   | 4.0 (-1.6, 9.8)        | 2.0 (-0.7, 4.7)      |
+| 14:1n-7      | -14.8 (-19.3, -10.1)\* | -15.2 (-19.7, -10.4)\* | -9.0 (-14.4, -3.2)\*   | -5.4 (-8.4, -2.3)\*  |
+| 16:1n-7      | -19.3 (-24.4, -13.8)\* | -19.8 (-25.0, -14.4)\* | -14.2 (-20.7, -7.1)\*  | -8.1 (-12.0, -4.1)\* |
+| 18:1n-7      | -22.3 (-26.2, -18.3)\* | -22.9 (-26.9, -18.7)\* | -16.0 (-21.3, -10.4)\* | -9.0 (-12.0, -5.9)\* |
+| 18:2n-6      | -19.0 (-23.7, -14.0)\* | -19.5 (-24.3, -14.4)\* | -12.0 (-17.7, -5.8)\*  | -7.2 (-10.7, -3.6)\* |
+| 18:3n-6      | -13.3 (-18.2, -8.1)\*  | -13.2 (-18.4, -7.8)\*  | -9.1 (-15.0, -2.8)\*   | -5.3 (-8.8, -1.7)\*  |
+| 20:2n-6      | -15.8 (-20.9, -10.4)\* | -16.3 (-21.5, -10.9)\* | -12.8 (-19.3, -5.9)\*  | -6.8 (-10.7, -2.8)\* |
+| 20:3n-6      | -17.7 (-22.8, -12.2)\* | -18.5 (-23.7, -13.0)\* | -12.5 (-18.6, -5.9)\*  | -7.3 (-10.9, -3.4)\* |
+| 20:4n-6      | -17.2 (-24.6, -9.1)\*  | -18.3 (-25.9, -9.9)\*  | -13.3 (-21.6, -4.1)\*  | -7.5 (-12.7, -1.9)\* |
+| 22:4n-6      | -18.1 (-25.8, -9.6)\*  | -18.7 (-26.4, -10.2)\* | -10.1 (-17.6, -1.9)\*  | -5.8 (-10.4, -0.9)\* |
+| 18:3n-3      | -15.8 (-19.7, -11.7)\* | -16.8 (-20.7, -12.6)\* | -9.5 (-14.3, -4.5)\*   | -6.0 (-8.6, -3.3)\*  |
+| 20:5n-3      | -5.5 (-9.3, -1.5)\*    | -8.4 (-12.2, -4.5)\*   | -3.7 (-8.5, 1.3)       | -3.2 (-5.8, -0.5)\*  |
+| 22:5n-3      | -7.7 (-11.8, -3.3)\*   | -8.0 (-12.3, -3.5)\*   | -11.0 (-15.7, -5.9)\*  | -6.7 (-9.1, -4.2)\*  |
+| 22:6n-3      | -7.3 (-11.1, -3.3)\*   | -10.1 (-14.0, -6.0)\*  | -4.2 (-8.6, 0.4)       | -3.4 (-5.9, -0.9)\*  |
+| **mol%**     |                        |                        |                        |                      |
+| 14:0         | -14.0 (-17.8, -10.0)\* | -13.8 (-17.8, -9.6)\*  | -4.8 (-10.5, 1.4)      | -3.6 (-6.6, -0.6)\*  |
+| 16:0         | -20.0 (-23.6, -16.2)\* | -20.4 (-24.2, -16.5)\* | -13.5 (-18.9, -7.7)\*  | -8.0 (-10.9, -5.0)\* |
+| 18:0         | 3.7 (-0.9, 8.6)        | 3.4 (-1.4, 8.3)        | 1.4 (-5.2, 8.5)        | 0.5 (-2.7, 3.8)      |
+| 20:0         | 9.5 (2.5, 16.9)\*      | 9.6 (2.3, 17.4)\*      | 7.6 (0.8, 15.0)\*      | 3.0 (-0.6, 6.7)      |
+| 22:0         | 4.2 (-0.7, 9.3)        | 4.2 (-0.4, 8.9)        | 11.0 (5.1, 17.2)\*     | 5.2 (2.6, 7.9)\*     |
+| 18:1n-9      | 14.6 (9.1, 20.4)\*     | 15.5 (9.5, 22.0)\*     | 5.6 (-0.5, 12.0)       | 4.4 (1.4, 7.5)\*     |
+| 20:1n-9      | 7.3 (1.9, 13.1)\*      | 8.2 (2.3, 14.4)\*      | 2.1 (-4.8, 9.6)        | 1.8 (-2.0, 5.7)      |
+| 22:1n-9      | 10.3 (4.8, 16.1)\*     | 12.7 (7.1, 18.6)\*     | 6.6 (-0.3, 14.0)       | 4.3 (0.8, 7.8)\*     |
+| 24:1n-9      | 3.2 (-1.5, 8.0)        | 1.4 (-3.2, 6.3)        | 10.5 (4.3, 17.0)\*     | 4.7 (1.8, 7.8)\*     |
+| 14:1n-7      | -10.0 (-14.2, -5.6)\*  | -9.6 (-14.0, -5.0)\*   | -4.1 (-9.7, 2.0)       | -2.8 (-5.7, 0.3)     |
+| 16:1n-7      | -10.9 (-15.2, -6.4)\*  | -10.7 (-15.2, -6.0)\*  | -8.5 (-14.2, -2.3)\*   | -5.0 (-7.9, -1.9)\*  |
+| 18:1n-7      | 7.2 (1.7, 12.9)\*      | 7.9 (2.4, 13.8)\*      | 5.3 (-1.0, 12.0)       | 3.8 (0.7, 7.0)\*     |
+| 18:2n-6      | 12.6 (6.7, 18.8)\*     | 13.1 (7.1, 19.6)\*     | 10.0 (3.4, 17.1)\*     | 5.1 (1.9, 8.5)\*     |
+| 18:3n-6      | 8.4 (3.7, 13.2)\*      | 10.3 (5.5, 15.3)\*     | 7.3 (1.2, 13.8)\*      | 3.9 (1.0, 6.9)\*     |
+| 20:2n-6      | 21.4 (16.2, 26.9)\*    | 21.9 (16.3, 27.7)\*    | 9.3 (2.9, 16.2)\*      | 6.6 (3.5, 9.8)\*     |
+| 20:3n-6      | 4.3 (-0.1, 9.0)        | 3.6 (-1.0, 8.4)        | 1.6 (-3.2, 6.8)        | 0.7 (-1.7, 3.2)      |
+| 20:4n-6      | 10.1 (5.0, 15.4)\*     | 8.9 (3.1, 15.0)\*      | 3.5 (-2.4, 9.8)        | 2.4 (-0.5, 5.4)      |
+| 22:4n-6      | 1.6 (-3.1, 6.4)        | 1.6 (-3.0, 6.3)        | 6.1 (-0.5, 13.1)       | 3.3 (0.4, 6.4)\*     |
+| 18:3n-3      | 5.7 (0.6, 11.1)\*      | 5.3 (-0.2, 11.2)       | 5.9 (-1.0, 13.3)       | 2.3 (-1.0, 5.7)      |
+| 20:5n-3      | 8.2 (1.7, 15.0)\*      | 4.7 (-1.9, 11.6)       | 7.1 (1.6, 12.9)\*      | 2.6 (-0.1, 5.4)      |
+| 22:5n-3      | 12.9 (7.4, 18.6)\*     | 12.1 (6.0, 18.5)\*     | 3.2 (-2.8, 9.5)        | 1.6 (-1.4, 4.6)      |
+| 22:6n-3      | 5.4 (0.2, 10.8)        | 2.2 (-3.0, 7.7)        | 5.6 (0.6, 10.9)\*      | 2.0 (-0.6, 4.7)      |
 
 Table: Supplemental Table  3: Raw estimates and confidence interval values for *time*-adjusted GEE models of the association of the triacylglycerol fatty acids (mol% and nmol/mL) and total clinically-measured TAG with insulin sensitivity and beta-cell function outcomes using the 6 year longitudinal data from the PROMISE cohort. Estimates represent a percent difference in the outcome per SD increase in the fatty acid. P-values were adjusted for the BH false discovery rate, with an asterisk (*) denoting a significant (p<0.05) association.
 
 
 
-| Fatty acid   | log(HOMA2-%S)          | log(ISI)               | log(IGI/IR)          | log(ISSI-2)         |
-|:-------------|:-----------------------|:-----------------------|:---------------------|:--------------------|
-| **Totals**   |                        |                        |                      |                     |
-| Clinical TAG | -16.7 (-20.6, -12.5)\* | -16.8 (-20.5, -12.9)\* | -9.5 (-15.1, -3.5)\* | -5.9 (-8.8, -2.8)\* |
-| Total        | -13.3 (-17.5, -9.0)\*  | -14.3 (-18.7, -9.7)\*  | -6.8 (-12.3, -1.0)\* | -3.7 (-6.7, -0.6)\* |
-| **nmol/mL**  |                        |                        |                      |                     |
-| 14:0         | -11.0 (-14.5, -7.3)\*  | -12.1 (-15.8, -8.2)\*  | -4.1 (-9.0, 1.0)     | -2.5 (-5.0, 0.1)    |
-| 16:0         | -13.7 (-17.8, -9.4)\*  | -14.7 (-19.0, -10.2)\* | -7.3 (-12.8, -1.5)\* | -3.9 (-6.9, -0.8)\* |
-| 18:0         | -12.5 (-16.6, -8.1)\*  | -13.2 (-17.7, -8.5)\*  | -7.4 (-13.0, -1.4)\* | -4.1 (-7.2, -1.0)\* |
-| 20:0         | -7.2 (-10.5, -3.8)\*   | -7.7 (-11.6, -3.6)\*   | -4.5 (-9.6, 1.0)     | -3.4 (-5.9, -0.7)\* |
-| 22:0         | -8.6 (-12.4, -4.7)\*   | -8.5 (-12.7, -4.2)\*   | -1.5 (-7.0, 4.2)     | -1.5 (-4.0, 1.0)    |
-| 18:1n-9      | -12.7 (-16.5, -8.8)\*  | -13.6 (-17.8, -9.3)\*  | -6.5 (-11.9, -0.7)   | -3.4 (-6.3, -0.4)   |
-| 20:1n-9      | -7.7 (-10.7, -4.5)\*   | -7.9 (-11.3, -4.3)\*   | -5.3 (-10.7, 0.4)    | -2.4 (-5.1, 0.3)    |
-| 22:1n-9      | -6.2 (-10.1, -2.2)\*   | -4.8 (-9.3, 0.0)       | -4.2 (-9.1, 0.9)     | -1.2 (-3.6, 1.2)    |
-| 24:1n-9      | -3.6 (-6.5, -0.5)\*    | -4.4 (-7.8, -1.0)\*    | 1.6 (-3.3, 6.7)      | 0.8 (-1.5, 3.1)     |
-| 14:1n-7      | -7.8 (-11.1, -4.4)\*   | -8.8 (-12.3, -5.2)\*   | -3.2 (-8.0, 1.8)     | -1.8 (-4.1, 0.6)    |
-| 16:1n-7      | -10.1 (-13.8, -6.2)\*  | -10.9 (-14.8, -6.8)\*  | -5.1 (-10.6, 0.7)    | -2.5 (-5.2, 0.4)    |
-| 18:1n-7      | -12.3 (-16.1, -8.3)\*  | -12.9 (-17.2, -8.5)\*  | -5.2 (-10.7, 0.8)    | -2.3 (-5.1, 0.6)    |
-| 18:2n-6      | -12.1 (-15.9, -8.1)\*  | -12.7 (-16.7, -8.5)\*  | -5.7 (-10.8, -0.2)   | -3.4 (-6.3, -0.5)\* |
-| 18:3n-6      | -8.3 (-12.1, -4.3)\*   | -8.7 (-13.0, -4.2)\*   | -5.5 (-10.5, -0.2)   | -3.0 (-5.7, -0.2)   |
-| 20:2n-6      | -8.2 (-11.9, -4.2)\*   | -8.8 (-12.9, -4.5)\*   | -5.0 (-10.1, 0.2)    | -2.1 (-4.8, 0.7)    |
-| 20:3n-6      | -9.5 (-13.0, -5.8)\*   | -10.5 (-14.3, -6.5)\*  | -4.7 (-9.4, 0.3)     | -2.5 (-5.1, 0.1)    |
-| 20:4n-6      | -9.3 (-14.0, -4.3)\*   | -10.5 (-15.6, -5.0)\*  | -6.3 (-12.2, -0.1)   | -3.2 (-6.5, 0.3)    |
-| 22:4n-6      | -9.9 (-14.8, -4.7)\*   | -10.5 (-15.4, -5.2)\*  | -4.2 (-9.5, 1.4)     | -2.1 (-5.0, 1.0)    |
-| 18:3n-3      | -10.2 (-13.4, -7.0)\*  | -11.2 (-14.6, -7.8)\*  | -5.3 (-10.1, -0.3)   | -3.5 (-5.8, -1.1)\* |
-| 20:5n-3      | -3.3 (-6.5, 0.0)       | -6.0 (-9.4, -2.4)\*    | -1.0 (-5.2, 3.5)     | -1.7 (-3.8, 0.5)    |
-| 22:5n-3      | -2.8 (-6.3, 0.9)       | -3.9 (-7.9, 0.3)       | -2.8 (-7.7, 2.3)     | -2.2 (-4.5, 0.1)    |
-| 22:6n-3      | -4.9 (-8.5, -1.2)\*    | -7.2 (-11.0, -3.3)\*   | -0.2 (-4.2, 3.9)     | -1.4 (-3.4, 0.7)    |
-| **mol%**     |                        |                        |                      |                     |
-| 14:0         | -9.0 (-12.0, -5.9)\*   | -9.7 (-13.1, -6.2)\*   | -2.1 (-7.1, 3.1)     | -1.9 (-4.3, 0.6)    |
-| 16:0         | -11.6 (-14.7, -8.3)\*  | -12.3 (-15.8, -8.7)\*  | -6.3 (-11.4, -1.0)\* | -3.4 (-5.9, -0.8)\* |
-| 18:0         | 2.2 (-1.3, 5.9)        | 1.9 (-1.9, 5.9)        | -1.6 (-7.4, 4.6)     | -1.3 (-4.0, 1.4)    |
-| 20:0         | 5.9 (1.6, 10.5)\*      | 5.9 (1.1, 10.9)\*      | 2.5 (-3.2, 8.5)      | 0.3 (-2.7, 3.3)     |
-| 22:0         | 1.0 (-2.3, 4.4)        | 1.6 (-1.8, 5.1)        | 3.7 (-2.5, 10.4)     | 1.1 (-1.5, 3.8)     |
-| 18:1n-9      | 8.7 (4.4, 13.1)\*      | 9.0 (4.1, 14.1)\*      | 4.4 (-1.1, 10.3)     | 3.5 (0.7, 6.3)\*    |
-| 20:1n-9      | 5.4 (1.1, 9.8)\*       | 6.2 (1.1, 11.5)\*      | 1.9 (-4.4, 8.7)      | 1.6 (-2.0, 5.3)     |
-| 22:1n-9      | 7.3 (3.4, 11.3)\*      | 8.9 (4.7, 13.3)\*      | 4.1 (-1.8, 10.4)     | 2.8 (0.0, 5.7)      |
-| 24:1n-9      | 0.6 (-3.0, 4.3)        | 0.3 (-3.6, 4.4)        | 4.2 (-1.6, 10.3)     | 1.2 (-1.3, 3.9)     |
-| 14:1n-7      | -6.0 (-9.2, -2.7)\*    | -6.6 (-10.1, -2.9)\*   | -1.3 (-6.2, 3.9)     | -0.9 (-3.3, 1.5)    |
-| 16:1n-7      | -5.7 (-9.1, -2.2)\*    | -5.8 (-9.5, -1.8)\*    | -1.9 (-7.6, 4.3)     | -0.9 (-3.6, 2.0)    |
-| 18:1n-7      | 7.8 (3.7, 12.2)\*      | 8.8 (4.3, 13.5)\*      | 8.3 (2.4, 14.5)\*    | 5.4 (2.7, 8.2)\*    |
-| 18:2n-6      | 5.4 (1.2, 9.9)\*       | 6.8 (2.1, 11.8)\*      | 2.1 (-3.3, 7.7)      | 0.6 (-2.0, 3.3)     |
-| 18:3n-6      | 2.9 (-1.1, 7.1)        | 4.3 (-0.2, 9.0)        | 0.3 (-5.2, 6.0)      | 0.1 (-2.5, 2.8)     |
-| 20:2n-6      | 14.2 (10.2, 18.3)\*    | 15.2 (10.8, 19.9)\*    | 4.5 (-1.1, 10.5)     | 3.8 (1.1, 6.6)\*    |
-| 20:3n-6      | 4.3 (0.7, 8.0)\*       | 4.1 (0.1, 8.2)         | 1.2 (-3.1, 5.7)      | 0.6 (-1.5, 2.8)     |
-| 20:4n-6      | 6.5 (2.5, 10.7)\*      | 5.8 (1.0, 10.9)\*      | -0.4 (-5.4, 4.9)     | 0.3 (-2.1, 2.8)     |
-| 22:4n-6      | 1.9 (-1.5, 5.5)        | 2.4 (-1.3, 6.2)        | 2.0 (-4.0, 8.3)      | 1.3 (-1.3, 3.9)     |
-| 18:3n-3      | 1.1 (-2.5, 4.8)        | 1.3 (-2.7, 5.5)        | 0.4 (-5.2, 6.3)      | -0.9 (-3.5, 1.8)    |
-| 20:5n-3      | 4.1 (-0.1, 8.5)        | 1.3 (-3.4, 6.2)        | 3.4 (-0.8, 7.8)      | 0.6 (-1.5, 2.7)     |
-| 22:5n-3      | 8.6 (4.6, 12.7)\*      | 7.6 (2.9, 12.5)\*      | 3.0 (-1.8, 8.0)      | 1.2 (-1.2, 3.6)     |
-| 22:6n-3      | 2.3 (-1.2, 5.9)        | -0.1 (-3.9, 4.0)       | 3.4 (-0.5, 7.5)      | 0.7 (-1.4, 2.7)     |
+| Fatty acid   | log(HOMA2-%S)         | log(ISI)               | log(IGI/IR)          | log(ISSI-2)         |
+|:-------------|:----------------------|:-----------------------|:---------------------|:--------------------|
+| **Totals**   |                       |                        |                      |                     |
+| BaseTAG      | -13.9 (-18.2, -9.4)\* | -14.7 (-19.1, -10.1)\* | -7.9 (-13.8, -1.7)\* | -4.0 (-7.2, -0.8)\* |
+| Total        | -13.3 (-17.5, -9.0)\* | -14.3 (-18.7, -9.7)\*  | -6.8 (-12.3, -1.0)\* | -3.7 (-6.7, -0.6)\* |
+| **nmol/mL**  |                       |                        |                      |                     |
+| 14:0         | -11.0 (-14.5, -7.3)\* | -12.1 (-15.8, -8.2)\*  | -4.1 (-9.0, 1.0)     | -2.5 (-5.0, 0.1)    |
+| 16:0         | -13.7 (-17.8, -9.4)\* | -14.7 (-19.0, -10.2)\* | -7.3 (-12.8, -1.5)\* | -3.9 (-6.9, -0.8)\* |
+| 18:0         | -12.5 (-16.6, -8.1)\* | -13.2 (-17.7, -8.5)\*  | -7.4 (-13.0, -1.4)\* | -4.1 (-7.2, -1.0)\* |
+| 20:0         | -7.2 (-10.5, -3.8)\*  | -7.7 (-11.6, -3.6)\*   | -4.5 (-9.6, 1.0)     | -3.4 (-5.9, -0.7)\* |
+| 22:0         | -8.6 (-12.4, -4.7)\*  | -8.5 (-12.7, -4.2)\*   | -1.5 (-7.0, 4.2)     | -1.5 (-4.0, 1.0)    |
+| 18:1n-9      | -12.7 (-16.5, -8.8)\* | -13.6 (-17.8, -9.3)\*  | -6.5 (-11.9, -0.7)   | -3.4 (-6.3, -0.4)   |
+| 20:1n-9      | -7.7 (-10.7, -4.5)\*  | -7.9 (-11.3, -4.3)\*   | -5.3 (-10.7, 0.4)    | -2.4 (-5.1, 0.3)    |
+| 22:1n-9      | -6.2 (-10.1, -2.2)\*  | -4.8 (-9.3, 0.0)       | -4.2 (-9.1, 0.9)     | -1.2 (-3.6, 1.2)    |
+| 24:1n-9      | -3.6 (-6.5, -0.5)\*   | -4.4 (-7.8, -1.0)\*    | 1.6 (-3.3, 6.7)      | 0.8 (-1.5, 3.1)     |
+| 14:1n-7      | -7.8 (-11.1, -4.4)\*  | -8.8 (-12.3, -5.2)\*   | -3.2 (-8.0, 1.8)     | -1.8 (-4.1, 0.6)    |
+| 16:1n-7      | -10.1 (-13.8, -6.2)\* | -10.9 (-14.8, -6.8)\*  | -5.1 (-10.6, 0.7)    | -2.5 (-5.2, 0.4)    |
+| 18:1n-7      | -12.3 (-16.1, -8.3)\* | -12.9 (-17.2, -8.5)\*  | -5.2 (-10.7, 0.8)    | -2.3 (-5.1, 0.6)    |
+| 18:2n-6      | -12.1 (-15.9, -8.1)\* | -12.7 (-16.7, -8.5)\*  | -5.7 (-10.8, -0.2)   | -3.4 (-6.3, -0.5)\* |
+| 18:3n-6      | -8.3 (-12.1, -4.3)\*  | -8.7 (-13.0, -4.2)\*   | -5.5 (-10.5, -0.2)   | -3.0 (-5.7, -0.2)   |
+| 20:2n-6      | -8.2 (-11.9, -4.2)\*  | -8.8 (-12.9, -4.5)\*   | -5.0 (-10.1, 0.2)    | -2.1 (-4.8, 0.7)    |
+| 20:3n-6      | -9.5 (-13.0, -5.8)\*  | -10.5 (-14.3, -6.5)\*  | -4.7 (-9.4, 0.3)     | -2.5 (-5.1, 0.1)    |
+| 20:4n-6      | -9.3 (-14.0, -4.3)\*  | -10.5 (-15.6, -5.0)\*  | -6.3 (-12.2, -0.1)   | -3.2 (-6.5, 0.3)    |
+| 22:4n-6      | -9.9 (-14.8, -4.7)\*  | -10.5 (-15.4, -5.2)\*  | -4.2 (-9.5, 1.4)     | -2.1 (-5.0, 1.0)    |
+| 18:3n-3      | -10.2 (-13.4, -7.0)\* | -11.2 (-14.6, -7.8)\*  | -5.3 (-10.1, -0.3)   | -3.5 (-5.8, -1.1)\* |
+| 20:5n-3      | -3.3 (-6.5, 0.0)      | -6.0 (-9.4, -2.4)\*    | -1.0 (-5.2, 3.5)     | -1.7 (-3.8, 0.5)    |
+| 22:5n-3      | -2.8 (-6.3, 0.9)      | -3.9 (-7.9, 0.3)       | -2.8 (-7.7, 2.3)     | -2.2 (-4.5, 0.1)    |
+| 22:6n-3      | -4.9 (-8.5, -1.2)\*   | -7.2 (-11.0, -3.3)\*   | -0.2 (-4.2, 3.9)     | -1.4 (-3.4, 0.7)    |
+| **mol%**     |                       |                        |                      |                     |
+| 14:0         | -9.0 (-12.0, -5.9)\*  | -9.7 (-13.1, -6.2)\*   | -2.1 (-7.1, 3.1)     | -1.9 (-4.3, 0.6)    |
+| 16:0         | -11.6 (-14.7, -8.3)\* | -12.3 (-15.8, -8.7)\*  | -6.3 (-11.4, -1.0)\* | -3.4 (-5.9, -0.8)\* |
+| 18:0         | 2.2 (-1.3, 5.9)       | 1.9 (-1.9, 5.9)        | -1.6 (-7.4, 4.6)     | -1.3 (-4.0, 1.4)    |
+| 20:0         | 5.9 (1.6, 10.5)\*     | 5.9 (1.1, 10.9)\*      | 2.5 (-3.2, 8.5)      | 0.3 (-2.7, 3.3)     |
+| 22:0         | 1.0 (-2.3, 4.4)       | 1.6 (-1.8, 5.1)        | 3.7 (-2.5, 10.4)     | 1.1 (-1.5, 3.8)     |
+| 18:1n-9      | 8.7 (4.4, 13.1)\*     | 9.0 (4.1, 14.1)\*      | 4.4 (-1.1, 10.3)     | 3.5 (0.7, 6.3)\*    |
+| 20:1n-9      | 5.4 (1.1, 9.8)\*      | 6.2 (1.1, 11.5)\*      | 1.9 (-4.4, 8.7)      | 1.6 (-2.0, 5.3)     |
+| 22:1n-9      | 7.3 (3.4, 11.3)\*     | 8.9 (4.7, 13.3)\*      | 4.1 (-1.8, 10.4)     | 2.8 (0.0, 5.7)      |
+| 24:1n-9      | 0.6 (-3.0, 4.3)       | 0.3 (-3.6, 4.4)        | 4.2 (-1.6, 10.3)     | 1.2 (-1.3, 3.9)     |
+| 14:1n-7      | -6.0 (-9.2, -2.7)\*   | -6.6 (-10.1, -2.9)\*   | -1.3 (-6.2, 3.9)     | -0.9 (-3.3, 1.5)    |
+| 16:1n-7      | -5.7 (-9.1, -2.2)\*   | -5.8 (-9.5, -1.8)\*    | -1.9 (-7.6, 4.3)     | -0.9 (-3.6, 2.0)    |
+| 18:1n-7      | 7.8 (3.7, 12.2)\*     | 8.8 (4.3, 13.5)\*      | 8.3 (2.4, 14.5)\*    | 5.4 (2.7, 8.2)\*    |
+| 18:2n-6      | 5.4 (1.2, 9.9)\*      | 6.8 (2.1, 11.8)\*      | 2.1 (-3.3, 7.7)      | 0.6 (-2.0, 3.3)     |
+| 18:3n-6      | 2.9 (-1.1, 7.1)       | 4.3 (-0.2, 9.0)        | 0.3 (-5.2, 6.0)      | 0.1 (-2.5, 2.8)     |
+| 20:2n-6      | 14.2 (10.2, 18.3)\*   | 15.2 (10.8, 19.9)\*    | 4.5 (-1.1, 10.5)     | 3.8 (1.1, 6.6)\*    |
+| 20:3n-6      | 4.3 (0.7, 8.0)\*      | 4.1 (0.1, 8.2)         | 1.2 (-3.1, 5.7)      | 0.6 (-1.5, 2.8)     |
+| 20:4n-6      | 6.5 (2.5, 10.7)\*     | 5.8 (1.0, 10.9)\*      | -0.4 (-5.4, 4.9)     | 0.3 (-2.1, 2.8)     |
+| 22:4n-6      | 1.9 (-1.5, 5.5)       | 2.4 (-1.3, 6.2)        | 2.0 (-4.0, 8.3)      | 1.3 (-1.3, 3.9)     |
+| 18:3n-3      | 1.1 (-2.5, 4.8)       | 1.3 (-2.7, 5.5)        | 0.4 (-5.2, 6.3)      | -0.9 (-3.5, 1.8)    |
+| 20:5n-3      | 4.1 (-0.1, 8.5)       | 1.3 (-3.4, 6.2)        | 3.4 (-0.8, 7.8)      | 0.6 (-1.5, 2.7)     |
+| 22:5n-3      | 8.6 (4.6, 12.7)\*     | 7.6 (2.9, 12.5)\*      | 3.0 (-1.8, 8.0)      | 1.2 (-1.2, 3.6)     |
+| 22:6n-3      | 2.3 (-1.2, 5.9)       | -0.1 (-3.9, 4.0)       | 3.4 (-0.5, 7.5)      | 0.7 (-1.4, 2.7)     |
 
 Table: Supplemental Table  4: Raw estimates and confidence interval values for *fully*-adjusted GEE models of the association of the triacylglycerol fatty acids (mol% and nmol/mL) and total clinically-measured TAG with insulin sensitivity and beta-cell function outcomes using the 6 year longitudinal data from the PROMISE cohort. Variables controlled for were follow-up time, waist circumference, baseline age, ethnicity, sex, ALT, physical activity, and total NEFA. Estimates represent a percent difference in the outcome per SD increase in the fatty acid. P-values were adjusted for the BH false discovery rate, with an asterisk (*) denoting a significant (p<0.05) association.
 
