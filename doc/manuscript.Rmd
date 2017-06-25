@@ -269,7 +269,7 @@ were 22 fatty acids measured in the TAGFA fraction.
 Findings
 for other lipid fractions in this cohort are reported separately (see ref
 @Johnston2016a for the analysis of the phospholipid and cholesteryl ester
-fractions). {{put these analyses in discussion?}}
+fractions). <!--{{put these analyses in discussion?}} -->
 <!--and {{next citation}} for the analysis of the NEFA fraction).-->
 
 ## Anthropometrics and sociodemographics
@@ -308,9 +308,7 @@ TAG was also included as a primary predictor to allow us to test the hypothesis
 that specific TAGFA better predicted outcomes compared to clinical TAG. 
 Pearson correlation coefficients were computed to assess the relationships of
 individual TAGFA with other continuous variables. Correlations were also
-computed for TAGFA against each other; hierarchical clustering analysis was
-applied to the correlation matrix to identify clusters within the TAGFA 
-composition. {{expand/clarify, ref suplemental material}}
+computed and hierarchical clustering analysis was conducted for TAGFA against each other.
 
 Generalized estimating equation (GEE) models [@Zeger1986a] were used in the 
 primary analysis to determine the longitudinal associations between the outcome 
@@ -320,7 +318,7 @@ design, an auto-regressive of order 1 (AR1) working correlation matrix was
 specified in the GEE model. Covariates to adjust for were selected based on the
 previous literature, from directed acyclic graph [@Greenland1999a]
 recommendations, and from quasi-likelihood information criteria (QIC). The final
-GEE model ({{M#?}}) was adjusted for time, waist circumference, baseline age, ethnicity,
+GEE model (M6) was adjusted for time, waist circumference, baseline age, ethnicity,
 sex, ALT, MET, and total NEFA. The TAGFA, total NEFA, sex, ethnicity, and
 baseline age were classified as *time-independent* (held constant) as they were
 measured only at the baseline visit or do not change throughout the study, while
@@ -390,10 +388,9 @@ correlation with clinical TAG (r=`r fa_cor_mol$rng$TAG[1]`) while all other fatt
 acids had a negative association (r=`r fa_cor_mol$rng$TAG[2]`). In particular,
 those fatty acids with the negative associations with clinical TAG were all the
 very long chain polyunsaturated fatty acids (e.g. 20:4n-6, 20:5n-3).
-Based on heirarchical cluster analysis of the inter-correlation matrix of the
-TAGFA fraction, shown in `r cite_f('heatmap_tagfa')`, four fatty acids (14:0,
-16:0, 14:1n-7, and 16:1n-7) displayed a marked separation and cluster from the
-other TAGFA. {{clarify, as well as the legend}}
+As seen in `r cite_f('heatmap_tagfa')`, four fatty acids (14:0,
+16:0, 14:1n-7, and 16:1n-7) clustered together, each highly positively correlated
+with each other and negatively correlated with all other fatty acids.
 
 ## Generalized estimating equation models
 
