@@ -23,8 +23,9 @@ plot_tagfa <- function(data = project_data) {
         dplyr::mutate(Measure = Measure %>%
                    factor(., levels = unique(.))) %>%
         seer::view_boxplots(
-            'Measure', 'Value',
-            xlab = 'Concentration (nmol/mL)',
-            ylab = 'Triacylglyceride fatty acids') +
+            'Measure', 'Value') +
+        ggplot2::labs(
+            x = 'Concentration (nmol/mL)',
+            y = 'Triacylglyceride fatty acids') +
         graph_theme(ticks = FALSE)
 }
