@@ -80,7 +80,7 @@ DONE Created new function for corr of DNL TAGFA and added to results
 DONE Added a brief section in discussion on DNL and total TAG
 TODO Added vignette on role of TAGFA on clinical TAG
 TODO Updated the README to include info about the actual project
-TODO Next edited version sent to co-authors # Create branch
+DONE Next edited version sent to co-authors # Create branch
 TODO Edits as per Ravi's suggestions # Create branch
 TODO Edits as per Stewart's suggestions # Create branch
 TODO Edits as per Bernie's suggestions # Create branch (maybe not send to him)
@@ -88,6 +88,7 @@ TODO Minor fixes to match with journal requirements
 TODO Added version numbers/session info of packages used
 TODO Sent to Tony updated version # with highlighted bits
 TODO Submitted to journal
+TODO Expanded on cis-vaccenic acid finding # it is an elongation product from palmitoleic acid
 >>> v0.1.0
 
 TODO Included dysglycemia as covariate # yea?
@@ -102,4 +103,3 @@ TODO Added handling of potential over-adjustment to methods # maybe?
 TODO Revisions as per Reviewer 1
 TODO Revisions as per Reviewer 2
 TODO Resubmit to journal
-

@@ -7,6 +7,5 @@ inst/doc
 vignettes/*.R
 vignettes/*.png
 doc/*.docx
-data/
 man/
 

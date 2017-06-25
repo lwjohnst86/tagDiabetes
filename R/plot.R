@@ -25,6 +25,6 @@ plot_tagfa <- function(data = project_data) {
         seer::view_boxplots(
             'Measure', 'Value') +
         ggplot2::labs(x = 'Concentration (nmol/mL)',
-            y = 'Triacylglyceride fatty acids') +
+                      y = 'Triacylglyceride fatty acids') +
         graph_theme(ticks = FALSE)
 }
