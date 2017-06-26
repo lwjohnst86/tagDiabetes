@@ -1,0 +1,11 @@
+.Rproj.user
+.Rhistory
+.RData
+inst/doc
+*_cache/
+*_files/
+vignettes/*.R
+vignettes/*.png
+doc/*.docx
+man/
+

@@ -1,0 +1,30 @@
+---
+title: "Interaction by time plots"
+author: "Luke W. Johnston"
+date: "`r Sys.Date()`"
+output: 
+    rmarkdown::html_vignette:
+        toc: true
+vignette: >
+  %\VignetteIndexEntry{Interact by time plots}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r}
+devtools::load_all()
+knitr::opts_chunk$set(fig.width = 5, fig.height = 5)
+
+covars_int_vn <- c(covariates[which(covariates != 'YearsFromBaseline')], 'VN')
+ds <- prep_gee_data(project_data)
+
+plot_interaction(ds, 'lHOMA2_S', 'pct_tg140', 3, covars = covars_int_vn)
+plot_interaction(ds, 'lHOMA2_S', 'pct_tg141n7', 3, covars = covars_int_vn)
+plot_interaction(ds, 'lHOMA2_S', 'pct_tg140', 3, covars = 'VN')
+plot_interaction(ds, 'lHOMA2_S', 'pct_tg160', 3, covars = 'VN')
+plot_interaction(ds, 'lHOMA2_S', 'pct_tg141n7', 3, covars = 'VN')
+plot_interaction(ds, 'lHOMA2_S', 'tg140', 3, covars = 'VN')
+plot_interaction(ds, 'lHOMA2_S', 'tg141n7', 3, covars = 'VN')
+plot_interaction(ds, 'lHOMA2_S', 'tg183n6', 3, covars = 'VN')
+```
+

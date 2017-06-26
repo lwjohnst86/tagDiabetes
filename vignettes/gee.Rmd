@@ -1,0 +1,245 @@
+---
+title: "GEE modeling results"
+author: "Luke W. Johnston"
+date: "`r Sys.Date()`"
+output: 
+    rmarkdown::html_vignette:
+        toc: true
+vignette: >
+  %\VignetteIndexEntry{GEE modeling results}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+# Setup
+
+```{r setup, message=FALSE}
+devtools::load_all()
+library(dplyr)
+
+knitr::opts_chunk$set(fig.width = 7, fig.height = 5)
+
+explore_gee <- function(data = project_data, 
+                        covars = covariates, caption = NULL, graph = FALSE) {
+    m <- analyze_gee(data = data, covars = covars)
+    m <- filter(m, p.value <= 0.05)
+    print(nrow(m))
+    if (graph) {
+        print(caption)
+        plot_gee_main(m)
+    } else {
+        table_gee_main(m, caption = caption)
+    }
+}
+```
+
+# Unadjusted (with YearsFromBaseline)
+```{r unadj_years, cache=TRUE}
+explore_gee(covars = 'YearsFromBaseline')
+```
+
+# Unadjusted (with VN)
+```{r unadj_vn, cache=TRUE}
+explore_gee(covars = 'VN')
+```
+
+# Adjusted
+```{r adj, cache=TRUE}
+explore_gee()
+```
+
+## Adjusting for `M4` in qic.html
+
+```{r adj_m4, cache=TRUE}
+explore_gee(covars = c(
+    'Waist',
+    'BaseAge',
+    'Ethnicity',
+    'Sex',
+    'ALT',
+    'MET',
+    'AlcoholPerWk'
+    ))
+```
+
+## Adjusting for Location
+
+```{r adj_location, cache=TRUE}
+ds <- project_data %>% 
+    mutate(Location = ifelse(SID >= 2000, 'London', 'Toronto')) 
+
+ds %>% 
+    group_by(Location, VN) %>% 
+    summarize(SampleSize = n()) %>% 
+    knitr::kable()
+
+ds %>% 
+    explore_gee(covars = c(covariates, 'Location'), graph = TRUE)
+```
+
+
+# Interactions
+
+## Time (Unadjusted; using YearsFromBaseline)
+```{r int_time_unadj, cache=TRUE}
+m <- analyze_gee(covar = 'YearsFromBaseline', intvar = 'YearsFromBaseline')
+m <- filter(m, p.value <= 0.05) 
+nrow(m)
+
+m %>% 
+    select(Yterms, Xterms, unit, term, estimate) %>% 
+    pander::pander()
+```
+
+## Time (Unadjusted; using VN)
+```{r int_time_unadj_vn, cache=TRUE}
+m <- analyze_gee(covar = 'VN', intvar = 'VN')
+m <- filter(m, p.value <= 0.05) 
+nrow(m)
+
+m %>% 
+    select(Yterms, Xterms, unit, term, estimate) %>% 
+    pander::pander()
+```
+
+## Time (using YearsFromBaseline)
+```{r int_time, cache=TRUE}
+m <- analyze_gee(intvar = 'YearsFromBaseline')
+m <- filter(m, p.value <= 0.05) 
+nrow(m)
+
+m %>% 
+    select(Yterms, Xterms, unit, term, estimate) %>% 
+    pander::pander()
+```
+
+## Time (using VN)
+```{r int_time_vn, cache=TRUE}
+covars_int_vn <- c(covariates[which(covariates != 'YearsFromBaseline')], 'VN')
+m <- analyze_gee(covars = covars_int_vn, intvar = 'VN')
+m <- filter(m, p.value <= 0.05) 
+nrow(m)
+
+m %>% 
+    select(Yterms, Xterms, unit, term, estimate) %>% 
+    pander::pander()
+```
+
+## Sex
+```{r int_sex, cache=TRUE}
+m <- analyze_gee(intvar = 'Sex')
+m <- filter(m, p.value <= 0.05) 
+nrow(m)
+
+m %>% 
+    select(Yterms, Xterms, unit, term, estimate) %>% 
+    pander::pander()
+```
+
+## Ethnicity
+```{r int_ethnicity, cache=TRUE}
+m <- analyze_gee(intvar = 'BiEthnicity')
+m <- filter(m, p.value <= 0.05) 
+nrow(m)
+
+m %>% 
+    select(Yterms, Xterms, unit, term, estimate) %>% 
+    pander::pander()
+```
+
+## Location
+```{r int_location, cache=TRUE}
+m <- project_data %>% 
+    mutate(Location = ifelse(SID >= 2000, 'London', 'Toronto')) %>% 
+    analyze_gee(covars = c(covariates, 'Location'), intvar = 'Location') %>% 
+    filter(p.value <= 0.05) 
+nrow(m)
+
+m %>% 
+    select(Yterms, Xterms, unit, term, estimate, p.value) %>% 
+    pander::pander()
+```
+
+# Stratified analysis (Sex)
+
+## Female
+```{r strat_sex_female, cache=TRUE}
+data_female <- project_data %>% 
+    filter(Sex == 'Female')
+m <- analyze_gee(data = data_female, covar = covariates[-5])
+m <- filter(m, p.value <= 0.05) 
+nrow(m)
+
+table_gee_main(m)
+```
+
+## Male
+```{r strat_sex_male, cache=TRUE}
+data_male <- project_data %>% 
+    filter(Sex == 'Male')
+m <- analyze_gee(data = data_male, covar = covariates[-5])
+m <- filter(m, p.value <= 0.05) 
+nrow(m)
+
+table_gee_main(m)
+```
+
+# Identify covariates that impact association
+
+```{r covar_id, cache=TRUE}
+covars <- c('YearsFromBaseline', 'Sex', 'BiEthnicity', 'BaseAge')
+explore_gee(covars = covars,
+            caption = 'Basic demographics',
+            graph = TRUE)
+
+explore_gee(
+    covars = c(covars, 'Waist'),
+    caption = 'Basic demographics with waist',
+    graph = TRUE
+    )
+
+explore_gee(covars = c(covars, 'ALT'),
+            caption = 'Basic demographics with ALT',
+            graph = TRUE)
+
+explore_gee(
+    covars = c(covars, 'TotalNE'),
+    caption = 'Basic demographics with Total NEFA',
+    graph = TRUE
+    )
+
+explore_gee(covars = c(covars, 'MET'),
+            caption = 'Basic demographics with MET',
+            graph = TRUE)
+
+explore_gee(
+    covars = c(covars, 'ALT', 'Waist'),
+    caption = 'Basic demographics with Waist and ALT',
+    graph = TRUE
+    )
+
+explore_gee(
+    covars = c(covars, 'TotalNE', 'Waist'),
+    caption = 'Basic demographics with Waist and Total NEFA',
+    graph = TRUE
+    )
+
+explore_gee(
+    covars = c(covars, 'TotalNE', 'ALT'),
+    caption = 'Basic demographics with ALT and Total NEFA',
+    graph = TRUE
+    )
+
+explore_gee(
+    covars = c(covars, 'TotalNE', 'ALT', 'Waist'),
+    caption = 'Basic demographics with Waist, ALT, and Total NEFA',
+    graph = TRUE
+    )
+
+explore_gee(
+    covars = c(covars, 'TotalNE', 'ALT', 'Waist', 'MET'),
+    caption = 'Basic demographics with Waist, ALT, Total NEFA, and MET',
+    graph = TRUE
+    )
+```
+

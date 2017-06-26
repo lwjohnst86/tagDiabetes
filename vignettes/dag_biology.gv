@@ -1,0 +1,25 @@
+digraph rmarkdown {
+
+    # a 'graph' statement. Ortho = bent lines,
+    # neato = allows positioning of boxes
+    graph [splines = ortho]
+
+    # Setting up the nodes (aka boxes)
+    node [shape = box]
+
+    # nodes
+    TAGFA [style = filled, fillcolor = 'green']
+    GSIS_BCF [style = filled, fillcolor = 'lightblue']
+    CellIR_ISI [style = filled, fillcolor = 'lightblue']
+    LiverIR_HOMA [style = filled, fillcolor = 'lightblue']
+
+    # edges
+    {NEFA FatIntake CarbIntake} -> LiverDNL -> TAGFA -> {LiverFat_ALT Lipoprotein}
+    LiverFat_ALT -> {LiverIR_HOMA}
+    LiverIR_HOMA -> FastGluc -> GSIS_BCF -> Insulin -> CellIR_ISI
+    Lipoprotein -> Cells -> {CellFat DAG Ceramides} -> CellIR_ISI -> FastGluc
+    PhysAct -> {CellIR_ISI LiverIR_HOMA NEFA AdiposeFat}
+    AdiposeFat -> NEFA
+    Ethnicity -> {CarbIntake FatIntake}
+
+}

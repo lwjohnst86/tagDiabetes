@@ -1,0 +1,178 @@
+---
+title: "Logistic regression with PLS scores and incident dysglycemia"
+author: "Luke Johnston"
+date: "`r Sys.Date()`"
+output: 
+    rmarkdown::html_vignette:
+        toc: true
+vignette: >
+  %\VignetteIndexEntry{Logistic regression with PLS scores and incident dysglycemia}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup}
+devtools::load_all()
+library(dplyr)
+library(mason)
+covariates <- covariates[which(covariates != 'YearsFromBaseline')]
+```
+
+# TAG composition and dyslglycemia
+
+```{r}
+data_with_dysgly <- project_data %>% 
+    filter(VN == 0) %>% 
+    full_join(prep_dys_data(project_data))
+```
+
+## Unadjusted model
+
+```{r}
+glm_results <- data_with_dysgly %>% 
+    dplyr::mutate_each(dplyr::funs(as.numeric(scale(.))), 
+                       dplyr::matches('pct_tg\\d+|^tg\\d+'), TotalTG, BaseTAG) %>% 
+    design("glm") %>% 
+    add_settings(family = binomial()) %>% 
+    add_variables('yvars', 'ConvertDysgly') %>% 
+    add_variables('xvars', tg_pct) %>% 
+    construct() %>% 
+    add_variables('xvars', tg_conc) %>%
+    construct() %>%
+    add_variables('xvars', tg_totals) %>%
+    construct() %>% 
+    scrub() %>% 
+    polish_filter('Xterm$', 'term') %>%
+    categorize_fa_model_output() %>%
+    polish_transform_estimates(function(x) exp(x)) %>% 
+    rename_terms_model_output(rename_x = renaming_fats, rename_y = function(x) x) %>%
+    padjust_model_output() %>%
+    order_model_output()
+```
+
+```{r fig.width=7, fig.height=7}
+glm_results %>% 
+        seer::view_main_effect(
+            graph.options = 'dot.size',
+            groups = 'unit~Yterms',
+            legend.title = 'FDR-adjusted\np-value',
+            xlab = 'Odds Ratio and 95% CI',
+            ylab = 'Triacylglycerol fatty acids',
+            estimate.type = 'OR'
+            )
+
+```
+
+## Adjusted model
+
+```{r}
+glm_results <- data_with_dysgly %>% 
+    dplyr::mutate_each(dplyr::funs(as.numeric(scale(.))), 
+                       dplyr::matches('pct_tg\\d+|^tg\\d+'), TotalTG, BaseTAG) %>% 
+    design("glm") %>% 
+    add_settings(family = binomial()) %>% 
+    add_variables('yvars', 'ConvertDysgly') %>% 
+    add_variables('covariates', covariates) %>% 
+    add_variables('xvars', tg_pct) %>% 
+    construct() %>% 
+    add_variables('xvars', tg_conc) %>%
+    construct() %>%
+    add_variables('xvars', tg_totals) %>%
+    construct() %>% 
+    scrub() %>% 
+    polish_filter('Xterm$', 'term') %>%
+    categorize_fa_model_output() %>%
+    polish_transform_estimates(function(x) exp(x)) %>% 
+    rename_terms_model_output(rename_x = renaming_fats, rename_y = function(x) x) %>%
+    padjust_model_output() %>%
+    order_model_output()
+```
+
+```{r, fig.width=7, fig.height=7}
+glm_results %>% 
+        seer::view_main_effect(
+            graph.options = 'dot.size',
+            groups = 'unit~Yterms',
+            legend.title = 'FDR-adjusted\np-value',
+            xlab = 'Odds Ratio and 95% CI',
+            ylab = 'Triacylglycerol fatty acids',
+            estimate.type = 'OR'
+            )
+```
+
+# PLS components, TAG, and dyslglycemia
+
+```{r}
+pls_results <- analyze_pls(project_data, y = 'lISI', x = tg_pct, cv = FALSE)
+
+sid_vn <- project_data %>%
+    filter(VN == 0) %>%
+    select_(.dots = c('lISI', tg_pct, 'SID', 'VN', covariates)) %>%
+    na.omit() %>%
+    full_join(project_data %>%
+                  filter(VN == 0) %>%
+                  select(SID)) %>%
+    select_(.dots = c('lISI', 'SID', 'VN'))
+
+data_with_pls <-
+    bind_cols(as_data_frame(pls_results$model$Y),
+              as_data_frame(unclass(pls_results$scores))[1:2]) %>% 
+    rename(Comp1 = `Comp 1`, Comp2 = `Comp 2`) %>%
+    full_join(sid_vn) %>%
+    select(SID, VN, Comp1, Comp2) %>%
+    full_join(prep_dys_data(project_data) %>% 
+                  select_(.dots = c('SID', 'VN', 'ConvertDysgly', 'TAG', tg_pct, covariates))
+                  ) 
+
+glm_results_adj <- data_with_pls %>%
+    design('glm') %>%
+    add_settings(family = binomial()) %>%
+    add_variables('yvars', 'ConvertDysgly') %>%
+    add_variables('xvars', c('Comp1', 'Comp2', 'TAG')) %>%
+    add_variables('covariates', covariates) %>% 
+    construct() %>% 
+    scrub() %>% 
+    polish_filter('Xterm$', 'term') %>%
+    polish_transform_estimates(function(x) exp(x)) %>% 
+    padjust_model_output()
+
+glm_results_unadj <- data_with_pls %>%
+    design('glm') %>%
+    add_settings(family = binomial()) %>%
+    add_variables('yvars', 'ConvertDysgly') %>%
+    add_variables('xvars', c('Comp1', 'Comp2', 'TAG')) %>%
+    construct() %>% 
+    scrub() %>% 
+    polish_filter('Xterm$', 'term') %>%
+    polish_transform_estimates(function(x) exp(x)) %>% 
+    padjust_model_output()
+```
+
+## Unadjusted model
+
+```{r, fig.width=7, fig.height=4}
+glm_results_unadj %>% 
+        seer::view_main_effect(
+            graph.options = 'dot.size',
+            groups = '~Yterms',
+            legend.title = 'FDR-adjusted\np-value',
+            xlab = 'Odds Ratio and 95% CI',
+            ylab = 'PLS components',
+            estimate.type = 'OR'
+            )
+```
+
+## Adjusted model
+
+```{r, fig.width=7, fig.height=4}
+glm_results_adj %>% 
+        seer::view_main_effect(
+            graph.options = 'dot.size',
+            groups = '~Yterms',
+            legend.title = 'FDR-adjusted\np-value',
+            xlab = 'Odds Ratio and 95% CI',
+            ylab = 'PLS components',
+            estimate.type = 'OR'
+            )
+```
+

@@ -1,0 +1,233 @@
+---
+title: "QIC modeling"
+author: "Luke W. Johnston"
+date: "`r Sys.Date()`"
+output: 
+    rmarkdown::html_vignette:
+        toc: true
+vignette: >
+  %\VignetteIndexEntry{QIC modeling}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup}
+devtools::load_all()
+library(DiagrammeR)
+library(DiagrammeRsvg)
+library(rsvg)
+
+print.anova <- function(x, ...) {
+    print(as.data.frame(x))
+}
+```
+
+# Underlying graph of the associations
+    
+```{r DAG}
+grViz("dag_variables.gv", height = 650, width = 500) %>% 
+    export_svg() %>%
+    charToRaw() %>%
+    rsvg_png('dag_variables.png')
+
+grViz("dag_biology.gv", height = 650, width = 500) %>% 
+    export_svg() %>%
+    charToRaw() %>%
+    rsvg_png('dag_biology.png')
+```
+
+![](dag_biology.png)
+
+## For DAGitty
+
+![](dag_variables.png)
+
+According to [DAGitty](http://dagitty.net/dags.html), variables to adjust for
+include:
+
+1. ISSI2 models
+    - Ethnicity
+    - MET, Waist
+    - TotalNE
+    
+2. ISI models
+    - MET, Sex
+    - MET, Waist
+    - TotalNE
+
+# Data prep and wrangling
+
+```{r data_prep}
+prep_qic <- project_data %>%
+    prep_gee_data() %>% 
+    dplyr::select(
+        SID, VN, YearsFromBaseline, lISSI2, lISI, TotalTG, TotalNE, Sex, Ethnicity, MET, ALT, BaseAge,
+        Waist, BMI, AlcoholPerWk, TobaccoUse, FamHistDiab
+        ) %>% 
+    stats::na.omit()
+
+qic_is <- prep_qic %>% 
+    dplyr::select(-lISSI2)
+
+qic_bcf <- prep_qic %>% 
+    dplyr::select(-lISI)
+```
+
+# VN vs YearsFromBaseline
+
+```{r}
+M0_vn <- geepack::geeglm(
+    lISI ~ TotalTG + VN, data = qic_is,
+    id = SID, family = stats::gaussian,
+    corstr = 'ar1'
+    )
+M0_mfb <- geepack::geeglm(
+    lISI ~ TotalTG + YearsFromBaseline, data = qic_is,
+    id = SID, family = stats::gaussian,
+    corstr = 'ar1'
+    )
+MuMIn::model.sel(M0_vn, M0_mfb, rank = MuMIn::QIC) %>%
+    clean_qic() %>%
+    table_qic()
+```
+
+# Working correlation matrices comparisons
+
+```{r corrmat_isi}
+M0_ar <- geepack::geeglm(
+    lISI ~ TotalTG + VN, data = qic_is,
+    id = SID, family = stats::gaussian,
+    corstr = 'ar1'
+    )
+
+M0_exch <- stats::update(M0_ar, corstr = 'exchangeable')
+M0_unstr <- stats::update(M0_ar, corstr = 'unstructured')
+M0_indep <- stats::update(M0_ar, corstr = 'independence')
+
+MuMIn::model.sel(M0_ar, M0_exch, M0_unstr, M0_indep, rank = MuMIn::QIC) %>%
+    clean_qic() %>%
+    table_qic()
+
+anova(M0_ar, M0_unstr)
+M0_ar_is <- M0_ar
+```
+
+```{r corrmat_issi2}
+M0_ar <- geepack::geeglm(
+    lISSI2 ~ TotalTG + VN, data = qic_bcf,
+    id = SID, family = stats::gaussian,
+    corstr = 'ar1'
+    )
+
+M0_exch <- stats::update(M0_ar, corstr = 'exchangeable')
+M0_unstr <- stats::update(M0_ar, corstr = 'unstructured')
+M0_indep <- stats::update(M0_ar, corstr = 'independence')
+
+MuMIn::model.sel(M0_ar, M0_exch, M0_unstr, M0_indep, rank = MuMIn::QIC) %>%
+    clean_qic() %>%
+    table_qic()
+
+anova(M0_ar, M0_unstr)
+M0_ar_bcf <- M0_ar
+```
+    
+# Covariate inclusion comparisons
+
+```{r covars_is}
+M0 <- M0_ar_is
+M_full <- stats::update(M0, . ~ . + Waist + BaseAge + Ethnicity + Sex + ALT + MET + 
+                            AlcoholPerWk + FamHistDiab + TobaccoUse + TotalNE)
+M1 <- stats::update(M0, . ~ . + Waist + BaseAge + Ethnicity + Sex)
+M2 <- stats::update(M0, . ~ . + Waist + BaseAge + Ethnicity + Sex + ALT)
+M3 <- stats::update(M0, . ~ . + Waist + BaseAge + Ethnicity + Sex + ALT + MET)
+M4 <- stats::update(M0, . ~ . + Waist + BaseAge + Ethnicity + Sex + ALT + MET + AlcoholPerWk)
+M5 <- stats::update(M0, . ~ . + Waist + BaseAge + Ethnicity + Sex + ALT + MET + AlcoholPerWk +
+                        FamHistDiab)
+M6 <- stats::update(M0, . ~ . + Waist + BaseAge + Ethnicity + Sex + ALT + FamHistDiab + TobaccoUse)
+M7 <- stats::update(M0, . ~ . + Waist + BaseAge + Ethnicity + Sex + ALT + FamHistDiab)
+M8 <- stats::update(M0, . ~ . + Waist + BaseAge + Ethnicity + Sex + ALT + MET + FamHistDiab)
+M9 <- stats::update(M0, . ~ . + Waist + BaseAge + Ethnicity + Sex + MET)
+M10 <- stats::update(M0, . ~ . + Waist + BaseAge + Ethnicity + Sex + ALT + MET + TotalNE)
+M11 <- stats::update(M0, . ~ . + Waist + BaseAge + Ethnicity + Sex + ALT + MET + TotalNE +
+                         FamHistDiab)
+M12 <- stats::update(M0, . ~ . + Waist + Sex + Ethnicity + MET + TotalNE)
+
+MuMIn::model.sel(M0, M_full, M1, M2, M3, M4, M5, M6, M7, M8, M9, M10, M11, M12,
+                 rank = MuMIn::QIC) %>%
+    clean_qic() %>%
+    table_qic()
+
+anova(M3, M4, test = 'LRT')
+anova(M3, M5, test = 'LRT')
+anova(M3, M8, test = 'LRT')
+anova(M3, M10, test = 'LRT')
+anova(M3, M11, test = 'LRT')
+```
+
+```{r covars_bcf}
+M0 <- M0_ar_bcf
+M_full <- stats::update(M0, . ~ . + Waist + BaseAge + Ethnicity + Sex + ALT + MET + 
+                            AlcoholPerWk + FamHistDiab + TobaccoUse + TotalNE)
+M1 <- stats::update(M0, . ~ . + Waist + BaseAge + Ethnicity + Sex)
+M2 <- stats::update(M0, . ~ . + Waist + BaseAge + Ethnicity + Sex + ALT)
+M3 <- stats::update(M0, . ~ . + Waist + BaseAge + Ethnicity + Sex + ALT + MET)
+M4 <- stats::update(M0, . ~ . + Waist + BaseAge + Ethnicity + Sex + ALT + MET + AlcoholPerWk)
+M5 <- stats::update(M0, . ~ . + Waist + BaseAge + Ethnicity + Sex + ALT + MET + AlcoholPerWk +
+                        FamHistDiab)
+M6 <- stats::update(M0, . ~ . + Waist + BaseAge + Ethnicity + Sex + ALT + FamHistDiab + TobaccoUse)
+M7 <- stats::update(M0, . ~ . + Waist + BaseAge + Ethnicity + Sex + ALT + FamHistDiab)
+M8 <- stats::update(M0, . ~ . + Waist + BaseAge + Ethnicity + Sex + ALT + MET + FamHistDiab)
+M9 <- stats::update(M0, . ~ . + Waist + BaseAge + Ethnicity + Sex + MET)
+M10 <- stats::update(M0, . ~ . + Waist + BaseAge + Ethnicity + Sex + ALT + MET + TotalNE)
+M11 <- stats::update(M0, . ~ . + Waist + BaseAge + Ethnicity + Sex + ALT + MET + TotalNE +
+                         FamHistDiab)
+M12 <- stats::update(M0, . ~ . + Waist + Sex + Ethnicity + MET + TotalNE)
+
+MuMIn::model.sel(M0, M_full, M1, M2, M3, M4, M5, M6, M7, M8, M9, M10, M11, M12,
+                 rank = MuMIn::QIC) %>%
+    clean_qic() %>%
+    table_qic()
+
+anova(M10, M_full, test = 'LRT')
+anova(M10, M11, test = 'LRT')
+anova(M3, M8, test = 'LRT')
+anova(M3, M10, test = 'LRT')
+anova(M3, M11, test = 'LRT')
+```
+
+Since `M10` has a good fit in both IS and BCF models (though better in the BCF),
+and since `M10` when compared to `M3` in IS models are not different from each
+other, I will be using `M10` for the final model.
+
+# Interaction inclusion comparisons
+
+```{r interact_is}
+M0 <- stats::update(M0_ar_is, . ~ . + Waist + BaseAge + Ethnicity + Sex + ALT + MET + TotalNE)
+M_time <- stats::update(M0, . ~ . + VN:TotalTG)
+M_sex <- stats::update(M0, . ~ . + Sex:TotalTG)
+M_ethn <- stats::update(M0, . ~ . + Ethnicity:TotalTG)
+
+anova(M0, M_time, test = 'LRT')
+anova(M0, M_ethn, test = 'LRT')
+anova(M0, M_sex, test = 'LRT')
+```
+
+```{r interact_bcf}
+M0 <- stats::update(M0_ar_bcf, . ~ . + Waist + BaseAge + Ethnicity + Sex + ALT + MET + TotalNE)
+M_time <- stats::update(M0, . ~ . + VN:TotalTG)
+M_sex <- stats::update(M0, . ~ . + Sex:TotalTG)
+M_ethn <- stats::update(M0, . ~ . + Ethnicity:TotalTG)
+
+anova(M0, M_time, test = 'LRT')
+anova(M0, M_ethn, test = 'LRT')
+anova(M0, M_sex, test = 'LRT')
+```
+
+There is a significant difference between models with an ethnicity or sex by
+TAGFA interaction, but not with follow-up visit. Greater examination of the
+interaction by sex and ethnicity is done in the GEE vignette (`gee.Rmd` or
+`gee.html`).
+
+Given the difficulty in interpreting and presenting results from a model that
+includes an interaction term, I won't include the interactions in the main
+effect GEE analyses.

@@ -1,0 +1,80 @@
+digraph rmarkdown {
+
+    # a 'graph' statement. Ortho = bent lines,
+    # neato = allows positioning of boxes
+    graph [splines = ortho]
+
+    # Setting up the nodes (aka boxes)
+    node [shape = box]
+
+    # nodes
+    TAGFA [style = filled, fillcolor = 'green']
+    IGIIR [style = filled, fillcolor = 'lightblue']
+    ISSI2 [style = filled, fillcolor = 'lightblue']
+    ISI [style = filled, fillcolor = 'lightblue']
+    HOMA [style = filled, fillcolor = 'lightblue']
+
+    # edges
+    MET -> {TotalNE Waist HOMA ISI}
+    TotalNE -> TAGFA
+    ALT -> TAGFA
+    TotalNE -> ALT
+    AlcoholPerWk -> {ALT}
+    Waist -> TotalNE
+    TAGFA -> {HOMA ISI ISSI2 IGIIR}
+    FamHistDiab -> {HOMA ISI ISSI2 IGIIR}
+    Ethnicity -> {Waist IGIIR ISSI2}
+    Sex -> {HOMA ISI Waist MET}
+    Age -> {ISI HOMA}
+    HOMA -> {ISSI2 IGIIR}
+    ISI -> {ISSI2 IGIIR}
+
+}
+
+# For DAGity: ISI
+MET 1
+TotalNE 1
+Waist 1
+ISI O
+TAGFA E
+ALT 1
+AlcoholPerWk 1
+FamHistDiab 1
+Ethnicity 1
+Sex 1
+Age 1
+
+MET  TotalNE Waist ISI
+TotalNE  TAGFA
+ALT  TAGFA
+TotalNE  ALT
+AlcoholPerWk  ALT
+Waist  TotalNE
+TAGFA  ISI
+FamHistDiab  ISI
+Ethnicity  Waist
+Sex  ISI Waist MET
+Age  ISI
+
+# For DAGity: ISSI2
+MET 1
+TotalNE 1
+Waist 1
+ISSI2 O
+TAGFA E
+ALT 1
+AlcoholPerWk 1
+FamHistDiab 1
+Ethnicity 1
+Sex 1
+
+MET  TotalNE Waist
+TotalNE  TAGFA
+ALT  TAGFA
+TotalNE  ALT
+AlcoholPerWk  ALT
+Waist  TotalNE
+TAGFA  ISSI2
+FamHistDiab  ISSI2
+Ethnicity  Waist ISSI2
+Sex  Waist MET
