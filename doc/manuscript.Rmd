@@ -345,7 +345,7 @@ cross-validation on the PLS models.
 All analyses were performed using R `r getRversion()` [@Rbase], along with the R
 packages geepack `r packageVersion('geepack')` for GEE [@Hoejsgaard2006a] and pls
 `r packageVersion('pls')` for PLS. The R code and extra analyses for
-this manuscript is available at {{code doi}}. Results were considered
+this manuscript is available at https://doi.org/10.6084/m9.figshare.5143438. Results were considered
 statistically significant at p<0.05, after adjusting for multiple testing using
 the Benjamini-Hochberg False Discovery Rate [@Benjamini1995a]. STROBE was used
 as a guideline for reporting [@Vandenbroucke2007b].
