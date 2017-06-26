@@ -8,4 +8,4 @@ vignettes/*.R
 vignettes/*.png
 doc/*.docx
 man/
-
+.httr-oauth
