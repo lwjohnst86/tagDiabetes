@@ -25,14 +25,6 @@ prep_gee_data <- function(data) {
             scaled_variables,
             by = 'SID'
         ) %>%
-        group_by(VN) %>%
-        mutate(
-            Waist = as.numeric(scale(Waist)),
-            ALT = as.numeric(scale(ALT)),
-            BaseAge = as.numeric(scale(BaseAge)),
-            MET = as.numeric(scale(MET))
-        ) %>%
-        ungroup() %>%
         arrange(SID, VN)
 }
 
