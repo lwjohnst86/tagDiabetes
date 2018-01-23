@@ -39,8 +39,9 @@ fetch_data <- function() {
         mutate(
             BaseTotalNE = TotalNE,
             BaseTotalTG = TotalTG,
-            BaseTAG = ifelse(VN == 1, TAG, NA),
-            BaseAge = ifelse(VN == 1, Age, NA),
+            BaseTAG = ifelse(VN == 0, TAG, NA),
+            BaseAge = ifelse(VN == 0, Age, NA),
+            Sex = forcats::as_factor(Sex),
             FamHistDiab =
                 plyr::mapvalues(FamHistDiab, c(0, 1:12),
                                 c('No', rep('Yes', 12))) %>%
