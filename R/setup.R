@@ -31,6 +31,7 @@ set_options <- function() {
     )
 }
 
+#' @import dplyr tidyr ggplot2 mason
 #' @importFrom magrittr %>%
 #' @export
 magrittr::`%>%`

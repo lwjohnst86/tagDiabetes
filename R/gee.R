@@ -162,15 +162,18 @@ padjust_model_output <- function(gee_results) {
 order_model_output <- function(gee_results) {
     gee_results %>%
         mutate(
-            order1 = substr(Xterms, nchar(Xterms), nchar(Xterms)),
-            order1 = ifelse(order1 == 0, 10, order1),
-            order1 = ifelse(order1 == 'l', 20, order1),
-            order1 = ifelse(order1 == 'G', 30, order1),
-            order1 = as.integer(order1)
+            ordering = as.character(substr(Xterms, nchar(Xterms), nchar(Xterms))),
+            ordering = case_when(
+                ordering == "0" ~ "10",
+                ordering == "l" ~ "20",
+                ordering == "G" ~ "30",
+                TRUE ~ ordering
+            ),
+            ordering = as.integer(ordering)
         ) %>%
-        arrange(desc(order1)) %>%
-        mutate(Xterms = factor(Xterms, unique(Xterms))) %>%
-        select(-order1)
+        arrange(desc(ordering)) %>%
+        mutate(Xterms = forcats::fct_inorder(Xterms)) %>%
+        select(-ordering)
 }
 
 set_outcome_order_model_output <- function(gee_results) {
