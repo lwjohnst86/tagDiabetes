@@ -715,11 +715,17 @@ plot_heatmap(cor_df_tagfa, text = FALSE)
 ```
 
 ```{r fig_gee_unadj, fig.cap=fig_gee_unadj}
-plot_gee_main(gee_unadj_df)
+gee_unadj_df %>% 
+    mutate(p.value = ifelse(p.value <= 0.05, 0.04, p.value)) %>% 
+    plot_gee_main() +
+    ggplot2::theme(legend.position = "none")
 ```
 
 ```{r fig_gee_adj, fig.cap=fig_gee_adj}
-plot_gee_main(gee_adj_df)
+gee_adj_df %>% 
+    mutate(p.value = ifelse(p.value <= 0.05, 0.04, p.value)) %>% 
+    plot_gee_main() +
+    ggplot2::theme(legend.position = "none")
 ```
 
 ```{r fig_pls, fig.cap=fig_pls, fig.height=8, fig.width=4}
