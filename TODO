@@ -81,16 +81,12 @@ DONE Added a brief section in discussion on DNL and total TAG
 TODO Added vignette on role of TAGFA on clinical TAG
 TODO Updated the README to include info about the actual project
 DONE Next edited version sent to co-authors # Create branch
-TODO Edits as per Ravi's suggestions # Create branch
-TODO Edits as per Stewart's suggestions # Create branch
-TODO Edits as per Bernie's suggestions # Create branch (maybe not send to him)
+TODO Edits of co-authors
 TODO Minor fixes to match with journal requirements
-TODO Added version numbers/session info of packages used
+DONE Added version numbers/session info of packages used
 TODO Sent to Tony updated version # with highlighted bits
-TODO Submitted to journal
 TODO Expanded on cis-vaccenic acid finding # it is an elongation product from palmitoleic acid
->>> v0.1.0
-
+TODO Include analysis of dietary carbs (sensitivity)
 TODO Included dysglycemia as covariate # yea?
 TODO Included sensitivity analysis with covariates as time-independent # maybe?
 TODO Included Basic characteristic table in main with p-value # maybe?
@@ -100,6 +96,13 @@ TODO Clarified whether covariates were confounders, mediators, etc.
     # If there are more mediators, they should be used in separate model and shown as such
     # Adjust for waist? Remove ALT?
 TODO Added handling of potential over-adjustment to methods # maybe?
-TODO Revisions as per Reviewer 1
-TODO Revisions as per Reviewer 2
+TODO Sensitivity analysis with added sugar and fat
+TODO Don't scale covars
+
+TODO Submit to preprint # ?
+TODO Upload code to figshare (or Zenodo) + github
+TODO Submitted to journal
+>>> v0.1.0
+
+TODO Reviewer responses and edits
 TODO Resubmit to journal
