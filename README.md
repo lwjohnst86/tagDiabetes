@@ -1,3 +1,8 @@
+# TAG composition on diabetes pathogenesis
+
+This project contains the analysis code for the manuscript on TAG composition and
+insulin sensitivity/beta-cell function in the PROMISE cohort.
+
 # Introduction to this project
 
 This README details how this research directory is structured, how files should
