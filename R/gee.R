@@ -200,7 +200,7 @@ table_gee_main <- function(results, caption = NULL, digits = 1) {
     table_data <- results %>%
         mutate_at(
             vars(estimate, conf.low, conf.high),
-            funs(format_rounding(., digits = digits))
+            funs(aide::format_round(., digits = digits))
         ) %>%
         mutate(
             p.binary = ifelse(p.value <= 0.05, '\\*', ''),

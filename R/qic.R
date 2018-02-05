@@ -147,7 +147,7 @@ table_qic <- function(data, caption = NULL) {
     data %>%
         dplyr::arrange(id) %>%
         dplyr::select(-id) %>%
-        dplyr::mutate(QIC = format_rounding(QIC, 1),
-                      Delta = format_rounding(Delta, 1)) %>%
+        dplyr::mutate(QIC = aide::format_round(QIC, 1),
+                      Delta = aide::format_round(Delta, 1)) %>%
         pander::pander(missing = '', caption = caption)
 }

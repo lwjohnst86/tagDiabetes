@@ -34,7 +34,7 @@ calc_tagfa_percent <- function(data = project_data) {
         dplyr::group_by(fat) %>%
         dplyr::summarise(pct = mean(value, na.rm = TRUE)) %>%
         dplyr::mutate(fat = renaming_fats(fat),
-               c = paste0(fat, ' (', format_rounding(pct, 1), '%)')) %>%
+               c = paste0(fat, ' (', aide::format_round(pct, 1), '%)')) %>%
         dplyr::arrange(dplyr::desc(pct)) %>%
         dplyr::filter(pct >= 10)
 
@@ -76,7 +76,7 @@ calc_outcome_changes <- function(data = project_data) {
         mason::scrub() %>%
         mason::polish_filter('Xterm$', 'term') %>%
         dplyr::summarise(p.value = mean(p.value)) %>%
-        dplyr::mutate(p.value = format_p(p.value))
+        dplyr::mutate(p.value = aide::format_pval(p.value))
 
     change_outcomes <- list(n = sample_size, chg = change_over_time, p = pval)
 
@@ -104,7 +104,7 @@ calc_gee_ave <- function(results) {
     results %>%
         dplyr::filter(p.value <= 0.05) %>%
         dplyr::group_by(Yterms) %>%
-        dplyr::summarise(b = format_rounding(abs(mean(estimate))))
+        dplyr::summarise(b = aide::format_round(abs(mean(estimate))))
 }
 
 
@@ -116,11 +116,11 @@ calc_gee_ave <- function(results) {
 calc_gee_estci <- function(results) {
     b_ci <- results %>%
         dplyr::mutate(
-            est = format_rounding(estimate),
+            est = aide::format_round(estimate),
             ci = paste0(
-                format_rounding(conf.low),
+                aide::format_round(conf.low),
                 ' to ',
-                format_rounding(conf.high)
+                aide::format_round(conf.high)
             ),
             eci = paste0('(beta: ', est, ', CI: ', ci, ')')
         ) %>%
@@ -211,5 +211,5 @@ calc_followup_time <- function(data = project_data) {
 #' @export
 calc_pct_full_visits <- function() {
     pct_val <- calc_n_for_visits()[1] / sum(calc_n_for_visits())
-    format_rounding(pct_val * 100)
+    aide::format_round(pct_val * 100)
 }
