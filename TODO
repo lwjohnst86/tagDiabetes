@@ -48,8 +48,8 @@ DONE First draft acknowledgements, conflicts, funding
 DONE Confirmed manuscript created as expected (minor edits, fixes)
 TODO Confirmed manuscript matches STROBE checklist
 DONE First edited version sent to Tony # Create branch
-TODO Moved format_rounding etc into aide, used aide instead
-TODO Switched load_data to match new prodigen style
+DONE Moved format_rounding etc into aide, used aide instead
+DONE Switched load_data to match new prodigen style
 DONE Edits as per Tony's suggestions from doc # Create branch
 DONE Edits as per Tony's suggestions from email (esp re: vs Tg)
 DONE Expanded on wording of PLS methods as per Tony's email
@@ -79,7 +79,7 @@ DONE Added abstract
 DONE Created new function for corr of DNL TAGFA and added to results
 DONE Added a brief section in discussion on DNL and total TAG
 TODO Added vignette on role of TAGFA on clinical TAG
-TODO Updated the README to include info about the actual project
+DONE Updated the README to include info about the actual project
 DONE Next edited version sent to co-authors # Create branch
 TODO Edits of co-authors
 TODO Minor fixes to match with journal requirements
@@ -87,9 +87,9 @@ DONE Added version numbers/session info of packages used
 TODO Sent to Tony updated version # with highlighted bits
 TODO Expanded on cis-vaccenic acid finding # it is an elongation product from palmitoleic acid
 TODO Include analysis of dietary carbs (sensitivity)
-TODO Included dysglycemia as covariate # yea?
+TODO Included dysglycemia as covariate # yea? NO
 TODO Included sensitivity analysis with covariates as time-independent # maybe?
-TODO Included Basic characteristic table in main with p-value # maybe?
+TODO Included Basic characteristic table in main with p-value # maybe? NO
 TODO Moved interaction plot to seer, used seer function instead # maybe?
 TODO Clarified whether covariates were confounders, mediators, etc.
     # Maybe?
@@ -97,7 +97,7 @@ TODO Clarified whether covariates were confounders, mediators, etc.
     # Adjust for waist? Remove ALT?
 TODO Added handling of potential over-adjustment to methods # maybe?
 TODO Sensitivity analysis with added sugar and fat
-TODO Don't scale covars
+DONE Don't scale covars
 
 TODO Submit to preprint # ?
 TODO Upload code to figshare (or Zenodo) + github
