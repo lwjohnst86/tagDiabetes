@@ -1,13 +1,5 @@
 # Misc --------------------------------------------------------------------
 
-format_rounding <- function(x, digits = 1) {
-    trimws(format(round(x, digits = digits), nsmall = digits))
-}
-
-format_p <- function(x) {
-   format.pval(x, digits = 2, eps = 0.001)
-}
-
 graph_theme <- function(base.plot, ticks = TRUE, minor.grid.lines = FALSE, legend.pos = 'bottom') {
     graph.theme <-
         "%+replace%"(
