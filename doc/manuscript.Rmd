@@ -158,36 +158,23 @@ fig_gee_adj_nowaist <- sfig('gee_adj_nowaist', 'Fully-adjusted (without waist si
 fig_pls <- fig('pls', 'Partial least squares (PLS) models showing the clustering of triacylglycerol fatty acids on insulin sensitivity and beta-cell function measures. The R value shown above the graph is the correlation between predicted and observed values, using cross-validation; a higher value suggests the fatty acids strongly predict the metabolic outcome. The percent explained variance of each component is shown in brackets on each axis. The solid line represents an explained variance of 100% while the dashed line represents an explained variance of 50%. Fatty acids between these lines represent variables that strongly explain the underlying structure of the data. See the Supplemental Methods for a description of PLS analysis and an explanation of interpreting this plot.')
 ```
 
-```{r analyze_gee, cache=TRUE}
-gee_unadj_df <- analyze_gee(covars = "YearsFromBaseline")
-gee_adj_df <- analyze_gee()
-```
-
 ```{r analyze_others}
-# CV results are shown in pls.Rmd vignette
-pls_homa2 <- analyze_pls(y = 'lHOMA2_S', cv = FALSE)
-pls_isi <- analyze_pls(y = 'lISI', cv = FALSE)
-
 # Correlation between predicted and observed
 pls_homa2_t <- analyze_pls(y = 'lHOMA2_S')
 pls_isi_t <- analyze_pls(y = 'lISI')
 pls_igi_t <- analyze_pls(y = 'lIGIIR')
 pls_issi2_t <- analyze_pls(y = 'lISSI2')
 
-cor_df <- analyze_corr()
-cor_df_mol <- analyze_corr(y = tg_pct)
-cor_df_tagfa <- analyze_corr_tagfa()
-
 pls_gee <- project_data %>%
     analyze_gee(
         x = c('Comp1', 'Comp2'),
         data_prep = 'pls',
-        pls_results = pls_isi
+        pls_results = pls_results$pls_isi_df
         ) %>% 
     dplyr::select(Yterms, Xterms, estimate, p.value) %>% 
     dplyr::filter(Xterms == 'Comp1') %>% 
-    dplyr::mutate(p.value = format_p(p.value),
-                  estimate = format_rounding(estimate))
+    dplyr::mutate(p.value = aide::format_pval(p.value),
+                  estimate = aide::format_round(estimate))
 ```
 
 ```{r inline}
