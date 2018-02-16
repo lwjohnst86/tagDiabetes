@@ -1,0 +1,195 @@
+---
+output: fost::diabetologia_manuscript
+---
+
+```{r setup, include=FALSE}
+devtools::load_all()
+set_options()
+knitr::opts_chunk$set(results = "asis", echo = FALSE)
+
+# Captions
+sfig <- captioner::captioner(prefix = 'Supplemental Figure')
+cite_sf <- pryr::partial(sfig, display = 'cite')
+
+tab <- captioner::captioner(prefix = 'Table')
+cite_t <- pryr::partial(tab, display = 'cite')
+stab <- captioner::captioner(prefix = 'Supplemental Table')
+cite_st <- pryr::partial(stab, display = 'cite')
+
+fig_consort <- sfig('consort', 'CONSORT diagram of PROMISE participants over the 3 visits.')
+fig_dag_is <- sfig('dag_is', 'Directed acyclic graphic output from the DAGitty online software for insulin sensitivity.')
+fig_dag_bcf <- sfig('dag_bcf', 'Directed acyclic graphic output from the DAGitty online software for beta-cell function.')
+fig_gee_adj_nowaist <- sfig('gee_adj_nowaist', 'Fully-adjusted (without waist size) GEE models of the association of the triacylglycerol fatty acids (mol% and nmol/mL) and total clinically-measured TAG with insulin sensitivity and beta-cell function outcomes using the 6 year longitudinal data from the PROMISE cohort. Variables controlled for were follow-up time, baseline age, ethnicity, sex, ALT, physical activity, and total NEFA. X-axis values represent a percent difference in the outcome per SD increase in the fatty acid. P-values were adjusted for the BH false discovery rate, with the largest dot representing a significant (p<0.05) association.')
+```
+
+# Supplemental Methods
+
+## Equations for outcomes
+
+The equations for calculating the outcome variables are listed below. HOMA2-%S was 
+calculated using the Excel found at https://www.dtu.ox.ac.uk/homacalculator/.
+
+```{r}
+cat(PROMISE.methods::insert_formula("ISI"))
+```
+
+```{r}
+cat(PROMISE.methods::insert_formula("HOMA"))
+```
+
+```{r}
+cat(PROMISE.methods::insert_formula("IGIIR"))
+```
+
+```{r}
+cat(PROMISE.methods::insert_formula("ISSI2"))
+```
+
+Area under the curve (AUC) for both glucose (G) and insulin (I) was computed
+using the trapezoidal rule. ISI~OGTT~ (ISI) uses all the glucose and insulin
+values from the oral glucose tolerance (the overall mean).
+
+## Statistical methods description
+
+These methods are also described in our article on the NEFA fraction
+[@Johnston2017a].
+
+Generalised estimating equations (GEE) is a technique similar to mixed effects 
+modelling, except it calculates the marginal population estimates compared to the
+subject-specific estimates in mixed effects models. GEE is well suited to and
+commonly used in longitudinal cohort studies, especially given its capacity to
+handle missed visits and for the correlation of variables across time. 
+GEE is able to handle the correlation of longitudinal data due to the
+estimating of a working correlation matrix, which was chosen based on
+quasi-likelihood information criteria (QIC; more detail on QIC below). The auto-regressive of order 1
+(AR1) matrix was chosen for the GEE models as it had the best model fit accessed
+using QIC, though other matrices (eg. exchangeable) had similar fit (data not
+shown). While the choice of the correlation matrix is important, it should be noted
+that even with misspecification GEE still computes robust estimates and standard errors.
+One main advantage of using methods such as GEE is the inclusion of the
+working correlation matrix that takes into account the inherent covariance
+between values measured at different time points when computing model estimates
+and standard errors. AR1 is the most appropriate correlation matrix for
+longitudinal data since the correlation matrix assumes lower intercorrelation of
+values within an individual as time passes. For example, BMI measured at the
+baseline visit would be more highly correlated to BMI measured at the 3rd year
+visit than compared to the 6th year visit.
+
+For the covariates, they were chosen based on previous literature, from directed
+acyclic graph (DAG) recommendations, and from QIC. The DAG recommendations were
+obtained from using the DAGitty software, http://dagitty.net/. DAG is a
+technique that allows for identifying potential confounding causal pathways and
+to limit potential bias. DAGs are composed on nodes (variables) connected by
+edges (arrows; causal pathway between two variables). Using DAGs to identify
+variables to adjust for is done algorithmically, as implemented in the DAGitty
+software. DAGitty calculates possible sets of variables to include in a model to
+adjust for potential confounding in the causal network. Use of DAGs in this
+manner can identify potential sources of bias, such as from inclusion of
+colliding variables. A collider variable is a variable that has two (or more)
+'parent' nodes/variables (connected causally by DAG edges pointing into the
+'child' node, which is the collider). The collider variable and parent variables
+are directed linked to the exposure and the outcome. Including all variables
+involved with the collider could introduce bias as it does not generate an
+unconditional association between all involved variables in the model.
+
+QIC is a technique that balances the goodness of fit of the model with its
+relative complexity (i.e. number of covariates) against other models being
+compared. QIC, more so then the more common AIC, penalises the inclusion of more
+variables in the model. This technique is used to compare multiple models to
+identify the model with the highest fit and with the lowest complexity (variables),
+*of the models compared*. QIC is similar to AIC, except AIC is based on maximum
+likelihood of models such as mixed effects models. Since GEE does not use
+maximum likelihood, AIC can not be used. QIC and other information
+criterion methods are used in conjunction with other techniques such as
+literature and DAG based. The final GEE model selected as best fitting was
+negligibly different when using insulin sensitivity or beta-cell function as an
+outcome and as such the same covariates were chosen for models with each of the
+outcomes. The covariates medication use, WC, ALT, and MET-h/week would be considered
+classical confounders while TAG would be considered a mediating variable.
+
+Partial least squares (PLS) regression is a technique similar to principal
+component analysis (PCA) that is designed to extract meaningful information from
+multivariate, high dimensionality data (e.g. as in metabolomic and other -omic type 
+analyses). These types of methods try to extract as much of the variance in the 
+data into a smaller number of components or factors. The difference between PCA 
+and PLS is that PLS is a supervised method, while PCA is not. This means that
+PLS uses a response variable(s), i.e. an outcome or **Y**, to 'supervise' (or
+constrain) the variation inherent in the predictors (**X**) while PCA only
+describes the variation inherent in **X**. Because of this, PLS can be better at
+predicting the contributions of predictor variables against an outcome variable.
+In this analysis, PLS was computed on the NEFA as a proportion due to the
+inherent interdependence of the values (all must equal 100%). This 
+interdependence allows PLS to identify patterns in the composition, since
+the concentration data is all highly positively correlated with each other.
+
+We used internal 10-fold cross-validation to determine which components to
+extract from the PLS analysis. Based on the internal cross-validation, the first
+two components gave the highest amount of explained variance (data not shown),
+of which we decided to use these two components in the final results.
+
+The predictive capability of the PLS models were tested using cross-validation. 
+The data set was randomly split in half into a training set and a testing set. 
+After specifying the model on the training set, results were compared using the 
+testing set to determine whether how predictive the model was given a new
+dataset. Final results shown in the figures use the full dataset (rather than a
+training or testing set). No prevalent diabetes cases were included in the PLS 
+analysis.
+
+## Supplemental Tables
+
+```{r table_qic}
+analyze_qic() %>% 
+    table_qic(caption = tab_qic)
+```
+
+Given the number of possible combinations of outcome and predictor variables,
+only ISI and ISSI-2 with total triacylglycerol fatty acids (nmol/mL) were used to
+compare various GEE models and to select a final model.  Baseline age was used
+as including both the original age and the time variable would result in
+collinearity.  Column names: QIC is the quasi-likelihood information criteria
+(smaller values, eg. larger negative values, indicate a better fit compared to
+other models), Delta is the QIC minus the lowest QIC (models with delta <10 are 
+considered equivalent).  Models were:
+
+- M0: log(ISSI-2) or log(ISI) = total triacylglycerol fatty acids (nmol/mL) + years from baseline
+- M1: M0 + fatty acid by time interaction
+- M2: M0 + sex + ethnicity + baseline age
+- M3: M2 + waist
+- M4: M3 + ALT
+- M5: M4 + physical activity (MET)
+- M6: M5 + total NEFA
+- M7: M6 + alcohol intake
+- M8: M7 + family history of diabetes
+- M9: M8 + smoking status
+
+```{r table_tagfa}
+table_tagfa(caption = tab_tagfa)
+```
+
+```{r table_gee}
+table_gee_main(gee_unadj_df, caption = tab_gee_unadj)
+table_gee_main(gee_adj_df, caption = tab_gee_adj)
+```
+
+## Supplemental Figures
+
+![`r fig_consort`](../img/flowDiagramSample.png)
+
+![`r fig_dag_is`](../img/dagitty-model-is.png)
+
+![`r fig_dag_bcf`](../img/dagitty-model-bcf.png)
+
+```{r fig_gee_adj_nowaist, fig.cap=fig_gee_adj_nowaist}
+project_data %>% 
+    analyze_gee(covars = covariates[which(covariates != 'Waist')]) %>% 
+    plot_gee_main()
+```
+
+```{r fig_pls_loadings}
+p1 <- plot_pls_loadings(pls_results$homa2) +
+    ggtitle("PLS model loadings for HOMA2-%S")
+p2 <- plot_pls_loadings(pls_results$isi) +
+    ggtitle("PLS model loadings for ISI")
+p1 + p2 + plot_layout(ncol = 1)
+```
+
