@@ -120,6 +120,8 @@ clinically measured TAG in a Canadian population at risk for diabetes.
 
 ```{r setup, message=FALSE, echo=FALSE}
 devtools::load_all('.')
+library(ggplot2)
+library(patchwork)
 library(dplyr)
 knitr::opts_chunk$set(echo = FALSE)
 ds0yr <- project_data %>% 
