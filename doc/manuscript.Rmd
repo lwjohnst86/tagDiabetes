@@ -3,8 +3,8 @@ bibliography:
     - /home/luke/Documents/bibliography/bib/bib-db/tagDiabetes.bib
     - /home/luke/Documents/bibliography/bib/bib-db/myrefs.bib
     - /home/luke/Documents/bibliography/bib/bib-db/methods.bib
-csl: /home/luke/Documents/bibliography/styles/dependent/diabetes-care.csl
-output: fost::diabetes_care_manuscript
+csl: /home/luke/Documents/bibliography/styles/vancouver.csl
+output: fost::jlr_manuscript
 ---
 
 # Title page
