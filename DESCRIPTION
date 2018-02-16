@@ -7,7 +7,7 @@ Description: This repository contains the R code used to analyze the data and
     produce the results for the manuscript on TAG and the pathogenesis of diabetes
     in the longitudinal PROMISE cohort.
 Depends:
-    R (>= 3.3.1)
+    R (>= 3.4.2)
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
