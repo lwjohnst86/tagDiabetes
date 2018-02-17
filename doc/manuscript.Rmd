@@ -126,9 +126,7 @@ library(dplyr)
 knitr::opts_chunk$set(echo = FALSE)
 ds0yr <- project_data %>% 
     filter(VN == 0)
-```
 
-```{r caption_setup}
 ## Include captions below using `captioner` package
 fig <- captioner::captioner(prefix = 'Figure')
 cite_f <- pryr::partial(fig, display = 'cite')
