@@ -672,46 +672,47 @@ for final content. All authors read and approved the final manuscript.
 # Tables
 
 ```{r table_basic}
-table_basic(caption = tab_basic)
+project_data %>% 
+    table_basic(caption = tab_basic)
 ```
 
 # Figures
 
 ```{r fig_tagfa, fig.cap=fig_tagfa}
-plot_tagfa()
+project_data %>% 
+    plot_tagfa()
 ```
 
 ```{r fig_heatmap, fig.cap=fig_heatmap}
-plot_heatmap(cor_df)
+plot_heatmap(cor_results$conc)
 ```
 
 ```{r fig_heatmap_mol, fig.cap=fig_heatmap_mol}
-plot_heatmap(cor_df_mol, unit = 'mol%')
+plot_heatmap(cor_results$pct, unit = 'mol%')
 ```
 
 ```{r fig_heatmap_tagfa, fig.cap=fig_heatmap_tagfa}
-plot_heatmap(cor_df_tagfa, text = FALSE)
+plot_heatmap(cor_results$tagfa, text = FALSE)
 ```
 
 ```{r fig_gee_unadj, fig.cap=fig_gee_unadj}
-gee_unadj_df %>% 
+gee_results$unadj %>% 
     mutate(p.value = ifelse(p.value <= 0.05, 0.04, p.value)) %>% 
     plot_gee_main() +
     ggplot2::theme(legend.position = "none")
 ```
 
 ```{r fig_gee_adj, fig.cap=fig_gee_adj}
-gee_adj_df %>% 
+gee_results$adj %>% 
     mutate(p.value = ifelse(p.value <= 0.05, 0.04, p.value)) %>% 
     plot_gee_main() +
     ggplot2::theme(legend.position = "none")
 ```
 
 ```{r fig_pls, fig.cap=fig_pls, fig.height=8, fig.width=4}
-gridExtra::grid.arrange(
-    plot_pls(pls_homa2) + ggplot2::ggtitle('A: HOMA2-%S'), 
-    plot_pls(pls_isi) + ggplot2::ggtitle('B: ISI'), 
-    ncol = 1)
+p1 <- plot_pls_corrcomps(pls_results$homa2) + ggplot2::ggtitle('A: HOMA2-%S')
+p2 <- plot_pls_corrcomps(pls_results$isi) + ggplot2::ggtitle('B: ISI')
+p1 + p2 + plot_layout(ncol = 1)
 ```
 
 # References
