@@ -161,7 +161,7 @@ pls_gee <- project_data %>%
     analyze_gee(
         x = c('Comp1', 'Comp2'),
         data_prep = 'pls',
-        pls_results = pls_results$pls_isi_df
+        pls_results = pls_results$isi
         ) %>% 
     dplyr::select(Yterms, Xterms, estimate, p.value) %>% 
     dplyr::filter(Xterms == 'Comp1') %>% 
@@ -179,10 +179,10 @@ outcome_chg <- calc_outcome_changes()
 female <- calc_discr_npct(ds0yr$Sex, 'Female')
 euro <- calc_discr_npct(ds0yr$Ethnicity, 'European')
 fhd <- calc_discr_npct(ds0yr$FamHistDiab, 'Yes')
-est0 <- calc_gee_estci(gee_unadj_df)
-est1 <- calc_gee_estci(gee_adj_df)
-fa_cor <- calc_cor(cor_df)
-fa_cor_mol <- calc_cor(cor_df_mol)
+gmest0 <- calc_gee_estci(gee_results$unadj)
+gmest1 <- calc_gee_estci(gee_results$adj)
+fa_cor <- calc_cor(cor_results$conc)
+fa_cor_mol <- calc_cor(cor_results$pct)
 cor_pls_homa2 <- calc_pred_corr(pls_homa2_t, pls_homa2_t$test_data)
 cor_pls_isi <- calc_pred_corr(pls_isi_t, pls_isi_t$test_data)
 cor_pls_igi <- calc_pred_corr(pls_igi_t, pls_igi_t$test_data)
