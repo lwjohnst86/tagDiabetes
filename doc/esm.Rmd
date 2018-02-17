@@ -1,5 +1,5 @@
 ---
-output: fost::diabetologia_manuscript
+output: fost::jlr_manuscript
 ---
 
 ```{r setup, include=FALSE}
