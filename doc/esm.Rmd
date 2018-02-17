@@ -168,12 +168,12 @@ considered equivalent).  Models were:
 - M9: M8 + smoking status
 
 ```{r table_tagfa}
-table_tagfa(caption = tab_tagfa)
+table_tagfa(project_data, caption = tab_tagfa)
 ```
 
 ```{r table_gee}
-table_gee_main(gee_unadj_df, caption = tab_gee_unadj)
-table_gee_main(gee_adj_df, caption = tab_gee_adj)
+table_gee_main(gee_results$unadj, caption = tab_gee_unadj)
+table_gee_main(gee_results$adj, caption = tab_gee_adj)
 ```
 
 ## Supplemental Figures
