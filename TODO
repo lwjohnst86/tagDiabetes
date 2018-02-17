@@ -32,7 +32,7 @@ DONE Included stats method for hclust of tagfa heatmap
 DONE Changed HOMA-IR methods to HOMA2-%S
 DONE Fixed results after HOMA-IR changed to HOMA2
 TODO Converted gee calc function into list of lists
-TODO Added equations for each outcome measure to methods
+DONE Added equations for each outcome measure to ESM methods
 DONE Added handling of diabetes cases in methods
 DONE Polish up methods
 DONE First (rough) draft of intro
@@ -73,7 +73,7 @@ TODO Added to supplemental material from NEFA paper
 DONE Added models to caption for QIC table
 DONE Fix pls figure dimensions
 TODO Added explanation to interaction vignette about the results
-TODO Moved supplemental material into new, separate file
+DONE Moved supplemental material into new, separate file
 DONE Edits as per Richard's suggestions
 DONE Added abstract
 DONE Created new function for corr of DNL TAGFA and added to results
@@ -88,7 +88,7 @@ TODO Sent to Tony updated version # with highlighted bits
 TODO Expanded on cis-vaccenic acid finding # it is an elongation product from palmitoleic acid
 TODO Include analysis of dietary carbs (sensitivity)
 TODO Included dysglycemia as covariate # yea? NO
-TODO Included sensitivity analysis with covariates as time-independent # maybe?
+TODO Included sensitivity analysis with covariates as time-independent # maybe? No
 TODO Included Basic characteristic table in main with p-value # maybe? NO
 TODO Moved interaction plot to seer, used seer function instead # maybe?
 TODO Clarified whether covariates were confounders, mediators, etc.
