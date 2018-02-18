@@ -274,11 +274,9 @@ Varian Factor Four capillary column and a flame ionization detector. Fatty acid
 concentrations (nmol/ml) were calculated by proportional comparison of gas
 chromatography peak areas to that of the internal standards [@Nishi2014a]. There
 were 22 fatty acids measured in the TGFA fraction. 
-Findings
-for other lipid fractions in this cohort are reported separately (see ref
-@Johnston2016a for the analysis of the phospholipid and cholesteryl ester
-fractions). <!--{{put these analyses in discussion?}} -->
-<!--and {{next citation}} for the analysis of the NEFA fraction).-->
+Findings for other lipid fractions in this cohort are reported separately (see
+ref [@Johnston2016a] for the phospholipid and cholesteryl ester fraction and
+[@Johnston2017b] for the NEFA fraction analysis).
 
 ## Anthropometrics and sociodemographics
 
