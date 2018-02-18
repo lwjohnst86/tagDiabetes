@@ -48,7 +48,7 @@ calc_tagfa_percent <- function(data = project_data) {
 #' @export
 calc_outcome_changes <- function(data = project_data) {
     prep.data <- data %>%
-        dplyr::select(f.VN, HOMA, ISI, IGIIR, ISSI2) %>%
+        dplyr::select(f.VN, HOMA2_S, ISI, IGIIR, ISSI2) %>%
         tidyr::gather(Measure, Value,-f.VN) %>%
         stats::na.omit() %>%
         dplyr::group_by(Measure, f.VN) %>%
@@ -70,7 +70,7 @@ calc_outcome_changes <- function(data = project_data) {
 
     pval <- mason::design(data, 'gee') %>%
         mason::add_settings(family = stats::gaussian(), corstr = 'ar1', cluster.id = 'SID') %>%
-        mason::add_variables('yvars', c('linvHOMA', 'lISI', 'lIGIIR', 'lISSI2')) %>%
+        mason::add_variables('yvars', c('lHOMA2_S', 'lISI', 'lIGIIR', 'lISSI2')) %>%
         mason::add_variables('xvars', 'VN') %>%
         mason::construct() %>%
         mason::scrub() %>%
