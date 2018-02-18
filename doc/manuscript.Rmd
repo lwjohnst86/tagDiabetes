@@ -65,8 +65,6 @@ resistance
 - NEFA: Non-esterified fatty acids
 - OGTT: Oral glucose tolerance test
 - CV: Coefficient of variation
-- IFG: Impaired fasting glucose
-- IGT: Impaired glucose tolerance
 - MAQ: Modified activity questionnaire
 - WC: Waist circumference
 - MET: Metabolic equivalent of task
@@ -198,10 +196,6 @@ pls_gee <- project_data %>%
 ```
 
 ```{r inline}
-dys <- project_data %>% 
-    prep_dys_data() %>% 
-    calc_convert_dys()
-
 tagfa <- calc_tagfa_percent()
 outcome_chg <- calc_outcome_changes()
 female <- calc_discr_npct(ds0yr$Sex, 'Female')
@@ -256,9 +250,7 @@ Inc) and has a coefficient of variation (CV) of 9.3%. Glucose was determined
 using an enzymatic hexokinase method (Roche Modular, Roche Diagnostics) with a 
 detection range of 0.11 to 41.6 mmol/L and an inter-assay CV of <1.1% and an
 intra-assay CV of < 1.9%.  All assays were performed at the Banting and Best
-Diabetes Centre Core Lab at Mt Sinai Hospital. Impaired fasting glucose (IFG),
-impaired glucose tolerance (IGT), and diabetes were categorized using the 2006
-WHO criteria [@WHO2006].
+Diabetes Centre Core Lab at Mt Sinai Hospital. 
 
 TGFA composition was quantified using stored fasting serum samples from the 
 baseline visit, which had been frozen at -70°C for 4-6 years and had not been 
@@ -371,10 +363,7 @@ of `r aide::ave_sd(ds0yr$BMI)` kg/m^2^. As expected from the study's eligibility
 criteria, the majority of participants, n=`r fhd$npct`, had a family history of
 diabetes. Between the baseline visit and the 6-year visit in this sample,
 insulin sensitivity and beta-cell function measures had a significant median decline of
-between `r outcome_chg$chg` (p`r outcome_chg$p` from GEE; n=`r outcome_chg$n`). There 
-were `r dys$pre` and `r dys$dm` incident cases of pre-diabetes (IFG and IGT) and
-diabetes, respectively, over the 6-years; these observations were excluded from GEE and PLS
-analyses due to how the outcomes were measured (OGTT was not done on those with diabetes).
+between `r outcome_chg$chg` (p`r outcome_chg$p` from GEE; n=`r outcome_chg$n`). 
 
 `r cite_f('tagfa')` shows the composition of each FA in the TG fraction (see 
 `r cite_st('tagfa')` for a tabular presentation of the values). 
