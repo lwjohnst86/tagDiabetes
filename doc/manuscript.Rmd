@@ -3,28 +3,34 @@ bibliography:
     - /home/luke/Documents/bibliography/bib/bib-db/tagDiabetes.bib
     - /home/luke/Documents/bibliography/bib/bib-db/myrefs.bib
     - /home/luke/Documents/bibliography/bib/bib-db/methods.bib
+    - /home/luke/Documents/site/cv/_includes/work.bib
 csl: /home/luke/Documents/bibliography/styles/vancouver.csl
 output: fost::jlr_manuscript
 ---
 
 # Title page
 
-Title: Specific clusters of fatty acids within the serum triacylglyceride fraction 
-associate with the pathogenesis of type 2 diabetes 
+Title (109 / 110 characters): 
+Clusters of fatty acids in serum triacylglyceride fraction associate with the
+pathogenesis of type 2 diabetes
 
-Author: Luke W. Johnston, MSc (1); Zhen Liu, PhD (1); Ravi Retnakaran, MD
+Authors: Luke W. Johnston, PhD (1); Zhen Liu, PhD (1); Ravi Retnakaran, MD
 (3,4); Bernard Zinman, MD (3,4); Adria Giacca, PhD (5); Stewart B. Harris, MD (2); 
 Richard P. Bazinet, PhD (1); and Anthony J. Hanley, PhD (1,3,6)
 
-<!-- During time of study. -->
-Affiliation:
+Institutions:
 
-(1) Department of Nutritional Sciences, University of Toronto, Toronto, Ontario, Canada.
-(2) Centre for Studies in Family Medicine, University of Western Ontario, London, Ontario, Canada.
-(3) Leadership Sinai Centre for Diabetes, Division of Endocrinology, University of Toronto, Toronto, ON, Canada.
-(4) Lunenfeld Tanenbaum Research Institute, Mount Sinai Hospital, Toronto, Ontario, Canada.
+(1) Department of Nutritional Sciences, University of Toronto, Toronto, Ontario,
+Canada.
+(2) Centre for Studies in Family Medicine, University of Western Ontario,
+London, Ontario, Canada.
+(3) Leadership Sinai Centre for Diabetes, Division of Endocrinology, University
+of Toronto, Toronto, ON, Canada.
+(4) Lunenfeld Tanenbaum Research Institute, Mount Sinai Hospital, Toronto,
+Ontario, Canada.
 (5) Department of Physiology, University of Toronto, Toronto, Ontario, Canada.
-(6) Dalla Lana School of Public Health, University of Toronto, Toronto, Ontario, Canada.
+(6) Dalla Lana School of Public Health, University of Toronto, Toronto, Ontario,
+Canada.
 
 Corresponding author contact information:
 
