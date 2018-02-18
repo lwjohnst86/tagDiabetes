@@ -48,49 +48,61 @@ Corresponding author contact information:
 Running title (54 / 60 characters):
 Triacylglyceride fatty acids and diabetes pathogenesis
 
-Abbreviations:
+# Abbreviations:
 
-- TG
-- TGFA
-- IS
-- PROMISE
-- ISI
-- 
+- TGFA: Triacylglycerol fatty acids
+- IS: Insulin sensitivity
+- PROMISE: Prospective Metabolism and Islet Cell Evaluation cohort
+- ISI: Insulin sensitivity index
+- GEE: Generalized estimating equations
+- PLS: Partial least squares
+- HOMA2-%S: Homeostatic model of assessment 2 - percent sensitivity
+- IGI/IR: Insulinogenic index over homeostatic model of assessment for insulin
+resistance
+- ISSI-2: Insulin Secretion-Sensitivity Index-2
+- DNL: De novo lipogenesis
+- ALT: Alanine aminotransferase
+- NEFA: Non-esterified fatty acids
+- OGTT: Oral glucose tolerance test
+- CV: Coefficient of variation
+- IFG: Impaired fasting glucose
+- IGT: Impaired glucose tolerance
+- MAQ: Modified activity questionnaire
+- WC: Waist circumference
+- MET: Metabolic equivalent of task
+- SD: Standard deviation
 
 # Abstract
 
 Word count: 249 / 200
 
-**Aims/hypothesis:**
-Although elevated serum triacylglyceride (TG) is a well-described risk factor for
-type 2 diabetes (T2D), few data are available regarding the role of the specific fatty
-acid (FA) composition within serum TG (TGFA) in the pathogenesis of T2DM. Our aim, therefore, was to
-examine longitudinal associations of TGFA with insulin sensitivity (IS) and
-beta-cell function.
+**Aims:**
+Our aim was to examine longitudinal associations of triacylglyceride fatty acid
+(TGFA) composition with insulin sensitivity (IS) and beta-cell function.
 
 **Methods**:
-We used longitudinal data (3 visits over 6 years) from the Prospective
-Metabolism and Islet Cell Evaluation (PROMISE) cohort of adults (n=477) who were at-risk
-for diabetes at baseline. Glucose and insulin from an OGTT were used to calculate the outcome variables
-Matsuda index (ISI), HOMA2-%S, Insulinogenic Index over HOMA-IR (IGI/IR),
-and Insulin Secretion-Sensitivity Index-2 (ISSI-2). Gas chromatography
-quantified TGFA composition. Generalized estimating equations (GEE) adjusted for
-confounders and partial least squares (PLS) were used for the analysis.
+Adults at-risk for T2D (n=477) had glucose and insulin measured from a glucose
+challenge at 3 time points over 6 years. The outcome variables Matsuda index
+(ISI), HOMA2-%S, Insulinogenic Index over HOMA-IR (IGI/IR), and Insulin
+Secretion-Sensitivity Index-2 (ISSI-2) were computed from the glucose challenge.
+Gas chromatography quantified TGFA composition from the baseline. We used
+adjusted generalized estimating equations (GEE) models and partial least squares
+(PLS) regression for the analysis.
 
 **Results**: 
-The metabolic outcome variables declined by 14% to 27% over the 6-years. In the adjusted
-GEE models, four TGFA (14:0, 16:0, 14:1n-7, 16:1n-7 as mol%) had
-strong negative associations with IS while others (e.g. 18:1n-7, 18:1n-9, 20:2n-6, 
-20:5n-3) had strong positive associations. Few associations were seen for 
-beta-cell function, except for 16:0 (negative) and 18:1n-7 (positive). PLS
-analysis indicated four TGFA (14:0, 16:0, 14:1n-7, 16:1n-7) that are markers of de novo lipogenesis (DNL)
-clustered together and strongly predicted
-lower IS. These four TGFA also correlated highly (r>0.4) with clinically
+In adjusted GEE models, four TGFA (14:0, 16:0, 14:1n-7, 16:1n-7 as mol%) had
+strong negative associations with IS while others (e.g. 18:1n-7, 18:1n-9,
+20:2n-6, 20:5n-3) had strong positive associations. Few associations were seen
+for beta-cell function, except for 16:0 and 18:1n-7. PLS analysis indicated four
+TGFA (14:0, 16:0, 14:1n-7, 16:1n-7) that clustered together and strongly related
+with lower IS. These four TGFA also correlated highly (r>0.4) with clinically
 measured TG.
 
 **Conclusions**:
-We found that higher proportions of a cluster of four DNL TGFA 
-strongly predicted lower IS as well as hypertriglyceridemia.
+We found that higher proportions of a cluster of four TGFA strongly related with
+lower IS as well as hypertriglyceridemia. Previous research suggests these four
+FA are also strongly influenced by de novo lipogenesis, particular from
+carbohydrates.
 
 # Keywords
 <!-- up to 10. Five from list, five free-form. Should not appear in title or
