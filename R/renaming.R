@@ -6,12 +6,12 @@ renaming_table_rows <- function(x) {
         gsub('ISSI2', 'ISSI-2', .) %>%
         gsub('HOMA2IR', 'HOMA2-IR', .) %>%
         gsub('HOMA2_S', 'HOMA2-%S', .) %>%
-        gsub('TAG', 'TAG (mmol/L)', .) %>%
+        gsub('TAG', 'TG (mmol/L)', .) %>%
         gsub('Chol', 'Chol (mmol/L)', .) %>%
         gsub('LDL', 'LDL (mmol/L)', .) %>%
         gsub('ALT', 'ALT (U/L)', .) %>%
         gsub('HDL', 'HDL (mmol/L)', .) %>%
-        gsub('BaseTotalTG', 'TAGFA (nmol/mL)', .) %>%
+        gsub('BaseTotalTG', 'TGFA (nmol/mL)', .) %>%
         gsub('BaseTotalNE', 'NEFA (nmol/mL)', .) %>%
         gsub('Age', 'Age (yrs)', .) %>%
         gsub('BMI', 'BMI (kg/m^2^)', .) %>%
@@ -35,7 +35,7 @@ renaming_fats <- function(x) {
     x %>%
         stringr::str_replace('^pct_', '') %>%
         stringr::str_replace('TotalTG', 'Total') %>%
-        stringr::str_replace('BaseTAG', 'Clinical TAG') %>%
+        stringr::str_replace('BaseTAG', 'Clinical TG') %>%
         PROMISE.misc::renaming_fa(keep.fraction = FALSE)
 }
 
