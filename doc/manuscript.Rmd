@@ -289,7 +289,8 @@ A version of the Modifiable Activity Questionnaire (MAQ) [@Kriska1990]
 determined estimated physical activity. The MAQ collects information on leisure
 and occupational activity, including intensity, frequency, and duration, over
 the past year. Each reported activity from the MAQ was weighted by its
-metabolic intensity allowing for the estimation of MET-hours per week [@Kriska1990].
+metabolic intensity allowing for the estimation of metabolic equivalents of
+tasks (MET) hours per week [@Kriska1990].
 
 ## Variable calculation and statistical analysis
 
