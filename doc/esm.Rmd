@@ -3,6 +3,8 @@ output: fost::jlr_manuscript
 ---
 
 ```{r setup, include=FALSE}
+library(ggplot2)
+library(patchwork)
 devtools::load_all()
 set_options()
 knitr::opts_chunk$set(results = "asis", echo = FALSE)
