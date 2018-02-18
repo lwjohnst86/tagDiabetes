@@ -304,8 +304,6 @@ and the Insulin Secretion-Sensitivity Index-2 (ISSI-2) [@Retnakaran2009]. IGI/IR
 is a measure of the early phase of insulin secretion while ISSI-2 is analogous to
 the disposition index (but is calculated using OGTT values). Each index has been validated
 against gold standard measures [@Matthews1985; @Hermans1999a; @Matsuda1999; @Retnakaran2009].
-Specific formulas for each OGTT-derived measure can be found in the 
-Supplemental Material {{insert formula}}.
 
 The primary outcome variables for this analysis were HOMA2-%S, ISI, IGI/IR, and
 ISSI-2, which were log-transformed for the statistical modeling. The primary
@@ -321,10 +319,10 @@ Generalized estimating equation (GEE) models [@Zeger1986a] were used in the
 primary analysis to determine the longitudinal associations between the outcome 
 variables and the predictor variables. The predictor variables and continuous 
 covariates were scaled (mean-centered and standardized). Given the longitudinal 
-design, an auto-regressive of order 1 (AR1) working correlation matrix was 
+design, an auto-regressive of order 1 working correlation matrix was 
 specified in the GEE model. Covariates to adjust for were selected based on the
 previous literature, from directed acyclic graph [@Greenland1999a]
-recommendations, and from quasi-likelihood information criteria (QIC). The final
+recommendations, and from quasi-likelihood information criteria. The final
 GEE model (M6) was adjusted for time, waist circumference, baseline age, ethnicity,
 sex, ALT, MET, and total NEFA. The TGFA, total NEFA, sex, ethnicity, and
 baseline age were classified as *time-independent* (held constant) as they were
