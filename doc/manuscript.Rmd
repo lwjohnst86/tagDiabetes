@@ -26,7 +26,7 @@ Affiliation:
 (5) Department of Physiology, University of Toronto, Toronto, Ontario, Canada.
 (6) Dalla Lana School of Public Health, University of Toronto, Toronto, Ontario, Canada.
 
-Corresponding author:
+Corresponding author contact information:
 
 - Name: Anthony J. Hanley
 - Current address:  
@@ -39,24 +39,22 @@ Corresponding author:
 - Fax number:
 - Email: anthony.hanley@utoronto.ca
 
-Disclaimers:
+Running title (max 60 characters):
 
-Funding support:
-
-Word count: ~4000
+Abbreviations:
 
 # Abstract
 
-Word count: 249 / 250
+Word count: 249 / 200
 
-**Objective**: 
+**Aims/hypothesis:**
 Although elevated serum triacylglyceride (TAG) is a well-described risk factor for
 type 2 diabetes (T2DM), few data are available regarding the role of the specific fatty
 acid (FA) composition within serum TAG (TAGFA) in the pathogenesis of T2DM. Our aim, therefore, was to
 examine longitudinal associations of TAGFA with insulin sensitivity (IS) and
 beta-cell function.
 
-**Research Design and Methods**:
+**Methods**:
 We used longitudinal data (3 visits over 6 years) from the Prospective
 Metabolism and Islet Cell Evaluation (PROMISE) cohort of adults (n=477) who were at-risk
 for diabetes at baseline. Glucose and insulin from an OGTT were used to calculate the outcome variables
@@ -80,7 +78,11 @@ measured TAG.
 We found that higher proportions of a cluster of four DNL TAGFA 
 strongly predicted lower IS as well as hypertriglyceridemia.
 
-# Background
+# Keywords
+<!-- up to 10. Five from list, five free-form. Should not appear in title or
+running title -->
+
+# Introduction
 
 Hypertriglyceridemia is a well described metabolic disorder resulting in negative health outcomes [@Chehade2013a].
 It is a risk factor for cardiovascular disease [@DAgostino2004a; @Verges2015a]
@@ -116,7 +118,7 @@ longitudinal role of the specific composition of the serum TAG fraction on
 OGTT-derived measures of insulin sensitivity and beta-cell function compared to 
 clinically measured TAG in a Canadian population at risk for diabetes.
 
-# Subjects and Methods
+# Materials and Methods
 
 ```{r setup, message=FALSE, echo=FALSE}
 devtools::load_all('.')
@@ -634,7 +636,7 @@ results, which are congruent with current evidence, suggest that higher DNL,
 likely due to greater intake of simple or refined carbohydrates, may increase the
 risk of diabetes through worsening of insulin sensitivity.
 
-# Acknowledgements
+# Acknowledgements/grant support
 
 The authors thank Jan Neuman, Paula Van Nostrand, Stella Kink, Nicole Rubio, and Annette
 Barnie of the Leadership Sinai Centre for Diabetes, Mount Sinai Hospital,
