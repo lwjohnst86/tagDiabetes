@@ -324,6 +324,9 @@ response variable(s) (i.e. the outcome variables). How accurately the clusters
 within the TAGFA composition predict metabolic function is determined by using
 cross-validation on the PLS models.
 
+A more detailed explanation of these statistical techniques and on the analysis
+process can be found in the supplemental methods for our paper in the NEFA
+fraction [@Johnston2017a].
 All analyses were performed using R `r getRversion()` [@Rbase], along with the R
 packages geepack `r packageVersion('geepack')` for GEE [@Hoejsgaard2006a] and pls
 `r packageVersion('pls')` for PLS. The R code and extra analyses for
