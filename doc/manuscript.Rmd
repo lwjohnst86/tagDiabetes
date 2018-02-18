@@ -373,7 +373,7 @@ TG concentration: `r tagfa$c[1]`; `r tagfa$c[2]`; and, `r tagfa$c[3]`.
 `r cite_f('heatmap')` shows a heatmap of the correlation of individual TGFA as
 concentrations with the outcome variables and several basic characteristics.
 As expected, nearly all TGFA had very strong positive correlations (r=
-`r fa_cor$rng$TG[2]`) with clinically-measured TG and moderate positive 
+`r fa_cor$rng$TAG[2]`) with clinically-measured TG and moderate positive 
 correlations with WC (r=`r fa_cor$rng$Waist[2]`). There were also moderate
 negative correlations with HDL (r=`r fa_cor$rng$HDL[1]`). For the outcome variables,
 the correlations for the insulin sensitivity measures were generally higher 
@@ -382,8 +382,8 @@ for the beta-cell function measures (all r<0.30). For correlations
 of individual TGFA using mol% with the basic participant characteristics, as shown in 
 `r cite_f('heatmap_mol')`, differences in correlations between fatty acids were
 most evident for 14:0, 14:1n-7, 16:0, and 16:1n-7 that had a moderate positive
-correlation with clinical TG (r=`r fa_cor_mol$rng$TG[1]`) while all other fatty
-acids had a negative association (r=`r fa_cor_mol$rng$TG[2]`). In particular,
+correlation with clinical TG (r=`r fa_cor_mol$rng$TAG[1]`) while all other fatty
+acids had a negative association (r=`r fa_cor_mol$rng$TAG[2]`). In particular,
 those fatty acids with the negative associations with clinical TG were all the
 very long chain polyunsaturated fatty acids (e.g. 20:4n-6, 20:5n-3).
 As seen in `r cite_f('heatmap_tagfa')`, four fatty acids (14:0,
