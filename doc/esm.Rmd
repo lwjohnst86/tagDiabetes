@@ -19,14 +19,15 @@ stab <- captioner::captioner(prefix = 'Supplemental Table')
 cite_st <- pryr::partial(stab, display = 'cite')
 
 tab_qic <- stab('qic', 'Comparison of GEE model fitness for variable selection using quasi-likelihood information criteria.')
-tab_tagfa <- stab('tagfa', 'Concentration (nmol/mL) and relative percent (mol%) values of triacylglycerol fatty acids in PROMISE participants at the baseline visit (2004-2006).')
-tab_gee_unadj <- stab('gee_unadj', 'Raw estimates and confidence interval values for *time*-adjusted GEE models of the association of the triacylglycerol fatty acids (mol% and nmol/mL) and total clinically-measured TG with insulin sensitivity and beta-cell function outcomes using the 6 year longitudinal data from the PROMISE cohort. Estimates represent a percent difference in the outcome per SD increase in the fatty acid. P-values were adjusted for the BH false discovery rate, with an asterisk (*) denoting a significant (p<0.05) association.')
-tab_gee_adj <- stab('gee_adj', 'Raw estimates and confidence interval values for *fully*-adjusted GEE models of the association of the triacylglycerol fatty acids (mol% and nmol/mL) and total clinically-measured TG with insulin sensitivity and beta-cell function outcomes using the 6 year longitudinal data from the PROMISE cohort. Variables controlled for were follow-up time, waist circumference, baseline age, ethnicity, sex, ALT, physical activity, and total NEFA. Estimates represent a percent difference in the outcome per SD increase in the fatty acid. P-values were adjusted for the BH false discovery rate, with an asterisk (*) denoting a significant (p<0.05) association.')
+tab_tagfa <- stab('tagfa', 'Concentration (nmol/mL) and relative percent (mol%) values of TGFA in PROMISE participants at the baseline visit (2004-2006).')
+tab_gee_unadj <- stab('gee_unadj', 'Raw estimates and confidence interval values for *time*-adjusted GEE models of the association of the TGFA (mol% and nmol/mL) and total clinically-measured TG with insulin sensitivity and beta-cell function outcomes using the 6 year longitudinal data from the PROMISE cohort. Estimates represent a percent difference in the outcome per SD increase in the FA. P-values were adjusted for the BH false discovery rate, with an asterisk (*) denoting a significant (p<0.05) association.')
+tab_gee_adj <- stab('gee_adj', 'Raw estimates and confidence interval values for *fully*-adjusted GEE models of the association of the TGFA (mol% and nmol/mL) and total clinically-measured TG with insulin sensitivity and beta-cell function outcomes using the 6 year longitudinal data from the PROMISE cohort. Variables controlled for were follow-up time, WC, baseline age, ethnicity, sex, ALT, physical activity, and total NEFA. Estimates represent a percent difference in the outcome per SD increase in the FA. P-values were adjusted for the BH false discovery rate, with an asterisk (*) denoting a significant (p<0.05) association.')
 
 fig_consort <- sfig('consort', 'CONSORT diagram of PROMISE participants over the 3 visits.')
 fig_dag_is <- sfig('dag_is', 'Directed acyclic graphic output from the DAGitty online software for insulin sensitivity.')
 fig_dag_bcf <- sfig('dag_bcf', 'Directed acyclic graphic output from the DAGitty online software for beta-cell function.')
-fig_gee_adj_nowaist <- sfig('gee_adj_nowaist', 'Fully-adjusted (without waist size) GEE models of the association of the triacylglycerol fatty acids (mol% and nmol/mL) and total clinically-measured TG with insulin sensitivity and beta-cell function outcomes using the 6 year longitudinal data from the PROMISE cohort. Variables controlled for were follow-up time, baseline age, ethnicity, sex, ALT, physical activity, and total NEFA. X-axis values represent a percent difference in the outcome per SD increase in the fatty acid. P-values were adjusted for the BH false discovery rate, with the largest dot representing a significant (p<0.05) association.')
+fig_gee_adj_nowaist <- sfig('gee_adj_nowaist', 'Fully-adjusted (without waist size) GEE models of the association of the TGFA (mol% and nmol/mL) and total clinically-measured TG with insulin sensitivity and beta-cell function outcomes using the 6 year longitudinal data from the PROMISE cohort. Variables controlled for were follow-up time, baseline age, ethnicity, sex, ALT, physical activity, and total NEFA. X-axis values represent a percent difference in the outcome per SD increase in the FA. P-values were adjusted for the BH false discovery rate, with the largest dot representing a significant (p<0.05) association.')
+fig_pls_loadings <- sfig("pls_loadings", "PLS loadings (or weights) for each of the TGFA. A larger loading indicates a higher contribution to the PLS component score.")
 ```
 
 # Supplemental Tables
@@ -37,7 +38,7 @@ analyze_qic() %>%
 ```
 
 Given the number of possible combinations of outcome and predictor variables,
-only ISI and ISSI-2 with total triacylglycerol fatty acids (nmol/mL) were used to
+only ISI and ISSI-2 with total TGFA (nmol/mL) were used to
 compare various GEE models and to select a final model.  Baseline age was used
 as including both the original age and the time variable would result in
 collinearity.  Column names: QIC is the quasi-likelihood information criteria
@@ -45,10 +46,10 @@ collinearity.  Column names: QIC is the quasi-likelihood information criteria
 other models), Delta is the QIC minus the lowest QIC (models with delta <10 are 
 considered equivalent).  Models were:
 
-- M0: log(ISSI-2) or log(ISI) = total triacylglycerol fatty acids (nmol/mL) + years from baseline
+- M0: log(ISSI-2) or log(ISI) = total TGFA (nmol/mL) + years from baseline
 - M1: M0 + fatty acid by time interaction
 - M2: M0 + sex + ethnicity + baseline age
-- M3: M2 + waist
+- M3: M2 + WC
 - M4: M3 + ALT
 - M5: M4 + physical activity (MET)
 - M6: M5 + total NEFA
@@ -81,7 +82,7 @@ project_data %>%
     ggplot2::theme(legend.position = "none")
 ```
 
-```{r fig_pls_loadings}
+```{r fig_pls_loadings, fig.cap=fig_pls_loadings}
 p1 <- plot_pls_loadings(pls_results$homa2) +
     ggtitle("PLS model loadings for HOMA2-%S")
 p2 <- plot_pls_loadings(pls_results$isi) +
