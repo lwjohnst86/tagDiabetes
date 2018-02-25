@@ -209,7 +209,8 @@ table_gee_main <- function(results, caption = NULL, digits = 1) {
         ) %>%
         select(Yterms, Xterms, unit, estimate.ci) %>%
         spread(Yterms, estimate.ci) %>%
-        mutate(Xterms = as.character(Xterms))
+        mutate(Xterms = as.character(Xterms)) %>%
+        order_model_output()
 
     bind_rows(
             tibble::data_frame(Xterms = paste0('**Totals**')),
