@@ -25,7 +25,10 @@ analyze_corr <-
         dplyr::mutate_at('Vars2', dplyr::funs(renaming_fats)) %>%
         dplyr::mutate_at("Vars1", function(x)
             gsub('l(ALT|TAG|IGIIR|HOMA2_S|ISI|ISSI2)', '\\1', x) %>%
-                renaming_outcomes()) %>%
+                renaming_outcomes() %>%
+                stringr::str_replace("Waist", "WC") %>%
+                stringr::str_replace("TAG", "TG")
+                ) %>%
         dplyr::mutate(
             order1 = substr(Vars2, nchar(Vars2), nchar(Vars2)),
             order1 = ifelse(order1 == 0, 10, order1),
