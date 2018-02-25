@@ -72,7 +72,7 @@ resistance
 
 # Abstract
 
-Word count: 249 / 200
+Word count: 200 / 200
 
 **Aims:**
 Our aim was to examine longitudinal associations of triacylglyceride fatty acid
@@ -134,14 +134,14 @@ multiple data collection time points are paramount to better understanding the
 underlying biology and subsequent risk.
 
 While several studies have documented prospective associations of
-hypertriglyceridemia with incident type 2 diabetes [@Chien2008a;
+hypertriglyceridemia with incident type 2 diabetes (T2D) [@Chien2008a;
 @DAgostino2004a; @Schulze2009a], only a limited number of longitudinal studies
 [@Rhee2011a; @Lankinen2015a] have examined the relationship between TG and its
-composition with the pathophysiological factors underlying diabetes,
+composition with the pathophysiological factors underlying T2D,
 particularly beta-cell function. Our objective was to examine the longitudinal
 role of the specific composition of the serum TG fraction on OGTT-derived
 measures of insulin sensitivity and beta-cell function compared to clinically
-measured TG in a Canadian population at risk for diabetes.
+measured TG in a Canadian population at risk for T2D.
 
 # Materials and Methods
 
@@ -168,13 +168,13 @@ cite_st <- pryr::partial(stab, display = 'cite')
 
 tab_basic <- tab('basic', 'Basic characteristics of PROMISE participants at each of the 3 clinic visits.')
 
-fig_tagfa <- fig('tagfa', 'Distribution of the composition of triacylglycerol fatty acids in the baseline visit of PROMISE participants (2004-2006). Boxplots represent the median and interquartile range of the fatty acid values.')
-fig_heatmap <- fig('heatmap', 'Pearson correlation heatmap of triacylglycerol fatty acids (nmol/mL) with continuous basic and metabolic characteristics of PROMISE participants from the baseline visit (2004-2006). Darker orange represents a positive correlation; darker blue represents a negative correlation.')
-fig_heatmap_mol <- fig('heatmap_mol', 'Pearson correlation heatmap of triacylglycerol fatty acids (mol%) with continuous basic and metabolic characteristics of PROMISE participants from the baseline visit (2004-2006). Darker orange represents a positive correlation; darker blue represents a negative correlation.')
-fig_heatmap_tagfa <- fig('heatmap_tagfa', 'Pearson correlation heatmap of the triacylglycerol fatty acids in the PROMISE participants from the baseline visit (2004-2006). The correlations of fatty acids grouped using heirarchical cluster analysis; fatty acids along the x and y axis are ordered according to this analysis. Darker orange represents a positive correlation; darker blue represents a negative correlation.')
-fig_gee_unadj <- fig('gee_unadj', 'Time-adjusted GEE models of the association of the triacylglycerol fatty acids (mol% and nmol/mL) and total clinically-measured TG with insulin sensitivity and beta-cell function outcomes using the 6 year longitudinal data from the PROMISE cohort. X-axis values represent a percent difference in the outcome per SD increase in the fatty acid. P-values were adjusted for the BH false discovery rate, with the largest dot representing a significant (p<0.05) association.')
-fig_gee_adj <- fig('gee_adj', 'Fully-adjusted GEE models of the association of the triacylglycerol fatty acids (mol% and nmol/mL) and total clinically-measured TG with insulin sensitivity and beta-cell function outcomes using the 6 year longitudinal data from the PROMISE cohort. Variables controlled for were follow-up time, waist circumference, baseline age, ethnicity, sex, ALT, physical activity, and total NEFA. X-axis values represent a percent difference in the outcome per SD increase in the fatty acid. P-values were adjusted for the BH false discovery rate, with the largest dot representing a significant (p<0.05) association.')
-fig_pls <- fig('pls', 'Partial least squares (PLS) models showing the clustering of triacylglycerol fatty acids on insulin sensitivity and beta-cell function measures. The R value shown above the graph is the correlation between predicted and observed values, using cross-validation; a higher value suggests the fatty acids strongly predict the metabolic outcome. The percent explained variance of each component is shown in brackets on each axis. The solid line represents an explained variance of 100% while the dashed line represents an explained variance of 50%. Fatty acids between these lines represent variables that strongly explain the underlying structure of the data. See the Supplemental Methods for a description of PLS analysis and an explanation of interpreting this plot.')
+fig_tagfa <- fig('tagfa', 'Distribution of the composition of TGFA in the baseline visit of PROMISE participants (2004-2006). Boxplots represent the median and interquartile range of the FA values.')
+fig_heatmap <- fig('heatmap', 'Pearson correlation heatmap of TGFA (nmol/mL) with continuous basic and metabolic characteristics of PROMISE participants from the baseline visit (2004-2006). Darker orange represents a positive correlation; darker blue represents a negative correlation.')
+fig_heatmap_mol <- fig('heatmap_mol', 'Pearson correlation heatmap of TGFA (mol%) with continuous basic and metabolic characteristics of PROMISE participants from the baseline visit (2004-2006). Darker orange represents a positive correlation; darker blue represents a negative correlation.')
+fig_heatmap_tagfa <- fig('heatmap_tagfa', 'Pearson correlation heatmap of TGFA in the PROMISE participants from the baseline visit (2004-2006). The correlations of FA grouped using heirarchical cluster analysis; FA along the x and y axis are ordered according to this analysis. Darker orange represents a positive correlation; darker blue represents a negative correlation.')
+fig_gee_unadj <- fig('gee_unadj', 'Time-adjusted GEE models of the association of the TGFA (mol% and nmol/mL) and total clinically-measured TG with insulin sensitivity and beta-cell function outcomes using the 6 year longitudinal data from the PROMISE cohort. X-axis values represent a percent difference in the outcome per SD increase in the FA. P-values were adjusted for the BH false discovery rate, with the largest dot representing a significant (p<0.05) association.')
+fig_gee_adj <- fig('gee_adj', 'Fully-adjusted GEE models of the association of the TGFA (mol% and nmol/mL) and total clinically-measured TG with insulin sensitivity and beta-cell function outcomes using the 6 year longitudinal data from the PROMISE cohort. Variables controlled for were follow-up time, WC, baseline age, ethnicity, sex, ALT, physical activity, and total NEFA. X-axis values represent a percent difference in the outcome per SD increase in the FA. P-values were adjusted for the BH false discovery rate, with the largest dot representing a significant (p<0.05) association.')
+fig_pls <- fig('pls', 'Partial least squares (PLS) models showing the clustering of TGFA on insulin sensitivity and beta-cell function measures. The percent explained variance of each component is shown in brackets on each axis. The solid line represents an explained variance of 100% while the dashed line represents an explained variance of 50%. FA between these lines represent variables that strongly explain the underlying structure of the data.')
 ```
 
 ```{r analyze_others}
@@ -217,13 +217,13 @@ cor_pls_issi2 <- calc_pred_corr(pls_issi2_t, pls_issi2_t$test_data)
 Recruitment for the baseline visit of the Prospective Metabolism and Islet Cell Evaluation (PROMISE) 
 cohort took place between 2004-2006 in London and Toronto, 
 Canada. Individuals were selected to participate if they met the eligibility 
-criteria of having one or more risk factors for type 2 diabetes mellitus, 
+criteria of having one or more risk factors for T2D, 
 including obesity, hypertension, family history of diabetes, and/or a history of
 gestational diabetes or birth of a macrosomic infant. A total of 736 individuals
 attended the baseline visit. Subsequent examinations occurred every three years,
 with data from three examination visits available for the present analysis
 (2004-2006, 2007-2009, and 2010-2013). The current study
-used data on participants who did not have diabetes at baseline, who
+used data on participants who did not have T2D at baseline, who
 returned for one or more of the follow-up examinations, and who had samples
 available for fatty acid measurements (n=477; see the CONSORT diagram in 
 `r cite_sf('consort')`). Metabolic characterization, anthropometric
@@ -258,7 +258,7 @@ baseline visit, which had been frozen at -70°C for 4-6 years and had not been
 exposed to any freeze-thaw cycles. Serum fatty acids have been documented to be 
 stable at these temperatures for up to 10 years [@Matthan2010a]. A known amount 
 of triheptadecanoin (17:0; Nu-Chek Prep, Inc Elysian, MN, USA) was added as an internal
-standard prior to extracting total lipids according to the method of Folch 
+standard prior to extracting total lipids according to the method of Folch et al
 [@Folch1957a]. Each serum lipid fraction (non-esterified fatty acids (NEFA), 
 cholesteryl ester, phospholipid, and TG) was isolated using thin layer 
 chromatography. Fatty acid methyl esters were separated and quantified using a 
@@ -305,19 +305,23 @@ predictor variables for this analysis were 22 individual TGFA included as either
 TG was also included as a primary predictor to allow us to test the hypothesis
 that specific TGFA better predicted outcomes compared to clinical TG. 
 Pearson correlation coefficients were computed to assess the relationships of
-individual TGFA with other continuous variables. Correlations were also
-computed and hierarchical clustering analysis was conducted for TGFA against each other.
+individual TGFA with other continuous variables. Within TGFA composition correlations were also
+computed and subsequently analyzed using hierarchical clustering.
 
 Generalized estimating equation (GEE) models [@Zeger1986a] were used in the 
 primary analysis to determine the longitudinal associations between the outcome 
-variables and the predictor variables. The predictor variables and continuous 
-covariates were scaled (mean-centered and standardized). Given the longitudinal 
+variables and the predictor variables. The predictor variables
+were scaled (mean-centered and standardized). Given the longitudinal 
 design, an auto-regressive of order 1 working correlation matrix was 
 specified in the GEE model. Covariates to adjust for were selected based on the
 previous literature, from directed acyclic graph [@Greenland1999a]
-recommendations, and from quasi-likelihood information criteria. The final
-GEE model (M6) was adjusted for time, waist circumference, baseline age, ethnicity,
-sex, ALT, MET, and total NEFA. The TGFA, total NEFA, sex, ethnicity, and
+recommendations, and from quasi-likelihood information criteria. 
+The DAG structures to understand potential confounding, shown in `r cite_sf("dag_is")`
+and `r cite_sf("dag_bcf")`, were processed by the DAGitty software
+[@Textor2011a;@Shrier2008a] to generate the recommended adjustments.
+The final
+GEE model (M6; seen in `r cite_st('qic')`) was adjusted for years since baseline, WC, baseline age, ethnicity,
+sex, ALT, MET, and total NEFA. The variables TGFA, total NEFA, sex, ethnicity, and
 baseline age were classified as *time-independent* (held constant) as they were
 measured only at the baseline visit or do not change throughout the study, while
 the outcome variables and remaining covariates were set as *time-dependent*.
@@ -325,16 +329,15 @@ After transformations, the GEE estimates are interpreted as an expected percent
 difference in the outcome variable for every standard deviation (SD) increase in
 the predictor variable given the covariates are held constant (including time). 
 We also tested for an interaction with sex, ethnicity, or time by the predictor 
-term for each outcome variable. See the Supplemental Methods for an expanded 
-explanation of the GEE modeling analysis.
+term for each outcome variable. 
 
 While GEE accounts for the longitudinal design of the data, this approach is 
 limited in that it cannot analyze the inherent multivariate nature of the 
 composition of the TGFA fraction. Therefore, to confirm the GEE results in a multivariate 
 environment (i.e. all TGFA analyzed collectively), partial least squares regression (PLS) was
 used to identify the patterns of TGFA composition against insulin sensitivity
-and beta-cell function as outcome variables. For a detailed explanation of PLS
-see the Supplemental Methods. Briefly, PLS is a technique that extracts latent
+and beta-cell function as outcome variables. 
+Briefly, PLS is a technique that extracts latent
 structures (clusters) underlying a set of predictor variables conditional on a
 response variable(s) (i.e. the outcome variables). How accurately the clusters
 within the TGFA composition predict metabolic function is determined by using
@@ -367,7 +370,7 @@ insulin sensitivity and beta-cell function measures had a significant median dec
 between `r outcome_chg$chg` (p`r outcome_chg$p` from GEE; n=`r outcome_chg$n`). 
 
 `r cite_f('tagfa')` shows the composition of each FA in the TG fraction (see 
-`r cite_st('tagfa')` for a tabular presentation of the values). 
+`r cite_st('tagfa')` for the raw values). 
 Three TGFA contributed `r aide::format_round(sum(tagfa$pct))`% to the total 
 TG concentration: `r tagfa$c[1]`; `r tagfa$c[2]`; and, `r tagfa$c[3]`.
 `r cite_f('heatmap')` shows a heatmap of the correlation of individual TGFA as
@@ -382,8 +385,8 @@ for the beta-cell function measures (all r<0.30). For correlations
 of individual TGFA using mol% with the basic participant characteristics, as shown in 
 `r cite_f('heatmap_mol')`, differences in correlations between fatty acids were
 most evident for 14:0, 14:1n-7, 16:0, and 16:1n-7 that had a moderate positive
-correlation with clinical TG (r=`r fa_cor_mol$rng$TAG[1]`) while all other fatty
-acids had a negative association (r=`r fa_cor_mol$rng$TAG[2]`). In particular,
+correlation with clinical TG (r=`r fa_cor_mol$rng$TAG[2]`) while all other fatty
+acids had a negative association (r=`r fa_cor_mol$rng$TAG[1]`). In particular,
 those fatty acids with the negative associations with clinical TG were all the
 very long chain polyunsaturated fatty acids (e.g. 20:4n-6, 20:5n-3).
 As seen in `r cite_f('heatmap_tagfa')`, four fatty acids (14:0,
@@ -398,19 +401,19 @@ associations with beta-cell function measures were attenuated after full model
 adjustment, while nearly all associations with insulin sensitivity remained
 significant for both mol% and nmol/mL results. Subsequent analysis revealed that
 the attenuation with beta-cell function was due primarily to adjustment for
-waist.
+WC.
 
 In analyses using concentration values, nearly all TGFA had a strong
-negative association on HOMA2-%S and ISI (estimates of percent different ranging from
+negative association on HOMA2-%S and ISI (estimates of percent difference ranging from
 `r gmest1$outcome_b$rng[3]` and `r gmest1$outcome_b$rng[7]`, respectively), and a
 few had strong negative associations with IGI/IR and ISSI-2 (estimates ranging 
 from `r gmest1$outcome_b$rng[11]` and `r gmest1$outcome_b$rng[15]`, respectively).
 In analyses using TGFA mol% values, four TGFA (14:0, 16:0, 14:1n-7, and 16:1n-7) had negative
-associations with HOMA2-%S and ISI (between `r gmest1$outcome_b$rng[1]` and 
+associations with HOMA2-%S and ISI (estimates between `r gmest1$outcome_b$rng[1]` and 
 `r gmest1$outcome_b$rng[5]`, respectively, lower insulin sensitivity for every SD
 increase in the TGFA), while several more TGFA had positive associations with
 HOMA2-%S and ISI (20:0, 18:1n-9, 20:1n-9, 22:1n-9, 18:2n-6, 20:2n-6, 20:4n-6,
-and 22:5n-3) predicting between `r gmest1$outcome_b$rng[2]` and 
+and 22:5n-3) estimating between `r gmest1$outcome_b$rng[2]` and 
 `r gmest1$outcome_b$rng[6]`%, respectively, higher insulin sensitivity for every
 SD increase in the TGFA. One TGFA, 20:2n-6, had a very strong positive
 association with the insulin sensitivity measures, with a `r gmest1$b_ci$est[1]`
@@ -423,7 +426,7 @@ significant interactions by time in unadjusted models, after inclusion of
 covariates in the model, these interactions were attenuated (data not
 shown). There were no significant interactions by sex or ethnicity for any of
 the TGFA (data not shown). Results of the sensitivity analyses identifying
-waist circumference as the covariate that attenuated the beta-cell function
+WC as the covariate that attenuated the beta-cell function
 associations from the unadjusted model are shown in `r cite_sf("gee_adj_nowaist")`. 
 A tabular presentation of the GEE results is shown in `r cite_st("gee_unadj")`
 for unadjusted models and `r cite_st("gee_adj")` for adjusted models.
@@ -437,7 +440,7 @@ clustering of the fatty acids 14:0, 14:1n-7, 16:0, and 16:1n-7 as mol%
 in the first component, suggesting this cluster of TGFA tracks
 together with lower insulin sensitivity. The TGFA 20:2n-6, 20:5n-3, 22:5n-3,
 and 22:6n-3 loaded positively on both insulin sensitivity measures. No other
-TGFA loaded strongly. In the second component, 18:1n-9 and 18:1n-7 loaded postively 
+TGFA loaded strongly. In the second component, 18:1n-9 and 18:1n-7 loaded positively 
 but not strongly while 20:5n-3 and 22:6n-3 loaded strongly and negatively with both
 HOMA2-%S and ISI; however, this component only explained <10% of the variance. 
 The PLS model for insulin sensitivity had good predictive
@@ -453,12 +456,13 @@ Given the low predictability, only the insulin sensitivity measures are
 presented. We used the extracted PLS scores as the predictor variable in the GEE
 models and found negative associations of the first component on all outcome
 variables, with the strongest association being with the insulin sensitivity
-variables (beta=`r pls_gee$estimate[3]`, all p`r pls_gee$p.value[1]`; using PLS
-scores constrained by ISI).
+variables (estimate of `r pls_gee$estimate[3]`, all p`r pls_gee$p.value[1]`; using PLS
+scores constrained by ISI). See `r cite_sf("pls_loadings")` for a plot of the
+loadings of each TGFA on the two components.
 
 # Discussion
 
-In the present study, we found that in a Canadian cohort at risk for diabetes,
+In the present study, we found that in a Canadian cohort at risk for T2D,
 several specific TGFA and groups of TGFA were strongly associated
 with insulin sensitivity and moderately associated with beta-cell function. In 
 particular, the TGFA myristic acid (14:0), 7-tetradecenoic acid 
@@ -472,17 +476,17 @@ strongly predicted lower insulin sensitivity. These four fatty acids are
 involved in the *de novo* lipogenesis (DNL) of refined and simple carbohydrates
 [@Hodson2008a; @Kawano2013a]. Our results suggest that higher activity of DNL
 (potentially through higher intakes of simple carbohydrates) may increase the
-risk for diabetes, primarily through worsening insulin sensitivity.
+risk for T2D, primarily through worsening insulin sensitivity.
 
 To our knowledge, no longitudinal study to date has examined the role of the
 composition of the TGFA fraction on detailed OGTT-derived metabolic measures 
 Two large prospective studies have been published that similarly examined TGFA 
-composition and diabetes outcomes. Rhee *et al* presented a nested case-control
+composition and T2D outcomes. Rhee *et al* presented a nested case-control
 analysis (n=189 cases and n=189 controls) within the Framingham offspring cohort
 [@Rhee2011a], which found that subjects with a TGFA composition characterized
 by a lower carbon chain and fewer double bonds (e.g. 14:0, 16:0) had a higher
-risk for diabetes after 12-years while those with a profile characterized by
-higher carbon chain and more double bond TGFA had a lower risk for diabetes.
+risk for T2D after 12-years while those with a profile characterized by
+higher carbon chain and more double bond TGFA had a lower risk for T2D.
 A similar pattern of TGFA was also associated with HOMA-IR cross-sectionally
 at the baseline visit. In addition, Lankinen *et al* reported on
 a prospective cohort of males in Finland [@Lankinen2015a], for which 
@@ -595,14 +599,12 @@ lipotoxic environment {{ cite }}
 
 -->
 
-## Limitations and strengths
-
 Our study has potential limitations that need to be considered when interpreting
 the results. Firstly, this is an observational cohort and as such there may be
 some residual confounding we were not able to control for or were unaware of. 
 However, we have taken extensive, empirically based precautions in identifying
 potential confounders and mediators through the use of the DAG modeling, relying
-on previous literature, and through QIC model fit comparison methods.
+on previous literature, and through information criteria model fit comparison methods.
 
 <!--
 TGFA can fluctuate substantially throughout the day and to control for this all
@@ -628,7 +630,7 @@ PLS is a well-established technique for constructing predictive models of high
 dimensionality data structures (i.e. fatty acid composition), however a 
 limitation is that the initial models analyzed through PLS and the final 
 computed scores are not able to control for potential confounders and other 
-effect modifiers. Likewise, PLS is not able to handle longitudinal data so only 
+effect modifiers. PLS is also not able to handle longitudinal data so only 
 the baseline visit was used in the PLS analysis, although we analyzed the extracted
 scores using the GEE modeling to overcome this limitation and observed
 concordant results between the PLS and GEE analyses.
@@ -641,7 +643,7 @@ multidimensional nature of the data. Lastly, our cohort contains highly detailed
 and comprehensive variable measurements for the fatty acids and outcomes,
 of which were collected at each visit.
 
-## Final conclusion
+## Conclusion
 
 In conclusion, we found that a TGFA composition indicative of higher DNL
 (containing higher 14:0, 14:1n-7, 16:0, and 16:1n-7) associated strongly with lower
@@ -650,7 +652,7 @@ acids that clustered together represent fatty acids created from DNL, which is
 characteristic of higher simple carbohydrate (e.g. added sugar) intake. Our
 results, which are congruent with current evidence, suggest that higher DNL,
 likely due to greater intake of simple or refined carbohydrates, may increase the
-risk of diabetes through worsening of insulin sensitivity.
+risk of T2D through worsening of insulin sensitivity.
 
 # Acknowledgements/grant support
 
@@ -666,9 +668,9 @@ This study was supported by grants from the Canadian Diabetes Association (CDA),
 the Canadian Institutes for Health Research, and the University of
 Toronto Banting and Best Diabetes Centre; LWJ was supported by a CDA
 Doctoral Student Research Award; RR is supported by a Heart and Stroke
-Foundation of Ontario Mid-Career Investigator Award {{confirm}}; SBH holds the
+Foundation of Ontario Mid-Career Investigator Award; SBH holds the
 CDA Chair in National Diabetes Management and the Ian McWhinney Chair of Family
-Medicine Studies at the University of Western Ontario {{confirm}}; RBP holds a
+Medicine Studies at the University of Western Ontario; RBP holds a
 Tier II Canada Research Chair in Brain Lipid Metabolism; AJH holds a Tier II
 Canada Research Chair in Diabetes Epidemiology.
 
