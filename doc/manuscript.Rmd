@@ -10,9 +10,9 @@ output: fost::jlr_manuscript
 
 # Title page
 
-Title (109 / 110 characters): 
-Clusters of fatty acids in serum triacylglyceride fraction associate with the
-pathogenesis of type 2 diabetes
+Title (110 / 110 characters): 
+Clusters of fatty acids in the serum triacylglyceride fraction associate with the
+disorders of type 2 diabetes
 
 Authors: Luke W. Johnston, PhD (1); Zhen Liu, PhD (1); Ravi Retnakaran, MD
 (3,4); Bernard Zinman, MD (3,4); Adria Giacca, PhD (5); Stewart B. Harris, MD (2); 
