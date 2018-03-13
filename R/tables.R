@@ -44,7 +44,7 @@ table_tagfa <- function(data = project_data, caption = NULL) {
                       unit = factor(unit, levels = c('nmol/mL', 'mol%'), ordered = TRUE)) %>%
         carpenter::outline_table('unit') %>%
         carpenter::add_rows(tgfa, carpenter::stat_meanSD, digits = 1) %>%
-        carpenter::renaming("header", c('TAGFA', 'Concentrations (nmol/mL)', 'Proportion (mol%)')) %>%
+        carpenter::renaming("header", c('TGFA', 'Concentrations (nmol/mL)', 'Proportion (mol%)')) %>%
         carpenter::renaming('rows', renaming_fats) %>%
         carpenter::build_table(caption = caption)
 }
@@ -52,6 +52,6 @@ table_tagfa <- function(data = project_data, caption = NULL) {
 table_corr <- function(results, caption = NULL) {
     results %>%
         tidyr::spread(Vars2, Correlations) %>%
-        dplyr::rename(TAGFA = Vars1) %>%
+        dplyr::rename(TGFA = Vars1) %>%
         pander::pander()
 }

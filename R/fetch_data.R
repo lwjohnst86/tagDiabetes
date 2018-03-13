@@ -12,93 +12,77 @@
 #'
 fetch_data <- function() {
     # Load the master dataset,
-    ds.prep <- PROMISE::PROMISE %>%
-        dplyr::filter(VN %in% c(1, 3, 6)) %>%
+    ds.prep <- PROMISE.data::PROMISE %>%
+        full_join(PROMISE.data::fattyacids %>%
+                      select(SID, VN, matches("^tg|^TotalTG|^TotalNE"))) %>%
+        filter(VN %in% c(0, 3, 6)) %>%
         ## Kick out Canoers
-        dplyr::filter(is.na(Canoe)) %>%
-        dplyr::tbl_df()
+        filter(is.na(Canoe)) %>%
+        tbl_df()
 
-    print(paste0('Original dataset rows are ', dim(ds.prep)[1], ' and columns are ', dim(ds.prep)[2]))
+    print(paste0(
+        'Original dataset rows are ',
+        dim(ds.prep)[1],
+        ' and columns are ',
+        dim(ds.prep)[2]
+    ))
 
     ##' Munge and wrangle the data into the final version.
     ds <- ds.prep %>%
-        dplyr::select(
-            SID, VN, BMI, Waist, HOMA, HOMA2IR, HOMA2_S, ISI, IGIIR, ISSI2,
-            TAG, LDL, HDL, Chol, MonthsFromBaseline,
-            ALT, CRP, FamHistDiab, dplyr::matches('meds'), Age, Sex, Ethnicity,
+        select(
+            SID, VN, BMI, Waist, HOMA, HOMA2_S, ISI, IGIIR, ISSI2,
+            TAG, LDL, HDL, Chol, YearsFromBaseline, Dysgly,
+            ALT, CRP, FamHistDiab, matches('meds'), Age, Sex, Ethnicity,
             IFG, IGT, DM, MET, AlcoholPerWk, TobaccoUse, SelfEdu, Occupation,
-            TotalTG, dplyr::matches('^tg\\d+'), Glucose0, Glucose120, TotalNE
+            TotalTG, matches('^tg\\d+'), Glucose0, Glucose120, TotalNE
         ) %>%
-        dplyr::mutate(
-            YearsFromBaseline = MonthsFromBaseline / 12,
+        mutate(
             BaseTotalNE = TotalNE,
             BaseTotalTG = TotalTG,
-            BaseTAG = ifelse(VN == 1, TAG, NA),
-            lBaseTAG = log(BaseTAG),
-            BaseAge = ifelse(VN == 1, Age, NA),
+            BaseTAG = ifelse(VN == 0, TAG, NA),
+            BaseAge = ifelse(VN == 0, Age, NA),
+            Sex = forcats::as_factor(Sex),
             FamHistDiab =
                 plyr::mapvalues(FamHistDiab, c(0, 1:12),
                                 c('No', rep('Yes', 12))) %>%
                 as.factor(),
-            AlcoholPerWk = plyr::mapvalues(
-                as.factor(AlcoholPerWk),
-                c('1', '2', '3', '4', '5', '6', '7'),
-                c('1', '2', '3', '3', '3', '3', '3')
-            ) %>%
-                as.factor(),
-            invHOMA = (1 / HOMA),
-            linvHOMA = log(invHOMA),
-            lHOMA2IR = log(HOMA2IR),
-            lHOMA2_S = log(HOMA2_S),
-            lISI = log(ISI),
-            lIGIIR = log(IGIIR),
-            lISSI2 = log(ISSI2),
-            lALT = log(ALT),
-            lTAG = log(TAG),
+            AlcoholPerWk = forcats::fct_other(
+                AlcoholPerWk,
+                keep = c("None", "<1 drink", "1-3 drinks"),
+                other_level = "<3 drinks"),
             MedsLipidsChol = ifelse(is.na(MedsLipidsChol), 0, MedsLipidsChol)
         ) %>%
-        dplyr::arrange(SID, VN) %>%
-        dplyr::group_by(SID) %>%
-        tidyr::fill(TotalTG, dplyr::matches('^tg\\d+'), BaseTAG, lBaseTAG, BaseAge, TotalNE) %>%
-        dplyr::ungroup()
+        arrange(SID, VN) %>%
+        group_by(SID) %>%
+        fill(TotalTG, matches('^tg\\d+'), BaseTAG, BaseAge, TotalNE) %>%
+        ungroup()
+
+    logged_vars <- ds %>%
+        select(BaseTAG, HOMA2_S, ISI, IGIIR, ISSI2, ALT, TAG) %>%
+        mutate_all(log) %>%
+        rename_all(~paste0("l", .))
+
+    pct_fats <- ds %>%
+        filter(VN == 0) %>%
+        select(SID, TotalTG, matches("^tg\\d+")) %>%
+        mutate_at(vars(starts_with("tg")), funs((. / TotalTG) * 100)) %>%
+        select(-TotalTG) %>%
+        rename_at(vars(starts_with("tg")), funs(paste0("pct_", .)))
 
     ds <- ds %>%
-        dplyr::full_join(ds %>%
-                      dplyr::filter(VN == 1) %>%
-                      dplyr::mutate_at(dplyr::vars(dplyr::matches('^tg\\d+')),
-                                       dplyr::funs((. / TotalTG) * 100)) %>%
-                      dplyr::select(SID, dplyr::matches('^tg\\d+')) %>%
-                      stats::setNames(paste0('pct_', names(.))) %>%
-                      dplyr::rename(SID = pct_SID),
-                  by = 'SID')
+        bind_cols(logged_vars) %>%
+        full_join(pct_fats, by = 'SID')
 
     ds <- ds %>%
-        dplyr::mutate(
-            VN = plyr::mapvalues(VN, c(1, 3, 6), c(0, 1, 2)),
+        mutate(
+            VN = plyr::mapvalues(VN, c(0, 3, 6), c(0, 1, 2)),
             f.VN = factor(VN, c(0, 1, 2), c('yr0', 'yr3', 'yr6')),
-            Dysgly = plyr::mapvalues(as.character(IFG + IGT + DM), c('0', '1'), c('No', 'Yes')),
-            Ethnicity =
-                plyr::mapvalues(
-                    Ethnicity,
-                    c(
-                        'African',
-                        'European',
-                        'First Nations',
-                        'Latino/a',
-                        'Other',
-                        'South Asian'
-                    ),
-                    c('Other', 'European', 'Other', 'Latino/a',
-                      'Other', 'South Asian')
-                ),
-            BiEthnicity = plyr::mapvalues(
-                Ethnicity,
-                c('Other', 'European', 'Latino/a', 'South Asian'),
-                c('Non-European', 'European', 'Non-European', 'Non-European')
-            )
+            Dysgly = plyr::mapvalues(as.character(Dysgly), c("0", "1"), c("No", "Yes")),
+            Ethnicity = forcats::fct_other(Ethnicity, keep = c("European", "Latino/a", "South Asian")),
+            BiEthnicity = forcats::fct_other(Ethnicity, keep = "European", other_level = "Non-European")
         ) %>%
-        dplyr::arrange(SID, VN) %>%
-        dplyr::filter(!is.na(TotalTG))
+        arrange(SID, VN) %>%
+        filter(!is.na(TotalTG))
 
     print(paste0('Working dataset rows are ', dim(ds)[1], ' and columns are ', dim(ds)[2]))
 

@@ -1,13 +1,13 @@
 Package: tagDiabetes
 Title: Analysis Code for TAG Manuscript
-Version: 0.0.2.9000
-Authors@R: person("Luke", "Johnston", email = "luke.johnston@mail.utoronto.com",
+Version: 0.1.0
+Authors@R: person("Luke", "Johnston", email = "lwjohnst@gmail.com",
     role = c("aut", "cre"))
 Description: This repository contains the R code used to analyze the data and
     produce the results for the manuscript on TAG and the pathogenesis of diabetes
     in the longitudinal PROMISE cohort.
 Depends:
-    R (>= 3.3.1)
+    R (>= 3.4.2)
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
@@ -36,6 +36,7 @@ Imports:
     pryr,
     magrittr,
     PROMISE,
+    PROMISE.data,
     tibble,
     MuMIn,
     lsmeans,
@@ -43,9 +44,16 @@ Imports:
     gridExtra,
     aide,
     showtext,
-    rfigshare
+    PROMISE.desc,
+    PROMISE.misc,
+    forcats,
+    patchwork
 Remotes:
-    github::lwjohnst86/fost,
-    github::lwjohnst86/aide,
+    lwjohnst86/fost,
+    lwjohnst86/aide,
+    lwjohnst86/PROMISE.misc,
+    lwjohnst86/PROMISE.desc,
     bitbucket::PROMISE-cohort/PROMISE
+    gitlab::promise-cohort/PROMISE,
+    thomasp85/patchwork
 RoxygenNote: 6.0.1

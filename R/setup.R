@@ -27,10 +27,13 @@ set_options <- function() {
     # For the document (knitr)
     knitr::opts_chunk$set(
         warning = FALSE, message = FALSE, collapse = TRUE,
-        fig.showtext = FALSE, comment = '#>', dev = "pdf"
+        #fig.showtext = FALSE,
+        comment = '#>', dev = c("png", "cairo_ps", "CairoPS"),
+        dpi = 300
     )
 }
 
+#' @import dplyr tidyr ggplot2 mason
 #' @importFrom magrittr %>%
 #' @export
 magrittr::`%>%`

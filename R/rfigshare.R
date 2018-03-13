@@ -6,8 +6,8 @@
 # 5. Then run the below code
 send_to_figshare <- function() {
     rfigshare::fs_new_article(
-        "Analysis code for poster on triacylglycerol DNL on components of the Metabolic Syndrome in PROMISE",
-        "Analysis code for a poster for the American Diabetes Association Scientific Sessions in 2017",
+        "Code for the analysis of TAGFA on diabetes pathogenesis",
+        "Analysis code for a manuscript on the role of triacylglyceride fatty acid composition on the pathogenesis of diabetes, based on a longitudinal cohort (PROMISE)",
         type = "fileset",
         # there was a problem with the authors...
         # authors = c("First Last"),
