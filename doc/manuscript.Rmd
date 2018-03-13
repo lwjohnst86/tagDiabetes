@@ -50,25 +50,25 @@ Triacylglyceride fatty acids and diabetes pathogenesis
 
 # Abbreviations:
 
-- TGFA: Triacylglycerol fatty acids
-- IS: Insulin sensitivity
-- PROMISE: Prospective Metabolism and Islet Cell Evaluation cohort
-- ISI: Insulin sensitivity index
+- ALT: Alanine aminotransferase
+- CV: Coefficient of variation
+- DNL: De novo lipogenesis
 - GEE: Generalized estimating equations
-- PLS: Partial least squares
 - HOMA2-%S: Homeostatic model of assessment 2 - percent sensitivity
 - IGI/IR: Insulinogenic index over homeostatic model of assessment for insulin
 resistance
+- IS: Insulin sensitivity
+- ISI: Insulin sensitivity index
 - ISSI-2: Insulin Secretion-Sensitivity Index-2
-- DNL: De novo lipogenesis
-- ALT: Alanine aminotransferase
+- MAQ: Modified activity questionnaire
+- MET: Metabolic equivalent of task
 - NEFA: Non-esterified fatty acids
 - OGTT: Oral glucose tolerance test
-- CV: Coefficient of variation
-- MAQ: Modified activity questionnaire
-- WC: Waist circumference
-- MET: Metabolic equivalent of task
+- PROMISE: Prospective Metabolism and Islet Cell Evaluation cohort
+- PLS: Partial least squares
 - SD: Standard deviation
+- TGFA: Triacylglycerol fatty acids
+- WC: Waist circumference
 
 # Abstract
 
