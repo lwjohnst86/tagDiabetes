@@ -361,7 +361,7 @@ as a guideline for reporting [@Vandenbroucke2007b].
 `r cite_t('basic')` shows basic characteristics of the PROMISE cohort. The mean 
 follow-up time was `r calc_followup_time()` years, where `r calc_pct_full_visits()`%
 of participants attended all three visits. There were
-`r female$npct` females and `r euro$npct` who had European-ancestry, with a mean
+`r female$npct` females and `r euro$npct` who reported European-ancestry, with a mean
 age in years of `r aide::ave_sd(ds0yr$Age)` and a mean BMI
 of `r aide::ave_sd(ds0yr$BMI)` kg/m^2^. As expected from the study's eligibility
 criteria, the majority of participants, n=`r fhd$npct`, had a family history of
@@ -479,7 +479,7 @@ involved in the *de novo* lipogenesis (DNL) of refined and simple carbohydrates
 risk for T2D, primarily through worsening insulin sensitivity.
 
 To our knowledge, no longitudinal study to date has examined the role of the
-composition of the TGFA fraction on detailed OGTT-derived metabolic measures 
+composition of the TGFA fraction on detailed OGTT-derived metabolic measures. 
 Two large prospective studies have been published that similarly examined TGFA 
 composition and T2D outcomes. Rhee *et al* presented a nested case-control
 analysis (n=189 cases and n=189 controls) within the Framingham offspring cohort
@@ -491,17 +491,17 @@ A similar pattern of TGFA was also associated with HOMA-IR cross-sectionally
 at the baseline visit. In addition, Lankinen *et al* reported on
 a prospective cohort of males in Finland [@Lankinen2015a], for which 
 TGFA data were available for 831 participants after 6-years of follow-up. In
-their cohort, OGTT data was only available at the 6-year visit.
-They cross-sectionally found that most saturated fatty acids had negative 
+their cohort, OGTT data were only available at the 6-year visit.
+In the cross-sectional analysis they found that most saturated fatty acids had negative 
 associations with insulin sensitivity and beta-cell function while
 linoleic acid (18:2n-6), docosapentaenoic acid (22:5n-3), eicosapentaenoic acid
 (20:5n-3), and arachidonic acid (20:4n-6) had positive associations with insulin
-sensitivity. The magnitude of the associations were larger in the insulin
+sensitivity. The magnitude of the associations were larger for the insulin
 sensitivity results compared to the beta-cell function results, similar to what
 we observed. Our study extends these findings by using multiple measurements
 of metabolic function and as well as multivariate statistical approaches that
-allowed us to identify clusters of TGFA. In another study of a much
-smaller (n=16) mostly female group [@Kotronen2009a], the authors report a
+allowed us to identify clusters of TGFA. In another much smaller study (n=16) of
+mostly females [@Kotronen2009a], the authors reported a
 positive correlation between total esterified (of which TG make up the
 majority) 16:0, 16:1n-7, and 18:1n-9 with HOMA-IR, findings which were largely 
 similar to the present analysis.
