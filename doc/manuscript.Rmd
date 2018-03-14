@@ -4,7 +4,7 @@ bibliography:
     - /home/luke/Documents/bibliography/bib/bib-db/myrefs.bib
     - /home/luke/Documents/bibliography/bib/bib-db/methods.bib
     - /home/luke/Documents/site/cv/_includes/work.bib
-csl: /home/luke/Documents/bibliography/styles/vancouver.csl
+csl: /home/luke/Documents/bibliography/styles/journal-of-lipid-research.csl
 output: fost::jlr_manuscript
 ---
 
@@ -71,8 +71,6 @@ resistance
 - WC: Waist circumference
 
 # Abstract
-
-Word count: 200 / 200
 
 **Aims:**
 Our aim was to examine longitudinal associations of triacylglyceride fatty acid
@@ -157,12 +155,12 @@ ds0yr <- project_data %>%
 ## Include captions below using `captioner` package
 fig <- captioner::captioner(prefix = 'Figure')
 cite_f <- pryr::partial(fig, display = 'cite')
-sfig <- captioner::captioner(prefix = 'Supplemental Figure')
+sfig <- captioner::captioner(prefix = 'Supplemental Figure S')
 cite_sf <- pryr::partial(sfig, display = 'cite')
 
 tab <- captioner::captioner(prefix = 'Table')
 cite_t <- pryr::partial(tab, display = 'cite')
-stab <- captioner::captioner(prefix = 'Supplemental Table')
+stab <- captioner::captioner(prefix = 'Supplemental Table S')
 cite_st <- pryr::partial(stab, display = 'cite')
 # usage: cite_st('basicChar')
 

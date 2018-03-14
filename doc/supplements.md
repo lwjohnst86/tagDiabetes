@@ -32,7 +32,7 @@ output: fost::jlr_manuscript
 | M0              | -2171.0 | 305.2 |
 | M1              | -2168.5 | 307.8 |
 
-Table: Supplemental Table  1: Comparison of GEE model fitness for variable selection using quasi-likelihood information criteria.
+Table: Supplemental Table S  1: Comparison of GEE model fitness for variable selection using quasi-likelihood information criteria.
 
 Given the number of possible combinations of outcome and predictor variables,
 only ISI and ISSI-2 with total TGFA (nmol/mL) were used to
@@ -81,7 +81,7 @@ considered equivalent).  Models were:
 | 22:0     |        1.5 (1.2)         |     0.1 (0.0)     |
 | Total    |     3137.5 (1686.6)      |                   |
 
-Table: Supplemental Table  2: Concentration (nmol/mL) and relative percent (mol%) values of TGFA in PROMISE participants at the baseline visit (2004-2006).
+Table: Supplemental Table S  2: Concentration (nmol/mL) and relative percent (mol%) values of TGFA in PROMISE participants at the baseline visit (2004-2006).
 
 
 | Fatty acid   | log(HOMA2-%S)          | log(ISI)               | log(IGI/IR)            | log(ISSI-2)           |
@@ -136,7 +136,7 @@ Table: Supplemental Table  2: Concentration (nmol/mL) and relative percent (mol%
 | 22:5 n-3     | 12.9 (7.3, 18.8)\*     | 12.6 (6.3, 19.2)\*     | 4.2 (-2.0, 10.9)       | 2.2 (-1.0, 5.5)       |
 | 22:6 n-3     | 5.4 (0.1, 11.0)        | 2.3 (-3.0, 7.8)        | 5.3 (0.2, 10.7)        | 1.9 (-0.8, 4.7)       |
 
-Table: Supplemental Table  3: Raw estimates and confidence interval values for *time*-adjusted GEE models of the association of the TGFA (mol% and nmol/mL) and total clinically-measured TG with insulin sensitivity and beta-cell function outcomes using the 6 year longitudinal data from the PROMISE cohort. Estimates represent a percent difference in the outcome per SD increase in the FA. P-values were adjusted for the BH false discovery rate, with an asterisk (*) denoting a significant (p<0.05) association.
+Table: Supplemental Table S  3: Raw estimates and confidence interval values for *time*-adjusted GEE models of the association of the TGFA (mol% and nmol/mL) and total clinically-measured TG with insulin sensitivity and beta-cell function outcomes using the 6 year longitudinal data from the PROMISE cohort. Estimates represent a percent difference in the outcome per SD increase in the FA. P-values were adjusted for the BH false discovery rate, with an asterisk (*) denoting a significant (p<0.05) association.
 
 
 
@@ -192,19 +192,19 @@ Table: Supplemental Table  3: Raw estimates and confidence interval values for *
 | 22:5 n-3     | 8.7 (4.7, 12.8)\*     | 7.9 (3.1, 13.0)\*      | 4.3 (-0.7, 9.5)      | 1.7 (-0.8, 4.4)     |
 | 22:6 n-3     | 2.4 (-1.1, 6.0)       | -0.2 (-4.0, 3.8)       | 3.3 (-0.7, 7.5)      | 0.6 (-1.6, 2.7)     |
 
-Table: Supplemental Table  4: Raw estimates and confidence interval values for *fully*-adjusted GEE models of the association of the TGFA (mol% and nmol/mL) and total clinically-measured TG with insulin sensitivity and beta-cell function outcomes using the 6 year longitudinal data from the PROMISE cohort. Variables controlled for were follow-up time, WC, baseline age, ethnicity, sex, ALT, physical activity, and total NEFA. Estimates represent a percent difference in the outcome per SD increase in the FA. P-values were adjusted for the BH false discovery rate, with an asterisk (*) denoting a significant (p<0.05) association.
+Table: Supplemental Table S  4: Raw estimates and confidence interval values for *fully*-adjusted GEE models of the association of the TGFA (mol% and nmol/mL) and total clinically-measured TG with insulin sensitivity and beta-cell function outcomes using the 6 year longitudinal data from the PROMISE cohort. Variables controlled for were follow-up time, WC, baseline age, ethnicity, sex, ALT, physical activity, and total NEFA. Estimates represent a percent difference in the outcome per SD increase in the FA. P-values were adjusted for the BH false discovery rate, with an asterisk (*) denoting a significant (p<0.05) association.
 
 # Supplemental Figures
 
-![Supplemental Figure  1: CONSORT diagram of PROMISE participants over the 3 visits.](../img/flowDiagramSample.png)
+![Supplemental Figure S  1: CONSORT diagram of PROMISE participants over the 3 visits.](../img/flowDiagramSample.png)
 
-![Supplemental Figure  2: Directed acyclic graphic output from the DAGitty online software for insulin sensitivity.](../img/dagitty-model-is.png)
+![Supplemental Figure S  2: Directed acyclic graphic output from the DAGitty online software for insulin sensitivity.](../img/dagitty-model-is.png)
 
-![Supplemental Figure  3: Directed acyclic graphic output from the DAGitty online software for beta-cell function.](../img/dagitty-model-bcf.png)
+![Supplemental Figure S  3: Directed acyclic graphic output from the DAGitty online software for beta-cell function.](../img/dagitty-model-bcf.png)
 
-![Supplemental Figure  4: Fully-adjusted (without waist size) GEE models of the association of the TGFA (mol% and nmol/mL) and total clinically-measured TG with insulin sensitivity and beta-cell function outcomes using the 6 year longitudinal data from the PROMISE cohort. Variables controlled for were follow-up time, baseline age, ethnicity, sex, ALT, physical activity, and total NEFA. X-axis values represent a percent difference in the outcome per SD increase in the FA. P-values were adjusted for the BH false discovery rate, with the largest dot representing a significant (p<0.05) association.](supplements_files/figure-docx/fig_gee_adj_nowaist-1.png)
+![Supplemental Figure S  4: Fully-adjusted (without waist size) GEE models of the association of the TGFA (mol% and nmol/mL) and total clinically-measured TG with insulin sensitivity and beta-cell function outcomes using the 6 year longitudinal data from the PROMISE cohort. Variables controlled for were follow-up time, baseline age, ethnicity, sex, ALT, physical activity, and total NEFA. X-axis values represent a percent difference in the outcome per SD increase in the FA. P-values were adjusted for the BH false discovery rate, with the largest dot representing a significant (p<0.05) association.](supplements_files/figure-docx/fig_gee_adj_nowaist-1.png)
 
-![Supplemental Figure  5: PLS loadings (or weights) for each of the TGFA. A larger loading indicates a higher contribution to the PLS component score.](supplements_files/figure-docx/fig_pls_loadings-1.png)
+![Supplemental Figure S  5: PLS loadings (or weights) for each of the TGFA. A larger loading indicates a higher contribution to the PLS component score.](supplements_files/figure-docx/fig_pls_loadings-1.png)
 
 
 

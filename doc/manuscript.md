@@ -4,13 +4,13 @@ bibliography:
     - /home/luke/Documents/bibliography/bib/bib-db/myrefs.bib
     - /home/luke/Documents/bibliography/bib/bib-db/methods.bib
     - /home/luke/Documents/site/cv/_includes/work.bib
-csl: /home/luke/Documents/bibliography/styles/vancouver.csl
+csl: /home/luke/Documents/bibliography/styles/journal-of-lipid-research.csl
 output: fost::jlr_manuscript
 ---
 
 # Title page
 
-Title (109 / 110 characters): 
+Title (110 / 110 characters): 
 Clusters of fatty acids in the serum triacylglyceride fraction associate with the
 disorders of type 2 diabetes
 
@@ -165,7 +165,7 @@ with data from three examination visits available for the present analysis
 used data on participants who did not have T2D at baseline, who
 returned for one or more of the follow-up examinations, and who had samples
 available for fatty acid measurements (n=477; see the CONSORT diagram in 
-Supplemental Figure  1). Metabolic characterization, anthropometric
+Supplemental Figure S  1). Metabolic characterization, anthropometric
 measurements, and questionnaires on lifestyle and sociodemographics were
 administered at each examination visit. Research ethics approval was obtained from
 Mount Sinai Hospital and the University of Western Ontario, and all participants
@@ -255,11 +255,11 @@ design, an auto-regressive of order 1 working correlation matrix was
 specified in the GEE model. Covariates to adjust for were selected based on the
 previous literature, from directed acyclic graph [@Greenland1999a]
 recommendations, and from quasi-likelihood information criteria. 
-The DAG structures to understand potential confounding, shown in Supplemental Figure  2
-and Supplemental Figure  3, were processed by the DAGitty software
+The DAG structures to understand potential confounding, shown in Supplemental Figure S  2
+and Supplemental Figure S  3, were processed by the DAGitty software
 [@Textor2011a;@Shrier2008a] to generate the recommended adjustments.
 The final
-GEE model (M6; seen in Supplemental Table  1) was adjusted for years since baseline, WC, baseline age, ethnicity,
+GEE model (M6; seen in Supplemental Table S  1) was adjusted for years since baseline, WC, baseline age, ethnicity,
 sex, ALT, MET, and total NEFA. The variables TGFA, total NEFA, sex, ethnicity, and
 baseline age were classified as *time-independent* (held constant) as they were
 measured only at the baseline visit or do not change throughout the study, while
@@ -309,7 +309,7 @@ insulin sensitivity and beta-cell function measures had a significant median dec
 between 14% to 21% (p<0.001 from GEE; n=357-470). 
 
 Figure  1 shows the composition of each FA in the TG fraction (see 
-Supplemental Table  2 for the raw values). 
+Supplemental Table S  2 for the raw values). 
 Three TGFA contributed 82.4% to the total 
 TG concentration: 18:1 n-9 (37.8%); 16:0 (26.6%); and, 18:2 n-6 (18.0%).
 Figure  2 shows a heatmap of the correlation of individual TGFA as
@@ -366,9 +366,9 @@ covariates in the model, these interactions were attenuated (data not
 shown). There were no significant interactions by sex or ethnicity for any of
 the TGFA (data not shown). Results of the sensitivity analyses identifying
 WC as the covariate that attenuated the beta-cell function
-associations from the unadjusted model are shown in Supplemental Figure  4. 
-A tabular presentation of the GEE results is shown in Supplemental Table  3
-for unadjusted models and Supplemental Table  4 for adjusted models.
+associations from the unadjusted model are shown in Supplemental Figure S  4. 
+A tabular presentation of the GEE results is shown in Supplemental Table S  3
+for unadjusted models and Supplemental Table S  4 for adjusted models.
 
 ## Clustering of TGFA by metabolic measures
 
@@ -396,7 +396,7 @@ presented. We used the extracted PLS scores as the predictor variable in the GEE
 models and found negative associations of the first component on all outcome
 variables, with the strongest association being with the insulin sensitivity
 variables (estimate of 10.4, all p<0.001; using PLS
-scores constrained by ISI). See Supplemental Figure  5 for a plot of the
+scores constrained by ISI). See Supplemental Figure S  5 for a plot of the
 loadings of each TGFA on the two components.
 
 # Discussion

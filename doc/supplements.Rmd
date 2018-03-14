@@ -10,13 +10,9 @@ set_options()
 knitr::opts_chunk$set(results = "asis", echo = FALSE)
 
 # Captions
-sfig <- captioner::captioner(prefix = 'Supplemental Figure')
-cite_sf <- pryr::partial(sfig, display = 'cite')
+sfig <- captioner::captioner(prefix = 'Supplemental Figure S')
 
-tab <- captioner::captioner(prefix = 'Table')
-cite_t <- pryr::partial(tab, display = 'cite')
-stab <- captioner::captioner(prefix = 'Supplemental Table')
-cite_st <- pryr::partial(stab, display = 'cite')
+stab <- captioner::captioner(prefix = 'Supplemental Table S')
 
 tab_qic <- stab('qic', 'Comparison of GEE model fitness for variable selection using quasi-likelihood information criteria.')
 tab_tagfa <- stab('tagfa', 'Concentration (nmol/mL) and relative percent (mol%) values of TGFA in PROMISE participants at the baseline visit (2004-2006).')
