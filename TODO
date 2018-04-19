@@ -99,10 +99,20 @@ TODO Added handling of potential over-adjustment to methods # maybe?
 TODO Sensitivity analysis with added sugar and fat
 DONE Don't scale covars
 
-TODO Submit to preprint # ?
-TODO Upload code to figshare (or Zenodo) + github
-TODO Submitted to journal
+DONE Submit to preprint # ?
+DONE Upload code to figshare (or Zenodo) + github
+DONE Submitted to journal
 >>> v0.1.0
 
 TODO Reviewer responses and edits
+TODO Remove sentence about DNL from abstract
+TODO Temper discussion about DNL and related hypotheses.
+    Page 13, 14. Look into Wei X et al. Nature 2016;539:294-298
+TODO Expand on how DNL could mechanistically influence metabolic endpoints
+TODO Add actual r values on page 9
+TODO Include a short description on the combined analysis (and in context of full composition)
+TODO Add comment to discussion about utility of using total TAG vs species
+TODO Add brief discussion about sup figs 2 and 3, as well as about DAG in general
+
 TODO Resubmit to journal
+>>> v0.1.1
