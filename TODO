@@ -105,6 +105,7 @@ DONE Submitted to journal
 >>> v0.1.0
 
 TODO Reviewer responses and edits
+TODO Include discussion of Yki-Jarvinen more recent paper on SC-SFA and NAFLD/NASH
 TODO Remove sentence about DNL from abstract
 TODO Temper discussion about DNL and related hypotheses.
     Page 13, 14. Look into Wei X et al. Nature 2016;539:294-298
@@ -113,6 +114,12 @@ TODO Add actual r values on page 9
 TODO Include a short description on the combined analysis (and in context of full composition)
 TODO Add comment to discussion about utility of using total TAG vs species
 TODO Add brief discussion about sup figs 2 and 3, as well as about DAG in general
+TODO Add more discussion to alternatives to then just DNL
+TODO Do sensitivity analyses using carbs in model
+    - PLS with CHO as response. GEE with CHO in model
+TODO In discussion, include fasting vs fed with TGFA and DNL
+TODO Include a brief explanation of DAG in methods
+TODO Include a discussion combining NEFA results with the TGFA results
 
 TODO Resubmit to journal
 >>> v0.1.1
