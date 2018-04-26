@@ -12,7 +12,7 @@ submitting your revised manuscript.
 
 # Editor 
 
-All three reviewers agreed that the paper had the strength of longitudinal
+- All three reviewers agreed that the paper had the strength of longitudinal
 followup and would be of interest to readers of the JLR but they also noted
 that there have been earlier studies with similar outcomes and one reviewer
 noted that some of those papers were by the present group but were not
@@ -24,6 +24,11 @@ shorter chain saturated fatty acids in the liver to NAFLD/NASH. You should look
 at those papers and add them to the discussion. I look forward to a modified
 version.
 
+    *We have made additions to the manuscript based on the editor's and reviewers'
+    suggestions, including the discussion around short chain SFA and NAFLD by
+    Yki-Jarvinen. We believe this has strengthened the paper and hope it
+    satisfactorily addresses the editor and reviewers comments.*
+
 # Reviewer 1
 
 1. This manuscript reports interesting and potentially valuable associations
@@ -33,8 +38,8 @@ between fatty acid composition and metabolic endpoints in humans over time.
 directly implicating de novo lipogenesis, so the last sentence in the abstract
 about previous research should be removed or substantially modified.
 
-    We thank the reviewer for these comments. The suggestion is convincing, we 
-    have removed the sentence from the abstract.
+    *We thank the reviewer for these comments. The suggestion is convincing, we 
+    have removed the sentence from the abstract.*
 
 3. There are statements in the Discussion that are overly speculative, dated,
 and misleading. At the bottom of page 13 the phrase "may lead to greater DNL in
@@ -47,8 +52,8 @@ the complex effects of improved insulin sensitivity on lipoprotein clearance
 associated with induction of lipoprotein lipase, so this sentence needs to be
 eliminated or modified.
 
-    These concerns and suggestions are appropriately raised. We have rephrased
-    these discussions to be more cautious and less speculative.
+    *These concerns and suggestions are appropriately raised. We have rephrased
+    these discussions to be more cautious and less speculative.*
 
 4. While the discussion emphasizes DNL, it does not allude to how DNL can
 mechanistically lead to the metabolic endpoints used in this study. It would be
@@ -57,7 +62,7 @@ in the promotion of chronic inflammation leading to decreased insulin
 sensitivity and other adverse metabolic events (Wei X et al. Nature 2016;
 539:294-298).
 
-    The discussion on DNL has been clarified in light of the reviewer's comments.
+    *The discussion on DNL has been clarified in light of the reviewer's comments.*
 
 5. On page 9, line 11 from the bottom, the text omits the actual r values for
 the relationships between fatty acids and TG (should be in the 0.8 range for
@@ -65,7 +70,7 @@ many) and waist circumference (should be in the 0.3 range for many). More
 omissions are made on lines 4 and 5 from the bottom when referring to the data
 in Figure 3.
 
-    The r values have been included in the text {{confirm this is appropriate}}.
+    *The r values have been included in the text {{confirm this is appropriate}}.*
 
 # Reviewer 2
 
@@ -77,7 +82,7 @@ previous analysis of NEFA and phospholipids and discuss some of the seemingly
 contradictory findings from the previous studies. If the data were examined,
 would the DNL story 'hold up'?
 
-    We thank the reviewer for these comments. We had many discussions over
+    *We thank the reviewer for these comments. We had many discussions over
     several months deciding how we can publish these results. Given the volume
     of results (figures, tables, numbers) and the complexity of the biology 
     involved in the present analysis, current journal article submissions are
@@ -95,15 +100,15 @@ would the DNL story 'hold up'?
     statistical technique (PLS), but it has a number of major limitations,
     not least of which is it can only handle cross-sectional data and can not
     adjust for potential confounders. The present analysis uses PLS in addition
-    to the powerful longitudinal technique GEE. We have included a short 
-    description expanding on 
+    to the powerful longitudinal technique GEE. {{include a short 
+    description expanding on these results here or in the manuscript?}}*
 
 2.	The discussion of GEE and its limitations is well done. However, it seems
 that the analysis suggests that total triglycerides are predictive of HOMA2-%S
 and the other parameters. Do we need to subfractionate to get insight into risk
 for type 2 diabetes?
 
-    This is excellent question. For a couple of reasons, no we don't need to 
+    *This is excellent question. For a couple of reasons, no we don't need to 
     subfractionate TAG to understand risk. Firstly, we found that the four TGFA
     also highly positively correlated with clinical TAG. Secondly, clinical TAG
     had a much higher magnitude of association compared to any individual
@@ -111,7 +116,7 @@ for type 2 diabetes?
     provide insight into the potential mechanisms that higher TAG influences risk
     for diabetes, which we show could be due to higher amounts of the four TGFA
     and that higher amounts of these four TGFA alone may strongly contribute to
-    the higher clinical TAG.
+    the higher clinical TAG.*
 
 3.	Supplemental figures 2 and 3 are not discussed at all. They appear to be
 interesting and informative in the development of the model. While the process
@@ -119,15 +124,10 @@ is described in the earlier NEFA paper, the authors should help the reader
 understand what information is being provided without having to go back to a
 previous paper.
 
-    We thank the reviewer for this comment. We agree, this information is useful
-    and have added a brief discussion of it to the Methods section.
+    *We thank the reviewer for this comment. We agree, this information is useful
+    and have added a brief discussion of it to the Methods section.*
 
 # Reviewer 3
-
-The major drawback
-of the report is that some of the mechanistic conclusions are a bit overstated.
-Readers would benefit from a more balanced discussion of the study limitations
-and alternative interpretations.
 
 1. The authors noted that cluster of four TGFA that correlated negatively with
 IS (14:0, 16:0, 14:1n-7, 16:1n-7) are products of DNL, and are therefore likely
@@ -138,14 +138,26 @@ hepatic steatosis and/or TGFA clearance by tissues such as muscle and adipose
 tissue. The authors should include a more balanced discussion of potential
 explanations/mechanisms beyond DNL.
 
+    *We thank the reviewer for these comments. We have revised the discussion to 
+    include alternative possibilities.*
+
 2. Are there any additional analyses that can be offered to strengthen evidence
 the TGFA composition is indeed a biomarker of DNL and/or CHO intake is this
 specific cohort? For example, did the PROMISE study include food recall
 records?
 
+    *PROMISE did collect food frequency questionnaires, however this was done at
+    the 3rd year visit while the fatty acids where measured at the baseline visit.
+    So while we could technically use this data to help understand the data,
+    we could also obtain inaccurate or biased results because of the time delay.
+    We therefore decided to not analyze this data. {{run analysis and mention it
+    here}}*
+
 3. Also, the discussion should mention and consider that blood samples were
 acquired after an overnight fast. Does fasting/fed state impact the correlation
 between TGFA composition and DNL?
+
+    *Excellent suggestion. We have included this in the discussion.*
 
 Minor comments.
 
@@ -153,8 +165,14 @@ Minor comments.
 (consistencies/contradictions) those reported in their recent Diabetalogia paper
 (the parallel NEFA analysis).
 
+    *We have included a comment in the discussion on how our current analysis
+    fits with our previous NEFA analysis.*
+
 5. Authors underscore the strength of the statistical modeling used for the
 analysis, including the use DAG modeling to identify potential confounders.
 Readers might benefit from a brief comment on the basic principles and strengths
 of the method.
- 
+
+    *We agree with this suggestion, but initially excluded it from the methods to
+    limit word count. We have included a section in the methods that briefly 
+    explains this method.*
