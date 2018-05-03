@@ -38,7 +38,7 @@ between fatty acid composition and metabolic endpoints in humans over time.
 directly implicating de novo lipogenesis, so the last sentence in the abstract
 about previous research should be removed or substantially modified.
 
-    *We thank the reviewer for these comments. The suggestion is convincing, we 
+    *We thank the reviewer for these comments. We agree with this suggestion and
     have removed the sentence from the abstract.*
 
 3. There are statements in the Discussion that are overly speculative, dated,
@@ -53,7 +53,7 @@ associated with induction of lipoprotein lipase, so this sentence needs to be
 eliminated or modified.
 
     *These concerns and suggestions are appropriately raised. We have rephrased
-    these discussions to be more cautious and less speculative.*
+    these sentences in the Discussion to be more cautious and less speculative.*
 
 4. While the discussion emphasizes DNL, it does not allude to how DNL can
 mechanistically lead to the metabolic endpoints used in this study. It would be
@@ -82,19 +82,18 @@ previous analysis of NEFA and phospholipids and discuss some of the seemingly
 contradictory findings from the previous studies. If the data were examined,
 would the DNL story 'hold up'?
 
-    *We thank the reviewer for these comments. We had many discussions over
-    several months deciding how we can publish these results. Given the volume
-    of results (figures, tables, numbers) and the complexity of the biology 
-    involved in the present analysis, current journal article submissions are
-    not suited for publishing a complete analysis and presentation of all the 
-    results for all the lipid fractions into a single paper. We were not
-    entirely satisfied with splitting the analyses up into multiple papers, 
-    however it was the best course of action that we could see. The complete 
-    and more integrated discussion and presentation of the results can be found
+    *We thank the reviewer for these comments. We agree that ideally the results
+    of all the pools would have been included together, but given the number of
+    fatty acids, the longitudinal visits, the depth and volume of the analyses,
+    and the complex biology involved, it simply wasn't possible to contain
+    everything in a single journal paper. We have included a brief discussion of
+    the results from the other fractions in the Discussion section. The 
+    complete and integrated discussion and presentation of the results is found
     in the first author's (LWJ) PhD thesis {{link}}. As to a combined analysis,
     we have presented these results at the European Diabetes Epidemiology Group
-    Meeting in April, 2018 {{include DOI}}, and the DNL story remains and is in
-    fact a strong contributor to fatty acid and diabetes pathogenesis associations.
+    Meeting in April, 2018 {{include DOI}}, and the proposed DNL mechanism
+    remained clearly associated and was had a strong contribution to association
+    with diabetes pathogenesis compared to other fatty acids/compositions.
     A short aside, these currently unpublished findings do not invalidate or 
     undermine the previous work. The combined analysis uses a powerful
     statistical technique (PLS), but it has a number of major limitations,
@@ -113,7 +112,7 @@ for type 2 diabetes?
     also highly positively correlated with clinical TAG. Secondly, clinical TAG
     had a much higher magnitude of association compared to any individual
     TGFA. Measuring clinical TAG is enough to assess risk. However, our results
-    provide insight into the potential mechanisms that higher TAG influences risk
+    provide insight into the potential mechanisms that regarding how TAG influences risk
     for diabetes, which we show could be due to higher amounts of the four TGFA
     and that higher amounts of these four TGFA alone may strongly contribute to
     the higher clinical TAG.*
@@ -148,10 +147,10 @@ records?
 
     *PROMISE did collect food frequency questionnaires, however this was done at
     the 3rd year visit while the fatty acids where measured at the baseline visit.
-    So while we could technically use this data to help understand the data,
-    we could also obtain inaccurate or biased results because of the time delay.
-    We therefore decided to not analyze this data. {{run analysis and mention it
-    here}}*
+    So while we could technically use these dietary intake data to help understand the fatty acid data,
+    we could also obtain inaccurate or biased results because of the time separation.
+    We therefore decided to not analyze this data. {{maybe run analysis and mention it
+    here?}}*
 
 3. Also, the discussion should mention and consider that blood samples were
 acquired after an overnight fast. Does fasting/fed state impact the correlation
