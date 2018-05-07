@@ -113,7 +113,7 @@ TODO Expand on how DNL could mechanistically influence metabolic endpoints
 TODO Add actual r values on page 9
 TODO Include a short description on the combined analysis (and in context of full composition)
 TODO Add comment to discussion about utility of using total TAG vs species
-TODO Add brief discussion about sup figs 2 and 3, as well as about DAG in general
+DONE Add brief discussion about sup figs 2 and 3, as well as about DAG in general
 TODO Add more discussion to alternatives to then just DNL
 TODO Do sensitivity analyses using carbs in model
     - PLS with CHO as response. GEE with CHO in model

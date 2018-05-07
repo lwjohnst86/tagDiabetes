@@ -53,6 +53,7 @@ Triacylglyceride fatty acids and diabetes pathogenesis
 - ALT: Alanine aminotransferase
 - CV: Coefficient of variation
 - DNL: De novo lipogenesis
+- DAG: Directed acyclic graph
 - GEE: Generalized estimating equations
 - HOMA2-%S: Homeostatic model of assessment 2 - percent sensitivity
 - IGI/IR: Insulinogenic index over homeostatic model of assessment for insulin
@@ -311,13 +312,20 @@ variables and the predictor variables. The predictor variables
 were scaled (mean-centered and standardized). Given the longitudinal 
 design, an auto-regressive of order 1 working correlation matrix was 
 specified in the GEE model. Covariates to adjust for were selected based on the
-previous literature, from directed acyclic graph [@Greenland1999a]
+previous literature, from directed acyclic graph (DAG) [@Greenland1999a]
 recommendations, and from quasi-likelihood information criteria. 
-The DAG structures to understand potential confounding, shown in `r cite_sf("dag_is")`
-and `r cite_sf("dag_bcf")`, were processed by the DAGitty software
-[@Textor2011a;@Shrier2008a] to generate the recommended adjustments.
-The final
-GEE model (M6; seen in `r cite_st('qic')`) was adjusted for years since baseline, WC, baseline age, ethnicity,
+DAGs are used to identify the minimum adjustment necessary for a model by
+using the causal pathways to algorithmically identify potential confounding and
+colliding variables (see the [@Greenland1999a] ref for more detail about using
+DAGs). The DAG structures to understand potential confounding, shown in 
+`r cite_sf("dag_is")` and `r cite_sf("dag_bcf")`, were processed by the DAGitty
+software [@Textor2011a;@Shrier2008a] to generate the recommended adjustments.
+These DAG structures were developed based on hypothesized causal pathways
+between each variable, which were then input into the DAGitty software. The
+output from DAGitty was used to help inform the final model.
+
+The final GEE model (M6; seen in `r cite_st('qic')`) was adjusted for years
+since baseline, WC, baseline age, ethnicity,
 sex, ALT, MET, and total NEFA. The variables TGFA, total NEFA, sex, ethnicity, and
 baseline age were classified as *time-independent* (held constant) as they were
 measured only at the baseline visit or do not change throughout the study, while
