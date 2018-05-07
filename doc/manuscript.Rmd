@@ -96,9 +96,8 @@ measured TG.
 
 **Conclusions**:
 We found that higher proportions of a cluster of four TGFA strongly related with
-lower IS as well as hypertriglyceridemia. Previous research suggests these four
-FA are also strongly influenced by de novo lipogenesis, particularly from
-carbohydrates.
+lower IS as well as hypertriglyceridemia, suggesting only a few fatty acids within
+the TGFA composition may primarily explain lipids' role in glucose dysregulation.
 
 # Keywords
 <!-- up to 10. Five from list, five free-form. Should not appear in title or
