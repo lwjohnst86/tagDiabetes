@@ -477,11 +477,7 @@ associated with beta-cell function, two fatty acids, palmitic acid (16:0) and
 *cis*-vaccenic acid (18:1n-7), were associated negatively and positively,
 respectively, with measures of beta-cell function. Using PLS, we also found that four
 TGFA (14:0, 14:1n-7, 16:0, 16:1n-7) clustered together, and that this cluster
-strongly predicted lower insulin sensitivity. These four fatty acids are
-involved in the *de novo* lipogenesis (DNL) of refined and simple carbohydrates
-[@Hodson2008a; @Kawano2013a]. Our results suggest that higher activity of DNL
-(potentially through higher intakes of simple carbohydrates) may increase the
-risk for T2D, primarily through worsening insulin sensitivity.
+strongly predicted lower insulin sensitivity. 
 
 To our knowledge, no longitudinal study to date has examined the role of the
 composition of the TGFA fraction on detailed OGTT-derived metabolic measures. 
@@ -511,9 +507,10 @@ positive correlation between total esterified (of which TG make up the
 majority) 16:0, 16:1n-7, and 18:1n-9 with HOMA-IR, findings which were largely 
 similar to the present analysis.
 
-Previous research has shown that carbohydrate intake increases DNL 
+There are some possible explanations to these findings.
+Previous research has shown that carbohydrate intake increases de novo lipogenesis (DNL)
 [@Hodson2008a; @Kawano2013a; @Harding2015a; @Hudgins2000a; @Parks1999a]. In
-particular, DNL from refined or simple carbohydrate sources increases the 14 to
+particular, DNL from simple carbohydrate sources increases the 14 to
 16 chain fatty acids as well as the 18 chain TGFA. Several studies have shown a
 link between higher estimated DNL and an increased risk for metabolic 
 dysfunction [@Ma2015a; @Zong2013a; @Lankinen2015a; @Kroger2011a]. Our study 
