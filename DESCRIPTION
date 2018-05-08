@@ -47,13 +47,13 @@ Imports:
     PROMISE.desc,
     PROMISE.misc,
     forcats,
-    patchwork
+    patchwork,
+    Cairo
 Remotes:
     lwjohnst86/fost,
     lwjohnst86/aide,
     lwjohnst86/PROMISE.misc,
     lwjohnst86/PROMISE.desc,
-    bitbucket::PROMISE-cohort/PROMISE
     gitlab::promise-cohort/PROMISE,
     thomasp85/patchwork
 RoxygenNote: 6.0.1
