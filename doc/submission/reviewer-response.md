@@ -93,7 +93,7 @@ would the DNL story 'hold up'?
     in the first author's (LWJ) PhD thesis {{link}}. As to a combined analysis,
     we have presented these results at the European Diabetes Epidemiology Group
     Meeting in April, 2018 {{include DOI}}, and the proposed DNL mechanism
-    remained clearly associated and was had a strong contribution to association
+    remained clearly associated and had a strong contribution to association
     with diabetes pathogenesis compared to other fatty acids/compositions.
     A short aside, these currently unpublished findings do not invalidate or 
     undermine the previous work. The combined analysis uses a powerful
@@ -113,7 +113,7 @@ for type 2 diabetes?
     also highly positively correlated with clinical TAG. Secondly, clinical TAG
     had a much higher magnitude of association compared to any individual
     TGFA. Measuring clinical TAG is enough to assess risk. However, our results
-    provide insight into the potential mechanisms that regarding how TAG influences risk
+    provide insight into the potential mechanisms regarding how TAG influences risk
     for diabetes, which we show could be due to higher amounts of the four TGFA
     and that higher amounts of these four TGFA alone may strongly contribute to
     the higher clinical TAG.*
