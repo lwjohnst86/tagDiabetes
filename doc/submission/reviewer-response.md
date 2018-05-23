@@ -90,18 +90,17 @@ would the DNL story 'hold up'?
     everything in a single journal paper. We have included a brief discussion of
     the results from the other fractions in the Discussion section. The 
     complete and integrated discussion and presentation of the results is found
-    in the first author's (LWJ) PhD thesis {{link}}. As to a combined analysis,
+    in the first author's (LWJ) PhD thesis (http://hdl.handle.net/1807/80893). As to a combined analysis,
     we have presented these results at the European Diabetes Epidemiology Group
-    Meeting in April, 2018 {{include DOI}}, and the proposed DNL mechanism
-    remained clearly associated and had a strong contribution to association
+    Meeting in April, 2018 (https://doi.org/10.6084/m9.figshare.6159293), and the proposed DNL mechanism
+    remained clearly associated and had a strong contribution to associations
     with diabetes pathogenesis compared to other fatty acids/compositions.
     A short aside, these currently unpublished findings do not invalidate or 
-    undermine the previous work. The combined analysis uses a powerful
+    undermine the previous work and the current manuscript. The combined analysis uses a powerful
     statistical technique (PLS), but it has a number of major limitations,
     not least of which is it can only handle cross-sectional data and can not
-    adjust for potential confounders. The present analysis uses PLS in addition
-    to the powerful longitudinal technique GEE. {{include a short 
-    description expanding on these results here or in the manuscript?}}*
+    adjust for potential confounders. The present analysis in this manuscript uses PLS in addition
+    to the powerful longitudinal technique GEE.*
 
 2.	The discussion of GEE and its limitations is well done. However, it seems
 that the analysis suggests that total triglycerides are predictive of HOMA2-%S
