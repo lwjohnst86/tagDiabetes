@@ -614,11 +614,14 @@ PROMISE participants came for their clinic visits in the morning in a fasted
 state. Some of the inherent variability in TGFA fluctuation can be managed by
 standardizing the data collection time, though there may still be some
 {{residual error? random error?}}.
-[@Rhee2011a] fasting TG status better as discriminating between DM case vs
-control than 2hr-OGTT TG
 -->
 
-TGFA were only quantified at the baseline visit and as such we cannot
+Only fasting TGFA were quantified, and only at the baseline visit. TGFA 
+composition can fluctuate substantially throughout the day, so in order to 
+control for this, PROMISE participants came for the clinic visit in the morning
+and fasted. There is some evidence to suggest that fasting TG is better able
+to discriminate diabetes cases compared to a post-prandial state [@Rhee2011a].
+Because TGFA were only measured at the baseline visit, we cannot
 investigate whether there are concomitant changes in TGFA and the metabolic
 measures over time. However, to optimally use GEE to analyze the data and for
 interpretation, we used the model to infer that a given value of TGFA could

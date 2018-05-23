@@ -149,15 +149,18 @@ records?
     *PROMISE did collect food frequency questionnaires, however this was done at
     the 3rd year visit while the fatty acids where measured at the baseline visit.
     So while we could technically use these dietary intake data to help understand the fatty acid data,
-    we could also obtain inaccurate or biased results because of the time separation.
-    We therefore decided to not analyze this data. {{maybe run analysis and mention it
-    here?}}*
+    we would likely obtain inaccurate or biased results because of the time separation.
+    We therefore decided to not analyze this data.*
 
 3. Also, the discussion should mention and consider that blood samples were
 acquired after an overnight fast. Does fasting/fed state impact the correlation
 between TGFA composition and DNL?
 
-    *Excellent suggestion. We have included this in the discussion.*
+    *Excellent question. In the fed state, DNL would increase due to conversion
+    of excess carbohydrates to fatty acids. This in turn would impact the composition
+    of primarily the TGFA. In order to control for this source of variability
+    in our cohort we only measured TGFA during fasting. We have included a brief
+    description of this fed vs fasted state in the limitations section.*
 
 Minor comments.
 

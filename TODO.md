@@ -118,7 +118,7 @@ DONE Add brief discussion about sup figs 2 and 3, as well as about DAG in genera
 TODO Add more discussion to alternatives to then just DNL
 TODO Do sensitivity analyses using carbs in model
     - PLS with CHO as response. GEE with CHO in model
-TODO In discussion, include fasting vs fed with TGFA and DNL
+DONE In discussion, include limitation/strength of fasting vs fed with TGFA 
 DONE Include a brief explanation of DAG in methods
 TODO Include a discussion combining NEFA results with the TGFA results
 
