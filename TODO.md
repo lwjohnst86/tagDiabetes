@@ -116,7 +116,8 @@ DONE May need to add a comment to discussion about utility of using total TAG vs
     - Not sure this is necessary and not even sure where to put this in the discussion
 DONE Add brief discussion about sup figs 2 and 3, as well as about DAG in general
 TODO Add more discussion to alternatives to then just DNL
-TODO Do sensitivity analyses using carbs in model
+DONE Do sensitivity analyses using carbs in model
+    - No, won't do this. Not necessary and probably not a good idea anyway.
     - PLS with CHO as response. GEE with CHO in model
 DONE In discussion, include limitation/strength of fasting vs fed with TGFA 
 DONE Include a brief explanation of DAG in methods
