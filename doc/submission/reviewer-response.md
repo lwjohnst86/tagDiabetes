@@ -70,7 +70,8 @@ many) and waist circumference (should be in the 0.3 range for many). More
 omissions are made on lines 4 and 5 from the bottom when referring to the data
 in Figure 3.
 
-    *The r values have been included in the text {{confirm this is appropriate}}.*
+    *We thank the reviewer for noticing that omission. The r values have been
+    included in the text.*
 
 # Reviewer 2
 
