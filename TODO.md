@@ -112,6 +112,7 @@ TODO Temper discussion about DNL and related hypotheses.
 TODO Expand on how DNL could mechanistically influence metabolic endpoints
 DONE Add actual r values on page 9
 TODO Include a short description on the combined analysis (and in context of full composition)
+    - Only discuss in the responses, not manuscript.
 DONE May need to add a comment to discussion about utility of using total TAG vs species
     - Not sure this is necessary and not even sure where to put this in the discussion
 DONE Add brief discussion about sup figs 2 and 3, as well as about DAG in general
