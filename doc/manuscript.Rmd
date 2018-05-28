@@ -564,23 +564,26 @@ confirm this, the lack of a time interaction we observed in addition to the
 timing of our measures likely suggests that it is the TGFA predicting insulin
 resistance.
 
+Given the close biological relationship between circulating NEFA and TAG, NEFA 
+may act as confounding factor and was thus adjusted for. In a previous published
+analysis of the NEFA fraction [@Johnston2017b], we found that higher total NEFA,
+but not the specific composition, associated with lower beta-cell function. This
+is in contrast to the TGFA findings that the specific composition does
+differentially associate with insulin sensitivity and beta-cell function,
+adjusting for total NEFA. There was no difference in results in models that did
+not include NEFA as a confounder (data not shown). This difference in results
+between NEFA and TGFA suggests that TGFA may independently and strongly influence the 
+pathophysiology of T2D, when compared to other lipid fraction compositions,
+including the phospholipid and cholesteryl ester fractions [@Johnston2016a]. This
+may be because TAG are biologically destined for uptake by non-hepatic tissue as
+they are found mainly in VLDL, at least during fasting. This is in contrast to
+NEFA that are mostly uptaken by the liver and used in TAG production [@Nielsen2012a].
+
 <!--
-{{ Not sure about this... Include this? }}
-As with our previous analysis of the PL fatty acid fraction {{cite}}, we found
-that cis-vaccenic acid strongly predicted higher insulin sensitivity and
-beta-cell function. Likewise, in the TGFA fraction we found a similar
-association with cis-vaccenic acid. {{we can discuss to include more}}
-
-{{ comment on comparing models with and without NEFA }} While
-NEFA may be a mediating factor, we found that adjustment for it did not
-{{confirm}} attenuate this association since TGFA composition is also dictated
-by other sources for DNL (e.g. recent meal, DNL from glucose stores, etc.).
-
-While the NEFA fraction is much smaller than the TG fraction, even though it
-contributes substantially to the TG fraction, the VLDL-TG is not cleared
-(lipolyzed) as much as chylomicron (which also contains a large amount of TG)
-and so has a higher half-life than NEFA, remaining in circulation longer {{hence
-why there is bigger TG pool vs NEFA}} {{cite?}}. 
+{{ comment on comparing models with and without NEFA }} While NEFA may be a
+mediating factor, we found that adjustment for it did not attenuate this
+association since TGFA composition is also dictated by other sources for DNL
+(e.g. recent meal, DNL from glucose stores, fatty acid recycling, etc.).
 
 - contributions to DNL (e.g. 70% 16:0 to newly synth) {{ confirm what this is }}
 
@@ -596,8 +599,6 @@ not present results on whole fraction for IR)
 - Or that post-prandial TG is not suppressed in IR Sondergaard2012a
 - {{ confirm }} greater flux of saturated fatty acids into tissues may encourage
 lipotoxic environment {{ cite }}
-
-{{ Concentration data is not }}
 
 -->
 

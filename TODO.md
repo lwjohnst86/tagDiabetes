@@ -122,7 +122,7 @@ DONE Do sensitivity analyses using carbs in model
     - PLS with CHO as response. GEE with CHO in model
 DONE In discussion, include limitation/strength of fasting vs fed with TGFA 
 DONE Include a brief explanation of DAG in methods
-TODO Include a discussion combining NEFA results with the TGFA results
+DONE Include a discussion combining NEFA results with the TGFA results
 
 TODO Resubmit to journal
 >>> v0.1.1
