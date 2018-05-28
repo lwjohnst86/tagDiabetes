@@ -108,7 +108,7 @@ TODO Reviewer responses and edits
 TODO Include discussion of Yki-Jarvinen more recent paper on SC-SFA and NAFLD/NASH
 DONE Remove sentence about DNL from abstract
 TODO Temper discussion about DNL and related hypotheses.
-    Page 13, 14. Look into Wei X et al. Nature 2016;539:294-298
+    - Page 13, 14. Look into Wei X et al. Nature 2016;539:294-298
 TODO Expand on how DNL could mechanistically influence metabolic endpoints
 DONE Add actual r values on page 9
 DONE Include a short description on the combined analysis (and in context of full composition)
