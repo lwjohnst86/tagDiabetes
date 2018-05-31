@@ -507,24 +507,30 @@ positive correlation between total esterified (of which TG make up the
 majority) 16:0, 16:1n-7, and 18:1n-9 with HOMA-IR, findings which were largely 
 similar to the present analysis.
 
-There are some possible explanations to these findings.
+There are a few possible explanations to these findings.
 
 {{
-There are two sources for endogenous fatty acids: diet and de novo lipogenesis 
-(DNL). Given that most fatty acids can come from either source, it is difficult
-to 
+Endogenous fatty acids derive from two sources: diet and de novo lipogenesis 
+(DNL). While adipose tissue also supplies circulating fatty acids, the stored
+fatty acids ultimately originate from these two sources.
 
+Since the majority of fatty acids can be obtained from either source, the specific
+composition 
 
+- composition is important
+- where it comes from is difficult
+- diet can influence, just as DNL can
+- diet can also influence DNL
+    - more carbs, more DNL
+    - more fat, less DNL
+- More specific fat in diet, more specific fat in body (generally)
+- More carbs, more DNL fat
+- Dietary fat contains wide range of fat types, translates to wide range of fats
+
+irrespective of the source, individual fatty acids can have unique physiological 
+effects. For instance, 14 to 18 chain
 
 }}
-
-Previous research has shown that carbohydrate intake increases de novo lipogenesis (DNL)
-[@Hodson2008a; @Kawano2013a; @Harding2015a; @Hudgins2000a; @Parks1999a]. 
-Several studies have shown a
-link between higher estimated DNL and an increased risk for metabolic 
-dysfunction [@Ma2015a; @Zong2013a; @Lankinen2015a; @Kroger2011a]; however, how
-DNL may influence metabolic dysfunction is not well described. One possible explanation
-may be the relationship between greater DNL and the types of fatty acids produced.
 
 The link between higher DNL and increases in specific fatty acids has been
 examined in several studies. Previous studies that have examined DNL have used
@@ -541,12 +547,23 @@ another small (n=14) feeding trial, meal type (high fat vs low fat) was tested
 to determine its effect on DNL and TGFA composition [@Wilke2009a]. The authors
 reported that 14:0, 16:0, 16:1, and 18:2 were higher in the low fat (high
 carbohydrate) group. These fatty acids are similar to the fatty acids we found
-that clustered together using the PLS analysis, implicating these fatty acids as
-indicative of a higher carbohydrate diet. A higher carbohydrate diet, 
-particularly one characterized by a predominance of simple carbohydrates, may
-lead to greater DNL in an attempt to control blood glucose, thus increasing hepatic
+that clustered together using the PLS analysis, suggesting a link to
+a higher carbohydrate diet, 
+
+which may increase de novo lipogenesis (DNL)
+[@Hodson2008a; @Kawano2013a; @Harding2015a; @Hudgins2000a; @Parks1999a] as one
+means of lowering blood glucose,
+[@Chehade2013a; @Verges2015a] 
+
+lead to higher DNL in an attempt to control blood glucose, thus increasing hepatic
 fat stores and consequently increasing the amount of TGFA in circulation
-[@Chehade2013a; @Verges2015a]. We found that
+Several studies have shown a
+link between higher estimated DNL and an increased risk for metabolic 
+dysfunction [@Ma2015a; @Zong2013a; @Lankinen2015a; @Kroger2011a]; however, how
+DNL may influence metabolic dysfunction is not well described. One possible explanation
+may be the relationship between greater DNL and the types of fatty acids produced.
+
+We found that
 higher proportions of these four DNL TGFA also highly correlated with a higher
 concentration of clinical TG, reinforcing this pathway between carbohydrate
 intake, DNL, and circulating TG. The higher concentration of circulating 14 and
@@ -554,18 +571,12 @@ intake, DNL, and circulating TG. The higher concentration of circulating 14 and
 instance from palmitic acid (16:0), which is well-known to have harmful effects
 on tissues [@Riserus2008a; @Iggman2010a].
 
-Our study 
-extends these findings by showing that TGFA with 14 to 16 carbons clustered
-together and this pattern strongly predicted lower insulin sensitivity. While
-these fatty acids also had a significant association with beta-cell function,
-the magnitude of associations were more modest compared to those for insulin
-sensitivity. 
-
 The direction of association between TGFA and insulin sensitivity is unclear 
 from previous cross-sectional studies due to the physiological feedback mechanisms 
 involved. For example, while greater DNL may promote muscle insulin resistance, 
 the reverse may also be true [@Flannery2012a]. Higher insulin resistance may
-encourage greater DNL to handle the higher blood glucose. {{higher insulin
+encourage greater DNL to handle the higher blood glucose. 
+{{higher insulin
 resistance may also lead to higher circulating LDL, since they are not taken
 up... cite}}
 As we found no interaction by time of TGFA on insulin sensitivity, this study
@@ -577,6 +588,13 @@ six year period. Given the complex biological mechanisms and feedback loops
 involved, disentangling whether insulin sensitivity influences TGFA more
 strongly than TGFA influencing insulin sensitivity will require more
 complex research designs and analyses. 
+
+Our study 
+extends these findings by showing that TGFA with 14 to 16 carbons clustered
+together and this pattern strongly predicted lower insulin sensitivity. While
+these fatty acids also had a significant association with beta-cell function,
+the magnitude of associations were more modest compared to those for insulin
+sensitivity. 
 
 Given the close biological relationship between circulating NEFA and TG, NEFA 
 may act as confounding factor and was thus adjusted for. In a previous published
