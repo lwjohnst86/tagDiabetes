@@ -507,30 +507,21 @@ positive correlation between total esterified (of which TG make up the
 majority) 16:0, 16:1n-7, and 18:1n-9 with HOMA-IR, findings which were largely 
 similar to the present analysis.
 
-There are a few possible explanations to these findings.
-
-{{
-Endogenous fatty acids derive from two sources: diet and de novo lipogenesis 
-(DNL). While adipose tissue also supplies circulating fatty acids, the stored
-fatty acids ultimately originate from these two sources.
-
-Since the majority of fatty acids can be obtained from either source, the specific
-composition 
-
-- composition is important
-- where it comes from is difficult
-- diet can influence, just as DNL can
-- diet can also influence DNL
-    - more carbs, more DNL
-    - more fat, less DNL
-- More specific fat in diet, more specific fat in body (generally)
-- More carbs, more DNL fat
-- Dietary fat contains wide range of fat types, translates to wide range of fats
-
-irrespective of the source, individual fatty acids can have unique physiological 
-effects. For instance, 14 to 18 chain
-
-}}
+There are a few possible explanations to these findings. The composition of the
+TGFA fraction is determined by the two sources of dietary fat and de novo
+lipogenesis (DNL). And while adipose tissue also supplies circulating fatty
+acids, the stored fatty acids ultimately originate from these two sources.
+Specific dietary fat as well as carbohydrates can influence DNL activity
+{{cite}}. Since the majority of fatty acids can be obtained from either source,
+the specific source for fatty acids is extremely difficult to ascertain outside
+of highly controlled experimental settings. 
+In our findings, the four fatty acids are also highly correlated amongst each other, in addition to
+clustering together on their negative association with insulin sensitivity. These
+findings suggest that these fatty acids may derived mainly from DNL, given the
+evidence that they share a tight DNL pathway. While it may be possible that
+these fatty acids also share a common dietary source (e.g. red meat) {{cite}},
+dietary sources of these four fatty acids are also high in fatty acids such as
+18:0 and 18:1 n-9, which we did not see cluster together.
 
 The link between higher DNL and increases in specific fatty acids has been
 examined in several studies. Previous studies that have examined DNL have used
@@ -546,30 +537,40 @@ DNL using isotopes, and liver fat were all highly correlated with each other
 another small (n=14) feeding trial, meal type (high fat vs low fat) was tested
 to determine its effect on DNL and TGFA composition [@Wilke2009a]. The authors
 reported that 14:0, 16:0, 16:1, and 18:2 were higher in the low fat (high
-carbohydrate) group. These fatty acids are similar to the fatty acids we found
-that clustered together using the PLS analysis, suggesting a link to
-a higher carbohydrate diet, 
+carbohydrate) group. {{talk about Yki-.. study}}. These fatty acids are similar
+to the fatty acids we found that clustered together using the PLS analysis.
 
-which may increase de novo lipogenesis (DNL)
-[@Hodson2008a; @Kawano2013a; @Harding2015a; @Hudgins2000a; @Parks1999a] as one
-means of lowering blood glucose,
-[@Chehade2013a; @Verges2015a] 
+We found that higher proportions of these four DNL TGFA also highly correlated
+with a higher concentration of clinical TG, highlighting a potential relationship
+between these four fatty acids, circulating TG, and the 
 
-lead to higher DNL in an attempt to control blood glucose, thus increasing hepatic
-fat stores and consequently increasing the amount of TGFA in circulation
-Several studies have shown a
-link between higher estimated DNL and an increased risk for metabolic 
-dysfunction [@Ma2015a; @Zong2013a; @Lankinen2015a; @Kroger2011a]; however, how
-DNL may influence metabolic dysfunction is not well described. One possible explanation
-may be the relationship between greater DNL and the types of fatty acids produced.
+A higher activity in DNL may be a means to control blood glucose with higher
+dietary carbohydrate intake [@Hodson2008a; @Kawano2013a; @Harding2015a;
+@Hudgins2000a; @Parks1999a; @Chehade2013a; @Verges2015a], which could increase
+hepatic fat stores and increase the amount of TG in circulation. Several studies
+have in fact shown a link between higher estimated DNL and an increased risk for
+metabolic dysfunction [@Ma2015a; @Zong2013a; @Lankinen2015a; @Kroger2011a];
+however, how DNL may influence metabolic dysfunction is not well described. One
+possible explanation may be the relationship between greater DNL and the types
+of fatty acids produced.
 
-We found that
-higher proportions of these four DNL TGFA also highly correlated with a higher
-concentration of clinical TG, reinforcing this pathway between carbohydrate
-intake, DNL, and circulating TG. The higher concentration of circulating 14 and
-16 carbon fatty acids may then expose tissues to greater lipotoxicity, for
-instance from palmitic acid (16:0), which is well-known to have harmful effects
-on tissues [@Riserus2008a; @Iggman2010a].
+Regardless of the exact source of these fatty acids, our results in addition to
+the available scientific evidence emphasizes the importance of the fatty acid
+composition on metabolic health, as individual fatty acids can have unique
+physiological functions {{cite}}.
+
+The higher concentration of
+circulating 14 and 16 carbon fatty acids may then expose tissues to greater
+lipotoxicity, for instance from palmitic acid (16:0), which is well-known to
+have harmful effects on tissues [@Riserus2008a; @Iggman2010a].
+
+Our study 
+extends these findings by showing that TGFA with 14 to 16 carbons clustered
+together and this pattern strongly predicted lower insulin sensitivity. While
+these fatty acids also had a significant association with beta-cell function,
+the magnitude of associations were more modest compared to those for insulin
+sensitivity. 
+
 
 The direction of association between TGFA and insulin sensitivity is unclear 
 from previous cross-sectional studies due to the physiological feedback mechanisms 
@@ -589,15 +590,9 @@ involved, disentangling whether insulin sensitivity influences TGFA more
 strongly than TGFA influencing insulin sensitivity will require more
 complex research designs and analyses. 
 
-Our study 
-extends these findings by showing that TGFA with 14 to 16 carbons clustered
-together and this pattern strongly predicted lower insulin sensitivity. While
-these fatty acids also had a significant association with beta-cell function,
-the magnitude of associations were more modest compared to those for insulin
-sensitivity. 
 
 Given the close biological relationship between circulating NEFA and TG, NEFA 
-may act as confounding factor and was thus adjusted for. In a previous published
+may act as confounding factor and was thus adjusted for. In our published
 analysis of the NEFA fraction [@Johnston2017b], we found that higher total NEFA,
 but not the specific composition, associated with lower beta-cell function. This
 is in contrast to the TGFA findings that the specific composition does
@@ -612,11 +607,6 @@ they are found mainly in VLDL, at least during fasting. This is in contrast to
 NEFA that are mostly uptaken by the liver and used in TG production [@Nielsen2012a].
 
 <!--
-{{ comment on comparing models with and without NEFA }} While NEFA may be a
-mediating factor, we found that adjustment for it did not attenuate this
-association since TGFA composition is also dictated by other sources for DNL
-(e.g. recent meal, DNL from glucose stores, fatty acid recycling, etc.).
-
 - contributions to DNL (e.g. 70% 16:0 to newly synth) {{ confirm what this is }}
 
 - Zulyniak2012a (only vaccenic acid in TG) (n=20, TLC-GC, HOMA-IR/HOMA-B,
