@@ -636,14 +636,15 @@ of which were collected at each visit.
 
 ## Conclusion
 
-In conclusion, we found that a TGFA composition indicative of higher DNL
-(containing higher 14:0, 14:1n-7, 16:0, and 16:1n-7) associated strongly with lower
-insulin sensitivity and (more moderately) with lower beta-cell function. The fatty
-acids that clustered together represent fatty acids created from DNL, which is
-characteristic of higher simple carbohydrate (e.g. added sugar) intake. Our
-results, which are congruent with current evidence, suggest that higher DNL,
-likely due to greater intake of simple or refined carbohydrates, may increase the
-risk of T2D through worsening of insulin sensitivity.
+In conclusion, we found that a TGFA composition containing higher proportions of
+14:0, 14:1n-7, 16:0, and 16:1n-7 associated strongly with lower insulin
+sensitivity and (more moderately) with lower beta-cell function. We also found
+that most other TGFA (e.g. 20:0, most omega 6 and 9 TGFA, and 20:5n-3)
+associated positively with insulin sensitivity. Only a few TGFA associated
+positively and consistently with beta-cell function (e.g. 18:1n-7, 20:2n-6). 
+These results provide more insight into how individual TGFA contribute to the
+pathogenesis of T2D while reinforcing the importance and value of clinically
+measured total TG as a indicator of metabolic health.
 
 # Acknowledgements/grant support
 
