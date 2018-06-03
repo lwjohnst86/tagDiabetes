@@ -595,38 +595,12 @@ may be because TG are biologically destined for uptake by non-hepatic tissue as
 they are found mainly in VLDL, at least during fasting. This is in contrast to
 NEFA that are mostly uptaken by the liver and used in TG production [@Nielsen2012a].
 
-<!--
-- contributions to DNL (e.g. 70% 16:0 to newly synth) {{ confirm what this is }}
-
-- Zulyniak2012a (only vaccenic acid in TG) (n=20, TLC-GC, HOMA-IR/HOMA-B,
-two groups: normogly and hypergly. results in general showed no diff between
-groups, only cis-vaccenic was higher in hyper, 'trend' with palmitic, did
-not present results on whole fraction for IR)
-    
-{{ comment on unadjusted vs adjusted }}
-
-- Potential clinical application
-
-- Or that post-prandial TG is not suppressed in IR Sondergaard2012a
-- {{ confirm }} greater flux of saturated fatty acids into tissues may encourage
-lipotoxic environment {{ cite }}
-
--->
-
 Our study has potential limitations that need to be considered when interpreting
 the results. Firstly, this is an observational cohort and as such there may be
 some residual confounding we were not able to control for or were unaware of. 
 However, we have taken extensive, empirically based precautions in identifying
 potential confounders and mediators through the use of the DAG modeling, relying
 on previous literature, and through information criteria model fit comparison methods.
-
-<!--
-TGFA can fluctuate substantially throughout the day and to control for this all
-PROMISE participants came for their clinic visits in the morning in a fasted
-state. Some of the inherent variability in TGFA fluctuation can be managed by
-standardizing the data collection time, though there may still be some
-{{residual error? random error?}}.
--->
 
 Only fasting TGFA were quantified, and only at the baseline visit. TGFA 
 composition can fluctuate substantially throughout the day, so in order to 
