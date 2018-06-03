@@ -107,16 +107,16 @@ DONE Submitted to journal
 TODO Reviewer responses and edits
 TODO Include discussion of Yki-Jarvinen more recent paper on SC-SFA and NAFLD/NASH
 DONE Remove sentence about DNL from abstract
-TODO Temper discussion about DNL and related hypotheses.
+DONE Temper discussion about DNL and related hypotheses.
     - Page 13, 14. Look into Wei X et al. Nature 2016;539:294-298
-TODO Expand on how DNL could mechanistically influence metabolic endpoints
+DONE Expand on how DNL could mechanistically influence metabolic endpoints
 DONE Add actual r values on page 9
 DONE Include a short description on the combined analysis (and in context of full composition)
     - Only discuss in the responses, not manuscript.
 DONE May need to add a comment to discussion about utility of using total TAG vs species
     - Not sure this is necessary and not even sure where to put this in the discussion
 DONE Add brief discussion about sup figs 2 and 3, as well as about DAG in general
-TODO Add more discussion to alternatives to then just DNL
+DONE Add more discussion to alternatives to then just DNL
 DONE Do sensitivity analyses using carbs in model
     - No, won't do this. Not necessary and probably not a good idea anyway.
     - PLS with CHO as response. GEE with CHO in model
