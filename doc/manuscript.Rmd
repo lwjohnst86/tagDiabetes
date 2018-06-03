@@ -345,8 +345,8 @@ and beta-cell function as outcome variables.
 Briefly, PLS is a technique that extracts latent
 structures (clusters) underlying a set of predictor variables conditional on a
 response variable(s) (i.e. the outcome variables). How accurately the clusters
-within the TGFA composition predict metabolic function is determined by using
-cross-validation on the PLS models.
+within the TGFA composition predict metabolic function is determined
+by using cross-validation on the PLS models.
 
 A more detailed explanation of these statistical techniques and on the analysis
 process can be found in the supplemental methods for our paper in the NEFA
@@ -472,9 +472,9 @@ several specific TGFA and groups of TGFA were strongly associated
 with insulin sensitivity and moderately associated with beta-cell function. In 
 particular, the TGFA myristic acid (14:0), 7-tetradecenoic acid 
 (14:1n-7), palmitic acid (16:0), and palmitoleic acid (16:1n-7) all strongly and
-negatively predicted lower insulin sensitivity. While most TGFA were not
-associated with beta-cell function, two fatty acids, palmitic acid (16:0) and
-*cis*-vaccenic acid (18:1n-7), were associated negatively and positively,
+negatively associated with lower insulin sensitivity. While most TGFA were not
+associated with beta-cell function, three fatty acids, palmitic acid (16:0),
+*cis*-vaccenic acid (18:1n-7), and eicosadienoic acid (20:2n-6) were associated negatively and positively,
 respectively, with measures of beta-cell function. Using PLS, we also found that four
 TGFA (14:0, 14:1n-7, 16:0, 16:1n-7) clustered together, and that this cluster
 strongly predicted lower insulin sensitivity. 
@@ -507,75 +507,67 @@ positive correlation between total esterified (of which TG make up the
 majority) 16:0, 16:1n-7, and 18:1n-9 with HOMA-IR, findings which were largely 
 similar to the present analysis.
 
-There are a few possible explanations to these findings. Fatty acids, and thus
-the TGFA composition, derive from two sources: dietary fat and de novo
-lipogenesis (DNL). Adipose tissue also supplies circulating fatty acids,
-however, these also ultimately originate from the two sources. Specific dietary
-fat and carbohydrates can influence DNL activity {{cite}}. Determining the
-specific source of fatty acids is extremely difficult to ascertain outside of
-highly controlled experimental settings. However, there are sign that suggest
-one source over another. 
-
-The link DNL activity and levels of specific fatty acids has been examined in
-several studies. Previous studies that have examined DNL have used
-markers of estimated DNL, such as the ratio between 18:2n-6 to 16:0 or 16:1n-7
-to 16:0 [@Hodson2008a; @Lankinen2015a; @Kroger2011a]. However, there are 
+There are a few possible explanations to these findings. Circulating 
+TGFA derive from three sources: adipose lyposis, dietary fat, and de novo
+lipogenesis (DNL). Dietary carbohydrates and fat can influence DNL activity
+[@Aarsland1998a;@Harding2015a;@Luukkonen2018a]. Determining the specific source
+of TGFA is extremely difficult to ascertain outside of highly controlled
+experimental settings. Many previous studies that have examined DNL
+have used markers of estimated DNL, such as the ratio between 18:2n-6 to 16:0 or
+16:1n-7 to 16:0 [@Hodson2008a; @Lankinen2015a; @Kroger2011a]. However, there are
 limitations to using these ratios as the fatty acids used in their calculation
 can also be obtained from the diet in addition to being created through DNL
-[@Hodson2008a]. A feeding trial (n=24) was conducted to identify 
-the fatty acids that most accurately reflected DNL as potential biomarkers
-[@Lee2015a]. The study found that palmitoleic acid (16:1n-7), directly measured
-DNL using isotopes, and liver fat were all highly correlated with each other
-(r>0.50), suggesting that 16:1n-7 may be a good biomarker for hepatic DNL. In
-another small (n=14) feeding trial, meal type (high fat vs low fat) was tested
-to determine its effect on DNL and TGFA composition [@Wilke2009a]. The authors
+[@Hodson2008a]. An experimental feeding trial (n=24) was conducted to identify the fatty acids
+that most accurately reflected DNL as potential biomarkers [@Lee2015a]. The
+study found that palmitoleic acid (16:1n-7), directly measured DNL using
+isotopes, and liver fat were all highly correlated with each other (r>0.50),
+suggesting that 16:1n-7 may be a good biomarker for hepatic DNL. In another
+small (n=14) feeding trial, meal type (high fat vs low fat) was tested to
+determine its effect on DNL and TGFA composition [@Wilke2009a]. The authors
 reported that 14:0, 16:0, 16:1, and 18:2 were higher in the low fat (high
-carbohydrate) group. {{talk about Yki-.. study}}.  In our findings, the four
-fatty acids were highly correlated amongst each other, in addition to clustering
-together on their negative association with insulin sensitivity. If these fatty
-acids derived from mainly the diet, we would anticipate seeing more correlation
-with the 18:0, 18:1, and 18:2 fatty acids, as these fatty acids often share a
-dietary source (e.g. meat) {{cite?}} with the four clustering fatty acids. As our
-results do not show this, this suggests the common source being DNL and that the
-fatty acids may have been produced from higher DNL activity since, again, there
-was no strong correlation with 18:0 and 18:1 fatty acids, which would be the
-next stage DNL via elongation and/or desaturation of 16:0 and 16:1 fatty acids.
+carbohydrate) group. In another recent overfeeding trial, 1000 kcal of saturated
+fat, unsaturated fat, or carbohydrates over 3 weeks was given to 38 overweight
+individuals [@Luukkonen2018a] to test changes in liver fat and hepatic DNL. At the
+end of the study, the carbohydrate group had higher DNL as well as an increase
+in liver fat, though the saturated fat group had the highest increase in liver
+fat. 
 
-A higher DNL activity may result from a higher carbohydrate intake as a means to
-control blood glucose [@Hodson2008a; @Kawano2013a; @Harding2015a; @Hudgins2000a;
-@Parks1999a; @Chehade2013a; @Verges2015a], which could increase hepatic fat
-stores and increase the amount of TG in circulation. In fact, we found that
-higher proportions of these four TGFA also highly correlated with a higher
-concentration of clinical TG. Several studies have shown a link between higher
-estimated DNL and an increased risk for metabolic dysfunction [@Ma2015a;
-@Zong2013a; @Lankinen2015a; @Kroger2011a]; how DNL may influence metabolic
-dysfunction is not well understood. Possible explanations may be that higher DNL
-produces more of certain fatty acids or that higher DNL increases circulating TG,
-which itself is well documented to contribute to metabolic dysfunction {{cite?}}.
+This link between carbohydrate intake and DNL activity has been well documented
+[@Hodson2008a; @Kawano2013a; @Harding2015a; @Hudgins2000a; @Parks1999a; @Chehade2013a; @Verges2015a].
+In our findings, the four fatty acids were highly positively correlated
+amongst each other and negatively or neutrally with all other TGFA, in addition to
+clustering together on their negative association with insulin sensitivity. This
+may suggest that greater DNL activity may be the source of these TGFA. Several
+studies have shown a link between higher estimated DNL and an increased risk for
+metabolic dysfunction [@Ma2015a; @Zong2013a; @Lankinen2015a; @Kroger2011a]; how
+DNL may influence metabolic dysfunction is not well understood. Possible
+reasons may be that higher DNL produces more of certain fatty acids or that
+higher DNL increases circulating TG, which itself is well documented to
+contribute to metabolic dysfunction and which we found in our study of a high
+positive correlation between the four TGFA and clinical TG.
 
 Regardless of the exact source of these fatty acids, our results in addition to
 the available scientific evidence emphasizes the importance of the fatty acid
 composition on metabolic health, as individual fatty acids can have specific
-physiological functions {{cite}}. For instance, a higher concentration of
+physiological functions. For instance, a higher concentration of
 circulating 14 and 16 carbon fatty acids may expose tissues to greater
 lipotoxicity, for instance from palmitic acid (16:0), which is well-known to
 have harmful effects on tissues [@Riserus2008a; @Iggman2010a]. Our study extends
 these findings by showing that TGFA with 14 to 16 carbons clustered together and
-this pattern strongly predicted lower insulin sensitivity. While these fatty
+this pattern strongly associated with lower insulin sensitivity. While these fatty
 acids also had a significant association with beta-cell function, the magnitude
 of associations were more modest compared to those for insulin sensitivity.
 
 The direction of association between TGFA and insulin sensitivity is unclear
 from previous cross-sectional studies due to the physiological feedback
-mechanisms involved. For example, while greater DNL and higher TGFA may promote
-muscle insulin resistance, the reverse may also be true [@Flannery2012a]. Higher
-insulin resistance may encourage TGFA to remain in circulation longer {{cite?}}.
+mechanisms involved. For example, while higher TGFA may promote
+muscle insulin resistance, the reverse may also be true [@Flannery2012a].
 As we found no interaction by time of TGFA on insulin sensitivity, this study
 cannot determine the exact role of the feedback mechanism. However, combining the
 with the lack of time interaction and the consistent negative association
 without the time interaction, these results at least suggest that the feedback
 mechanism may not be strongly influential and that TGFA may predict insulin
-sensitivity over a six year period. Given the complex biological mechanisms and
+sensitivity at least over a six year period. Given the complex biological mechanisms and
 feedback loops involved, disentangling whether insulin sensitivity influences
 TGFA more strongly than TGFA influencing insulin sensitivity will require more
 complex research designs and analyses.
@@ -601,7 +593,6 @@ some residual confounding we were not able to control for or were unaware of.
 However, we have taken extensive, empirically based precautions in identifying
 potential confounders and mediators through the use of the DAG modeling, relying
 on previous literature, and through information criteria model fit comparison methods.
-
 Only fasting TGFA were quantified, and only at the baseline visit. TGFA 
 composition can fluctuate substantially throughout the day, so in order to 
 control for this, PROMISE participants came for the clinic visit in the morning
