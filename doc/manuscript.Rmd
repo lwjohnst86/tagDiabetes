@@ -15,20 +15,20 @@ Clusters of fatty acids in the serum triacylglyceride fraction associate with th
 disorders of type 2 diabetes
 
 Authors: Luke W. Johnston, PhD (1); Zhen Liu, PhD (1); Ravi Retnakaran, MD
-(3,4); Bernard Zinman, MD (3,4); Adria Giacca, PhD (5); Stewart B. Harris, MD (2); 
-Richard P. Bazinet, PhD (1); and Anthony J. Hanley, PhD (1,3,6)
+(2,3); Bernard Zinman, MD (2,3); Adria Giacca, PhD (4); Stewart B. Harris, MD (5);
+Richard P. Bazinet, PhD (1); and Anthony J. Hanley, PhD (1,2,6)
 
 Institutions:
 
 (1) Department of Nutritional Sciences, University of Toronto, Toronto, Ontario,
 Canada.
-(2) Centre for Studies in Family Medicine, University of Western Ontario,
-London, Ontario, Canada.
-(3) Leadership Sinai Centre for Diabetes, Division of Endocrinology, University
+(2) Leadership Sinai Centre for Diabetes, Division of Endocrinology, University
 of Toronto, Toronto, ON, Canada.
-(4) Lunenfeld Tanenbaum Research Institute, Mount Sinai Hospital, Toronto,
+(3) Lunenfeld Tanenbaum Research Institute, Mount Sinai Hospital, Toronto,
 Ontario, Canada.
-(5) Department of Physiology, University of Toronto, Toronto, Ontario, Canada.
+(4) Department of Physiology, University of Toronto, Toronto, Ontario, Canada.
+(5) Centre for Studies in Family Medicine, University of Western Ontario,
+London, Ontario, Canada.
 (6) Dalla Lana School of Public Health, University of Toronto, Toronto, Ontario,
 Canada.
 
@@ -42,7 +42,6 @@ Corresponding author contact information:
     FitzGerald Building, 150 College Street, Room 341  
     Toronto, ON, Canada, M5S 3E2
 - Phone number: 416.978.3616
-- Fax number:
 - Email: anthony.hanley@utoronto.ca
 
 Running title (54 / 60 characters):
@@ -90,7 +89,7 @@ adjusted generalized estimating equations (GEE) models and partial least squares
 In adjusted GEE models, four TGFA (14:0, 16:0, 14:1n-7, 16:1n-7 as mol%) had
 strong negative associations with IS while others (e.g. 18:1n-7, 18:1n-9,
 20:2n-6, 20:5n-3) had strong positive associations. Few associations were seen
-for beta-cell function, except for 16:0 and 18:1n-7. PLS analysis indicated four
+for beta-cell function, except for 16:0, 18:1n-7, and 20:2n-6. PLS analysis indicated four
 TGFA (14:0, 16:0, 14:1n-7, 16:1n-7) that clustered together and strongly related
 with lower IS. These four TGFA also correlated highly (r>0.4) with clinically
 measured TG.
@@ -99,10 +98,6 @@ measured TG.
 We found that higher proportions of a cluster of four TGFA strongly related with
 lower IS as well as hypertriglyceridemia, suggesting only a few fatty acids within
 the TGFA composition may primarily explain lipids' role in glucose dysregulation.
-
-# Keywords
-<!-- up to 10. Five from list, five free-form. Should not appear in title or
-running title -->
 
 # Introduction
 
