@@ -244,7 +244,7 @@ plot_gee_main <- function(results) {
             ylab = 'Triacylglycerol fatty acids'
             ) +
         graph_theme(ticks = FALSE) +
-        ggplot2::facet_grid(unit~Yterms, switch = 'y',
+        ggplot2::facet_grid(cols = vars(unit), rows = vars(Yterms), switch = 'y',
                             scales = 'free_y',
                             space = 'free_y')
 }
