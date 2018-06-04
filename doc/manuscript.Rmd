@@ -316,7 +316,7 @@ previous literature, from directed acyclic graph (DAG) [@Greenland1999a]
 recommendations, and from quasi-likelihood information criteria. 
 DAGs are used to identify the minimum adjustment necessary for a model by
 using the causal pathways to algorithmically identify potential confounding and
-colliding variables (see the [@Greenland1999a] ref for more detail about using
+colliding variables (see [@Greenland1999a] for more detail about using
 DAGs). The DAG structures to understand potential confounding, shown in 
 `r cite_sf("dag_is")` and `r cite_sf("dag_bcf")`, were processed by the DAGitty
 software [@Textor2011a;@Shrier2008a] to generate the recommended adjustments.
@@ -507,7 +507,7 @@ positive correlation between total esterified (of which TG make up the
 majority) 16:0, 16:1n-7, and 18:1n-9 with HOMA-IR, findings which were largely 
 similar to the present analysis.
 
-There are a few possible explanations to these findings. Circulating 
+There are a few possible explanations for these findings. Circulating 
 TGFA derive from three sources: adipose lyposis, dietary fat, and de novo
 lipogenesis (DNL). Dietary carbohydrates and fat can influence DNL activity
 [@Aarsland1998a;@Harding2015a;@Luukkonen2018a]. Determining the specific source
@@ -546,8 +546,8 @@ higher DNL increases circulating TG, which itself is well documented to
 contribute to metabolic dysfunction and which we found in our study of a high
 positive correlation between the four TGFA and clinical TG.
 
-Regardless of the exact source of these fatty acids, our results in addition to
-the available scientific evidence emphasizes the importance of the fatty acid
+Regardless of the exact source of these fatty acids, our results, in addition to
+the available scientific evidence, emphasize the importance of the fatty acid
 composition on metabolic health, as individual fatty acids can have specific
 physiological functions. For instance, a higher concentration of
 circulating 14 and 16 carbon fatty acids may expose tissues to greater
@@ -585,7 +585,7 @@ pathophysiology of T2D, when compared to other lipid fraction compositions,
 including the phospholipid and cholesteryl ester fractions [@Johnston2016a]. This
 may be because TG are biologically destined for uptake by non-hepatic tissue as
 they are found mainly in VLDL, at least during fasting. This is in contrast to
-NEFA that are mostly uptaken by the liver and used in TG production [@Nielsen2012a].
+NEFA that are mostly taken up by the liver and used in TG production [@Nielsen2012a].
 
 Our study has potential limitations that need to be considered when interpreting
 the results. Firstly, this is an observational cohort and as such there may be
@@ -635,7 +635,7 @@ associated positively with insulin sensitivity. Only a few TGFA associated
 positively and consistently with beta-cell function (e.g. 18:1n-7, 20:2n-6). 
 These results provide more insight into how individual TGFA contribute to the
 pathogenesis of T2D while reinforcing the importance and value of clinically
-measured total TG as a indicator of metabolic health.
+measured total TG as an indicator of metabolic health.
 
 # Acknowledgements/grant support
 
