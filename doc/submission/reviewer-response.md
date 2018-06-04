@@ -10,13 +10,15 @@ and abstract for you to consider. Please wait to hear from them before
 submitting your revised manuscript. 
 -->
 
-# Dear Dr. 
+Dear Dr. Ginsberg,
 
 We'd like to thank the editors and the reviewers for their thorough and
 insightful review of our manuscript. We have been able to make the vast majority
 of the suggested revisions, which we feel has improved the manuscript considerably.
 Below we present a point-by-point response to each of the editors' and reviewers' 
 comments.
+
+# Editor comment
 
 - All three reviewers agreed that the paper had the strength of longitudinal
 followup and would be of interest to readers of the JLR but they also noted
@@ -31,8 +33,8 @@ at those papers and add them to the discussion. I look forward to a modified
 version.
 
     *Thank you for this suggestion. We have made additions to the manuscript based on the editor's and reviewers'
-    suggestions, including the discussion around short chain SFA and NAFLD by
-    Yki-Jarvinen. We believe this has strengthened the paper and hope it
+    suggestions, including the discussion around SFA and NAFLD by
+    Yki-Jarvinen and colleagues. We believe this has strengthened the paper and hope it
     satisfactorily addresses the editor and reviewers comments.*
 
 # Reviewer 1
