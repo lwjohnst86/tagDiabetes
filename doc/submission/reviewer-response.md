@@ -10,7 +10,13 @@ and abstract for you to consider. Please wait to hear from them before
 submitting your revised manuscript. 
 -->
 
-# Editor 
+# Dear Dr. 
+
+We'd like to thank the editors and the reviewers for their thorough and
+insightful review of our manuscript. We have been able to make the vast majority
+of the suggested revisions, which we feel has improved the manuscript considerably.
+Below we present a point-by-point response to each of the editors' and reviewers' 
+comments.
 
 - All three reviewers agreed that the paper had the strength of longitudinal
 followup and would be of interest to readers of the JLR but they also noted
@@ -24,7 +30,7 @@ shorter chain saturated fatty acids in the liver to NAFLD/NASH. You should look
 at those papers and add them to the discussion. I look forward to a modified
 version.
 
-    *We have made additions to the manuscript based on the editor's and reviewers'
+    *Thank you for this suggestion. We have made additions to the manuscript based on the editor's and reviewers'
     suggestions, including the discussion around short chain SFA and NAFLD by
     Yki-Jarvinen. We believe this has strengthened the paper and hope it
     satisfactorily addresses the editor and reviewers comments.*
@@ -84,10 +90,10 @@ contradictory findings from the previous studies. If the data were examined,
 would the DNL story 'hold up'?
 
     *We thank the reviewer for these comments. We agree that ideally the results
-    of all the pools would have been included together, but given the number of
+    of all the fatty acid fractions would have been included together, but given the number of
     fatty acids, the longitudinal visits, the depth and volume of the analyses,
     and the complex biology involved, it simply wasn't possible to contain
-    everything in a single journal paper. We have included a brief discussion of
+    everything in a single journal paper given word count and table/figure limitations. We have included a brief discussion of
     the results from the other fractions in the Discussion section. The 
     complete and integrated discussion and presentation of the results is found
     in the first author's (LWJ) PhD thesis (http://hdl.handle.net/1807/80893). As to a combined analysis,
@@ -149,7 +155,7 @@ records?
     the 3rd year visit while the fatty acids where measured at the baseline visit.
     So while we could technically use these dietary intake data to help understand the fatty acid data,
     we would likely obtain inaccurate or biased results because of the time separation.
-    We therefore decided to not analyze this data.*
+    We therefore decided to not analyze these data.*
 
 3. Also, the discussion should mention and consider that blood samples were
 acquired after an overnight fast. Does fasting/fed state impact the correlation
