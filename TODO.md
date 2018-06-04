@@ -104,8 +104,8 @@ DONE Upload code to figshare (or Zenodo) + github
 DONE Submitted to journal
 >>> v0.1.0
 
-TODO Reviewer responses and edits
-TODO Include discussion of Yki-Jarvinen more recent paper on SC-SFA and NAFLD/NASH
+DONE Reviewer responses and edits
+DONE Include discussion of Yki-Jarvinen more recent paper on SC-SFA and NAFLD/NASH
 DONE Remove sentence about DNL from abstract
 DONE Temper discussion about DNL and related hypotheses.
     - Page 13, 14. Look into Wei X et al. Nature 2016;539:294-298
@@ -125,4 +125,9 @@ DONE Include a brief explanation of DAG in methods
 DONE Include a discussion combining NEFA results with the TGFA results
 
 TODO Resubmit to journal
+TODO Update bioRxiv version
 >>> v0.1.1
+
+TODO Add link to bioRxiv once accepted and published
+    - See http://www.jlr.org/site/misc/policy/edpolicy.xhtml#Copyright
+
