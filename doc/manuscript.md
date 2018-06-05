@@ -15,20 +15,20 @@ Clusters of fatty acids in the serum triacylglyceride fraction associate with th
 disorders of type 2 diabetes
 
 Authors: Luke W. Johnston, PhD (1); Zhen Liu, PhD (1); Ravi Retnakaran, MD
-(3,4); Bernard Zinman, MD (3,4); Adria Giacca, PhD (5); Stewart B. Harris, MD (2); 
-Richard P. Bazinet, PhD (1); and Anthony J. Hanley, PhD (1,3,6)
+(2,3); Bernard Zinman, MD (2,3); Adria Giacca, PhD (4); Stewart B. Harris, MD (5);
+Richard P. Bazinet, PhD (1); and Anthony J. Hanley, PhD (1,2,6)
 
 Institutions:
 
 (1) Department of Nutritional Sciences, University of Toronto, Toronto, Ontario,
 Canada.
-(2) Centre for Studies in Family Medicine, University of Western Ontario,
-London, Ontario, Canada.
-(3) Leadership Sinai Centre for Diabetes, Division of Endocrinology, University
+(2) Leadership Sinai Centre for Diabetes, Division of Endocrinology, University
 of Toronto, Toronto, ON, Canada.
-(4) Lunenfeld Tanenbaum Research Institute, Mount Sinai Hospital, Toronto,
+(3) Lunenfeld Tanenbaum Research Institute, Mount Sinai Hospital, Toronto,
 Ontario, Canada.
-(5) Department of Physiology, University of Toronto, Toronto, Ontario, Canada.
+(4) Department of Physiology, University of Toronto, Toronto, Ontario, Canada.
+(5) Centre for Studies in Family Medicine, University of Western Ontario,
+London, Ontario, Canada.
 (6) Dalla Lana School of Public Health, University of Toronto, Toronto, Ontario,
 Canada.
 
@@ -42,7 +42,6 @@ Corresponding author contact information:
     FitzGerald Building, 150 College Street, Room 341  
     Toronto, ON, Canada, M5S 3E2
 - Phone number: 416.978.3616
-- Fax number:
 - Email: anthony.hanley@utoronto.ca
 
 Running title (54 / 60 characters):
@@ -53,6 +52,7 @@ Triacylglyceride fatty acids and diabetes pathogenesis
 - ALT: Alanine aminotransferase
 - CV: Coefficient of variation
 - DNL: De novo lipogenesis
+- DAG: Directed acyclic graph
 - GEE: Generalized estimating equations
 - HOMA2-%S: Homeostatic model of assessment 2 - percent sensitivity
 - IGI/IR: Insulinogenic index over homeostatic model of assessment for insulin
@@ -72,8 +72,6 @@ resistance
 
 # Abstract
 
-Word count: 200 / 200
-
 **Aims:**
 Our aim was to examine longitudinal associations of triacylglyceride fatty acid
 (TGFA) composition with insulin sensitivity (IS) and beta-cell function.
@@ -91,20 +89,15 @@ adjusted generalized estimating equations (GEE) models and partial least squares
 In adjusted GEE models, four TGFA (14:0, 16:0, 14:1n-7, 16:1n-7 as mol%) had
 strong negative associations with IS while others (e.g. 18:1n-7, 18:1n-9,
 20:2n-6, 20:5n-3) had strong positive associations. Few associations were seen
-for beta-cell function, except for 16:0 and 18:1n-7. PLS analysis indicated four
+for beta-cell function, except for 16:0, 18:1n-7, and 20:2n-6. PLS analysis indicated four
 TGFA (14:0, 16:0, 14:1n-7, 16:1n-7) that clustered together and strongly related
 with lower IS. These four TGFA also correlated highly (r>0.4) with clinically
 measured TG.
 
 **Conclusions**:
 We found that higher proportions of a cluster of four TGFA strongly related with
-lower IS as well as hypertriglyceridemia. Previous research suggests these four
-FA are also strongly influenced by de novo lipogenesis, particularly from
-carbohydrates.
-
-# Keywords
-<!-- up to 10. Five from list, five free-form. Should not appear in title or
-running title -->
+lower IS as well as hypertriglyceridemia, suggesting only a few fatty acids within
+the TGFA composition may primarily explain lipids' role in glucose dysregulation.
 
 # Introduction
 
@@ -207,7 +200,7 @@ concentrations (nmol/ml) were calculated by proportional comparison of gas
 chromatography peak areas to that of the internal standards [@Nishi2014a]. There
 were 22 fatty acids measured in the TGFA fraction. 
 Findings for other lipid fractions in this cohort are reported separately (see
-ref [@Johnston2016a] for the phospholipid and cholesteryl ester fraction and
+[@Johnston2016a] for the phospholipid and cholesteryl ester fraction and
 [@Johnston2017b] for the NEFA fraction analysis).
 
 ## Anthropometrics and sociodemographics
@@ -253,13 +246,20 @@ variables and the predictor variables. The predictor variables
 were scaled (mean-centered and standardized). Given the longitudinal 
 design, an auto-regressive of order 1 working correlation matrix was 
 specified in the GEE model. Covariates to adjust for were selected based on the
-previous literature, from directed acyclic graph [@Greenland1999a]
+previous literature, from directed acyclic graph (DAG) [@Greenland1999a]
 recommendations, and from quasi-likelihood information criteria. 
-The DAG structures to understand potential confounding, shown in Supplemental Figure S  2
-and Supplemental Figure S  3, were processed by the DAGitty software
-[@Textor2011a;@Shrier2008a] to generate the recommended adjustments.
-The final
-GEE model (M6; seen in Supplemental Table S  1) was adjusted for years since baseline, WC, baseline age, ethnicity,
+DAGs are used to identify the minimum adjustment necessary for a model by
+using the causal pathways to algorithmically identify potential confounding and
+colliding variables (see [@Greenland1999a] for more detail about using
+DAGs). The DAG structures to understand potential confounding, shown in 
+Supplemental Figure S  2 and Supplemental Figure S  3, were processed by the DAGitty
+software [@Textor2011a;@Shrier2008a] to generate the recommended adjustments.
+These DAG structures were developed based on hypothesized causal pathways
+between each variable, which were then input into the DAGitty software. The
+output from DAGitty was used, in conjunction with the other methods, to help inform the final model.
+
+The final GEE model (M6; seen in Supplemental Table S  1) was adjusted for years
+since baseline, WC, baseline age, ethnicity,
 sex, ALT, MET, and total NEFA. The variables TGFA, total NEFA, sex, ethnicity, and
 baseline age were classified as *time-independent* (held constant) as they were
 measured only at the baseline visit or do not change throughout the study, while
@@ -279,13 +279,13 @@ and beta-cell function as outcome variables.
 Briefly, PLS is a technique that extracts latent
 structures (clusters) underlying a set of predictor variables conditional on a
 response variable(s) (i.e. the outcome variables). How accurately the clusters
-within the TGFA composition predict metabolic function is determined by using
-cross-validation on the PLS models.
+within the TGFA composition predict metabolic function is determined
+by using cross-validation on the PLS models.
 
 A more detailed explanation of these statistical techniques and on the analysis
 process can be found in the supplemental methods for our paper in the NEFA
 fraction [@Johnston2017b].
-All analyses were performed using R 3.4.3 [@Rbase], along with the R
+All analyses were performed using R 3.4.4 [@Rbase], along with the R
 packages geepack 1.2.1 for GEE [@Hoejsgaard2006a] and pls
 2.6.0 for PLS. The R code and extra analyses for
 this manuscript is available at https://doi.org/10.6084/m9.figshare.5143438. Results were considered
@@ -315,8 +315,8 @@ TG concentration: 18:1 n-9 (37.8%); 16:0 (26.6%); and, 18:2 n-6 (18.0%).
 Figure  2 shows a heatmap of the correlation of individual TGFA as
 concentrations with the outcome variables and several basic characteristics.
 As expected, nearly all TGFA had very strong positive correlations (r=
-) with clinically-measured TG and moderate positive 
-correlations with WC (r=). There were also moderate
+0.34 to 0.92) with clinically-measured TG and moderate positive 
+correlations with WC (r=0.31 to 0.36). There were also moderate
 negative correlations with HDL (r=-0.53 to -0.31). For the outcome variables,
 the correlations for the insulin sensitivity measures were generally higher 
 (HOMA2-%S: r=-0.47 to -0.32, ISI: r=-0.47 to -0.31) than 
@@ -324,8 +324,8 @@ for the beta-cell function measures (all r<0.30). For correlations
 of individual TGFA using mol% with the basic participant characteristics, as shown in 
 Figure  3, differences in correlations between fatty acids were
 most evident for 14:0, 14:1n-7, 16:0, and 16:1n-7 that had a moderate positive
-correlation with clinical TG (r=) while all other fatty
-acids had a negative association (r=). In particular,
+correlation with clinical TG (r=0.42 to 0.52) while all other fatty
+acids had a negative association (r=-0.5 to -0.34). In particular,
 those fatty acids with the negative associations with clinical TG were all the
 very long chain polyunsaturated fatty acids (e.g. 20:4n-6, 20:5n-3).
 As seen in Figure  4, four fatty acids (14:0,
@@ -406,16 +406,12 @@ several specific TGFA and groups of TGFA were strongly associated
 with insulin sensitivity and moderately associated with beta-cell function. In 
 particular, the TGFA myristic acid (14:0), 7-tetradecenoic acid 
 (14:1n-7), palmitic acid (16:0), and palmitoleic acid (16:1n-7) all strongly and
-negatively predicted lower insulin sensitivity. While most TGFA were not
-associated with beta-cell function, two fatty acids, palmitic acid (16:0) and
-*cis*-vaccenic acid (18:1n-7), were associated negatively and positively,
+negatively associated with lower insulin sensitivity. While most TGFA were not
+associated with beta-cell function, three fatty acids, palmitic acid (16:0),
+*cis*-vaccenic acid (18:1n-7), and eicosadienoic acid (20:2n-6) were associated negatively and positively,
 respectively, with measures of beta-cell function. Using PLS, we also found that four
 TGFA (14:0, 14:1n-7, 16:0, 16:1n-7) clustered together, and that this cluster
-strongly predicted lower insulin sensitivity. These four fatty acids are
-involved in the *de novo* lipogenesis (DNL) of refined and simple carbohydrates
-[@Hodson2008a; @Kawano2013a]. Our results suggest that higher activity of DNL
-(potentially through higher intakes of simple carbohydrates) may increase the
-risk for T2D, primarily through worsening insulin sensitivity.
+strongly predicted lower insulin sensitivity. 
 
 To our knowledge, no longitudinal study to date has examined the role of the
 composition of the TGFA fraction on detailed OGTT-derived metabolic measures. 
@@ -445,98 +441,84 @@ positive correlation between total esterified (of which TG make up the
 majority) 16:0, 16:1n-7, and 18:1n-9 with HOMA-IR, findings which were largely 
 similar to the present analysis.
 
-Previous research has shown that carbohydrate intake increases DNL 
-[@Hodson2008a; @Kawano2013a; @Harding2015a; @Hudgins2000a; @Parks1999a]. In
-particular, DNL from refined or simple carbohydrate sources increases the 14 to
-16 chain fatty acids as well as the 18 chain TGFA. Several studies have shown a
-link between higher estimated DNL and an increased risk for metabolic 
-dysfunction [@Ma2015a; @Zong2013a; @Lankinen2015a; @Kroger2011a]. Our study 
-extends these findings by showing that TGFA with 14 to 16 carbons clustered
-together and this pattern strongly predicted lower insulin sensitivity. While
-these fatty acids also had a significant association with beta-cell function,
-the magnitude of associations were more modest compared to those for insulin
-sensitivity. 
-
-The link between higher DNL and increases in specific fatty acids has been
-examined in several studies. Previous studies that have examined DNL have used
-markers of estimated DNL, such as the ratio between 18:2n-6 to 16:0 or 16:1n-7
-to 16:0 [@Hodson2008a; @Lankinen2015a; @Kroger2011a]. However, there are 
+There are a few possible explanations for these findings. Circulating 
+TGFA derive from three sources: adipose lipolysis, dietary fat, and de novo
+lipogenesis (DNL). Dietary carbohydrates and fat can influence DNL activity
+[@Aarsland1998a;@Harding2015a;@Luukkonen2018a]. Determining the specific source
+of TGFA is extremely difficult to ascertain outside of highly controlled
+experimental settings. Many previous studies that have examined DNL as the source
+have used markers of estimated DNL, such as the ratio between 18:2n-6 to 16:0 or
+16:1n-7 to 16:0 [@Hodson2008a; @Lankinen2015a; @Kroger2011a]. However, there are
 limitations to using these ratios as the fatty acids used in their calculation
 can also be obtained from the diet in addition to being created through DNL
-[@Hodson2008a]. A feeding trial (n=24) was conducted to identify 
-the fatty acids that most accurately reflected DNL as potential biomarkers
-[@Lee2015a]. The study found that palmitoleic acid (16:1n-7), directly measured
-DNL using isotopes, and liver fat were all highly correlated with each other
-(r>0.50), suggesting that 16:1n-7 may be a good biomarker for hepatic DNL. In
-another small (n=14) feeding trial, meal type (high fat vs low fat) was tested
-to determine its effect on DNL and TGFA composition [@Wilke2009a]. The authors
+[@Hodson2008a]. An experimental feeding trial (n=24) was conducted to identify the fatty acids
+that most accurately reflected DNL as potential biomarkers [@Lee2015a]. The
+study found that palmitoleic acid (16:1n-7), directly measured DNL using
+isotopes, and liver fat were all highly correlated with each other (r>0.50),
+suggesting that 16:1n-7 may be a good biomarker for hepatic DNL. In another
+small (n=14) feeding trial, meal type (high fat vs low fat) was tested to
+determine its effect on DNL and TGFA composition [@Wilke2009a]. The authors
 reported that 14:0, 16:0, 16:1, and 18:2 were higher in the low fat (high
-carbohydrate) group. These fatty acids are similar to the fatty acids we found
-that clustered together using the PLS analysis, implicating these fatty acids as
-indicative of a higher carbohydrate diet. A higher carbohydrate diet, 
-particularly one characterized by a predominance of simple carbohydrates, may
-lead to greater DNL in an attempt to control blood glucose, thus increasing hepatic
-fat stores and consequently increasing the amount of TGFA in circulation
-[@Chehade2013a; @Verges2015a]. In fact, we found in our study that
-higher proportions of these four DNL TGFA also highly correlated with a higher
-concentration of clinical TG, reinforcing this pathway between carbohydrate
-intake, DNL, and circulating TG. The higher concentration of circulating 14 and
-16 carbon fatty acids may then expose tissues to greater lipotoxicity, for
-instance from palmitic acid (16:0), which is well-known to have harmful effects
-on tissues [@Riserus2008a; @Iggman2010a].
+carbohydrate) group. In another recent overfeeding trial, 1000 kcal of saturated
+fat, unsaturated fat, or carbohydrates over 3 weeks was given to 38 overweight
+individuals [@Luukkonen2018a] to test changes in liver fat and hepatic DNL. At the
+end of the study, the carbohydrate group had higher DNL activity as well as an increase
+in liver fat, though the saturated fat group had the highest increase in liver
+fat. This link between carbohydrate intake and DNL activity has been well documented
+[@Hodson2008a; @Kawano2013a; @Harding2015a; @Hudgins2000a; @Parks1999a; @Chehade2013a; @Verges2015a].
 
-The direction of association between TGFA and insulin sensitivity is unclear 
-from previous cross-sectional studies due to the physiological feedback mechanisms 
-involved. For example, while greater DNL may promote muscle insulin resistance, 
-the reverse may also be true [@Flannery2012a]. Higher insulin resistance may
-encourage greater DNL to handle the higher blood glucose. To illustrate this, in
-a weight loss intervention trial (n=19 with TGFA data), participants who lost
-weight over 33 weeks showed higher insulin sensitivity and lower TGFA
-composition indicative of lower DNL (less 14:0, 14:1, 16:0, 16:1, etc)
-[@Schwab2008a]. Given the complex biological mechanisms and feedback loops
-involved, disentangling whether insulin sensitivity influences TGFA more
-strongly than TGFA influencing insulin sensitivity will require more
-complicated research designs and analyses. While further research will need to
-confirm this, the lack of a time interaction we observed in addition to the
-timing of our measures likely suggests that it is the TGFA predicting insulin
-resistance.
+In our findings, the four fatty acids were highly positively correlated
+amongst each other and negatively or neutrally with all other TGFA, in addition to
+clustering together on their negative association with insulin sensitivity. This
+may suggest that greater DNL activity is the source of these TGFA. Several
+studies have shown a link between higher estimated DNL activity and an increased risk for
+metabolic dysfunction [@Ma2015a; @Zong2013a; @Lankinen2015a; @Kroger2011a]. How
+DNL may influence metabolic dysfunction is not well understood. Possible
+reasons may be that higher DNL produces more of certain fatty acids or that
+higher DNL increases circulating TG, which itself is well documented to
+contribute to metabolic dysfunction and which we found in our study as a high
+positive correlation between the four TGFA and clinical TG.
 
-<!--
-{{ Not sure about this... Include this? }}
-As with our previous analysis of the PL fatty acid fraction {{cite}}, we found
-that cis-vaccenic acid strongly predicted higher insulin sensitivity and
-beta-cell function. Likewise, in the TGFA fraction we found a similar
-association with cis-vaccenic acid. {{we can discuss to include more}}
+Regardless of the exact source of these fatty acids, our results, in addition to
+the available scientific evidence, emphasize the importance of the fatty acid
+composition on metabolic health, as individual fatty acids can have specific
+physiological functions. For instance, a higher concentration of
+circulating 14 and 16 carbon fatty acids may expose tissues to greater
+lipotoxicity, for instance from palmitic acid (16:0), which is well-known to
+have harmful effects on tissues [@Riserus2008a; @Iggman2010a]. Our study extends
+these findings by showing that TGFA with 14 to 16 carbons clustered together and
+this pattern strongly associated with lower insulin sensitivity. While some of these fatty
+acids also had a significant association with beta-cell function, the magnitude
+of associations were more modest compared to those for insulin sensitivity.
 
-{{ comment on comparing models with and without NEFA }} While
-NEFA may be a mediating factor, we found that adjustment for it did not
-{{confirm}} attenuate this association since TGFA composition is also dictated
-by other sources for DNL (e.g. recent meal, DNL from glucose stores, etc.).
+The direction of association between TGFA and insulin sensitivity is unclear
+from previous cross-sectional studies due to the physiological feedback
+mechanisms involved. For example, while higher TGFA may promote
+muscle insulin resistance, the reverse may also be true [@Flannery2012a].
+As we found no interaction by time of TGFA on insulin sensitivity, this study
+cannot determine the exact role of the feedback mechanism. However, combining
+the lack of a time interaction and the consistent negative association
+in models without the time interaction, these results at least suggest that the feedback
+mechanism may not be strongly influential and that TGFA may predict insulin
+sensitivity at least over a six year period. Given the complex biological mechanisms and
+feedback loops involved, disentangling whether insulin sensitivity influences
+TGFA more strongly than TGFA influencing insulin sensitivity will require more
+complex research designs and analyses.
 
-While the NEFA fraction is much smaller than the TG fraction, even though it
-contributes substantially to the TG fraction, the VLDL-TG is not cleared
-(lipolyzed) as much as chylomicron (which also contains a large amount of TG)
-and so has a higher half-life than NEFA, remaining in circulation longer {{hence
-why there is bigger TG pool vs NEFA}} {{cite?}}. 
-
-- contributions to DNL (e.g. 70% 16:0 to newly synth) {{ confirm what this is }}
-
-- Zulyniak2012a (only vaccenic acid in TG) (n=20, TLC-GC, HOMA-IR/HOMA-B,
-two groups: normogly and hypergly. results in general showed no diff between
-groups, only cis-vaccenic was higher in hyper, 'trend' with palmitic, did
-not present results on whole fraction for IR)
-    
-{{ comment on unadjusted vs adjusted }}
-
-- Potential clinical application
-
-- Or that post-prandial TG is not suppressed in IR Sondergaard2012a
-- {{ confirm }} greater flux of saturated fatty acids into tissues may encourage
-lipotoxic environment {{ cite }}
-
-{{ Concentration data is not }}
-
--->
+Given the close biological relationship between circulating NEFA and TG, NEFA 
+may act as a confounding factor and was thus adjusted for. In our published
+analysis of the NEFA fraction [@Johnston2017b], we found that higher total NEFA,
+but not the specific composition, associated with lower beta-cell function. This
+is in contrast to the TGFA findings that the specific composition does
+differentially associate with insulin sensitivity and beta-cell function,
+adjusting for total NEFA. There was no difference in results in models that did
+not include NEFA as a confounder (data not shown). This difference in results
+between NEFA and TGFA suggests that TGFA may independently and strongly influence the 
+pathophysiology of T2D, when compared to other lipid fraction compositions,
+including the phospholipid and cholesteryl ester fractions [@Johnston2016a]. This
+may be due to TG being biologically destined for uptake by non-hepatic tissue as
+they are found mainly in VLDL, at least during fasting. This is in contrast to
+NEFA that are mostly taken up by the liver and used in TG production [@Nielsen2012a].
 
 Our study has potential limitations that need to be considered when interpreting
 the results. Firstly, this is an observational cohort and as such there may be
@@ -544,18 +526,12 @@ some residual confounding we were not able to control for or were unaware of.
 However, we have taken extensive, empirically based precautions in identifying
 potential confounders and mediators through the use of the DAG modeling, relying
 on previous literature, and through information criteria model fit comparison methods.
-
-<!--
-TGFA can fluctuate substantially throughout the day and to control for this all
-PROMISE participants came for their clinic visits in the morning in a fasted
-state. Some of the inherent variability in TGFA fluctuation can be managed by
-standardizing the data collection time, though there may still be some
-{{residual error? random error?}}.
-[@Rhee2011a] fasting TG status better as discriminating between DM case vs
-control than 2hr-OGTT TG
--->
-
-TGFA were only quantified at the baseline visit and as such we cannot
+Only fasting TGFA were quantified, and only at the baseline visit. TGFA 
+composition can fluctuate substantially throughout the day, so in order to 
+control for this, PROMISE participants came for the clinic visit in the morning
+and fasted. There is some evidence to suggest that fasting TG is better able
+to discriminate diabetes cases compared to a post-prandial state [@Rhee2011a].
+Because TGFA were only measured at the baseline visit, we cannot
 investigate whether there are concomitant changes in TGFA and the metabolic
 measures over time. However, to optimally use GEE to analyze the data and for
 interpretation, we used the model to infer that a given value of TGFA could
@@ -584,14 +560,15 @@ of which were collected at each visit.
 
 ## Conclusion
 
-In conclusion, we found that a TGFA composition indicative of higher DNL
-(containing higher 14:0, 14:1n-7, 16:0, and 16:1n-7) associated strongly with lower
-insulin sensitivity and (more moderately) with lower beta-cell function. The fatty
-acids that clustered together represent fatty acids created from DNL, which is
-characteristic of higher simple carbohydrate (e.g. added sugar) intake. Our
-results, which are congruent with current evidence, suggest that higher DNL,
-likely due to greater intake of simple or refined carbohydrates, may increase the
-risk of T2D through worsening of insulin sensitivity.
+In conclusion, we found that a TGFA composition containing higher proportions of
+14:0, 14:1n-7, 16:0, and 16:1n-7 associated strongly with lower insulin
+sensitivity and (more moderately) with lower beta-cell function. We also found
+that most other TGFA (e.g. 20:0, most omega 6 and 9 TGFA, and 20:5n-3)
+associated positively with insulin sensitivity. Only a few TGFA associated
+positively and consistently with beta-cell function (e.g. 18:1n-7, 20:2n-6). 
+These results provide more insight into how individual TGFA contribute to the
+pathogenesis of T2D while reinforcing the importance and value of clinically
+measured total TG as an indicator of metabolic health.
 
 # Acknowledgements/grant support
 
@@ -657,6 +634,7 @@ for final content. All authors read and approved the final manuscript.
 | - Male         |      128 (27%)      |                     |                     |
 
 Table: Table  1: Basic characteristics of PROMISE participants at each of the 3 clinic visits.
+Note: Tables values as either median (interquartile range), mean (SD), or n (percent).
 
 # Figures
 
