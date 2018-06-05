@@ -124,8 +124,8 @@ DONE In discussion, include limitation/strength of fasting vs fed with TGFA
 DONE Include a brief explanation of DAG in methods
 DONE Include a discussion combining NEFA results with the TGFA results
 
-TODO Resubmit to journal
-TODO Update bioRxiv version
+DONE Resubmit to journal
+DONE Update bioRxiv version
 >>> v0.1.1
 
 TODO Add link to bioRxiv once accepted and published
