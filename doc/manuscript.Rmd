@@ -261,7 +261,7 @@ concentrations (nmol/ml) were calculated by proportional comparison of gas
 chromatography peak areas to that of the internal standards [@Nishi2014a]. There
 were 22 fatty acids measured in the TGFA fraction. 
 Findings for other lipid fractions in this cohort are reported separately (see
-ref [@Johnston2016a] for the phospholipid and cholesteryl ester fraction and
+[@Johnston2016a] for the phospholipid and cholesteryl ester fraction and
 [@Johnston2017b] for the NEFA fraction analysis).
 
 ## Anthropometrics and sociodemographics
@@ -317,7 +317,7 @@ DAGs). The DAG structures to understand potential confounding, shown in
 software [@Textor2011a;@Shrier2008a] to generate the recommended adjustments.
 These DAG structures were developed based on hypothesized causal pathways
 between each variable, which were then input into the DAGitty software. The
-output from DAGitty was used to help inform the final model.
+output from DAGitty was used, in conjunction with the other methods, to help inform the final model.
 
 The final GEE model (M6; seen in `r cite_st('qic')`) was adjusted for years
 since baseline, WC, baseline age, ethnicity,
@@ -503,11 +503,11 @@ majority) 16:0, 16:1n-7, and 18:1n-9 with HOMA-IR, findings which were largely
 similar to the present analysis.
 
 There are a few possible explanations for these findings. Circulating 
-TGFA derive from three sources: adipose lyposis, dietary fat, and de novo
+TGFA derive from three sources: adipose lipolysis, dietary fat, and de novo
 lipogenesis (DNL). Dietary carbohydrates and fat can influence DNL activity
 [@Aarsland1998a;@Harding2015a;@Luukkonen2018a]. Determining the specific source
 of TGFA is extremely difficult to ascertain outside of highly controlled
-experimental settings. Many previous studies that have examined DNL
+experimental settings. Many previous studies that have examined DNL as the source
 have used markers of estimated DNL, such as the ratio between 18:2n-6 to 16:0 or
 16:1n-7 to 16:0 [@Hodson2008a; @Lankinen2015a; @Kroger2011a]. However, there are
 limitations to using these ratios as the fatty acids used in their calculation
@@ -523,22 +523,21 @@ reported that 14:0, 16:0, 16:1, and 18:2 were higher in the low fat (high
 carbohydrate) group. In another recent overfeeding trial, 1000 kcal of saturated
 fat, unsaturated fat, or carbohydrates over 3 weeks was given to 38 overweight
 individuals [@Luukkonen2018a] to test changes in liver fat and hepatic DNL. At the
-end of the study, the carbohydrate group had higher DNL as well as an increase
+end of the study, the carbohydrate group had higher DNL activity as well as an increase
 in liver fat, though the saturated fat group had the highest increase in liver
-fat. 
-
-This link between carbohydrate intake and DNL activity has been well documented
+fat. This link between carbohydrate intake and DNL activity has been well documented
 [@Hodson2008a; @Kawano2013a; @Harding2015a; @Hudgins2000a; @Parks1999a; @Chehade2013a; @Verges2015a].
+
 In our findings, the four fatty acids were highly positively correlated
 amongst each other and negatively or neutrally with all other TGFA, in addition to
 clustering together on their negative association with insulin sensitivity. This
-may suggest that greater DNL activity may be the source of these TGFA. Several
-studies have shown a link between higher estimated DNL and an increased risk for
-metabolic dysfunction [@Ma2015a; @Zong2013a; @Lankinen2015a; @Kroger2011a]; how
+may suggest that greater DNL activity is the source of these TGFA. Several
+studies have shown a link between higher estimated DNL activity and an increased risk for
+metabolic dysfunction [@Ma2015a; @Zong2013a; @Lankinen2015a; @Kroger2011a]. How
 DNL may influence metabolic dysfunction is not well understood. Possible
 reasons may be that higher DNL produces more of certain fatty acids or that
 higher DNL increases circulating TG, which itself is well documented to
-contribute to metabolic dysfunction and which we found in our study of a high
+contribute to metabolic dysfunction and which we found in our study as a high
 positive correlation between the four TGFA and clinical TG.
 
 Regardless of the exact source of these fatty acids, our results, in addition to
@@ -549,7 +548,7 @@ circulating 14 and 16 carbon fatty acids may expose tissues to greater
 lipotoxicity, for instance from palmitic acid (16:0), which is well-known to
 have harmful effects on tissues [@Riserus2008a; @Iggman2010a]. Our study extends
 these findings by showing that TGFA with 14 to 16 carbons clustered together and
-this pattern strongly associated with lower insulin sensitivity. While these fatty
+this pattern strongly associated with lower insulin sensitivity. While some of these fatty
 acids also had a significant association with beta-cell function, the magnitude
 of associations were more modest compared to those for insulin sensitivity.
 
@@ -558,9 +557,9 @@ from previous cross-sectional studies due to the physiological feedback
 mechanisms involved. For example, while higher TGFA may promote
 muscle insulin resistance, the reverse may also be true [@Flannery2012a].
 As we found no interaction by time of TGFA on insulin sensitivity, this study
-cannot determine the exact role of the feedback mechanism. However, combining the
-with the lack of time interaction and the consistent negative association
-without the time interaction, these results at least suggest that the feedback
+cannot determine the exact role of the feedback mechanism. However, combining
+the lack of a time interaction and the consistent negative association
+in models without the time interaction, these results at least suggest that the feedback
 mechanism may not be strongly influential and that TGFA may predict insulin
 sensitivity at least over a six year period. Given the complex biological mechanisms and
 feedback loops involved, disentangling whether insulin sensitivity influences
@@ -568,7 +567,7 @@ TGFA more strongly than TGFA influencing insulin sensitivity will require more
 complex research designs and analyses.
 
 Given the close biological relationship between circulating NEFA and TG, NEFA 
-may act as confounding factor and was thus adjusted for. In our published
+may act as a confounding factor and was thus adjusted for. In our published
 analysis of the NEFA fraction [@Johnston2017b], we found that higher total NEFA,
 but not the specific composition, associated with lower beta-cell function. This
 is in contrast to the TGFA findings that the specific composition does
@@ -578,7 +577,7 @@ not include NEFA as a confounder (data not shown). This difference in results
 between NEFA and TGFA suggests that TGFA may independently and strongly influence the 
 pathophysiology of T2D, when compared to other lipid fraction compositions,
 including the phospholipid and cholesteryl ester fractions [@Johnston2016a]. This
-may be because TG are biologically destined for uptake by non-hepatic tissue as
+may be due to TG being biologically destined for uptake by non-hepatic tissue as
 they are found mainly in VLDL, at least during fasting. This is in contrast to
 NEFA that are mostly taken up by the liver and used in TG production [@Nielsen2012a].
 
@@ -673,6 +672,8 @@ for final content. All authors read and approved the final manuscript.
 project_data %>% 
     table_basic(caption = tab_basic)
 ```
+
+Note: Tables values as either median (interquartile range), mean (SD), or n (percent).
 
 # Figures
 
