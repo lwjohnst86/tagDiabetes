@@ -2,21 +2,11 @@
 output: fost::default_manuscript
 ---
 
-<!-- add manuscript number to cover letter -->
-
 <!--
 The editorial staff will be in touch shortly to suggest revisions to your title
 and abstract for you to consider. Please wait to hear from them before
 submitting your revised manuscript. 
 -->
-
-Dear Dr. Ginsberg,
-
-We'd like to thank the editors and the reviewers for their thorough and
-insightful review of our manuscript. We have been able to make the vast majority
-of the suggested revisions, which we feel has improved the manuscript considerably.
-Below we present a point-by-point response to each of the editors' and reviewers' 
-comments.
 
 # Editor comment
 
@@ -34,7 +24,7 @@ version.
 
     *Thank you for this suggestion. We have made additions to the manuscript based on the editor's and reviewers'
     suggestions, including the discussion around SFA and NAFLD by
-    Yki-Jarvinen and colleagues. We believe this has strengthened the paper and hope it
+    Yki-Jarvinen and colleagues (first paragraph, page 13). We believe this has strengthened the paper and hope it
     satisfactorily addresses the editor and reviewers comments.*
 
 # Reviewer 1
@@ -61,7 +51,7 @@ associated with induction of lipoprotein lipase, so this sentence needs to be
 eliminated or modified.
 
     *These concerns and suggestions are appropriately raised. We have rephrased
-    these sentences in the Discussion to be more cautious and less speculative.*
+    these sentences at all points in the Discussion to be more cautious and less speculative.*
 
 4. While the discussion emphasizes DNL, it does not allude to how DNL can
 mechanistically lead to the metabolic endpoints used in this study. It would be
@@ -96,7 +86,7 @@ would the DNL story 'hold up'?
     fatty acids, the longitudinal visits, the depth and volume of the analyses,
     and the complex biology involved, it simply wasn't possible to contain
     everything in a single journal paper given word count and table/figure limitations. We have included a brief discussion of
-    the results from the other fractions in the Discussion section. The 
+    the results from the other fractions in the Discussion section (end of page 14, beginning of page 15). The 
     complete and integrated discussion and presentation of the results is found
     in the first author's (LWJ) PhD thesis (http://hdl.handle.net/1807/80893). As to a combined analysis,
     we have presented these results at the European Diabetes Epidemiology Group
@@ -132,7 +122,7 @@ understand what information is being provided without having to go back to a
 previous paper.
 
     *We thank the reviewer for this comment. We agree, this information is useful
-    and have added a brief discussion of it to the Methods section.*
+    and have added a brief discussion of it to the Methods section (end of page 7).*
 
 # Reviewer 3
 
@@ -145,7 +135,7 @@ hepatic steatosis and/or TGFA clearance by tissues such as muscle and adipose
 tissue. The authors should include a more balanced discussion of potential
 explanations/mechanisms beyond DNL.
 
-    *We thank the reviewer for these comments. We have revised the discussion to 
+    *We thank the reviewer for these comments. We have revised the discussion throughout to 
     include alternative possibilities.*
 
 2. Are there any additional analyses that can be offered to strengthen evidence
@@ -167,7 +157,7 @@ between TGFA composition and DNL?
     of excess carbohydrates to fatty acids. This in turn would impact the composition
     of primarily the TGFA. In order to control for this source of variability
     in our cohort we only measured TGFA during fasting. We have included a brief
-    description of this fed vs fasted state in the limitations section.*
+    description of this fed vs fasted state in the limitations section (middle of page 15).*
 
 Minor comments.
 
@@ -176,7 +166,7 @@ Minor comments.
 (the parallel NEFA analysis).
 
     *We have included a comment in the discussion on how our current analysis
-    fits with our previous NEFA analysis.*
+    fits with our previous NEFA analysis (end of page 14, beginning of page 15).*
 
 5. Authors underscore the strength of the statistical modeling used for the
 analysis, including the use DAG modeling to identify potential confounders.
@@ -185,4 +175,4 @@ of the method.
 
     *We agree with this suggestion, but initially excluded it from the methods to
     limit word count. We have included a section in the methods that briefly 
-    explains this method.*
+    explains this method (last paragraph of page 7).*
