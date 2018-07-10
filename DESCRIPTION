@@ -1,6 +1,6 @@
 Package: tagDiabetes
 Title: Analysis Code for TAG Manuscript
-Version: 0.1.1
+Version: 1.0.0
 Authors@R: person("Luke", "Johnston", email = "lwjohnst@gmail.com",
     role = c("aut", "cre"))
 Description: This repository contains the R code used to analyze the data and
