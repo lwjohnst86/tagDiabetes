@@ -1,6 +1,6 @@
 Package: tagDiabetes
 Title: Analysis Code for TAG Manuscript
-Version: 0.1.0
+Version: 1.0.0
 Authors@R: person("Luke", "Johnston", email = "lwjohnst@gmail.com",
     role = c("aut", "cre"))
 Description: This repository contains the R code used to analyze the data and
@@ -47,13 +47,13 @@ Imports:
     PROMISE.desc,
     PROMISE.misc,
     forcats,
-    patchwork
+    patchwork,
+    Cairo
 Remotes:
     lwjohnst86/fost,
     lwjohnst86/aide,
     lwjohnst86/PROMISE.misc,
     lwjohnst86/PROMISE.desc,
-    bitbucket::PROMISE-cohort/PROMISE
     gitlab::promise-cohort/PROMISE,
     thomasp85/patchwork
 RoxygenNote: 6.0.1

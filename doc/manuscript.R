@@ -10,12 +10,12 @@ ds0yr <- project_data %>%
 ## Include captions below using `captioner` package
 fig <- captioner::captioner(prefix = 'Figure')
 cite_f <- pryr::partial(fig, display = 'cite')
-sfig <- captioner::captioner(prefix = 'Supplemental Figure')
+sfig <- captioner::captioner(prefix = 'Supplemental Figure S')
 cite_sf <- pryr::partial(sfig, display = 'cite')
 
 tab <- captioner::captioner(prefix = 'Table')
 cite_t <- pryr::partial(tab, display = 'cite')
-stab <- captioner::captioner(prefix = 'Supplemental Table')
+stab <- captioner::captioner(prefix = 'Supplemental Table S')
 cite_st <- pryr::partial(stab, display = 'cite')
 # usage: cite_st('basicChar')
 
