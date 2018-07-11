@@ -3,6 +3,9 @@
 This project contains the analysis code for the manuscript on TAG composition and
 insulin sensitivity/beta-cell function in the PROMISE cohort.
 
+The article has been accepted and published in *Journal of Lipid Research*,
+found [here](https://doi.org/10.1194/jlr.P084970).
+
 # Introduction to this project
 
 This README details how this research directory is structured, how files should
